@@ -1,4 +1,6 @@
-﻿Public Class Login
+﻿Imports System.IO
+
+Public Class Login
     Private Sub CenterPanel()
         ConfigPnl.Location = New Point(
             LobbyPnl.Width / 2 - ConfigPnl.Size.Width / 2,
@@ -56,12 +58,20 @@
         End If
     End Sub
 
+    Private Sub InitializeLogo()
+        Dim imagePath As String = Application.StartupPath
+        Dim logoFolderPath As String = Path.Combine(imagePath, "Logo")
+        Dim fullPath As String = Path.Combine(logoFolderPath, My.Settings.LogoName)
+        LoadImageToPictureBox(PictureBox1, fullPath)
+    End Sub
+
     Private Sub LoadConfig()
         server_txtbox.Text = My.Settings.server
         port_txtbox.Text = My.Settings.port
         uname_txtbox.Text = My.Settings.username
         pword_txtbox.Text = My.Settings.password
         dbname_txtbox.Text = My.Settings.db_name
+        InitializeLogo()
     End Sub
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles DocumentsBtn.Click
@@ -115,4 +125,6 @@
     Private Sub pass_checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles pass_checkbox.CheckedChanged
         login_pword_txtbox.UseSystemPasswordChar = Not pass_checkbox.Checked
     End Sub
+
+
 End Class

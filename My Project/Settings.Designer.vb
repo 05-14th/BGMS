@@ -113,6 +113,18 @@ Namespace My
                 Me("db_name") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property LogoName() As String
+            Get
+                Return CType(Me("LogoName"),String)
+            End Get
+            Set
+                Me("LogoName") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

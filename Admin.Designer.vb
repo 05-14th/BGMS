@@ -27,7 +27,6 @@ Partial Class Admin
         Me.exit_btn = New MetroFramework.Controls.MetroButton()
         Me.MetroButton11 = New MetroFramework.Controls.MetroButton()
         Me.reports_btn = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton9 = New MetroFramework.Controls.MetroButton()
         Me.brgyMngmnt_btn = New MetroFramework.Controls.MetroButton()
         Me.brgyTrans_btn = New MetroFramework.Controls.MetroButton()
         Me.Settings_Menu = New MetroFramework.Controls.MetroContextMenu(Me.components)
@@ -114,9 +113,9 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.settings_pnl = New MetroFramework.Controls.MetroPanel()
-        Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.removeLogo = New MetroFramework.Controls.MetroButton()
+        Me.upload_btn = New MetroFramework.Controls.MetroButton()
+        Me.LogoSlot = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -134,7 +133,7 @@ Partial Class Admin
         Me.bt_bus_clearance.SuspendLayout()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.settings_pnl.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoSlot, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -142,7 +141,6 @@ Partial Class Admin
         Me.Panel1.Controls.Add(Me.exit_btn)
         Me.Panel1.Controls.Add(Me.MetroButton11)
         Me.Panel1.Controls.Add(Me.reports_btn)
-        Me.Panel1.Controls.Add(Me.MetroButton9)
         Me.Panel1.Controls.Add(Me.brgyMngmnt_btn)
         Me.Panel1.Controls.Add(Me.brgyTrans_btn)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
@@ -154,7 +152,7 @@ Partial Class Admin
         'exit_btn
         '
         Me.exit_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.exit_btn.Location = New System.Drawing.Point(0, 275)
+        Me.exit_btn.Location = New System.Drawing.Point(0, 220)
         Me.exit_btn.Name = "exit_btn"
         Me.exit_btn.Size = New System.Drawing.Size(258, 55)
         Me.exit_btn.TabIndex = 7
@@ -164,7 +162,7 @@ Partial Class Admin
         'MetroButton11
         '
         Me.MetroButton11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.MetroButton11.Location = New System.Drawing.Point(0, 220)
+        Me.MetroButton11.Location = New System.Drawing.Point(0, 165)
         Me.MetroButton11.Name = "MetroButton11"
         Me.MetroButton11.Size = New System.Drawing.Size(258, 55)
         Me.MetroButton11.TabIndex = 6
@@ -174,22 +172,12 @@ Partial Class Admin
         'reports_btn
         '
         Me.reports_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.reports_btn.Location = New System.Drawing.Point(0, 165)
+        Me.reports_btn.Location = New System.Drawing.Point(0, 110)
         Me.reports_btn.Name = "reports_btn"
         Me.reports_btn.Size = New System.Drawing.Size(258, 55)
         Me.reports_btn.TabIndex = 5
         Me.reports_btn.Text = "Reports"
         Me.reports_btn.UseSelectable = True
-        '
-        'MetroButton9
-        '
-        Me.MetroButton9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.MetroButton9.Location = New System.Drawing.Point(0, 110)
-        Me.MetroButton9.Name = "MetroButton9"
-        Me.MetroButton9.Size = New System.Drawing.Size(258, 55)
-        Me.MetroButton9.TabIndex = 4
-        Me.MetroButton9.Text = "Katarungang Pambarangay"
-        Me.MetroButton9.UseSelectable = True
         '
         'brgyMngmnt_btn
         '
@@ -340,7 +328,7 @@ Partial Class Admin
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column6.HeaderText = "Date Issued"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 111
+        Me.Column6.Width = 121
         '
         'certificate_pnl
         '
@@ -438,7 +426,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn6.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 111
+        Me.DataGridViewTextBoxColumn6.Width = 121
         '
         'bus_clearance_pnl
         '
@@ -896,46 +884,47 @@ Partial Class Admin
         '
         'settings_pnl
         '
-        Me.settings_pnl.Controls.Add(Me.MetroButton5)
-        Me.settings_pnl.Controls.Add(Me.MetroButton4)
-        Me.settings_pnl.Controls.Add(Me.PictureBox1)
+        Me.settings_pnl.Controls.Add(Me.removeLogo)
+        Me.settings_pnl.Controls.Add(Me.upload_btn)
+        Me.settings_pnl.Controls.Add(Me.LogoSlot)
         Me.settings_pnl.HorizontalScrollbarBarColor = True
         Me.settings_pnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.settings_pnl.HorizontalScrollbarSize = 10
+        Me.settings_pnl.HorizontalScrollbarSize = 9
         Me.settings_pnl.Location = New System.Drawing.Point(1164, 72)
         Me.settings_pnl.Name = "settings_pnl"
-        Me.settings_pnl.Size = New System.Drawing.Size(319, 387)
+        Me.settings_pnl.Size = New System.Drawing.Size(320, 388)
         Me.settings_pnl.TabIndex = 12
         Me.settings_pnl.VerticalScrollbarBarColor = True
         Me.settings_pnl.VerticalScrollbarHighlightOnWheel = False
         Me.settings_pnl.VerticalScrollbarSize = 10
         Me.settings_pnl.Visible = False
         '
-        'MetroButton5
+        'removeLogo
         '
-        Me.MetroButton5.Location = New System.Drawing.Point(14, 340)
-        Me.MetroButton5.Name = "MetroButton5"
-        Me.MetroButton5.Size = New System.Drawing.Size(292, 34)
-        Me.MetroButton5.TabIndex = 6
-        Me.MetroButton5.Text = "Remove Logo"
-        Me.MetroButton5.UseSelectable = True
+        Me.removeLogo.Location = New System.Drawing.Point(14, 340)
+        Me.removeLogo.Name = "removeLogo"
+        Me.removeLogo.Size = New System.Drawing.Size(292, 34)
+        Me.removeLogo.TabIndex = 6
+        Me.removeLogo.Text = "Remove Logo"
+        Me.removeLogo.UseSelectable = True
         '
-        'MetroButton4
+        'upload_btn
         '
-        Me.MetroButton4.Location = New System.Drawing.Point(14, 297)
-        Me.MetroButton4.Name = "MetroButton4"
-        Me.MetroButton4.Size = New System.Drawing.Size(292, 34)
-        Me.MetroButton4.TabIndex = 5
-        Me.MetroButton4.Text = "Upload Logo"
-        Me.MetroButton4.UseSelectable = True
+        Me.upload_btn.Location = New System.Drawing.Point(14, 297)
+        Me.upload_btn.Name = "upload_btn"
+        Me.upload_btn.Size = New System.Drawing.Size(292, 34)
+        Me.upload_btn.TabIndex = 5
+        Me.upload_btn.Text = "Upload Logo"
+        Me.upload_btn.UseSelectable = True
         '
-        'PictureBox1
+        'LogoSlot
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(13, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(293, 275)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
+        Me.LogoSlot.Location = New System.Drawing.Point(14, 15)
+        Me.LogoSlot.Name = "LogoSlot"
+        Me.LogoSlot.Size = New System.Drawing.Size(292, 275)
+        Me.LogoSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoSlot.TabIndex = 2
+        Me.LogoSlot.TabStop = False
         '
         'Admin
         '
@@ -979,7 +968,7 @@ Partial Class Admin
         Me.bt_bus_clearance.PerformLayout()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.settings_pnl.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoSlot, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -990,7 +979,6 @@ Partial Class Admin
     Friend WithEvents exit_btn As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton11 As MetroFramework.Controls.MetroButton
     Friend WithEvents reports_btn As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton9 As MetroFramework.Controls.MetroButton
     Friend WithEvents Panel3 As Panel
     Friend WithEvents clearance_pnl As MetroFramework.Controls.MetroPanel
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
@@ -1075,7 +1063,7 @@ Partial Class Admin
     Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents settings_pnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents MetroButton5 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton4 As MetroFramework.Controls.MetroButton
+    Friend WithEvents LogoSlot As PictureBox
+    Friend WithEvents removeLogo As MetroFramework.Controls.MetroButton
+    Friend WithEvents upload_btn As MetroFramework.Controls.MetroButton
 End Class
