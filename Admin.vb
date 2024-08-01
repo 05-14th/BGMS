@@ -23,41 +23,51 @@
         Me.Close()
     End Sub
 
-
-
     Private Sub MetroButton10_Click(sender As Object, e As EventArgs) Handles reports_btn.Click
         Me.Settings_Menu.Show(Me.reports_btn, Me.reports_btn.PointToClient(Cursor.Position))
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         clearance_pnl.Dock = DockStyle.Fill
+        ToggleBT(False, False, False)
         ToggleReports(True, False, False)
     End Sub
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         certificate_pnl.Dock = DockStyle.Fill
+        ToggleBT(False, False, False)
         ToggleReports(False, True, False)
     End Sub
 
     Private Sub BusinessClearanceToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BusinessClearanceToolStripMenuItem1.Click
         bus_clearance_pnl.Dock = DockStyle.Fill
+        ToggleBT(False, False, False)
         ToggleReports(False, False, True)
     End Sub
 
     Private Sub ClearanceToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ClearanceToolStripMenuItem.Click
         bt_clearance_pnl.Dock = DockStyle.Fill
+        ToggleReports(False, False, False)
         ToggleBT(True, False, False)
     End Sub
 
     Private Sub CertificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificationToolStripMenuItem.Click
         bt_certificate_pnl.Dock = DockStyle.Fill
+        ToggleReports(False, False, False)
         ToggleBT(False, True, False)
     End Sub
 
     Private Sub BusinessClearanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusinessClearanceToolStripMenuItem.Click
         bt_bus_clearance.Dock = DockStyle.Fill
+        ToggleReports(False, False, False)
         ToggleBT(False, False, True)
     End Sub
 
+    Private Sub MetroButton11_Click(sender As Object, e As EventArgs) Handles MetroButton11.Click
+        settings_pnl.Dock = DockStyle.Fill
+        ToggleReports(False, False, False)
+        ToggleBT(False, False, False)
+        settings_pnl.Visible = True
+    End Sub
 
 End Class
