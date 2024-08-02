@@ -229,7 +229,7 @@ Partial Class Admin
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(258, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1446, 55)
+        Me.Panel3.Size = New System.Drawing.Size(1926, 55)
         Me.Panel3.TabIndex = 2
         '
         'clearance_pnl
@@ -328,7 +328,7 @@ Partial Class Admin
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column6.HeaderText = "Date Issued"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 121
+        Me.Column6.Width = 111
         '
         'certificate_pnl
         '
@@ -426,7 +426,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn6.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 121
+        Me.DataGridViewTextBoxColumn6.Width = 111
         '
         'bus_clearance_pnl
         '
@@ -930,7 +930,7 @@ Partial Class Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1704, 652)
+        Me.ClientSize = New System.Drawing.Size(2184, 652)
         Me.Controls.Add(Me.settings_pnl)
         Me.Controls.Add(Me.bt_bus_clearance)
         Me.Controls.Add(Me.bt_certificate_pnl)
