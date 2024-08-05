@@ -22,7 +22,7 @@ Public Class Admin
         End If
     End Sub
 
-    Private Sub showSettings(Optional ByVal state = False)
+    Private Sub showSettings(Optional state As Boolean = False)
         settings_pnl.Visible = state
     End Sub
 
@@ -43,10 +43,11 @@ Public Class Admin
         bus_clearance_pnl.Visible = state3
     End Sub
 
-    Private Sub ToggleBT(state1 As Boolean, state2 As Boolean, state3 As Boolean)
+    Private Sub ToggleBT(state1 As Boolean, state2 As Boolean, state3 As Boolean, Optional state4 As Boolean = False)
         bt_clearance_pnl.Visible = state1
         bt_certificate_pnl.Visible = state2
         bt_bus_clearance.Visible = state3
+        blotter_pnl.Visible = state4
     End Sub
 
     Private Sub brgyTrans_btn_Click(sender As Object, e As EventArgs) Handles brgyTrans_btn.Click
@@ -115,7 +116,13 @@ Public Class Admin
     End Sub
 
     Private Sub BlotterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlotterToolStripMenuItem.Click
-
+        blotter_pnl.Dock = DockStyle.Fill
+        ToggleBT(False, False, False, True)
+        Dim blotter_report As New Blotter_Report()
+        blotter_pnl.Controls.Add(blotter_report)
+        blotter_report.Left = (blotter_pnl.Width - blotter_report.Width) / 2
+        blotter_report.Top = (blotter_pnl.Height - blotter_report.Height) / 2
+        showSettings()
     End Sub
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load

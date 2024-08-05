@@ -116,6 +116,7 @@ Partial Class Admin
         Me.removeLogo = New MetroFramework.Controls.MetroButton()
         Me.upload_btn = New MetroFramework.Controls.MetroButton()
         Me.LogoSlot = New System.Windows.Forms.PictureBox()
+        Me.blotter_pnl = New MetroFramework.Controls.MetroPanel()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -145,16 +146,18 @@ Partial Class Admin
         Me.Panel1.Controls.Add(Me.brgyTrans_btn)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(258, 652)
+        Me.Panel1.Size = New System.Drawing.Size(172, 424)
         Me.Panel1.TabIndex = 0
         '
         'exit_btn
         '
         Me.exit_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.exit_btn.Location = New System.Drawing.Point(0, 220)
+        Me.exit_btn.Location = New System.Drawing.Point(0, 144)
+        Me.exit_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.exit_btn.Name = "exit_btn"
-        Me.exit_btn.Size = New System.Drawing.Size(258, 55)
+        Me.exit_btn.Size = New System.Drawing.Size(172, 36)
         Me.exit_btn.TabIndex = 7
         Me.exit_btn.Text = "Exit"
         Me.exit_btn.UseSelectable = True
@@ -162,9 +165,10 @@ Partial Class Admin
         'MetroButton11
         '
         Me.MetroButton11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.MetroButton11.Location = New System.Drawing.Point(0, 165)
+        Me.MetroButton11.Location = New System.Drawing.Point(0, 108)
+        Me.MetroButton11.Margin = New System.Windows.Forms.Padding(2)
         Me.MetroButton11.Name = "MetroButton11"
-        Me.MetroButton11.Size = New System.Drawing.Size(258, 55)
+        Me.MetroButton11.Size = New System.Drawing.Size(172, 36)
         Me.MetroButton11.TabIndex = 6
         Me.MetroButton11.Text = "Settings"
         Me.MetroButton11.UseSelectable = True
@@ -172,9 +176,10 @@ Partial Class Admin
         'reports_btn
         '
         Me.reports_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.reports_btn.Location = New System.Drawing.Point(0, 110)
+        Me.reports_btn.Location = New System.Drawing.Point(0, 72)
+        Me.reports_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.reports_btn.Name = "reports_btn"
-        Me.reports_btn.Size = New System.Drawing.Size(258, 55)
+        Me.reports_btn.Size = New System.Drawing.Size(172, 36)
         Me.reports_btn.TabIndex = 5
         Me.reports_btn.Text = "Reports"
         Me.reports_btn.UseSelectable = True
@@ -182,9 +187,10 @@ Partial Class Admin
         'brgyMngmnt_btn
         '
         Me.brgyMngmnt_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.brgyMngmnt_btn.Location = New System.Drawing.Point(0, 55)
+        Me.brgyMngmnt_btn.Location = New System.Drawing.Point(0, 36)
+        Me.brgyMngmnt_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.brgyMngmnt_btn.Name = "brgyMngmnt_btn"
-        Me.brgyMngmnt_btn.Size = New System.Drawing.Size(258, 55)
+        Me.brgyMngmnt_btn.Size = New System.Drawing.Size(172, 36)
         Me.brgyMngmnt_btn.TabIndex = 2
         Me.brgyMngmnt_btn.Text = "Barangay Management"
         Me.brgyMngmnt_btn.UseSelectable = True
@@ -193,8 +199,9 @@ Partial Class Admin
         '
         Me.brgyTrans_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.brgyTrans_btn.Location = New System.Drawing.Point(0, 0)
+        Me.brgyTrans_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.brgyTrans_btn.Name = "brgyTrans_btn"
-        Me.brgyTrans_btn.Size = New System.Drawing.Size(258, 55)
+        Me.brgyTrans_btn.Size = New System.Drawing.Size(172, 36)
         Me.brgyTrans_btn.TabIndex = 0
         Me.brgyTrans_btn.Text = "Barangay Transaction"
         Me.brgyTrans_btn.UseSelectable = True
@@ -227,9 +234,10 @@ Partial Class Admin
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(258, 0)
+        Me.Panel3.Location = New System.Drawing.Point(172, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1926, 55)
+        Me.Panel3.Size = New System.Drawing.Size(1284, 36)
         Me.Panel3.TabIndex = 2
         '
         'clearance_pnl
@@ -240,30 +248,33 @@ Partial Class Admin
         Me.clearance_pnl.Controls.Add(Me.DataGridView1)
         Me.clearance_pnl.HorizontalScrollbarBarColor = True
         Me.clearance_pnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.clearance_pnl.HorizontalScrollbarSize = 9
-        Me.clearance_pnl.Location = New System.Drawing.Point(315, 72)
+        Me.clearance_pnl.HorizontalScrollbarSize = 6
+        Me.clearance_pnl.Location = New System.Drawing.Point(210, 47)
+        Me.clearance_pnl.Margin = New System.Windows.Forms.Padding(2)
         Me.clearance_pnl.Name = "clearance_pnl"
-        Me.clearance_pnl.Size = New System.Drawing.Size(418, 175)
+        Me.clearance_pnl.Size = New System.Drawing.Size(279, 114)
         Me.clearance_pnl.TabIndex = 3
         Me.clearance_pnl.VerticalScrollbarBarColor = True
         Me.clearance_pnl.VerticalScrollbarHighlightOnWheel = False
-        Me.clearance_pnl.VerticalScrollbarSize = 10
+        Me.clearance_pnl.VerticalScrollbarSize = 7
         Me.clearance_pnl.Visible = False
         '
         'TextBox1
         '
         Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(189, 15)
+        Me.TextBox1.Location = New System.Drawing.Point(126, 10)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(145, 20)
         Me.TextBox1.TabIndex = 7
         '
         'MetroButton1
         '
         Me.MetroButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroButton1.Location = New System.Drawing.Point(300, 123)
+        Me.MetroButton1.Location = New System.Drawing.Point(200, 80)
+        Me.MetroButton1.Margin = New System.Windows.Forms.Padding(2)
         Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(104, 43)
+        Me.MetroButton1.Size = New System.Drawing.Size(69, 28)
         Me.MetroButton1.TabIndex = 6
         Me.MetroButton1.Text = "Print"
         Me.MetroButton1.UseSelectable = True
@@ -272,7 +283,8 @@ Partial Class Admin
         '
         Me.MetroLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(112, 15)
+        Me.MetroLabel1.Location = New System.Drawing.Point(75, 10)
+        Me.MetroLabel1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel1.TabIndex = 4
@@ -285,10 +297,11 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        Me.DataGridView1.Location = New System.Drawing.Point(18, 68)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 44)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(386, 42)
+        Me.DataGridView1.Size = New System.Drawing.Size(257, 27)
         Me.DataGridView1.TabIndex = 2
         '
         'Column1
@@ -296,7 +309,7 @@ Partial Class Admin
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column1.HeaderText = "Clearance ID"
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 127
+        Me.Column1.Width = 94
         '
         'Column2
         '
@@ -315,7 +328,7 @@ Partial Class Admin
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column4.HeaderText = "MI"
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 52
+        Me.Column4.Width = 44
         '
         'Column5
         '
@@ -328,7 +341,7 @@ Partial Class Admin
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column6.HeaderText = "Date Issued"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 111
+        Me.Column6.Width = 89
         '
         'certificate_pnl
         '
@@ -338,30 +351,33 @@ Partial Class Admin
         Me.certificate_pnl.Controls.Add(Me.DataGridView2)
         Me.certificate_pnl.HorizontalScrollbarBarColor = True
         Me.certificate_pnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.certificate_pnl.HorizontalScrollbarSize = 9
-        Me.certificate_pnl.Location = New System.Drawing.Point(315, 252)
+        Me.certificate_pnl.HorizontalScrollbarSize = 6
+        Me.certificate_pnl.Location = New System.Drawing.Point(210, 164)
+        Me.certificate_pnl.Margin = New System.Windows.Forms.Padding(2)
         Me.certificate_pnl.Name = "certificate_pnl"
-        Me.certificate_pnl.Size = New System.Drawing.Size(418, 175)
+        Me.certificate_pnl.Size = New System.Drawing.Size(279, 114)
         Me.certificate_pnl.TabIndex = 8
         Me.certificate_pnl.VerticalScrollbarBarColor = True
         Me.certificate_pnl.VerticalScrollbarHighlightOnWheel = False
-        Me.certificate_pnl.VerticalScrollbarSize = 10
+        Me.certificate_pnl.VerticalScrollbarSize = 7
         Me.certificate_pnl.Visible = False
         '
         'TextBox2
         '
         Me.TextBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(189, 15)
+        Me.TextBox2.Location = New System.Drawing.Point(126, 10)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox2.Size = New System.Drawing.Size(145, 20)
         Me.TextBox2.TabIndex = 7
         '
         'MetroButton2
         '
         Me.MetroButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroButton2.Location = New System.Drawing.Point(300, 123)
+        Me.MetroButton2.Location = New System.Drawing.Point(200, 80)
+        Me.MetroButton2.Margin = New System.Windows.Forms.Padding(2)
         Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(104, 43)
+        Me.MetroButton2.Size = New System.Drawing.Size(69, 28)
         Me.MetroButton2.TabIndex = 6
         Me.MetroButton2.Text = "Print"
         Me.MetroButton2.UseSelectable = True
@@ -370,7 +386,8 @@ Partial Class Admin
         '
         Me.MetroLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(112, 15)
+        Me.MetroLabel2.Location = New System.Drawing.Point(75, 10)
+        Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel2.TabIndex = 4
@@ -383,10 +400,11 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.DataGridView2.Location = New System.Drawing.Point(18, 68)
+        Me.DataGridView2.Location = New System.Drawing.Point(12, 44)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowTemplate.Height = 28
-        Me.DataGridView2.Size = New System.Drawing.Size(386, 42)
+        Me.DataGridView2.Size = New System.Drawing.Size(257, 27)
         Me.DataGridView2.TabIndex = 2
         '
         'DataGridViewTextBoxColumn1
@@ -394,7 +412,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn1.HeaderText = "Certificate ID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 127
+        Me.DataGridViewTextBoxColumn1.Width = 93
         '
         'DataGridViewTextBoxColumn2
         '
@@ -413,7 +431,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn4.HeaderText = "MI"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 52
+        Me.DataGridViewTextBoxColumn4.Width = 44
         '
         'DataGridViewTextBoxColumn5
         '
@@ -426,7 +444,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn6.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 111
+        Me.DataGridViewTextBoxColumn6.Width = 89
         '
         'bus_clearance_pnl
         '
@@ -436,30 +454,33 @@ Partial Class Admin
         Me.bus_clearance_pnl.Controls.Add(Me.DataGridView3)
         Me.bus_clearance_pnl.HorizontalScrollbarBarColor = True
         Me.bus_clearance_pnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.bus_clearance_pnl.HorizontalScrollbarSize = 9
-        Me.bus_clearance_pnl.Location = New System.Drawing.Point(315, 435)
+        Me.bus_clearance_pnl.HorizontalScrollbarSize = 6
+        Me.bus_clearance_pnl.Location = New System.Drawing.Point(210, 283)
+        Me.bus_clearance_pnl.Margin = New System.Windows.Forms.Padding(2)
         Me.bus_clearance_pnl.Name = "bus_clearance_pnl"
-        Me.bus_clearance_pnl.Size = New System.Drawing.Size(418, 175)
+        Me.bus_clearance_pnl.Size = New System.Drawing.Size(279, 114)
         Me.bus_clearance_pnl.TabIndex = 9
         Me.bus_clearance_pnl.VerticalScrollbarBarColor = True
         Me.bus_clearance_pnl.VerticalScrollbarHighlightOnWheel = False
-        Me.bus_clearance_pnl.VerticalScrollbarSize = 10
+        Me.bus_clearance_pnl.VerticalScrollbarSize = 7
         Me.bus_clearance_pnl.Visible = False
         '
         'TextBox3
         '
         Me.TextBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox3.Location = New System.Drawing.Point(189, 15)
+        Me.TextBox3.Location = New System.Drawing.Point(126, 10)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox3.Size = New System.Drawing.Size(145, 20)
         Me.TextBox3.TabIndex = 7
         '
         'MetroButton3
         '
         Me.MetroButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroButton3.Location = New System.Drawing.Point(300, 123)
+        Me.MetroButton3.Location = New System.Drawing.Point(200, 80)
+        Me.MetroButton3.Margin = New System.Windows.Forms.Padding(2)
         Me.MetroButton3.Name = "MetroButton3"
-        Me.MetroButton3.Size = New System.Drawing.Size(104, 43)
+        Me.MetroButton3.Size = New System.Drawing.Size(69, 28)
         Me.MetroButton3.TabIndex = 6
         Me.MetroButton3.Text = "Print"
         Me.MetroButton3.UseSelectable = True
@@ -468,7 +489,8 @@ Partial Class Admin
         '
         Me.MetroLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(112, 15)
+        Me.MetroLabel3.Location = New System.Drawing.Point(75, 10)
+        Me.MetroLabel3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel3.TabIndex = 4
@@ -481,10 +503,11 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.Column7, Me.DataGridViewTextBoxColumn12})
-        Me.DataGridView3.Location = New System.Drawing.Point(18, 68)
+        Me.DataGridView3.Location = New System.Drawing.Point(12, 44)
+        Me.DataGridView3.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.RowTemplate.Height = 28
-        Me.DataGridView3.Size = New System.Drawing.Size(386, 42)
+        Me.DataGridView3.Size = New System.Drawing.Size(257, 27)
         Me.DataGridView3.TabIndex = 2
         '
         'DataGridViewTextBoxColumn7
@@ -492,7 +515,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn7.HeaderText = "Business Clearance ID"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 159
+        Me.DataGridViewTextBoxColumn7.Width = 114
         '
         'DataGridViewTextBoxColumn8
         '
@@ -511,7 +534,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn10.HeaderText = "MI"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 52
+        Me.DataGridViewTextBoxColumn10.Width = 44
         '
         'DataGridViewTextBoxColumn11
         '
@@ -530,7 +553,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn12.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.Width = 111
+        Me.DataGridViewTextBoxColumn12.Width = 82
         '
         'Bt_Menu
         '
@@ -601,29 +624,32 @@ Partial Class Admin
         Me.bt_clearance_pnl.Controls.Add(Me.DataGridView4)
         Me.bt_clearance_pnl.HorizontalScrollbarBarColor = True
         Me.bt_clearance_pnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.bt_clearance_pnl.HorizontalScrollbarSize = 9
-        Me.bt_clearance_pnl.Location = New System.Drawing.Point(740, 72)
+        Me.bt_clearance_pnl.HorizontalScrollbarSize = 6
+        Me.bt_clearance_pnl.Location = New System.Drawing.Point(493, 47)
+        Me.bt_clearance_pnl.Margin = New System.Windows.Forms.Padding(2)
         Me.bt_clearance_pnl.Name = "bt_clearance_pnl"
-        Me.bt_clearance_pnl.Size = New System.Drawing.Size(418, 175)
+        Me.bt_clearance_pnl.Size = New System.Drawing.Size(279, 114)
         Me.bt_clearance_pnl.TabIndex = 8
         Me.bt_clearance_pnl.VerticalScrollbarBarColor = True
         Me.bt_clearance_pnl.VerticalScrollbarHighlightOnWheel = False
-        Me.bt_clearance_pnl.VerticalScrollbarSize = 10
+        Me.bt_clearance_pnl.VerticalScrollbarSize = 7
         Me.bt_clearance_pnl.Visible = False
         '
         'TextBox4
         '
         Me.TextBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox4.Location = New System.Drawing.Point(189, 15)
+        Me.TextBox4.Location = New System.Drawing.Point(126, 10)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox4.Size = New System.Drawing.Size(145, 20)
         Me.TextBox4.TabIndex = 7
         '
         'MetroLabel4
         '
         Me.MetroLabel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(112, 15)
+        Me.MetroLabel4.Location = New System.Drawing.Point(75, 10)
+        Me.MetroLabel4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel4.TabIndex = 4
@@ -636,10 +662,11 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.Column8})
-        Me.DataGridView4.Location = New System.Drawing.Point(18, 68)
+        Me.DataGridView4.Location = New System.Drawing.Point(12, 44)
+        Me.DataGridView4.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView4.Name = "DataGridView4"
         Me.DataGridView4.RowTemplate.Height = 28
-        Me.DataGridView4.Size = New System.Drawing.Size(386, 98)
+        Me.DataGridView4.Size = New System.Drawing.Size(257, 64)
         Me.DataGridView4.TabIndex = 2
         '
         'DataGridViewTextBoxColumn13
@@ -647,7 +674,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn13.HeaderText = "Clearance ID"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.Width = 116
+        Me.DataGridViewTextBoxColumn13.Width = 87
         '
         'DataGridViewTextBoxColumn14
         '
@@ -666,7 +693,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn16.HeaderText = "MI"
         Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        Me.DataGridViewTextBoxColumn16.Width = 52
+        Me.DataGridViewTextBoxColumn16.Width = 44
         '
         'DataGridViewTextBoxColumn17
         '
@@ -679,14 +706,14 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn18.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.Width = 139
+        Me.DataGridViewTextBoxColumn18.Width = 101
         '
         'Column8
         '
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column8.HeaderText = "Action"
         Me.Column8.Name = "Column8"
-        Me.Column8.Width = 60
+        Me.Column8.Width = 43
         '
         'bt_certificate_pnl
         '
@@ -695,29 +722,32 @@ Partial Class Admin
         Me.bt_certificate_pnl.Controls.Add(Me.DataGridView5)
         Me.bt_certificate_pnl.HorizontalScrollbarBarColor = True
         Me.bt_certificate_pnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.bt_certificate_pnl.HorizontalScrollbarSize = 9
-        Me.bt_certificate_pnl.Location = New System.Drawing.Point(740, 254)
+        Me.bt_certificate_pnl.HorizontalScrollbarSize = 6
+        Me.bt_certificate_pnl.Location = New System.Drawing.Point(493, 165)
+        Me.bt_certificate_pnl.Margin = New System.Windows.Forms.Padding(2)
         Me.bt_certificate_pnl.Name = "bt_certificate_pnl"
-        Me.bt_certificate_pnl.Size = New System.Drawing.Size(418, 175)
+        Me.bt_certificate_pnl.Size = New System.Drawing.Size(279, 114)
         Me.bt_certificate_pnl.TabIndex = 10
         Me.bt_certificate_pnl.VerticalScrollbarBarColor = True
         Me.bt_certificate_pnl.VerticalScrollbarHighlightOnWheel = False
-        Me.bt_certificate_pnl.VerticalScrollbarSize = 10
+        Me.bt_certificate_pnl.VerticalScrollbarSize = 7
         Me.bt_certificate_pnl.Visible = False
         '
         'TextBox5
         '
         Me.TextBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox5.Location = New System.Drawing.Point(189, 15)
+        Me.TextBox5.Location = New System.Drawing.Point(126, 10)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox5.Size = New System.Drawing.Size(145, 20)
         Me.TextBox5.TabIndex = 7
         '
         'MetroLabel5
         '
         Me.MetroLabel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(112, 15)
+        Me.MetroLabel5.Location = New System.Drawing.Point(75, 10)
+        Me.MetroLabel5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.MetroLabel5.Name = "MetroLabel5"
         Me.MetroLabel5.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel5.TabIndex = 4
@@ -730,10 +760,11 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewImageColumn1})
-        Me.DataGridView5.Location = New System.Drawing.Point(18, 68)
+        Me.DataGridView5.Location = New System.Drawing.Point(12, 44)
+        Me.DataGridView5.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView5.Name = "DataGridView5"
         Me.DataGridView5.RowTemplate.Height = 28
-        Me.DataGridView5.Size = New System.Drawing.Size(386, 97)
+        Me.DataGridView5.Size = New System.Drawing.Size(257, 63)
         Me.DataGridView5.TabIndex = 2
         '
         'DataGridViewTextBoxColumn19
@@ -741,7 +772,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn19.HeaderText = "Certificate ID"
         Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.Width = 116
+        Me.DataGridViewTextBoxColumn19.Width = 86
         '
         'DataGridViewTextBoxColumn20
         '
@@ -760,7 +791,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn22.HeaderText = "MI"
         Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        Me.DataGridViewTextBoxColumn22.Width = 52
+        Me.DataGridViewTextBoxColumn22.Width = 44
         '
         'DataGridViewTextBoxColumn23
         '
@@ -773,14 +804,14 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn24.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.Width = 139
+        Me.DataGridViewTextBoxColumn24.Width = 101
         '
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewImageColumn1.HeaderText = "Action"
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.Width = 60
+        Me.DataGridViewImageColumn1.Width = 43
         '
         'bt_bus_clearance
         '
@@ -789,29 +820,32 @@ Partial Class Admin
         Me.bt_bus_clearance.Controls.Add(Me.DataGridView6)
         Me.bt_bus_clearance.HorizontalScrollbarBarColor = True
         Me.bt_bus_clearance.HorizontalScrollbarHighlightOnWheel = False
-        Me.bt_bus_clearance.HorizontalScrollbarSize = 9
-        Me.bt_bus_clearance.Location = New System.Drawing.Point(740, 435)
+        Me.bt_bus_clearance.HorizontalScrollbarSize = 6
+        Me.bt_bus_clearance.Location = New System.Drawing.Point(493, 283)
+        Me.bt_bus_clearance.Margin = New System.Windows.Forms.Padding(2)
         Me.bt_bus_clearance.Name = "bt_bus_clearance"
-        Me.bt_bus_clearance.Size = New System.Drawing.Size(418, 175)
+        Me.bt_bus_clearance.Size = New System.Drawing.Size(279, 114)
         Me.bt_bus_clearance.TabIndex = 11
         Me.bt_bus_clearance.VerticalScrollbarBarColor = True
         Me.bt_bus_clearance.VerticalScrollbarHighlightOnWheel = False
-        Me.bt_bus_clearance.VerticalScrollbarSize = 10
+        Me.bt_bus_clearance.VerticalScrollbarSize = 7
         Me.bt_bus_clearance.Visible = False
         '
         'TextBox6
         '
         Me.TextBox6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox6.Location = New System.Drawing.Point(189, 15)
+        Me.TextBox6.Location = New System.Drawing.Point(126, 10)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox6.Size = New System.Drawing.Size(145, 20)
         Me.TextBox6.TabIndex = 7
         '
         'MetroLabel6
         '
         Me.MetroLabel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(112, 15)
+        Me.MetroLabel6.Location = New System.Drawing.Point(75, 10)
+        Me.MetroLabel6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel6.TabIndex = 4
@@ -824,10 +858,11 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.Column9})
-        Me.DataGridView6.Location = New System.Drawing.Point(18, 68)
+        Me.DataGridView6.Location = New System.Drawing.Point(12, 44)
+        Me.DataGridView6.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView6.Name = "DataGridView6"
         Me.DataGridView6.RowTemplate.Height = 28
-        Me.DataGridView6.Size = New System.Drawing.Size(386, 98)
+        Me.DataGridView6.Size = New System.Drawing.Size(257, 64)
         Me.DataGridView6.TabIndex = 2
         '
         'DataGridViewTextBoxColumn25
@@ -835,7 +870,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn25.HeaderText = "Business Clearance ID"
         Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        Me.DataGridViewTextBoxColumn25.Width = 159
+        Me.DataGridViewTextBoxColumn25.Width = 114
         '
         'DataGridViewTextBoxColumn26
         '
@@ -854,7 +889,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn28.HeaderText = "MI"
         Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
-        Me.DataGridViewTextBoxColumn28.Width = 52
+        Me.DataGridViewTextBoxColumn28.Width = 44
         '
         'DataGridViewTextBoxColumn29
         '
@@ -873,14 +908,14 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn31.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.Width = 139
+        Me.DataGridViewTextBoxColumn31.Width = 101
         '
         'Column9
         '
         Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column9.HeaderText = "Action"
         Me.Column9.Name = "Column9"
-        Me.Column9.Width = 60
+        Me.Column9.Width = 43
         '
         'settings_pnl
         '
@@ -889,48 +924,68 @@ Partial Class Admin
         Me.settings_pnl.Controls.Add(Me.LogoSlot)
         Me.settings_pnl.HorizontalScrollbarBarColor = True
         Me.settings_pnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.settings_pnl.HorizontalScrollbarSize = 9
-        Me.settings_pnl.Location = New System.Drawing.Point(1164, 72)
+        Me.settings_pnl.HorizontalScrollbarSize = 6
+        Me.settings_pnl.Location = New System.Drawing.Point(776, 47)
+        Me.settings_pnl.Margin = New System.Windows.Forms.Padding(2)
         Me.settings_pnl.Name = "settings_pnl"
-        Me.settings_pnl.Size = New System.Drawing.Size(320, 388)
+        Me.settings_pnl.Size = New System.Drawing.Size(213, 252)
         Me.settings_pnl.TabIndex = 12
         Me.settings_pnl.VerticalScrollbarBarColor = True
         Me.settings_pnl.VerticalScrollbarHighlightOnWheel = False
-        Me.settings_pnl.VerticalScrollbarSize = 10
+        Me.settings_pnl.VerticalScrollbarSize = 7
         Me.settings_pnl.Visible = False
         '
         'removeLogo
         '
-        Me.removeLogo.Location = New System.Drawing.Point(14, 340)
+        Me.removeLogo.Location = New System.Drawing.Point(9, 221)
+        Me.removeLogo.Margin = New System.Windows.Forms.Padding(2)
         Me.removeLogo.Name = "removeLogo"
-        Me.removeLogo.Size = New System.Drawing.Size(292, 34)
+        Me.removeLogo.Size = New System.Drawing.Size(195, 22)
         Me.removeLogo.TabIndex = 6
         Me.removeLogo.Text = "Remove Logo"
         Me.removeLogo.UseSelectable = True
         '
         'upload_btn
         '
-        Me.upload_btn.Location = New System.Drawing.Point(14, 297)
+        Me.upload_btn.Location = New System.Drawing.Point(9, 193)
+        Me.upload_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.upload_btn.Name = "upload_btn"
-        Me.upload_btn.Size = New System.Drawing.Size(292, 34)
+        Me.upload_btn.Size = New System.Drawing.Size(195, 22)
         Me.upload_btn.TabIndex = 5
         Me.upload_btn.Text = "Upload Logo"
         Me.upload_btn.UseSelectable = True
         '
         'LogoSlot
         '
-        Me.LogoSlot.Location = New System.Drawing.Point(14, 15)
+        Me.LogoSlot.Location = New System.Drawing.Point(9, 10)
+        Me.LogoSlot.Margin = New System.Windows.Forms.Padding(2)
         Me.LogoSlot.Name = "LogoSlot"
-        Me.LogoSlot.Size = New System.Drawing.Size(292, 275)
+        Me.LogoSlot.Size = New System.Drawing.Size(195, 179)
         Me.LogoSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.LogoSlot.TabIndex = 2
         Me.LogoSlot.TabStop = False
         '
+        'blotter_pnl
+        '
+        Me.blotter_pnl.HorizontalScrollbarBarColor = True
+        Me.blotter_pnl.HorizontalScrollbarHighlightOnWheel = False
+        Me.blotter_pnl.HorizontalScrollbarSize = 6
+        Me.blotter_pnl.Location = New System.Drawing.Point(776, 303)
+        Me.blotter_pnl.Margin = New System.Windows.Forms.Padding(2)
+        Me.blotter_pnl.Name = "blotter_pnl"
+        Me.blotter_pnl.Size = New System.Drawing.Size(213, 94)
+        Me.blotter_pnl.TabIndex = 13
+        Me.blotter_pnl.VerticalScrollbarBarColor = True
+        Me.blotter_pnl.VerticalScrollbarHighlightOnWheel = False
+        Me.blotter_pnl.VerticalScrollbarSize = 7
+        Me.blotter_pnl.Visible = False
+        '
         'Admin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(2184, 652)
+        Me.ClientSize = New System.Drawing.Size(1456, 424)
+        Me.Controls.Add(Me.blotter_pnl)
         Me.Controls.Add(Me.settings_pnl)
         Me.Controls.Add(Me.bt_bus_clearance)
         Me.Controls.Add(Me.bt_certificate_pnl)
@@ -941,6 +996,7 @@ Partial Class Admin
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
@@ -1066,4 +1122,5 @@ Partial Class Admin
     Friend WithEvents LogoSlot As PictureBox
     Friend WithEvents removeLogo As MetroFramework.Controls.MetroButton
     Friend WithEvents upload_btn As MetroFramework.Controls.MetroButton
+    Friend WithEvents blotter_pnl As MetroFramework.Controls.MetroPanel
 End Class

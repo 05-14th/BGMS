@@ -112,11 +112,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Test_Form.Designer.vb">
-      <DependentUpon>Test_Form.vb</DependentUpon>
+    <Compile Include="Blotter_Report.Designer.vb">
+      <DependentUpon>Blotter_Report.vb</DependentUpon>
     </Compile>
-    <Compile Include="Test_Form.vb">
-      <SubType>Form</SubType>
+    <Compile Include="Blotter_Report.vb">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -132,8 +132,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test_Form.resx">
-      <DependentUpon>Test_Form.vb</DependentUpon>
+    <EmbeddedResource Include="Blotter_Report.resx">
+      <DependentUpon>Blotter_Report.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

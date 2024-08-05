@@ -317,9 +317,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox9.CustomButton.Image = Nothing
-        Me.MetroTextBox9.CustomButton.Location = New System.Drawing.Point(183, 1)
+        Me.MetroTextBox9.CustomButton.Location = New System.Drawing.Point(274, 1)
         Me.MetroTextBox9.CustomButton.Name = ""
-        Me.MetroTextBox9.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox9.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox9.CustomButton.TabIndex = 1
         Me.MetroTextBox9.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -393,9 +393,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox7.CustomButton.Image = Nothing
-        Me.MetroTextBox7.CustomButton.Location = New System.Drawing.Point(183, 1)
+        Me.MetroTextBox7.CustomButton.Location = New System.Drawing.Point(274, 1)
         Me.MetroTextBox7.CustomButton.Name = ""
-        Me.MetroTextBox7.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox7.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox7.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox7.CustomButton.TabIndex = 1
         Me.MetroTextBox7.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -425,9 +425,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox8.CustomButton.Image = Nothing
-        Me.MetroTextBox8.CustomButton.Location = New System.Drawing.Point(144, 1)
+        Me.MetroTextBox8.CustomButton.Location = New System.Drawing.Point(216, 1)
         Me.MetroTextBox8.CustomButton.Name = ""
-        Me.MetroTextBox8.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox8.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox8.CustomButton.TabIndex = 1
         Me.MetroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -507,9 +507,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox6.CustomButton.Image = Nothing
-        Me.MetroTextBox6.CustomButton.Location = New System.Drawing.Point(45, 1)
+        Me.MetroTextBox6.CustomButton.Location = New System.Drawing.Point(67, 1)
         Me.MetroTextBox6.CustomButton.Name = ""
-        Me.MetroTextBox6.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox6.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox6.CustomButton.TabIndex = 1
         Me.MetroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -661,9 +661,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox4.CustomButton.Image = Nothing
-        Me.MetroTextBox4.CustomButton.Location = New System.Drawing.Point(183, 1)
+        Me.MetroTextBox4.CustomButton.Location = New System.Drawing.Point(274, 1)
         Me.MetroTextBox4.CustomButton.Name = ""
-        Me.MetroTextBox4.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox4.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox4.CustomButton.TabIndex = 1
         Me.MetroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -693,9 +693,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox5.CustomButton.Image = Nothing
-        Me.MetroTextBox5.CustomButton.Location = New System.Drawing.Point(144, 1)
+        Me.MetroTextBox5.CustomButton.Location = New System.Drawing.Point(216, 1)
         Me.MetroTextBox5.CustomButton.Name = ""
-        Me.MetroTextBox5.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox5.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox5.CustomButton.TabIndex = 1
         Me.MetroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -842,9 +842,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox3.CustomButton.Image = Nothing
-        Me.MetroTextBox3.CustomButton.Location = New System.Drawing.Point(183, 1)
+        Me.MetroTextBox3.CustomButton.Location = New System.Drawing.Point(274, 1)
         Me.MetroTextBox3.CustomButton.Name = ""
-        Me.MetroTextBox3.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox3.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox3.CustomButton.TabIndex = 1
         Me.MetroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -874,9 +874,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox2.CustomButton.Image = Nothing
-        Me.MetroTextBox2.CustomButton.Location = New System.Drawing.Point(144, 1)
+        Me.MetroTextBox2.CustomButton.Location = New System.Drawing.Point(216, 1)
         Me.MetroTextBox2.CustomButton.Name = ""
-        Me.MetroTextBox2.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox2.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox2.CustomButton.TabIndex = 1
         Me.MetroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -966,9 +966,9 @@ Partial Class Login
         '
         '
         Me.login_pword_txtbox.CustomButton.Image = Nothing
-        Me.login_pword_txtbox.CustomButton.Location = New System.Drawing.Point(208, 1)
+        Me.login_pword_txtbox.CustomButton.Location = New System.Drawing.Point(312, 1)
         Me.login_pword_txtbox.CustomButton.Name = ""
-        Me.login_pword_txtbox.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.login_pword_txtbox.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.login_pword_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.login_pword_txtbox.CustomButton.TabIndex = 1
         Me.login_pword_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1008,9 +1008,9 @@ Partial Class Login
         '
         '
         Me.login_uname_txtbox.CustomButton.Image = Nothing
-        Me.login_uname_txtbox.CustomButton.Location = New System.Drawing.Point(208, 1)
+        Me.login_uname_txtbox.CustomButton.Location = New System.Drawing.Point(312, 1)
         Me.login_uname_txtbox.CustomButton.Name = ""
-        Me.login_uname_txtbox.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.login_uname_txtbox.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.login_uname_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.login_uname_txtbox.CustomButton.TabIndex = 1
         Me.login_uname_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1143,9 +1143,9 @@ Partial Class Login
         '
         '
         Me.MetroTextBox1.CustomButton.Image = Nothing
-        Me.MetroTextBox1.CustomButton.Location = New System.Drawing.Point(315, 1)
+        Me.MetroTextBox1.CustomButton.Location = New System.Drawing.Point(472, 1)
         Me.MetroTextBox1.CustomButton.Name = ""
-        Me.MetroTextBox1.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.MetroTextBox1.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.MetroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox1.CustomButton.TabIndex = 1
         Me.MetroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1276,9 +1276,9 @@ Partial Class Login
         '
         '
         Me.dbname_txtbox.CustomButton.Image = Nothing
-        Me.dbname_txtbox.CustomButton.Location = New System.Drawing.Point(208, 1)
+        Me.dbname_txtbox.CustomButton.Location = New System.Drawing.Point(312, 1)
         Me.dbname_txtbox.CustomButton.Name = ""
-        Me.dbname_txtbox.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.dbname_txtbox.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.dbname_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.dbname_txtbox.CustomButton.TabIndex = 1
         Me.dbname_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1308,9 +1308,9 @@ Partial Class Login
         '
         '
         Me.pword_txtbox.CustomButton.Image = Nothing
-        Me.pword_txtbox.CustomButton.Location = New System.Drawing.Point(208, 1)
+        Me.pword_txtbox.CustomButton.Location = New System.Drawing.Point(312, 1)
         Me.pword_txtbox.CustomButton.Name = ""
-        Me.pword_txtbox.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.pword_txtbox.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.pword_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.pword_txtbox.CustomButton.TabIndex = 1
         Me.pword_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1340,9 +1340,9 @@ Partial Class Login
         '
         '
         Me.uname_txtbox.CustomButton.Image = Nothing
-        Me.uname_txtbox.CustomButton.Location = New System.Drawing.Point(208, 1)
+        Me.uname_txtbox.CustomButton.Location = New System.Drawing.Point(312, 1)
         Me.uname_txtbox.CustomButton.Name = ""
-        Me.uname_txtbox.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.uname_txtbox.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.uname_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.uname_txtbox.CustomButton.TabIndex = 1
         Me.uname_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1372,9 +1372,9 @@ Partial Class Login
         '
         '
         Me.port_txtbox.CustomButton.Image = Nothing
-        Me.port_txtbox.CustomButton.Location = New System.Drawing.Point(208, 1)
+        Me.port_txtbox.CustomButton.Location = New System.Drawing.Point(312, 1)
         Me.port_txtbox.CustomButton.Name = ""
-        Me.port_txtbox.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.port_txtbox.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.port_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.port_txtbox.CustomButton.TabIndex = 1
         Me.port_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1404,9 +1404,9 @@ Partial Class Login
         '
         '
         Me.server_txtbox.CustomButton.Image = Nothing
-        Me.server_txtbox.CustomButton.Location = New System.Drawing.Point(208, 1)
+        Me.server_txtbox.CustomButton.Location = New System.Drawing.Point(312, 1)
         Me.server_txtbox.CustomButton.Name = ""
-        Me.server_txtbox.CustomButton.Size = New System.Drawing.Size(14, 14)
+        Me.server_txtbox.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.server_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.server_txtbox.CustomButton.TabIndex = 1
         Me.server_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
