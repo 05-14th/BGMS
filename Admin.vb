@@ -116,12 +116,10 @@ Public Class Admin
     End Sub
 
     Private Sub BlotterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlotterToolStripMenuItem.Click
-        blotter_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False, True)
         Dim blotter_report As New Blotter_Report()
+        blotter_report.Dock = DockStyle.Fill
         blotter_pnl.Controls.Add(blotter_report)
-        blotter_report.Left = (blotter_pnl.Width - blotter_report.Width) / 2
-        blotter_report.Top = (blotter_pnl.Height - blotter_report.Height) / 2
         showSettings()
     End Sub
 
