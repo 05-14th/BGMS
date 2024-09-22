@@ -87,7 +87,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.actionBtn = New System.Windows.Forms.DataGridViewImageColumn()
         Me.bt_certificate_pnl = New MetroFramework.Controls.MetroPanel()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
@@ -131,6 +131,7 @@ Partial Class Admin
         Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -141,6 +142,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -160,8 +162,7 @@ Partial Class Admin
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.summonPnl = New MetroFramework.Controls.MetroPanel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.actionModel = New MetroFramework.Controls.MetroPanel()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -705,7 +706,7 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.Column8})
+        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.actionBtn})
         Me.DataGridView4.Location = New System.Drawing.Point(18, 68)
         Me.DataGridView4.Name = "DataGridView4"
         Me.DataGridView4.RowHeadersWidth = 62
@@ -758,13 +759,13 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
         Me.DataGridViewTextBoxColumn18.Width = 150
         '
-        'Column8
+        'actionBtn
         '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "Action"
-        Me.Column8.MinimumWidth = 8
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 60
+        Me.actionBtn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.actionBtn.HeaderText = "Action"
+        Me.actionBtn.MinimumWidth = 8
+        Me.actionBtn.Name = "actionBtn"
+        Me.actionBtn.Width = 60
         '
         'bt_certificate_pnl
         '
@@ -1057,10 +1058,9 @@ Partial Class Admin
         Me.Panel5.Controls.Add(Me.Panel8)
         Me.Panel5.Controls.Add(Me.Panel7)
         Me.Panel5.Controls.Add(Me.Panel6)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 52)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1404, 545)
+        Me.Panel5.Size = New System.Drawing.Size(1362, 545)
         Me.Panel5.TabIndex = 6
         '
         'Panel8
@@ -1076,10 +1076,9 @@ Partial Class Admin
         Me.Panel8.Controls.Add(Me.Label7)
         Me.Panel8.Controls.Add(Me.RichTextBox3)
         Me.Panel8.Controls.Add(Me.Label6)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel8.Location = New System.Drawing.Point(800, 0)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(604, 545)
+        Me.Panel8.Size = New System.Drawing.Size(526, 545)
         Me.Panel8.TabIndex = 2
         '
         'Button4
@@ -1107,7 +1106,7 @@ Partial Class Admin
         Me.ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Morning", "Afternoon"})
-        Me.ComboBox1.Location = New System.Drawing.Point(426, 294)
+        Me.ComboBox1.Location = New System.Drawing.Point(348, 294)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(164, 28)
         Me.ComboBox1.TabIndex = 16
@@ -1115,7 +1114,7 @@ Partial Class Admin
         'TextBox11
         '
         Me.TextBox11.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.TextBox11.Location = New System.Drawing.Point(357, 296)
+        Me.TextBox11.Location = New System.Drawing.Point(279, 296)
         Me.TextBox11.MaxLength = 2
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(63, 26)
@@ -1125,7 +1124,7 @@ Partial Class Admin
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(338, 299)
+        Me.Label9.Location = New System.Drawing.Point(260, 299)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(13, 20)
         Me.Label9.TabIndex = 14
@@ -1134,7 +1133,7 @@ Partial Class Admin
         'TextBox10
         '
         Me.TextBox10.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.TextBox10.Location = New System.Drawing.Point(269, 296)
+        Me.TextBox10.Location = New System.Drawing.Point(191, 296)
         Me.TextBox10.MaxLength = 2
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(63, 26)
@@ -1152,7 +1151,7 @@ Partial Class Admin
         'DateTimePicker1
         '
         Me.DateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.DateTimePicker1.Location = New System.Drawing.Point(269, 243)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(191, 243)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(321, 26)
         Me.DateTimePicker1.TabIndex = 11
@@ -1171,7 +1170,7 @@ Partial Class Admin
         Me.RichTextBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RichTextBox3.Location = New System.Drawing.Point(14, 47)
         Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(576, 178)
+        Me.RichTextBox3.Size = New System.Drawing.Size(498, 178)
         Me.RichTextBox3.TabIndex = 9
         Me.RichTextBox3.Text = ""
         '
@@ -1198,6 +1197,15 @@ Partial Class Admin
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(400, 545)
         Me.Panel7.TabIndex = 1
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(7, 170)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(101, 20)
+        Me.Label14.TabIndex = 7
+        Me.Label14.Text = "Respondent:"
         '
         'Button2
         '
@@ -1290,6 +1298,15 @@ Partial Class Admin
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(400, 545)
         Me.Panel6.TabIndex = 0
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(3, 170)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(102, 20)
+        Me.Label13.TabIndex = 6
+        Me.Label13.Text = "Complainant:"
         '
         'Button1
         '
@@ -1463,39 +1480,35 @@ Partial Class Admin
         Me.summonPnl.HorizontalScrollbarBarColor = True
         Me.summonPnl.HorizontalScrollbarHighlightOnWheel = False
         Me.summonPnl.HorizontalScrollbarSize = 9
-        Me.summonPnl.Location = New System.Drawing.Point(751, 254)
+        Me.summonPnl.Location = New System.Drawing.Point(264, 72)
         Me.summonPnl.Name = "summonPnl"
-        Me.summonPnl.Size = New System.Drawing.Size(422, 144)
+        Me.summonPnl.Size = New System.Drawing.Size(14, 144)
         Me.summonPnl.TabIndex = 15
         Me.summonPnl.VerticalScrollbarBarColor = True
         Me.summonPnl.VerticalScrollbarHighlightOnWheel = False
         Me.summonPnl.VerticalScrollbarSize = 10
         Me.summonPnl.Visible = False
         '
-        'Label13
+        'actionModel
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(3, 170)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(102, 20)
-        Me.Label13.TabIndex = 6
-        Me.Label13.Text = "Complainant:"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(7, 170)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(101, 20)
-        Me.Label14.TabIndex = 7
-        Me.Label14.Text = "Respondent:"
+        Me.actionModel.HorizontalScrollbarBarColor = True
+        Me.actionModel.HorizontalScrollbarHighlightOnWheel = False
+        Me.actionModel.HorizontalScrollbarSize = 9
+        Me.actionModel.Location = New System.Drawing.Point(264, 222)
+        Me.actionModel.Name = "actionModel"
+        Me.actionModel.Size = New System.Drawing.Size(14, 99)
+        Me.actionModel.TabIndex = 16
+        Me.actionModel.VerticalScrollbarBarColor = True
+        Me.actionModel.VerticalScrollbarHighlightOnWheel = False
+        Me.actionModel.VerticalScrollbarSize = 10
+        Me.actionModel.Visible = False
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1924, 652)
-        Me.Controls.Add(Me.summon_pnl)
+        Me.Controls.Add(Me.actionModel)
         Me.Controls.Add(Me.summonPnl)
         Me.Controls.Add(Me.blotter_pnl)
         Me.Controls.Add(Me.settings_pnl)
@@ -1507,6 +1520,7 @@ Partial Class Admin
         Me.Controls.Add(Me.clearance_pnl)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.summon_pnl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1626,13 +1640,6 @@ Partial Class Admin
     Friend WithEvents DataGridViewTextBoxColumn31 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewImageColumn
     Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewImageColumn
     Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
@@ -1691,4 +1698,12 @@ Partial Class Admin
     Friend WithEvents Button3 As Button
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+    Friend WithEvents actionBtn As DataGridViewImageColumn
+    Friend WithEvents actionModel As MetroFramework.Controls.MetroPanel
 End Class

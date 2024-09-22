@@ -22,31 +22,28 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.configBtn = New MetroFramework.Controls.MetroButton()
-        Me.trackReqBtn = New MetroFramework.Controls.MetroButton()
-        Me.btnPnl = New System.Windows.Forms.Panel()
-        Me.brgyClearance_btn = New MetroFramework.Controls.MetroButton()
-        Me.Clearance_btn = New MetroFramework.Controls.MetroButton()
-        Me.Cert_btn = New MetroFramework.Controls.MetroButton()
-        Me.LoginBtn = New MetroFramework.Controls.MetroButton()
-        Me.DocumentsBtn = New MetroFramework.Controls.MetroButton()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LobbyPnl = New MetroFramework.Controls.MetroPanel()
-        Me.busClearancePnl = New MetroFramework.Controls.MetroPanel()
-        Me.MetroLabel22 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox9 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel21 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton6 = New MetroFramework.Controls.MetroButton()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.MetroTextBox7 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox8 = New MetroFramework.Controls.MetroTextBox()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.loginPnl = New MetroFramework.Controls.MetroPanel()
+        Me.pass_checkbox = New MetroFramework.Controls.MetroCheckBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.login_pword_txtbox = New MetroFramework.Controls.MetroTextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.login_uname_txtbox = New MetroFramework.Controls.MetroTextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.login_btn = New MetroFramework.Controls.MetroButton()
+        Me.brgyCertPnl = New MetroFramework.Controls.MetroPanel()
+        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
+        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.ClearancePnl = New MetroFramework.Controls.MetroPanel()
         Me.MetroTextBox6 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
@@ -66,39 +63,19 @@ Partial Class Login
         Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.brgyCertPnl = New MetroFramework.Controls.MetroPanel()
-        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.loginPnl = New MetroFramework.Controls.MetroPanel()
-        Me.pass_checkbox = New MetroFramework.Controls.MetroCheckBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.login_pword_txtbox = New MetroFramework.Controls.MetroTextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.login_uname_txtbox = New MetroFramework.Controls.MetroTextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.login_btn = New MetroFramework.Controls.MetroButton()
-        Me.requestPnl = New MetroFramework.Controls.MetroPanel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.busClearancePnl = New MetroFramework.Controls.MetroPanel()
+        Me.MetroLabel22 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroTextBox9 = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel21 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton6 = New MetroFramework.Controls.MetroButton()
+        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
+        Me.MetroTextBox7 = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroTextBox8 = New MetroFramework.Controls.MetroTextBox()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.ConfigPnl = New MetroFramework.Controls.MetroPanel()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
@@ -113,387 +90,401 @@ Partial Class Login
         Me.saveConfBtn = New MetroFramework.Controls.MetroButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
-        Me.btnPnl.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LobbyPnl.SuspendLayout()
-        Me.busClearancePnl.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.ClearancePnl.SuspendLayout()
-        Me.Panel6.SuspendLayout()
+        Me.requestPnl = New MetroFramework.Controls.MetroPanel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LobbyPnl = New MetroFramework.Controls.MetroPanel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DocumentsBtn = New MetroFramework.Controls.MetroButton()
+        Me.LoginBtn = New MetroFramework.Controls.MetroButton()
+        Me.btnPnl = New System.Windows.Forms.Panel()
+        Me.brgyClearance_btn = New MetroFramework.Controls.MetroButton()
+        Me.Clearance_btn = New MetroFramework.Controls.MetroButton()
+        Me.Cert_btn = New MetroFramework.Controls.MetroButton()
+        Me.trackReqBtn = New MetroFramework.Controls.MetroButton()
+        Me.configBtn = New MetroFramework.Controls.MetroButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.loginPnl.SuspendLayout()
         Me.brgyCertPnl.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.loginPnl.SuspendLayout()
+        Me.ClearancePnl.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.busClearancePnl.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.ConfigPnl.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.requestPnl.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        Me.ConfigPnl.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.LobbyPnl.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnPnl.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'loginPnl
         '
-        Me.Panel1.Controls.Add(Me.configBtn)
-        Me.Panel1.Controls.Add(Me.trackReqBtn)
-        Me.Panel1.Controls.Add(Me.btnPnl)
-        Me.Panel1.Controls.Add(Me.LoginBtn)
-        Me.Panel1.Controls.Add(Me.DocumentsBtn)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(300, 882)
-        Me.Panel1.TabIndex = 0
+        Me.loginPnl.Controls.Add(Me.pass_checkbox)
+        Me.loginPnl.Controls.Add(Me.Label6)
+        Me.loginPnl.Controls.Add(Me.login_pword_txtbox)
+        Me.loginPnl.Controls.Add(Me.Label5)
+        Me.loginPnl.Controls.Add(Me.login_uname_txtbox)
+        Me.loginPnl.Controls.Add(Me.Label4)
+        Me.loginPnl.Controls.Add(Me.Label3)
+        Me.loginPnl.Controls.Add(Me.login_btn)
+        Me.loginPnl.HorizontalScrollbarBarColor = True
+        Me.loginPnl.HorizontalScrollbarHighlightOnWheel = False
+        Me.loginPnl.HorizontalScrollbarSize = 15
+        Me.loginPnl.Location = New System.Drawing.Point(35, 357)
+        Me.loginPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.loginPnl.Name = "loginPnl"
+        Me.loginPnl.Size = New System.Drawing.Size(561, 532)
+        Me.loginPnl.TabIndex = 15
+        Me.loginPnl.VerticalScrollbarBarColor = True
+        Me.loginPnl.VerticalScrollbarHighlightOnWheel = False
+        Me.loginPnl.VerticalScrollbarSize = 15
+        Me.loginPnl.Visible = False
         '
-        'configBtn
+        'pass_checkbox
         '
-        Me.configBtn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.configBtn.Location = New System.Drawing.Point(0, 587)
-        Me.configBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.configBtn.Name = "configBtn"
-        Me.configBtn.Size = New System.Drawing.Size(300, 85)
-        Me.configBtn.TabIndex = 3
-        Me.configBtn.Text = "CONFIGURATION"
-        Me.configBtn.UseSelectable = True
+        Me.pass_checkbox.AutoSize = True
+        Me.pass_checkbox.Location = New System.Drawing.Point(30, 363)
+        Me.pass_checkbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.pass_checkbox.Name = "pass_checkbox"
+        Me.pass_checkbox.Size = New System.Drawing.Size(105, 15)
+        Me.pass_checkbox.TabIndex = 21
+        Me.pass_checkbox.Text = "Show Password"
+        Me.pass_checkbox.UseSelectable = True
         '
-        'trackReqBtn
+        'Label6
         '
-        Me.trackReqBtn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.trackReqBtn.Location = New System.Drawing.Point(0, 502)
-        Me.trackReqBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.trackReqBtn.Name = "trackReqBtn"
-        Me.trackReqBtn.Size = New System.Drawing.Size(300, 85)
-        Me.trackReqBtn.TabIndex = 2
-        Me.trackReqBtn.Text = "TRACK REQUEST"
-        Me.trackReqBtn.UseSelectable = True
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label6.Location = New System.Drawing.Point(26, 295)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(78, 20)
+        Me.Label6.TabIndex = 20
+        Me.Label6.Text = "Password"
         '
-        'btnPnl
+        'login_pword_txtbox
         '
-        Me.btnPnl.Controls.Add(Me.brgyClearance_btn)
-        Me.btnPnl.Controls.Add(Me.Clearance_btn)
-        Me.btnPnl.Controls.Add(Me.Cert_btn)
-        Me.btnPnl.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnPnl.Location = New System.Drawing.Point(0, 342)
-        Me.btnPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnPnl.Name = "btnPnl"
-        Me.btnPnl.Size = New System.Drawing.Size(300, 160)
-        Me.btnPnl.TabIndex = 5
-        Me.btnPnl.Visible = False
-        '
-        'brgyClearance_btn
-        '
-        Me.brgyClearance_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.brgyClearance_btn.Location = New System.Drawing.Point(0, 108)
-        Me.brgyClearance_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.brgyClearance_btn.Name = "brgyClearance_btn"
-        Me.brgyClearance_btn.Size = New System.Drawing.Size(300, 54)
-        Me.brgyClearance_btn.TabIndex = 2
-        Me.brgyClearance_btn.Text = "Business Clearance"
-        Me.brgyClearance_btn.UseSelectable = True
-        '
-        'Clearance_btn
-        '
-        Me.Clearance_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Clearance_btn.Location = New System.Drawing.Point(0, 54)
-        Me.Clearance_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Clearance_btn.Name = "Clearance_btn"
-        Me.Clearance_btn.Size = New System.Drawing.Size(300, 54)
-        Me.Clearance_btn.TabIndex = 1
-        Me.Clearance_btn.Text = "Barangay Clearance"
-        Me.Clearance_btn.UseSelectable = True
-        '
-        'Cert_btn
-        '
-        Me.Cert_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Cert_btn.Location = New System.Drawing.Point(0, 0)
-        Me.Cert_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Cert_btn.Name = "Cert_btn"
-        Me.Cert_btn.Size = New System.Drawing.Size(300, 54)
-        Me.Cert_btn.TabIndex = 0
-        Me.Cert_btn.Text = "Barangay Certificate"
-        Me.Cert_btn.UseSelectable = True
-        '
-        'LoginBtn
-        '
-        Me.LoginBtn.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LoginBtn.Location = New System.Drawing.Point(0, 811)
-        Me.LoginBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.LoginBtn.Name = "LoginBtn"
-        Me.LoginBtn.Size = New System.Drawing.Size(300, 71)
-        Me.LoginBtn.TabIndex = 4
-        Me.LoginBtn.Text = "LOGIN"
-        Me.LoginBtn.UseSelectable = True
-        '
-        'DocumentsBtn
-        '
-        Me.DocumentsBtn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DocumentsBtn.Location = New System.Drawing.Point(0, 257)
-        Me.DocumentsBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.DocumentsBtn.Name = "DocumentsBtn"
-        Me.DocumentsBtn.Size = New System.Drawing.Size(300, 85)
-        Me.DocumentsBtn.TabIndex = 1
-        Me.DocumentsBtn.Text = "REQUEST DOCUMENT"
-        Me.DocumentsBtn.UseSelectable = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(300, 257)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'Panel2
-        '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(300, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1624, 68)
-        Me.Panel2.TabIndex = 0
-        '
-        'LobbyPnl
-        '
-        Me.LobbyPnl.Controls.Add(Me.busClearancePnl)
-        Me.LobbyPnl.Controls.Add(Me.ClearancePnl)
-        Me.LobbyPnl.Controls.Add(Me.brgyCertPnl)
-        Me.LobbyPnl.Controls.Add(Me.loginPnl)
-        Me.LobbyPnl.Controls.Add(Me.requestPnl)
-        Me.LobbyPnl.Controls.Add(Me.ConfigPnl)
-        Me.LobbyPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LobbyPnl.HorizontalScrollbarBarColor = True
-        Me.LobbyPnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.LobbyPnl.HorizontalScrollbarSize = 15
-        Me.LobbyPnl.Location = New System.Drawing.Point(300, 68)
-        Me.LobbyPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.LobbyPnl.Name = "LobbyPnl"
-        Me.LobbyPnl.Size = New System.Drawing.Size(1624, 814)
-        Me.LobbyPnl.TabIndex = 1
-        Me.LobbyPnl.VerticalScrollbarBarColor = True
-        Me.LobbyPnl.VerticalScrollbarHighlightOnWheel = False
-        Me.LobbyPnl.VerticalScrollbarSize = 15
-        '
-        'busClearancePnl
-        '
-        Me.busClearancePnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.busClearancePnl.Controls.Add(Me.MetroLabel22)
-        Me.busClearancePnl.Controls.Add(Me.MetroLabel19)
-        Me.busClearancePnl.Controls.Add(Me.MetroTextBox9)
-        Me.busClearancePnl.Controls.Add(Me.MetroLabel20)
-        Me.busClearancePnl.Controls.Add(Me.MetroLabel21)
-        Me.busClearancePnl.Controls.Add(Me.MetroButton5)
-        Me.busClearancePnl.Controls.Add(Me.MetroButton6)
-        Me.busClearancePnl.Controls.Add(Me.RichTextBox3)
-        Me.busClearancePnl.Controls.Add(Me.MetroTextBox7)
-        Me.busClearancePnl.Controls.Add(Me.MetroTextBox8)
-        Me.busClearancePnl.Controls.Add(Me.Panel7)
-        Me.busClearancePnl.HorizontalScrollbarBarColor = True
-        Me.busClearancePnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.busClearancePnl.HorizontalScrollbarSize = 15
-        Me.busClearancePnl.Location = New System.Drawing.Point(1106, 275)
-        Me.busClearancePnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.busClearancePnl.Name = "busClearancePnl"
-        Me.busClearancePnl.Size = New System.Drawing.Size(503, 634)
-        Me.busClearancePnl.TabIndex = 18
-        Me.busClearancePnl.VerticalScrollbarBarColor = True
-        Me.busClearancePnl.VerticalScrollbarHighlightOnWheel = False
-        Me.busClearancePnl.VerticalScrollbarSize = 15
-        Me.busClearancePnl.Visible = False
-        '
-        'MetroLabel22
-        '
-        Me.MetroLabel22.AutoSize = True
-        Me.MetroLabel22.Location = New System.Drawing.Point(28, 322)
-        Me.MetroLabel22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel22.Name = "MetroLabel22"
-        Me.MetroLabel22.Size = New System.Drawing.Size(107, 19)
-        Me.MetroLabel22.TabIndex = 26
-        Me.MetroLabel22.Text = "Business Address"
-        '
-        'MetroLabel19
-        '
-        Me.MetroLabel19.AutoSize = True
-        Me.MetroLabel19.Location = New System.Drawing.Point(28, 237)
-        Me.MetroLabel19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel19.Name = "MetroLabel19"
-        Me.MetroLabel19.Size = New System.Drawing.Size(104, 19)
-        Me.MetroLabel19.TabIndex = 25
-        Me.MetroLabel19.Text = "Name of Owner"
-        '
-        'MetroTextBox9
-        '
-        Me.MetroTextBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.login_pword_txtbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox9.CustomButton.Image = Nothing
-        Me.MetroTextBox9.CustomButton.Location = New System.Drawing.Point(615, 2)
-        Me.MetroTextBox9.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox9.CustomButton.Name = ""
-        Me.MetroTextBox9.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.MetroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox9.CustomButton.TabIndex = 1
-        Me.MetroTextBox9.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox9.CustomButton.UseSelectable = True
-        Me.MetroTextBox9.CustomButton.Visible = False
-        Me.MetroTextBox9.Lines = New String(-1) {}
-        Me.MetroTextBox9.Location = New System.Drawing.Point(28, 266)
-        Me.MetroTextBox9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox9.MaxLength = 32767
-        Me.MetroTextBox9.Name = "MetroTextBox9"
-        Me.MetroTextBox9.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox9.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox9.SelectedText = ""
-        Me.MetroTextBox9.SelectionLength = 0
-        Me.MetroTextBox9.SelectionStart = 0
-        Me.MetroTextBox9.ShortcutsEnabled = True
-        Me.MetroTextBox9.Size = New System.Drawing.Size(444, 35)
-        Me.MetroTextBox9.TabIndex = 24
-        Me.MetroTextBox9.UseSelectable = True
-        Me.MetroTextBox9.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox9.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.login_pword_txtbox.CustomButton.Image = Nothing
+        Me.login_pword_txtbox.CustomButton.Location = New System.Drawing.Point(467, 1)
+        Me.login_pword_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.login_pword_txtbox.CustomButton.Name = ""
+        Me.login_pword_txtbox.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.login_pword_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.login_pword_txtbox.CustomButton.TabIndex = 1
+        Me.login_pword_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.login_pword_txtbox.CustomButton.UseSelectable = True
+        Me.login_pword_txtbox.CustomButton.Visible = False
+        Me.login_pword_txtbox.Lines = New String(-1) {}
+        Me.login_pword_txtbox.Location = New System.Drawing.Point(30, 320)
+        Me.login_pword_txtbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.login_pword_txtbox.MaxLength = 32767
+        Me.login_pword_txtbox.Name = "login_pword_txtbox"
+        Me.login_pword_txtbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.login_pword_txtbox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.login_pword_txtbox.SelectedText = ""
+        Me.login_pword_txtbox.SelectionLength = 0
+        Me.login_pword_txtbox.SelectionStart = 0
+        Me.login_pword_txtbox.ShortcutsEnabled = True
+        Me.login_pword_txtbox.Size = New System.Drawing.Size(501, 35)
+        Me.login_pword_txtbox.TabIndex = 19
+        Me.login_pword_txtbox.UseSelectable = True
+        Me.login_pword_txtbox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.login_pword_txtbox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'MetroLabel20
+        'Label5
         '
-        Me.MetroLabel20.AutoSize = True
-        Me.MetroLabel20.Location = New System.Drawing.Point(28, 151)
-        Me.MetroLabel20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel20.Name = "MetroLabel20"
-        Me.MetroLabel20.Size = New System.Drawing.Size(96, 19)
-        Me.MetroLabel20.TabIndex = 21
-        Me.MetroLabel20.Text = "Business Name"
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label5.Location = New System.Drawing.Point(26, 225)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(83, 20)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Username"
         '
-        'MetroLabel21
+        'login_uname_txtbox
         '
-        Me.MetroLabel21.AutoSize = True
-        Me.MetroLabel21.Location = New System.Drawing.Point(28, 68)
-        Me.MetroLabel21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel21.Name = "MetroLabel21"
-        Me.MetroLabel21.Size = New System.Drawing.Size(54, 19)
-        Me.MetroLabel21.TabIndex = 20
-        Me.MetroLabel21.Text = "Track ID"
-        '
-        'MetroButton5
-        '
-        Me.MetroButton5.Location = New System.Drawing.Point(398, 95)
-        Me.MetroButton5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroButton5.Name = "MetroButton5"
-        Me.MetroButton5.Size = New System.Drawing.Size(78, 35)
-        Me.MetroButton5.TabIndex = 19
-        Me.MetroButton5.Text = "Copy"
-        Me.MetroButton5.UseSelectable = True
-        '
-        'MetroButton6
-        '
-        Me.MetroButton6.Location = New System.Drawing.Point(28, 568)
-        Me.MetroButton6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroButton6.Name = "MetroButton6"
-        Me.MetroButton6.Size = New System.Drawing.Size(132, 40)
-        Me.MetroButton6.TabIndex = 18
-        Me.MetroButton6.Text = "Submit"
-        Me.MetroButton6.UseSelectable = True
-        '
-        'RichTextBox3
-        '
-        Me.RichTextBox3.Location = New System.Drawing.Point(28, 351)
-        Me.RichTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(445, 206)
-        Me.RichTextBox3.TabIndex = 17
-        Me.RichTextBox3.Text = ""
-        '
-        'MetroTextBox7
-        '
-        Me.MetroTextBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.login_uname_txtbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox7.CustomButton.Image = Nothing
-        Me.MetroTextBox7.CustomButton.Location = New System.Drawing.Point(615, 2)
-        Me.MetroTextBox7.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox7.CustomButton.Name = ""
-        Me.MetroTextBox7.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.MetroTextBox7.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox7.CustomButton.TabIndex = 1
-        Me.MetroTextBox7.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox7.CustomButton.UseSelectable = True
-        Me.MetroTextBox7.CustomButton.Visible = False
-        Me.MetroTextBox7.Lines = New String(-1) {}
-        Me.MetroTextBox7.Location = New System.Drawing.Point(28, 180)
-        Me.MetroTextBox7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox7.MaxLength = 32767
-        Me.MetroTextBox7.Name = "MetroTextBox7"
-        Me.MetroTextBox7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox7.SelectedText = ""
-        Me.MetroTextBox7.SelectionLength = 0
-        Me.MetroTextBox7.SelectionStart = 0
-        Me.MetroTextBox7.ShortcutsEnabled = True
-        Me.MetroTextBox7.Size = New System.Drawing.Size(444, 35)
-        Me.MetroTextBox7.TabIndex = 15
-        Me.MetroTextBox7.UseSelectable = True
-        Me.MetroTextBox7.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox7.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.login_uname_txtbox.CustomButton.Image = Nothing
+        Me.login_uname_txtbox.CustomButton.Location = New System.Drawing.Point(467, 1)
+        Me.login_uname_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.login_uname_txtbox.CustomButton.Name = ""
+        Me.login_uname_txtbox.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.login_uname_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.login_uname_txtbox.CustomButton.TabIndex = 1
+        Me.login_uname_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.login_uname_txtbox.CustomButton.UseSelectable = True
+        Me.login_uname_txtbox.CustomButton.Visible = False
+        Me.login_uname_txtbox.Lines = New String(-1) {}
+        Me.login_uname_txtbox.Location = New System.Drawing.Point(30, 249)
+        Me.login_uname_txtbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.login_uname_txtbox.MaxLength = 32767
+        Me.login_uname_txtbox.Name = "login_uname_txtbox"
+        Me.login_uname_txtbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.login_uname_txtbox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.login_uname_txtbox.SelectedText = ""
+        Me.login_uname_txtbox.SelectionLength = 0
+        Me.login_uname_txtbox.SelectionStart = 0
+        Me.login_uname_txtbox.ShortcutsEnabled = True
+        Me.login_uname_txtbox.Size = New System.Drawing.Size(501, 35)
+        Me.login_uname_txtbox.TabIndex = 17
+        Me.login_uname_txtbox.UseSelectable = True
+        Me.login_uname_txtbox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.login_uname_txtbox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'MetroTextBox8
+        'Label4
         '
-        Me.MetroTextBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(28, 146)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(458, 50)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "           Please enter your login information to access " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "admin panel."
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(24, 60)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(307, 44)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Login to System"
+        '
+        'login_btn
+        '
+        Me.login_btn.Highlight = True
+        Me.login_btn.Location = New System.Drawing.Point(30, 403)
+        Me.login_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.login_btn.Name = "login_btn"
+        Me.login_btn.Size = New System.Drawing.Size(501, 51)
+        Me.login_btn.TabIndex = 14
+        Me.login_btn.Text = "Login"
+        Me.login_btn.UseSelectable = True
+        '
+        'brgyCertPnl
+        '
+        Me.brgyCertPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.brgyCertPnl.Controls.Add(Me.MetroLabel9)
+        Me.brgyCertPnl.Controls.Add(Me.MetroLabel8)
+        Me.brgyCertPnl.Controls.Add(Me.MetroLabel7)
+        Me.brgyCertPnl.Controls.Add(Me.MetroLabel6)
+        Me.brgyCertPnl.Controls.Add(Me.MetroButton3)
+        Me.brgyCertPnl.Controls.Add(Me.MetroButton2)
+        Me.brgyCertPnl.Controls.Add(Me.RichTextBox1)
+        Me.brgyCertPnl.Controls.Add(Me.MetroComboBox1)
+        Me.brgyCertPnl.Controls.Add(Me.MetroTextBox3)
+        Me.brgyCertPnl.Controls.Add(Me.MetroTextBox2)
+        Me.brgyCertPnl.Controls.Add(Me.Panel5)
+        Me.brgyCertPnl.HorizontalScrollbarBarColor = True
+        Me.brgyCertPnl.HorizontalScrollbarHighlightOnWheel = False
+        Me.brgyCertPnl.HorizontalScrollbarSize = 15
+        Me.brgyCertPnl.Location = New System.Drawing.Point(1096, 12)
+        Me.brgyCertPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.brgyCertPnl.Name = "brgyCertPnl"
+        Me.brgyCertPnl.Size = New System.Drawing.Size(503, 700)
+        Me.brgyCertPnl.TabIndex = 16
+        Me.brgyCertPnl.VerticalScrollbarBarColor = True
+        Me.brgyCertPnl.VerticalScrollbarHighlightOnWheel = False
+        Me.brgyCertPnl.VerticalScrollbarSize = 15
+        Me.brgyCertPnl.Visible = False
+        '
+        'MetroLabel9
+        '
+        Me.MetroLabel9.AutoSize = True
+        Me.MetroLabel9.Location = New System.Drawing.Point(28, 322)
+        Me.MetroLabel9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel9.Name = "MetroLabel9"
+        Me.MetroLabel9.Size = New System.Drawing.Size(57, 19)
+        Me.MetroLabel9.TabIndex = 23
+        Me.MetroLabel9.Text = "Purpose"
+        '
+        'MetroLabel8
+        '
+        Me.MetroLabel8.AutoSize = True
+        Me.MetroLabel8.Location = New System.Drawing.Point(28, 257)
+        Me.MetroLabel8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel8.Name = "MetroLabel8"
+        Me.MetroLabel8.Size = New System.Drawing.Size(46, 19)
+        Me.MetroLabel8.TabIndex = 22
+        Me.MetroLabel8.Text = "Purok:"
+        '
+        'MetroLabel7
+        '
+        Me.MetroLabel7.AutoSize = True
+        Me.MetroLabel7.Location = New System.Drawing.Point(28, 149)
+        Me.MetroLabel7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel7.Name = "MetroLabel7"
+        Me.MetroLabel7.Size = New System.Drawing.Size(45, 19)
+        Me.MetroLabel7.TabIndex = 21
+        Me.MetroLabel7.Text = "Name"
+        '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.Location = New System.Drawing.Point(28, 66)
+        Me.MetroLabel6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(54, 19)
+        Me.MetroLabel6.TabIndex = 20
+        Me.MetroLabel6.Text = "Track ID"
+        '
+        'MetroButton3
+        '
+        Me.MetroButton3.Location = New System.Drawing.Point(398, 95)
+        Me.MetroButton3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroButton3.Name = "MetroButton3"
+        Me.MetroButton3.Size = New System.Drawing.Size(78, 35)
+        Me.MetroButton3.TabIndex = 19
+        Me.MetroButton3.Text = "Copy"
+        Me.MetroButton3.UseSelectable = True
+        '
+        'MetroButton2
+        '
+        Me.MetroButton2.Location = New System.Drawing.Point(28, 632)
+        Me.MetroButton2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroButton2.Name = "MetroButton2"
+        Me.MetroButton2.Size = New System.Drawing.Size(132, 40)
+        Me.MetroButton2.TabIndex = 18
+        Me.MetroButton2.Text = "Submit"
+        Me.MetroButton2.UseSelectable = True
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(28, 351)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(445, 270)
+        Me.RichTextBox1.TabIndex = 17
+        Me.RichTextBox1.Text = ""
+        '
+        'MetroComboBox1
+        '
+        Me.MetroComboBox1.FormattingEnabled = True
+        Me.MetroComboBox1.ItemHeight = 23
+        Me.MetroComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
+        Me.MetroComboBox1.Location = New System.Drawing.Point(104, 252)
+        Me.MetroComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroComboBox1.Name = "MetroComboBox1"
+        Me.MetroComboBox1.Size = New System.Drawing.Size(91, 29)
+        Me.MetroComboBox1.TabIndex = 16
+        Me.MetroComboBox1.UseSelectable = True
+        '
+        'MetroTextBox3
+        '
+        Me.MetroTextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox8.CustomButton.Image = Nothing
-        Me.MetroTextBox8.CustomButton.Location = New System.Drawing.Point(484, 2)
-        Me.MetroTextBox8.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox8.CustomButton.Name = ""
-        Me.MetroTextBox8.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.MetroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox8.CustomButton.TabIndex = 1
-        Me.MetroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox8.CustomButton.UseSelectable = True
-        Me.MetroTextBox8.CustomButton.Visible = False
-        Me.MetroTextBox8.Lines = New String(-1) {}
-        Me.MetroTextBox8.Location = New System.Drawing.Point(28, 97)
-        Me.MetroTextBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox8.MaxLength = 32767
-        Me.MetroTextBox8.Name = "MetroTextBox8"
-        Me.MetroTextBox8.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox8.SelectedText = ""
-        Me.MetroTextBox8.SelectionLength = 0
-        Me.MetroTextBox8.SelectionStart = 0
-        Me.MetroTextBox8.ShortcutsEnabled = True
-        Me.MetroTextBox8.Size = New System.Drawing.Size(357, 35)
-        Me.MetroTextBox8.TabIndex = 14
-        Me.MetroTextBox8.UseSelectable = True
-        Me.MetroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox8.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.MetroTextBox3.CustomButton.Image = Nothing
+        Me.MetroTextBox3.CustomButton.Location = New System.Drawing.Point(410, 1)
+        Me.MetroTextBox3.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox3.CustomButton.Name = ""
+        Me.MetroTextBox3.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.MetroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBox3.CustomButton.TabIndex = 1
+        Me.MetroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBox3.CustomButton.UseSelectable = True
+        Me.MetroTextBox3.CustomButton.Visible = False
+        Me.MetroTextBox3.Lines = New String(-1) {}
+        Me.MetroTextBox3.Location = New System.Drawing.Point(28, 178)
+        Me.MetroTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox3.MaxLength = 32767
+        Me.MetroTextBox3.Name = "MetroTextBox3"
+        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox3.SelectedText = ""
+        Me.MetroTextBox3.SelectionLength = 0
+        Me.MetroTextBox3.SelectionStart = 0
+        Me.MetroTextBox3.ShortcutsEnabled = True
+        Me.MetroTextBox3.Size = New System.Drawing.Size(444, 35)
+        Me.MetroTextBox3.TabIndex = 15
+        Me.MetroTextBox3.UseSelectable = True
+        Me.MetroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.MetroTextBox3.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'Panel7
+        'MetroTextBox2
         '
-        Me.Panel7.Controls.Add(Me.Label9)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(501, 51)
-        Me.Panel7.TabIndex = 3
+        Me.MetroTextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
-        'Label9
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label9.Location = New System.Drawing.Point(0, 0)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(0, 20)
-        Me.Label9.TabIndex = 0
+        '
+        Me.MetroTextBox2.CustomButton.Image = Nothing
+        Me.MetroTextBox2.CustomButton.Location = New System.Drawing.Point(323, 1)
+        Me.MetroTextBox2.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox2.CustomButton.Name = ""
+        Me.MetroTextBox2.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.MetroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBox2.CustomButton.TabIndex = 1
+        Me.MetroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBox2.CustomButton.UseSelectable = True
+        Me.MetroTextBox2.CustomButton.Visible = False
+        Me.MetroTextBox2.Lines = New String(-1) {}
+        Me.MetroTextBox2.Location = New System.Drawing.Point(28, 95)
+        Me.MetroTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox2.MaxLength = 32767
+        Me.MetroTextBox2.Name = "MetroTextBox2"
+        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox2.SelectedText = ""
+        Me.MetroTextBox2.SelectionLength = 0
+        Me.MetroTextBox2.SelectionStart = 0
+        Me.MetroTextBox2.ShortcutsEnabled = True
+        Me.MetroTextBox2.Size = New System.Drawing.Size(357, 35)
+        Me.MetroTextBox2.TabIndex = 14
+        Me.MetroTextBox2.UseSelectable = True
+        Me.MetroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.MetroTextBox2.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Label7)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(501, 51)
+        Me.Panel5.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label7.Location = New System.Drawing.Point(0, 0)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(0, 20)
+        Me.Label7.TabIndex = 0
         '
         'ClearancePnl
         '
@@ -518,7 +509,7 @@ Partial Class Login
         Me.ClearancePnl.HorizontalScrollbarBarColor = True
         Me.ClearancePnl.HorizontalScrollbarHighlightOnWheel = False
         Me.ClearancePnl.HorizontalScrollbarSize = 15
-        Me.ClearancePnl.Location = New System.Drawing.Point(2074, 22)
+        Me.ClearancePnl.Location = New System.Drawing.Point(922, 73)
         Me.ClearancePnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ClearancePnl.Name = "ClearancePnl"
         Me.ClearancePnl.Size = New System.Drawing.Size(503, 753)
@@ -536,10 +527,10 @@ Partial Class Login
         '
         '
         Me.MetroTextBox6.CustomButton.Image = Nothing
-        Me.MetroTextBox6.CustomButton.Location = New System.Drawing.Point(150, 2)
+        Me.MetroTextBox6.CustomButton.Location = New System.Drawing.Point(100, 1)
         Me.MetroTextBox6.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MetroTextBox6.CustomButton.Name = ""
-        Me.MetroTextBox6.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.MetroTextBox6.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.MetroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox6.CustomButton.TabIndex = 1
         Me.MetroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -705,10 +696,10 @@ Partial Class Login
         '
         '
         Me.MetroTextBox4.CustomButton.Image = Nothing
-        Me.MetroTextBox4.CustomButton.Location = New System.Drawing.Point(615, 2)
+        Me.MetroTextBox4.CustomButton.Location = New System.Drawing.Point(410, 1)
         Me.MetroTextBox4.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MetroTextBox4.CustomButton.Name = ""
-        Me.MetroTextBox4.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.MetroTextBox4.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.MetroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox4.CustomButton.TabIndex = 1
         Me.MetroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -739,10 +730,10 @@ Partial Class Login
         '
         '
         Me.MetroTextBox5.CustomButton.Image = Nothing
-        Me.MetroTextBox5.CustomButton.Location = New System.Drawing.Point(484, 2)
+        Me.MetroTextBox5.CustomButton.Location = New System.Drawing.Point(323, 1)
         Me.MetroTextBox5.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MetroTextBox5.CustomButton.Name = ""
-        Me.MetroTextBox5.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.MetroTextBox5.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.MetroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTextBox5.CustomButton.TabIndex = 1
         Me.MetroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -785,497 +776,223 @@ Partial Class Login
         Me.Label8.Size = New System.Drawing.Size(0, 20)
         Me.Label8.TabIndex = 0
         '
-        'brgyCertPnl
+        'busClearancePnl
         '
-        Me.brgyCertPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.brgyCertPnl.Controls.Add(Me.MetroLabel9)
-        Me.brgyCertPnl.Controls.Add(Me.MetroLabel8)
-        Me.brgyCertPnl.Controls.Add(Me.MetroLabel7)
-        Me.brgyCertPnl.Controls.Add(Me.MetroLabel6)
-        Me.brgyCertPnl.Controls.Add(Me.MetroButton3)
-        Me.brgyCertPnl.Controls.Add(Me.MetroButton2)
-        Me.brgyCertPnl.Controls.Add(Me.RichTextBox1)
-        Me.brgyCertPnl.Controls.Add(Me.MetroComboBox1)
-        Me.brgyCertPnl.Controls.Add(Me.MetroTextBox3)
-        Me.brgyCertPnl.Controls.Add(Me.MetroTextBox2)
-        Me.brgyCertPnl.Controls.Add(Me.Panel5)
-        Me.brgyCertPnl.HorizontalScrollbarBarColor = True
-        Me.brgyCertPnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.brgyCertPnl.HorizontalScrollbarSize = 15
-        Me.brgyCertPnl.Location = New System.Drawing.Point(1562, 22)
-        Me.brgyCertPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.brgyCertPnl.Name = "brgyCertPnl"
-        Me.brgyCertPnl.Size = New System.Drawing.Size(503, 700)
-        Me.brgyCertPnl.TabIndex = 16
-        Me.brgyCertPnl.VerticalScrollbarBarColor = True
-        Me.brgyCertPnl.VerticalScrollbarHighlightOnWheel = False
-        Me.brgyCertPnl.VerticalScrollbarSize = 15
-        Me.brgyCertPnl.Visible = False
+        Me.busClearancePnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.busClearancePnl.Controls.Add(Me.MetroLabel22)
+        Me.busClearancePnl.Controls.Add(Me.MetroLabel19)
+        Me.busClearancePnl.Controls.Add(Me.MetroTextBox9)
+        Me.busClearancePnl.Controls.Add(Me.MetroLabel20)
+        Me.busClearancePnl.Controls.Add(Me.MetroLabel21)
+        Me.busClearancePnl.Controls.Add(Me.MetroButton5)
+        Me.busClearancePnl.Controls.Add(Me.MetroButton6)
+        Me.busClearancePnl.Controls.Add(Me.RichTextBox3)
+        Me.busClearancePnl.Controls.Add(Me.MetroTextBox7)
+        Me.busClearancePnl.Controls.Add(Me.MetroTextBox8)
+        Me.busClearancePnl.Controls.Add(Me.Panel7)
+        Me.busClearancePnl.HorizontalScrollbarBarColor = True
+        Me.busClearancePnl.HorizontalScrollbarHighlightOnWheel = False
+        Me.busClearancePnl.HorizontalScrollbarSize = 15
+        Me.busClearancePnl.Location = New System.Drawing.Point(1101, 119)
+        Me.busClearancePnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.busClearancePnl.Name = "busClearancePnl"
+        Me.busClearancePnl.Size = New System.Drawing.Size(503, 634)
+        Me.busClearancePnl.TabIndex = 18
+        Me.busClearancePnl.VerticalScrollbarBarColor = True
+        Me.busClearancePnl.VerticalScrollbarHighlightOnWheel = False
+        Me.busClearancePnl.VerticalScrollbarSize = 15
+        Me.busClearancePnl.Visible = False
         '
-        'MetroLabel9
+        'MetroLabel22
         '
-        Me.MetroLabel9.AutoSize = True
-        Me.MetroLabel9.Location = New System.Drawing.Point(28, 322)
-        Me.MetroLabel9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(57, 19)
-        Me.MetroLabel9.TabIndex = 23
-        Me.MetroLabel9.Text = "Purpose"
+        Me.MetroLabel22.AutoSize = True
+        Me.MetroLabel22.Location = New System.Drawing.Point(28, 322)
+        Me.MetroLabel22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel22.Name = "MetroLabel22"
+        Me.MetroLabel22.Size = New System.Drawing.Size(107, 19)
+        Me.MetroLabel22.TabIndex = 26
+        Me.MetroLabel22.Text = "Business Address"
         '
-        'MetroLabel8
+        'MetroLabel19
         '
-        Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(28, 257)
-        Me.MetroLabel8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(46, 19)
-        Me.MetroLabel8.TabIndex = 22
-        Me.MetroLabel8.Text = "Purok:"
+        Me.MetroLabel19.AutoSize = True
+        Me.MetroLabel19.Location = New System.Drawing.Point(28, 237)
+        Me.MetroLabel19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel19.Name = "MetroLabel19"
+        Me.MetroLabel19.Size = New System.Drawing.Size(104, 19)
+        Me.MetroLabel19.TabIndex = 25
+        Me.MetroLabel19.Text = "Name of Owner"
         '
-        'MetroLabel7
+        'MetroTextBox9
         '
-        Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.Location = New System.Drawing.Point(28, 149)
-        Me.MetroLabel7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(45, 19)
-        Me.MetroLabel7.TabIndex = 21
-        Me.MetroLabel7.Text = "Name"
-        '
-        'MetroLabel6
-        '
-        Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(28, 66)
-        Me.MetroLabel6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(54, 19)
-        Me.MetroLabel6.TabIndex = 20
-        Me.MetroLabel6.Text = "Track ID"
-        '
-        'MetroButton3
-        '
-        Me.MetroButton3.Location = New System.Drawing.Point(398, 95)
-        Me.MetroButton3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroButton3.Name = "MetroButton3"
-        Me.MetroButton3.Size = New System.Drawing.Size(78, 35)
-        Me.MetroButton3.TabIndex = 19
-        Me.MetroButton3.Text = "Copy"
-        Me.MetroButton3.UseSelectable = True
-        '
-        'MetroButton2
-        '
-        Me.MetroButton2.Location = New System.Drawing.Point(28, 632)
-        Me.MetroButton2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(132, 40)
-        Me.MetroButton2.TabIndex = 18
-        Me.MetroButton2.Text = "Submit"
-        Me.MetroButton2.UseSelectable = True
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(28, 351)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(445, 270)
-        Me.RichTextBox1.TabIndex = 17
-        Me.RichTextBox1.Text = ""
-        '
-        'MetroComboBox1
-        '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
-        Me.MetroComboBox1.Location = New System.Drawing.Point(104, 252)
-        Me.MetroComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(91, 29)
-        Me.MetroComboBox1.TabIndex = 16
-        Me.MetroComboBox1.UseSelectable = True
-        '
-        'MetroTextBox3
-        '
-        Me.MetroTextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.MetroTextBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox3.CustomButton.Image = Nothing
-        Me.MetroTextBox3.CustomButton.Location = New System.Drawing.Point(615, 2)
-        Me.MetroTextBox3.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox3.CustomButton.Name = ""
-        Me.MetroTextBox3.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.MetroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox3.CustomButton.TabIndex = 1
-        Me.MetroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox3.CustomButton.UseSelectable = True
-        Me.MetroTextBox3.CustomButton.Visible = False
-        Me.MetroTextBox3.Lines = New String(-1) {}
-        Me.MetroTextBox3.Location = New System.Drawing.Point(28, 178)
-        Me.MetroTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox3.MaxLength = 32767
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox3.SelectedText = ""
-        Me.MetroTextBox3.SelectionLength = 0
-        Me.MetroTextBox3.SelectionStart = 0
-        Me.MetroTextBox3.ShortcutsEnabled = True
-        Me.MetroTextBox3.Size = New System.Drawing.Size(444, 35)
-        Me.MetroTextBox3.TabIndex = 15
-        Me.MetroTextBox3.UseSelectable = True
-        Me.MetroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox3.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.MetroTextBox9.CustomButton.Image = Nothing
+        Me.MetroTextBox9.CustomButton.Location = New System.Drawing.Point(410, 1)
+        Me.MetroTextBox9.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox9.CustomButton.Name = ""
+        Me.MetroTextBox9.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.MetroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBox9.CustomButton.TabIndex = 1
+        Me.MetroTextBox9.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBox9.CustomButton.UseSelectable = True
+        Me.MetroTextBox9.CustomButton.Visible = False
+        Me.MetroTextBox9.Lines = New String(-1) {}
+        Me.MetroTextBox9.Location = New System.Drawing.Point(28, 266)
+        Me.MetroTextBox9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox9.MaxLength = 32767
+        Me.MetroTextBox9.Name = "MetroTextBox9"
+        Me.MetroTextBox9.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox9.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox9.SelectedText = ""
+        Me.MetroTextBox9.SelectionLength = 0
+        Me.MetroTextBox9.SelectionStart = 0
+        Me.MetroTextBox9.ShortcutsEnabled = True
+        Me.MetroTextBox9.Size = New System.Drawing.Size(444, 35)
+        Me.MetroTextBox9.TabIndex = 24
+        Me.MetroTextBox9.UseSelectable = True
+        Me.MetroTextBox9.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.MetroTextBox9.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'MetroTextBox2
+        'MetroLabel20
         '
-        Me.MetroTextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.MetroLabel20.AutoSize = True
+        Me.MetroLabel20.Location = New System.Drawing.Point(28, 151)
+        Me.MetroLabel20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel20.Name = "MetroLabel20"
+        Me.MetroLabel20.Size = New System.Drawing.Size(96, 19)
+        Me.MetroLabel20.TabIndex = 21
+        Me.MetroLabel20.Text = "Business Name"
+        '
+        'MetroLabel21
+        '
+        Me.MetroLabel21.AutoSize = True
+        Me.MetroLabel21.Location = New System.Drawing.Point(28, 68)
+        Me.MetroLabel21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel21.Name = "MetroLabel21"
+        Me.MetroLabel21.Size = New System.Drawing.Size(54, 19)
+        Me.MetroLabel21.TabIndex = 20
+        Me.MetroLabel21.Text = "Track ID"
+        '
+        'MetroButton5
+        '
+        Me.MetroButton5.Location = New System.Drawing.Point(398, 95)
+        Me.MetroButton5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroButton5.Name = "MetroButton5"
+        Me.MetroButton5.Size = New System.Drawing.Size(78, 35)
+        Me.MetroButton5.TabIndex = 19
+        Me.MetroButton5.Text = "Copy"
+        Me.MetroButton5.UseSelectable = True
+        '
+        'MetroButton6
+        '
+        Me.MetroButton6.Location = New System.Drawing.Point(28, 568)
+        Me.MetroButton6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroButton6.Name = "MetroButton6"
+        Me.MetroButton6.Size = New System.Drawing.Size(132, 40)
+        Me.MetroButton6.TabIndex = 18
+        Me.MetroButton6.Text = "Submit"
+        Me.MetroButton6.UseSelectable = True
+        '
+        'RichTextBox3
+        '
+        Me.RichTextBox3.Location = New System.Drawing.Point(28, 351)
+        Me.RichTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.RichTextBox3.Name = "RichTextBox3"
+        Me.RichTextBox3.Size = New System.Drawing.Size(445, 206)
+        Me.RichTextBox3.TabIndex = 17
+        Me.RichTextBox3.Text = ""
+        '
+        'MetroTextBox7
+        '
+        Me.MetroTextBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox2.CustomButton.Image = Nothing
-        Me.MetroTextBox2.CustomButton.Location = New System.Drawing.Point(484, 2)
-        Me.MetroTextBox2.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox2.CustomButton.Name = ""
-        Me.MetroTextBox2.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.MetroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox2.CustomButton.TabIndex = 1
-        Me.MetroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox2.CustomButton.UseSelectable = True
-        Me.MetroTextBox2.CustomButton.Visible = False
-        Me.MetroTextBox2.Lines = New String(-1) {}
-        Me.MetroTextBox2.Location = New System.Drawing.Point(28, 95)
-        Me.MetroTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox2.MaxLength = 32767
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox2.SelectedText = ""
-        Me.MetroTextBox2.SelectionLength = 0
-        Me.MetroTextBox2.SelectionStart = 0
-        Me.MetroTextBox2.ShortcutsEnabled = True
-        Me.MetroTextBox2.Size = New System.Drawing.Size(357, 35)
-        Me.MetroTextBox2.TabIndex = 14
-        Me.MetroTextBox2.UseSelectable = True
-        Me.MetroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox2.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.MetroTextBox7.CustomButton.Image = Nothing
+        Me.MetroTextBox7.CustomButton.Location = New System.Drawing.Point(410, 1)
+        Me.MetroTextBox7.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox7.CustomButton.Name = ""
+        Me.MetroTextBox7.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.MetroTextBox7.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBox7.CustomButton.TabIndex = 1
+        Me.MetroTextBox7.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBox7.CustomButton.UseSelectable = True
+        Me.MetroTextBox7.CustomButton.Visible = False
+        Me.MetroTextBox7.Lines = New String(-1) {}
+        Me.MetroTextBox7.Location = New System.Drawing.Point(28, 180)
+        Me.MetroTextBox7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox7.MaxLength = 32767
+        Me.MetroTextBox7.Name = "MetroTextBox7"
+        Me.MetroTextBox7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox7.SelectedText = ""
+        Me.MetroTextBox7.SelectionLength = 0
+        Me.MetroTextBox7.SelectionStart = 0
+        Me.MetroTextBox7.ShortcutsEnabled = True
+        Me.MetroTextBox7.Size = New System.Drawing.Size(444, 35)
+        Me.MetroTextBox7.TabIndex = 15
+        Me.MetroTextBox7.UseSelectable = True
+        Me.MetroTextBox7.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.MetroTextBox7.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'Panel5
+        'MetroTextBox8
         '
-        Me.Panel5.Controls.Add(Me.Label7)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(501, 51)
-        Me.Panel5.TabIndex = 3
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label7.Location = New System.Drawing.Point(0, 0)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(0, 20)
-        Me.Label7.TabIndex = 0
-        '
-        'loginPnl
-        '
-        Me.loginPnl.Controls.Add(Me.pass_checkbox)
-        Me.loginPnl.Controls.Add(Me.Label6)
-        Me.loginPnl.Controls.Add(Me.login_pword_txtbox)
-        Me.loginPnl.Controls.Add(Me.Label5)
-        Me.loginPnl.Controls.Add(Me.login_uname_txtbox)
-        Me.loginPnl.Controls.Add(Me.Label4)
-        Me.loginPnl.Controls.Add(Me.Label3)
-        Me.loginPnl.Controls.Add(Me.login_btn)
-        Me.loginPnl.HorizontalScrollbarBarColor = True
-        Me.loginPnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.loginPnl.HorizontalScrollbarSize = 15
-        Me.loginPnl.Location = New System.Drawing.Point(30, 505)
-        Me.loginPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.loginPnl.Name = "loginPnl"
-        Me.loginPnl.Size = New System.Drawing.Size(561, 532)
-        Me.loginPnl.TabIndex = 15
-        Me.loginPnl.VerticalScrollbarBarColor = True
-        Me.loginPnl.VerticalScrollbarHighlightOnWheel = False
-        Me.loginPnl.VerticalScrollbarSize = 15
-        Me.loginPnl.Visible = False
-        '
-        'pass_checkbox
-        '
-        Me.pass_checkbox.AutoSize = True
-        Me.pass_checkbox.Location = New System.Drawing.Point(30, 363)
-        Me.pass_checkbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.pass_checkbox.Name = "pass_checkbox"
-        Me.pass_checkbox.Size = New System.Drawing.Size(105, 15)
-        Me.pass_checkbox.TabIndex = 21
-        Me.pass_checkbox.Text = "Show Password"
-        Me.pass_checkbox.UseSelectable = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label6.Location = New System.Drawing.Point(26, 295)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(78, 20)
-        Me.Label6.TabIndex = 20
-        Me.Label6.Text = "Password"
-        '
-        'login_pword_txtbox
-        '
-        Me.login_pword_txtbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.MetroTextBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.login_pword_txtbox.CustomButton.Image = Nothing
-        Me.login_pword_txtbox.CustomButton.Location = New System.Drawing.Point(700, 2)
-        Me.login_pword_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.login_pword_txtbox.CustomButton.Name = ""
-        Me.login_pword_txtbox.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.login_pword_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.login_pword_txtbox.CustomButton.TabIndex = 1
-        Me.login_pword_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.login_pword_txtbox.CustomButton.UseSelectable = True
-        Me.login_pword_txtbox.CustomButton.Visible = False
-        Me.login_pword_txtbox.Lines = New String(-1) {}
-        Me.login_pword_txtbox.Location = New System.Drawing.Point(30, 320)
-        Me.login_pword_txtbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.login_pword_txtbox.MaxLength = 32767
-        Me.login_pword_txtbox.Name = "login_pword_txtbox"
-        Me.login_pword_txtbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.login_pword_txtbox.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.login_pword_txtbox.SelectedText = ""
-        Me.login_pword_txtbox.SelectionLength = 0
-        Me.login_pword_txtbox.SelectionStart = 0
-        Me.login_pword_txtbox.ShortcutsEnabled = True
-        Me.login_pword_txtbox.Size = New System.Drawing.Size(501, 35)
-        Me.login_pword_txtbox.TabIndex = 19
-        Me.login_pword_txtbox.UseSelectable = True
-        Me.login_pword_txtbox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.login_pword_txtbox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.MetroTextBox8.CustomButton.Image = Nothing
+        Me.MetroTextBox8.CustomButton.Location = New System.Drawing.Point(323, 1)
+        Me.MetroTextBox8.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox8.CustomButton.Name = ""
+        Me.MetroTextBox8.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.MetroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBox8.CustomButton.TabIndex = 1
+        Me.MetroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBox8.CustomButton.UseSelectable = True
+        Me.MetroTextBox8.CustomButton.Visible = False
+        Me.MetroTextBox8.Lines = New String(-1) {}
+        Me.MetroTextBox8.Location = New System.Drawing.Point(28, 97)
+        Me.MetroTextBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox8.MaxLength = 32767
+        Me.MetroTextBox8.Name = "MetroTextBox8"
+        Me.MetroTextBox8.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox8.SelectedText = ""
+        Me.MetroTextBox8.SelectionLength = 0
+        Me.MetroTextBox8.SelectionStart = 0
+        Me.MetroTextBox8.ShortcutsEnabled = True
+        Me.MetroTextBox8.Size = New System.Drawing.Size(357, 35)
+        Me.MetroTextBox8.TabIndex = 14
+        Me.MetroTextBox8.UseSelectable = True
+        Me.MetroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.MetroTextBox8.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'Label5
+        'Panel7
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(26, 225)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(83, 20)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "Username"
+        Me.Panel7.Controls.Add(Me.Label9)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(501, 51)
+        Me.Panel7.TabIndex = 3
         '
-        'login_uname_txtbox
+        'Label9
         '
-        Me.login_uname_txtbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        '
-        '
-        '
-        Me.login_uname_txtbox.CustomButton.Image = Nothing
-        Me.login_uname_txtbox.CustomButton.Location = New System.Drawing.Point(700, 2)
-        Me.login_uname_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.login_uname_txtbox.CustomButton.Name = ""
-        Me.login_uname_txtbox.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.login_uname_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.login_uname_txtbox.CustomButton.TabIndex = 1
-        Me.login_uname_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.login_uname_txtbox.CustomButton.UseSelectable = True
-        Me.login_uname_txtbox.CustomButton.Visible = False
-        Me.login_uname_txtbox.Lines = New String(-1) {}
-        Me.login_uname_txtbox.Location = New System.Drawing.Point(30, 249)
-        Me.login_uname_txtbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.login_uname_txtbox.MaxLength = 32767
-        Me.login_uname_txtbox.Name = "login_uname_txtbox"
-        Me.login_uname_txtbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.login_uname_txtbox.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.login_uname_txtbox.SelectedText = ""
-        Me.login_uname_txtbox.SelectionLength = 0
-        Me.login_uname_txtbox.SelectionStart = 0
-        Me.login_uname_txtbox.ShortcutsEnabled = True
-        Me.login_uname_txtbox.Size = New System.Drawing.Size(501, 35)
-        Me.login_uname_txtbox.TabIndex = 17
-        Me.login_uname_txtbox.UseSelectable = True
-        Me.login_uname_txtbox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.login_uname_txtbox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(28, 146)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(458, 50)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "           Please enter your login information to access " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "admin panel."
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(24, 60)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(307, 44)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Login to System"
-        '
-        'login_btn
-        '
-        Me.login_btn.Highlight = True
-        Me.login_btn.Location = New System.Drawing.Point(30, 403)
-        Me.login_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.login_btn.Name = "login_btn"
-        Me.login_btn.Size = New System.Drawing.Size(501, 51)
-        Me.login_btn.TabIndex = 14
-        Me.login_btn.Text = "Login"
-        Me.login_btn.UseSelectable = True
-        '
-        'requestPnl
-        '
-        Me.requestPnl.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.requestPnl.AutoSize = True
-        Me.requestPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.requestPnl.Controls.Add(Me.DataGridView1)
-        Me.requestPnl.Controls.Add(Me.MetroTextBox1)
-        Me.requestPnl.Controls.Add(Me.MetroLabel10)
-        Me.requestPnl.Controls.Add(Me.Panel4)
-        Me.requestPnl.HorizontalScrollbarBarColor = True
-        Me.requestPnl.HorizontalScrollbarHighlightOnWheel = False
-        Me.requestPnl.HorizontalScrollbarSize = 15
-        Me.requestPnl.Location = New System.Drawing.Point(159, -229)
-        Me.requestPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.requestPnl.Name = "requestPnl"
-        Me.requestPnl.Size = New System.Drawing.Size(808, 719)
-        Me.requestPnl.TabIndex = 13
-        Me.requestPnl.VerticalScrollbarBarColor = True
-        Me.requestPnl.VerticalScrollbarHighlightOnWheel = False
-        Me.requestPnl.VerticalScrollbarSize = 15
-        Me.requestPnl.Visible = False
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.DataGridView1.Location = New System.Drawing.Point(30, 155)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 62
-        Me.DataGridView1.Size = New System.Drawing.Size(741, 532)
-        Me.DataGridView1.TabIndex = 14
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "Name"
-        Me.Column1.MinimumWidth = 8
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "Document Type"
-        Me.Column2.MinimumWidth = 8
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.HeaderText = "Tracking Code"
-        Me.Column3.MinimumWidth = 8
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 135
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.HeaderText = "Date Requested"
-        Me.Column4.MinimumWidth = 8
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 150
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "Status"
-        Me.Column5.MinimumWidth = 8
-        Me.Column5.Name = "Column5"
-        '
-        'MetroTextBox1
-        '
-        Me.MetroTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        '
-        '
-        '
-        Me.MetroTextBox1.CustomButton.Image = Nothing
-        Me.MetroTextBox1.CustomButton.Location = New System.Drawing.Point(1060, 2)
-        Me.MetroTextBox1.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox1.CustomButton.Name = ""
-        Me.MetroTextBox1.CustomButton.Size = New System.Drawing.Size(50, 51)
-        Me.MetroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox1.CustomButton.TabIndex = 1
-        Me.MetroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox1.CustomButton.UseSelectable = True
-        Me.MetroTextBox1.CustomButton.Visible = False
-        Me.MetroTextBox1.Lines = New String(-1) {}
-        Me.MetroTextBox1.Location = New System.Drawing.Point(30, 95)
-        Me.MetroTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox1.MaxLength = 32767
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox1.SelectedText = ""
-        Me.MetroTextBox1.SelectionLength = 0
-        Me.MetroTextBox1.SelectionStart = 0
-        Me.MetroTextBox1.ShortcutsEnabled = True
-        Me.MetroTextBox1.Size = New System.Drawing.Size(741, 35)
-        Me.MetroTextBox1.TabIndex = 13
-        Me.MetroTextBox1.UseSelectable = True
-        Me.MetroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox1.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'MetroLabel10
-        '
-        Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Location = New System.Drawing.Point(30, 62)
-        Me.MetroLabel10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(92, 19)
-        Me.MetroLabel10.TabIndex = 8
-        Me.MetroLabel10.Text = "Tracking Code"
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.Label2)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(806, 51)
-        Me.Panel4.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 20)
-        Me.Label2.TabIndex = 0
+        Me.Label9.AutoSize = True
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label9.Location = New System.Drawing.Point(0, 0)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(0, 20)
+        Me.Label9.TabIndex = 0
         '
         'ConfigPnl
         '
@@ -1297,11 +1014,11 @@ Partial Class Login
         Me.ConfigPnl.HorizontalScrollbarBarColor = True
         Me.ConfigPnl.HorizontalScrollbarHighlightOnWheel = False
         Me.ConfigPnl.HorizontalScrollbarSize = 15
-        Me.ConfigPnl.Location = New System.Drawing.Point(-411, -229)
+        Me.ConfigPnl.Location = New System.Drawing.Point(898, 295)
         Me.ConfigPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ConfigPnl.Name = "ConfigPnl"
         Me.ConfigPnl.Size = New System.Drawing.Size(562, 719)
-        Me.ConfigPnl.TabIndex = 2
+        Me.ConfigPnl.TabIndex = 19
         Me.ConfigPnl.VerticalScrollbarBarColor = True
         Me.ConfigPnl.VerticalScrollbarHighlightOnWheel = False
         Me.ConfigPnl.VerticalScrollbarSize = 15
@@ -1365,10 +1082,10 @@ Partial Class Login
         '
         '
         Me.dbname_txtbox.CustomButton.Image = Nothing
-        Me.dbname_txtbox.CustomButton.Location = New System.Drawing.Point(700, 2)
+        Me.dbname_txtbox.CustomButton.Location = New System.Drawing.Point(467, 1)
         Me.dbname_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dbname_txtbox.CustomButton.Name = ""
-        Me.dbname_txtbox.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.dbname_txtbox.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.dbname_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.dbname_txtbox.CustomButton.TabIndex = 1
         Me.dbname_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1399,10 +1116,10 @@ Partial Class Login
         '
         '
         Me.pword_txtbox.CustomButton.Image = Nothing
-        Me.pword_txtbox.CustomButton.Location = New System.Drawing.Point(700, 2)
+        Me.pword_txtbox.CustomButton.Location = New System.Drawing.Point(467, 1)
         Me.pword_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.pword_txtbox.CustomButton.Name = ""
-        Me.pword_txtbox.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.pword_txtbox.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.pword_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.pword_txtbox.CustomButton.TabIndex = 1
         Me.pword_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1433,10 +1150,10 @@ Partial Class Login
         '
         '
         Me.uname_txtbox.CustomButton.Image = Nothing
-        Me.uname_txtbox.CustomButton.Location = New System.Drawing.Point(700, 2)
+        Me.uname_txtbox.CustomButton.Location = New System.Drawing.Point(467, 1)
         Me.uname_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.uname_txtbox.CustomButton.Name = ""
-        Me.uname_txtbox.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.uname_txtbox.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.uname_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.uname_txtbox.CustomButton.TabIndex = 1
         Me.uname_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1467,10 +1184,10 @@ Partial Class Login
         '
         '
         Me.port_txtbox.CustomButton.Image = Nothing
-        Me.port_txtbox.CustomButton.Location = New System.Drawing.Point(700, 2)
+        Me.port_txtbox.CustomButton.Location = New System.Drawing.Point(467, 1)
         Me.port_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.port_txtbox.CustomButton.Name = ""
-        Me.port_txtbox.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.port_txtbox.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.port_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.port_txtbox.CustomButton.TabIndex = 1
         Me.port_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1501,10 +1218,10 @@ Partial Class Login
         '
         '
         Me.server_txtbox.CustomButton.Image = Nothing
-        Me.server_txtbox.CustomButton.Location = New System.Drawing.Point(700, 2)
+        Me.server_txtbox.CustomButton.Location = New System.Drawing.Point(467, 1)
         Me.server_txtbox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.server_txtbox.CustomButton.Name = ""
-        Me.server_txtbox.CustomButton.Size = New System.Drawing.Size(50, 51)
+        Me.server_txtbox.CustomButton.Size = New System.Drawing.Size(33, 33)
         Me.server_txtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.server_txtbox.CustomButton.TabIndex = 1
         Me.server_txtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -1559,11 +1276,294 @@ Partial Class Login
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Database Configuration"
         '
+        'requestPnl
+        '
+        Me.requestPnl.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.requestPnl.AutoSize = True
+        Me.requestPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.requestPnl.Controls.Add(Me.DataGridView1)
+        Me.requestPnl.Controls.Add(Me.MetroTextBox1)
+        Me.requestPnl.Controls.Add(Me.MetroLabel10)
+        Me.requestPnl.Controls.Add(Me.Panel4)
+        Me.requestPnl.HorizontalScrollbarBarColor = True
+        Me.requestPnl.HorizontalScrollbarHighlightOnWheel = False
+        Me.requestPnl.HorizontalScrollbarSize = 15
+        Me.requestPnl.Location = New System.Drawing.Point(73, 107)
+        Me.requestPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.requestPnl.Name = "requestPnl"
+        Me.requestPnl.Size = New System.Drawing.Size(808, 894)
+        Me.requestPnl.TabIndex = 14
+        Me.requestPnl.VerticalScrollbarBarColor = True
+        Me.requestPnl.VerticalScrollbarHighlightOnWheel = False
+        Me.requestPnl.VerticalScrollbarSize = 15
+        Me.requestPnl.Visible = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.DataGridView1.Location = New System.Drawing.Point(30, 155)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 62
+        Me.DataGridView1.Size = New System.Drawing.Size(741, 639)
+        Me.DataGridView1.TabIndex = 14
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "Name"
+        Me.Column1.MinimumWidth = 8
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "Document Type"
+        Me.Column2.MinimumWidth = 8
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.HeaderText = "Tracking Code"
+        Me.Column3.MinimumWidth = 8
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 135
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.HeaderText = "Date Requested"
+        Me.Column4.MinimumWidth = 8
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 150
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "Status"
+        Me.Column5.MinimumWidth = 8
+        Me.Column5.Name = "Column5"
+        '
+        'MetroTextBox1
+        '
+        Me.MetroTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        '
+        '
+        '
+        Me.MetroTextBox1.CustomButton.Image = Nothing
+        Me.MetroTextBox1.CustomButton.Location = New System.Drawing.Point(707, 1)
+        Me.MetroTextBox1.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox1.CustomButton.Name = ""
+        Me.MetroTextBox1.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.MetroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBox1.CustomButton.TabIndex = 1
+        Me.MetroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBox1.CustomButton.UseSelectable = True
+        Me.MetroTextBox1.CustomButton.Visible = False
+        Me.MetroTextBox1.Lines = New String(-1) {}
+        Me.MetroTextBox1.Location = New System.Drawing.Point(30, 95)
+        Me.MetroTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MetroTextBox1.MaxLength = 32767
+        Me.MetroTextBox1.Name = "MetroTextBox1"
+        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox1.SelectedText = ""
+        Me.MetroTextBox1.SelectionLength = 0
+        Me.MetroTextBox1.SelectionStart = 0
+        Me.MetroTextBox1.ShortcutsEnabled = True
+        Me.MetroTextBox1.Size = New System.Drawing.Size(741, 35)
+        Me.MetroTextBox1.TabIndex = 13
+        Me.MetroTextBox1.UseSelectable = True
+        Me.MetroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.MetroTextBox1.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'MetroLabel10
+        '
+        Me.MetroLabel10.AutoSize = True
+        Me.MetroLabel10.Location = New System.Drawing.Point(30, 62)
+        Me.MetroLabel10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MetroLabel10.Name = "MetroLabel10"
+        Me.MetroLabel10.Size = New System.Drawing.Size(92, 19)
+        Me.MetroLabel10.TabIndex = 8
+        Me.MetroLabel10.Text = "Tracking Code"
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(806, 51)
+        Me.Panel4.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 20)
+        Me.Label2.TabIndex = 0
+        '
+        'LobbyPnl
+        '
+        Me.LobbyPnl.Controls.Add(Me.ConfigPnl)
+        Me.LobbyPnl.Controls.Add(Me.busClearancePnl)
+        Me.LobbyPnl.Controls.Add(Me.ClearancePnl)
+        Me.LobbyPnl.Controls.Add(Me.brgyCertPnl)
+        Me.LobbyPnl.Controls.Add(Me.loginPnl)
+        Me.LobbyPnl.Controls.Add(Me.requestPnl)
+        Me.LobbyPnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LobbyPnl.HorizontalScrollbarBarColor = True
+        Me.LobbyPnl.HorizontalScrollbarHighlightOnWheel = False
+        Me.LobbyPnl.HorizontalScrollbarSize = 15
+        Me.LobbyPnl.Location = New System.Drawing.Point(300, 68)
+        Me.LobbyPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.LobbyPnl.Name = "LobbyPnl"
+        Me.LobbyPnl.Size = New System.Drawing.Size(1624, 982)
+        Me.LobbyPnl.TabIndex = 1
+        Me.LobbyPnl.VerticalScrollbarBarColor = True
+        Me.LobbyPnl.VerticalScrollbarHighlightOnWheel = False
+        Me.LobbyPnl.VerticalScrollbarSize = 15
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(300, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1624, 68)
+        Me.Panel2.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(300, 257)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'DocumentsBtn
+        '
+        Me.DocumentsBtn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.DocumentsBtn.Location = New System.Drawing.Point(0, 257)
+        Me.DocumentsBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.DocumentsBtn.Name = "DocumentsBtn"
+        Me.DocumentsBtn.Size = New System.Drawing.Size(300, 85)
+        Me.DocumentsBtn.TabIndex = 1
+        Me.DocumentsBtn.Text = "REQUEST DOCUMENT"
+        Me.DocumentsBtn.UseSelectable = True
+        '
+        'LoginBtn
+        '
+        Me.LoginBtn.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LoginBtn.Location = New System.Drawing.Point(0, 979)
+        Me.LoginBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.LoginBtn.Name = "LoginBtn"
+        Me.LoginBtn.Size = New System.Drawing.Size(300, 71)
+        Me.LoginBtn.TabIndex = 4
+        Me.LoginBtn.Text = "LOGIN"
+        Me.LoginBtn.UseSelectable = True
+        '
+        'btnPnl
+        '
+        Me.btnPnl.Controls.Add(Me.brgyClearance_btn)
+        Me.btnPnl.Controls.Add(Me.Clearance_btn)
+        Me.btnPnl.Controls.Add(Me.Cert_btn)
+        Me.btnPnl.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnPnl.Location = New System.Drawing.Point(0, 342)
+        Me.btnPnl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnPnl.Name = "btnPnl"
+        Me.btnPnl.Size = New System.Drawing.Size(300, 160)
+        Me.btnPnl.TabIndex = 5
+        Me.btnPnl.Visible = False
+        '
+        'brgyClearance_btn
+        '
+        Me.brgyClearance_btn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.brgyClearance_btn.Location = New System.Drawing.Point(0, 108)
+        Me.brgyClearance_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.brgyClearance_btn.Name = "brgyClearance_btn"
+        Me.brgyClearance_btn.Size = New System.Drawing.Size(300, 54)
+        Me.brgyClearance_btn.TabIndex = 2
+        Me.brgyClearance_btn.Text = "Business Clearance"
+        Me.brgyClearance_btn.UseSelectable = True
+        '
+        'Clearance_btn
+        '
+        Me.Clearance_btn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Clearance_btn.Location = New System.Drawing.Point(0, 54)
+        Me.Clearance_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Clearance_btn.Name = "Clearance_btn"
+        Me.Clearance_btn.Size = New System.Drawing.Size(300, 54)
+        Me.Clearance_btn.TabIndex = 1
+        Me.Clearance_btn.Text = "Barangay Clearance"
+        Me.Clearance_btn.UseSelectable = True
+        '
+        'Cert_btn
+        '
+        Me.Cert_btn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Cert_btn.Location = New System.Drawing.Point(0, 0)
+        Me.Cert_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Cert_btn.Name = "Cert_btn"
+        Me.Cert_btn.Size = New System.Drawing.Size(300, 54)
+        Me.Cert_btn.TabIndex = 0
+        Me.Cert_btn.Text = "Barangay Certificate"
+        Me.Cert_btn.UseSelectable = True
+        '
+        'trackReqBtn
+        '
+        Me.trackReqBtn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.trackReqBtn.Location = New System.Drawing.Point(0, 502)
+        Me.trackReqBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.trackReqBtn.Name = "trackReqBtn"
+        Me.trackReqBtn.Size = New System.Drawing.Size(300, 85)
+        Me.trackReqBtn.TabIndex = 2
+        Me.trackReqBtn.Text = "TRACK REQUEST"
+        Me.trackReqBtn.UseSelectable = True
+        '
+        'configBtn
+        '
+        Me.configBtn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.configBtn.Location = New System.Drawing.Point(0, 587)
+        Me.configBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.configBtn.Name = "configBtn"
+        Me.configBtn.Size = New System.Drawing.Size(300, 85)
+        Me.configBtn.TabIndex = 3
+        Me.configBtn.Text = "CONFIGURATION"
+        Me.configBtn.UseSelectable = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.configBtn)
+        Me.Panel1.Controls.Add(Me.trackReqBtn)
+        Me.Panel1.Controls.Add(Me.btnPnl)
+        Me.Panel1.Controls.Add(Me.LoginBtn)
+        Me.Panel1.Controls.Add(Me.DocumentsBtn)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(300, 1050)
+        Me.Panel1.TabIndex = 0
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1924, 882)
+        Me.ClientSize = New System.Drawing.Size(1924, 1050)
         Me.Controls.Add(Me.LobbyPnl)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -1573,85 +1573,49 @@ Partial Class Login
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.btnPnl.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LobbyPnl.ResumeLayout(False)
-        Me.LobbyPnl.PerformLayout()
-        Me.busClearancePnl.ResumeLayout(False)
-        Me.busClearancePnl.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.ClearancePnl.ResumeLayout(False)
-        Me.ClearancePnl.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
+        Me.loginPnl.ResumeLayout(False)
+        Me.loginPnl.PerformLayout()
         Me.brgyCertPnl.ResumeLayout(False)
         Me.brgyCertPnl.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.loginPnl.ResumeLayout(False)
-        Me.loginPnl.PerformLayout()
+        Me.ClearancePnl.ResumeLayout(False)
+        Me.ClearancePnl.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.busClearancePnl.ResumeLayout(False)
+        Me.busClearancePnl.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.ConfigPnl.ResumeLayout(False)
+        Me.ConfigPnl.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.requestPnl.ResumeLayout(False)
         Me.requestPnl.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.ConfigPnl.ResumeLayout(False)
-        Me.ConfigPnl.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.LobbyPnl.ResumeLayout(False)
+        Me.LobbyPnl.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.btnPnl.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents LobbyPnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents DocumentsBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents LoginBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents configBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents trackReqBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents ConfigPnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents saveConfBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents Label1 As Label
-    Friend WithEvents btnPnl As Panel
-    Friend WithEvents Cert_btn As MetroFramework.Controls.MetroButton
-    Friend WithEvents brgyClearance_btn As MetroFramework.Controls.MetroButton
-    Friend WithEvents Clearance_btn As MetroFramework.Controls.MetroButton
-    Friend WithEvents server_txtbox As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents dbname_txtbox As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents pword_txtbox As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents uname_txtbox As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents port_txtbox As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents requestPnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents loginPnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents login_btn As MetroFramework.Controls.MetroButton
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents login_uname_txtbox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents pass_checkbox As MetroFramework.Controls.MetroCheckBox
     Friend WithEvents Label6 As Label
     Friend WithEvents login_pword_txtbox As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents pass_checkbox As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents login_uname_txtbox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents login_btn As MetroFramework.Controls.MetroButton
     Friend WithEvents brgyCertPnl As MetroFramework.Controls.MetroPanel
+    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
@@ -1662,9 +1626,13 @@ Partial Class Login
     Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label7 As Label
-    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents ClearancePnl As MetroFramework.Controls.MetroPanel
+    Friend WithEvents MetroTextBox6 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroComboBox4 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroComboBox3 As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
@@ -1677,13 +1645,10 @@ Partial Class Login
     Friend WithEvents MetroTextBox5 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label8 As Label
-    Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox3 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox4 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox6 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents busClearancePnl As MetroFramework.Controls.MetroPanel
+    Friend WithEvents MetroLabel22 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroTextBox9 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel21 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton5 As MetroFramework.Controls.MetroButton
@@ -1693,7 +1658,41 @@ Partial Class Login
     Friend WithEvents MetroTextBox8 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label9 As Label
-    Friend WithEvents MetroLabel22 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox9 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents ConfigPnl As MetroFramework.Controls.MetroPanel
+    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents dbname_txtbox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents pword_txtbox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents uname_txtbox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents port_txtbox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents server_txtbox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents saveConfBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents requestPnl As MetroFramework.Controls.MetroPanel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents LobbyPnl As MetroFramework.Controls.MetroPanel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DocumentsBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents LoginBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnPnl As Panel
+    Friend WithEvents brgyClearance_btn As MetroFramework.Controls.MetroButton
+    Friend WithEvents Clearance_btn As MetroFramework.Controls.MetroButton
+    Friend WithEvents Cert_btn As MetroFramework.Controls.MetroButton
+    Friend WithEvents trackReqBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents configBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents Panel1 As Panel
 End Class

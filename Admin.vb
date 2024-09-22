@@ -153,5 +153,20 @@ Public Class Admin
         Panel8.Dock = DockStyle.Fill
     End Sub
 
+    Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellContentClick
+        If e.ColumnIndex = DataGridView4.Columns("actionBtn").Index AndAlso e.RowIndex >= 0 Then
+            bt_clearance_pnl.Controls.Add(actionModel)
+            actionModel.Width = 410
+            actionModel.Height = 430
+            actionModel.Location = New Point(
+               bt_clearance_pnl.Width / 2 - actionModel.Size.Width / 2,
+               bt_clearance_pnl.Height / 2 - actionModel.Size.Height / 2
+            )
+            actionModel.Anchor = AnchorStyles.None
+            actionModel.Visible = True
+            actionModel.BringToFront()
+        End If
+    End Sub
+
 
 End Class

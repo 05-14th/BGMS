@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class Login
     Private Sub CenterPanel()
@@ -110,6 +111,8 @@ Public Class Login
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadConfig()
+        ConnectToDB()
+        login_pword_txtbox.UseSystemPasswordChar = True
     End Sub
 
     Private Sub Clearance_btn_Click(sender As Object, e As EventArgs) Handles Clearance_btn.Click
@@ -117,9 +120,27 @@ Public Class Login
     End Sub
 
     Private Sub MetroButton1_Click_1(sender As Object, e As EventArgs) Handles login_btn.Click
-        Me.Hide()
-        Admin.ShowDialog()
-        Me.Close()
+
+        Dim command As New MySqlCommand("SELECT COUNT(*) FROM bgms_account WHERE acc_username = @username AND acc_password = @password", cn)
+        command.Parameters.AddWithValue("@username", login_uname_txtbox.Text())
+        command.Parameters.AddWithValue("@password", ComputeSHA256Hash(login_pword_txtbox.Text()))
+        Try
+            cn.Open()
+            Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+
+            If count > 0 Then
+                Me.Hide()
+                Admin.ShowDialog()
+                Me.Close()
+            Else
+                MessageBox.Show("Invalid username or password.")
+            End If
+            cn.Close()
+        Catch ex As MySqlException
+            MessageBox.Show("Database error: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
     End Sub
 
     Private Sub pass_checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles pass_checkbox.CheckedChanged
