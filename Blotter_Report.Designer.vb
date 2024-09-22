@@ -418,7 +418,7 @@ Partial Class Blotter_Report
         Me.MetroComboBox1.FormattingEnabled = True
         Me.MetroComboBox1.ItemHeight = 23
         Me.MetroComboBox1.Items.AddRange(New Object() {"Complainant", "Defendant", "Witness"})
-        Me.MetroComboBox1.Location = New System.Drawing.Point(160, 315)
+        Me.MetroComboBox1.Location = New System.Drawing.Point(160, 311)
         Me.MetroComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MetroComboBox1.Name = "MetroComboBox1"
         Me.MetroComboBox1.Size = New System.Drawing.Size(180, 29)

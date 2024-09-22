@@ -43,11 +43,12 @@ Public Class Admin
         bus_clearance_pnl.Visible = state3
     End Sub
 
-    Private Sub ToggleBT(state1 As Boolean, state2 As Boolean, state3 As Boolean, Optional state4 As Boolean = False)
+    Private Sub ToggleBT(state1 As Boolean, state2 As Boolean, state3 As Boolean, Optional state4 As Boolean = False, Optional state5 As Boolean = False)
         bt_clearance_pnl.Visible = state1
         bt_certificate_pnl.Visible = state2
         bt_bus_clearance.Visible = state3
         blotter_pnl.Visible = state4
+        summonPnl.Visible = state5
     End Sub
 
     Private Sub brgyTrans_btn_Click(sender As Object, e As EventArgs) Handles brgyTrans_btn.Click
@@ -116,6 +117,7 @@ Public Class Admin
     End Sub
 
     Private Sub BlotterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlotterToolStripMenuItem.Click
+        blotter_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False, True)
         Dim blotter_report As New Blotter_Report()
         blotter_report.Dock = DockStyle.Fill
@@ -135,6 +137,20 @@ Public Class Admin
             My.Settings.LogoName = ""
             My.Settings.Save()
         End If
+    End Sub
+
+    Private Sub SummonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SummonToolStripMenuItem.Click
+        summonPnl.Dock = DockStyle.Fill
+        ToggleBT(False, False, False, False, True)
+        summonPnl.Controls.Add(summon_pnl)
+        summon_pnl.Location = New Point(
+            summonPnl.Width / 2 - summon_pnl.Size.Width / 2,
+            summonPnl.Height / 2 - summon_pnl.Size.Height / 2
+        )
+        summon_pnl.Anchor = AnchorStyles.None
+        summon_pnl.Visible = True
+        Panel5.Dock = DockStyle.Fill
+        Panel8.Dock = DockStyle.Fill
     End Sub
 
 
