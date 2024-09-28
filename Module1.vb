@@ -4,6 +4,7 @@ Imports MySql.Data.MySqlClient
 
 Module Module1
     Public cn As New MySqlConnection
+    Private random As New Random()
     Public Sub LoadImageToPictureBox(pictureBox As PictureBox, imagePath As String)
         Try
             pictureBox.Image = Image.FromFile(imagePath)
@@ -36,5 +37,11 @@ Module Module1
             Next
             Return builder.ToString()
         End Using
+    End Function
+
+    Public Function GenerateID() As String
+        Dim letters As String = $"{Chr(random.Next(65, 91))}{Chr(random.Next(65, 91))}"
+        Dim digits As String = random.Next(0, 1000000000).ToString("D9")
+        Return $"{letters}-{digits}"
     End Function
 End Module

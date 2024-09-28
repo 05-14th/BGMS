@@ -1,7 +1,9 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 
 Public Class Login
+    Dim currentDate As String = DateTime.Now.ToString("yyyy-MM-dd")
     Private Sub CenterPanel()
         ConfigPnl.Location = New Point(
             LobbyPnl.Width / 2 - ConfigPnl.Size.Width / 2,
@@ -38,6 +40,70 @@ Public Class Login
          LobbyPnl.Height / 2 - busClearancePnl.Size.Height / 2
      )
         busClearancePnl.Anchor = AnchorStyles.None
+    End Sub
+
+    Private Sub LoadDocuments()
+        Try
+            DataGridView1.Rows.Clear()
+            cn.Open()
+
+            Dim sqlQuery As String = "
+        SELECT 
+            clearance_name AS name, 
+            'Barangay Clearance' AS document_type,
+            clearance_track_id AS tracking_code,
+            request_date, 
+            status
+        FROM 
+            bgms_clearance 
+
+        UNION ALL 
+
+        SELECT 
+            cert_name AS name, 
+            'Barangay Certificate' AS document_type,
+            cert_track_id AS tracking_code,
+            request_date, 
+            status 
+        FROM 
+            bgms_certificate 
+
+        UNION ALL 
+
+        SELECT 
+            bc_owner_name AS name,
+            'Business Clearance' AS document_type,
+            bc_track_id AS tracking_code,
+            request_date, 
+            status
+        FROM 
+            bgms_bus_clearance;"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                DataGridView1.Rows.Add(dr("name"), dr("document_type"), dr("tracking_code"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), dr("status"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub ClearTextBox()
+        txtbox_busName.Clear()
+        txtbox_ownerName.Clear()
+        txtbox_busAd.Clear()
+        txtbox_clearanceName.Clear()
+        txtbox_clearanceAge.Clear()
+        cb_clearanceSex.SelectedIndex = -1
+        cb_clearanceCS.SelectedIndex = -1
+        cb_clearancePurok.SelectedIndex = -1
+        txtbox_clearancePurp.Clear()
     End Sub
 
     Private Sub ToggleUI(state1 As Boolean, state2 As Boolean, state3 As Boolean, state4 As Boolean, state5 As Boolean, state6 As Boolean, state7 As Boolean)
@@ -94,14 +160,19 @@ Public Class Login
     End Sub
 
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles trackReqBtn.Click
+        LoadDocuments()
         ToggleUI(False, False, True, False, False, False, False)
     End Sub
 
     Private Sub MetroButton5_Click(sender As Object, e As EventArgs) Handles Cert_btn.Click
+        txtbox_certTI.Text = GenerateID()
+        ClearTextBox()
         ToggleUI(True, False, False, False, True, False, False)
     End Sub
 
     Private Sub MetroButton7_Click(sender As Object, e As EventArgs) Handles brgyClearance_btn.Click
+        txtbox_trackID.Text = GenerateID()
+        ClearTextBox()
         ToggleUI(True, False, False, False, False, False, True)
     End Sub
 
@@ -116,6 +187,8 @@ Public Class Login
     End Sub
 
     Private Sub Clearance_btn_Click(sender As Object, e As EventArgs) Handles Clearance_btn.Click
+        txtbox_clearance.Text = GenerateID()
+        ClearTextBox()
         ToggleUI(True, False, False, False, False, True, False)
     End Sub
 
@@ -133,13 +206,13 @@ Public Class Login
                 Admin.ShowDialog()
                 Me.Close()
             Else
-                MessageBox.Show("Invalid username or password.")
+                MsgBox("Invalid username or password.", vbInformation, "Incorrect")
             End If
             cn.Close()
         Catch ex As MySqlException
-            MessageBox.Show("Database error: " & ex.Message)
+            MsgBox("Database error: " & ex.Message, vbCritical, "Failure")
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MsgBox("Error: " & ex.Message, vbCritical, "Failure")
         End Try
     End Sub
 
@@ -147,5 +220,135 @@ Public Class Login
         login_pword_txtbox.UseSystemPasswordChar = Not pass_checkbox.Checked
     End Sub
 
+    Private Sub btn_submitBus_Click(sender As Object, e As EventArgs) Handles btn_submitBus.Click
+        cn.Open()
 
+        Dim bcInsertCommand As New MySqlCommand("INSERT INTO bgms_bus_clearance (`bc_track_id`, `bc_bus_name`, `bc_owner_name`, `bc_bus_addr`, `request_date`, `status`) VALUES (@bti, @bbn, @bon, @bba,@rd, @stat)", cn)
+        bcInsertCommand.Parameters.Add("@bti", MySqlDbType.VarChar).Value = txtbox_trackID.Text
+        bcInsertCommand.Parameters.Add("@bbn", MySqlDbType.VarChar).Value = txtbox_busName.Text
+        bcInsertCommand.Parameters.Add("@bon", MySqlDbType.VarChar).Value = txtbox_ownerName.Text
+        bcInsertCommand.Parameters.Add("@bba", MySqlDbType.VarChar).Value = txtbox_busAd.Text
+        bcInsertCommand.Parameters.Add("@rd", MySqlDbType.VarChar).Value = currentDate
+        bcInsertCommand.Parameters.Add("@stat", MySqlDbType.VarChar).Value = "Pending"
+
+        Try
+            If bcInsertCommand.ExecuteNonQuery() = 1 Then
+                MsgBox("Data inserted successfully", vbInformation, "Success")
+            Else
+                MsgBox("Error inserting data", vbCritical, "Failure")
+            End If
+        Catch ex As Exception
+            MsgBox("Error inserting data: " & ex.Message, vbCritical, "Failure")
+        Finally
+            cn.Close()
+            ClearTextBox()
+            GenerateID()
+        End Try
+    End Sub
+
+    Private Sub MetroButton8_Click(sender As Object, e As EventArgs) Handles MetroButton8.Click
+        cn.Open()
+
+        Dim clearanceInsertCommand As New MySqlCommand("INSERT INTO bgms_clearance (`clearance_track_id`, `clearance_name`, `clearance_age` ,`clearance_sex`, `clearance_cs`, `clearance_purok`, `clearance_purpose`, `request_date`, `status`) VALUES (@cti, @cn, @ca, @cs, @css ,@cp, @cpp, @rq, @stat)", cn)
+        clearanceInsertCommand.Parameters.Add("@cti", MySqlDbType.VarChar).Value = txtbox_clearance.Text
+        clearanceInsertCommand.Parameters.Add("@cn", MySqlDbType.VarChar).Value = txtbox_clearanceName.Text
+        clearanceInsertCommand.Parameters.Add("@ca", MySqlDbType.VarChar).Value = txtbox_clearanceAge.Text
+        clearanceInsertCommand.Parameters.Add("@cs", MySqlDbType.VarChar).Value = cb_clearanceSex.Text
+        clearanceInsertCommand.Parameters.Add("@css", MySqlDbType.VarChar).Value = cb_clearanceCS.Text
+        clearanceInsertCommand.Parameters.Add("@cp", MySqlDbType.VarChar).Value = cb_clearancePurok.Text
+        clearanceInsertCommand.Parameters.Add("@cpp", MySqlDbType.VarChar).Value = txtbox_clearancePurp.Text
+        clearanceInsertCommand.Parameters.Add("@rq", MySqlDbType.VarChar).Value = currentDate
+        clearanceInsertCommand.Parameters.Add("@stat", MySqlDbType.VarChar).Value = "Pending"
+
+        Try
+            If clearanceInsertCommand.ExecuteNonQuery() = 1 Then
+                MsgBox("Data inserted successfully", vbInformation, "Success")
+            Else
+                MsgBox("Error inserting data", vbCritical, "Failure")
+            End If
+        Catch ex As Exception
+            MsgBox("Error inserting data: " & ex.Message, vbCritical, "Failure")
+        Finally
+            cn.Close()
+            ClearTextBox()
+            GenerateID()
+        End Try
+    End Sub
+
+    Private Sub MetroButton2_Click_1(sender As Object, e As EventArgs) Handles MetroButton2.Click
+        cn.Open()
+
+        Dim clearanceInsertCommand As New MySqlCommand("INSERT INTO bgms_certificate (`cert_track_id`, `cert_name`, `cert_purok`, `cert_purpose`, `request_date`, `status`) VALUES (@cti, @cn ,@cp, @cpp, @rq, @stat)", cn)
+        clearanceInsertCommand.Parameters.Add("@cti", MySqlDbType.VarChar).Value = txtbox_certTI.Text
+        clearanceInsertCommand.Parameters.Add("@cn", MySqlDbType.VarChar).Value = txtbox_certName.Text
+        clearanceInsertCommand.Parameters.Add("@cp", MySqlDbType.VarChar).Value = txtbox_certPurok.Text
+        clearanceInsertCommand.Parameters.Add("@cpp", MySqlDbType.VarChar).Value = txtbox_certPurpose.Text
+        clearanceInsertCommand.Parameters.Add("@rq", MySqlDbType.VarChar).Value = currentDate
+        clearanceInsertCommand.Parameters.Add("@stat", MySqlDbType.VarChar).Value = "Pending"
+
+        Try
+            If clearanceInsertCommand.ExecuteNonQuery() = 1 Then
+                MsgBox("Data inserted successfully", vbInformation, "Success")
+            Else
+                MsgBox("Error inserting data", vbCritical, "Failure")
+            End If
+        Catch ex As Exception
+            MsgBox("Error inserting data: " & ex.Message, vbCritical, "Failure")
+        Finally
+            cn.Close()
+            ClearTextBox()
+            GenerateID()
+        End Try
+    End Sub
+
+    Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles MetroButton3.Click
+        Clipboard.SetText(txtbox_certTI.Text)
+        MsgBox("Track ID copied to clipboard", vbInformation, "Notice")
+    End Sub
+
+    Private Sub MetroButton5_Click_1(sender As Object, e As EventArgs) Handles MetroButton5.Click
+        Clipboard.SetText(txtbox_trackID.Text)
+        MsgBox("Track ID copied to clipboard", vbInformation, "Notice")
+    End Sub
+
+    Private Sub MetroButton4_Click_1(sender As Object, e As EventArgs) Handles MetroButton4.Click
+        Clipboard.SetText(txtbox_clearance.Text)
+        MsgBox("Track ID copied to clipboard", vbInformation, "Notice")
+    End Sub
+
+    Private Sub MetroTextBox1_Click(sender As Object, e As EventArgs) Handles MetroTextBox1.TextChanged
+        cn.Open()
+        Dim searchTerm As String = MetroTextBox1.Text
+        Dim query As String = "
+            SELECT clearance_name AS name, 'Barangay Clearance' AS document_type, clearance_track_id AS tracking_code, request_date, status
+            FROM bgms_clearance
+            WHERE clearance_track_id LIKE @searchTerm OR clearance_name LIKE @searchTerm
+
+            UNION ALL 
+
+            SELECT cert_name AS name, 'Barangay Certificate' AS document_type, cert_track_id AS tracking_code, request_date, status
+            FROM bgms_certificate
+            WHERE cert_track_id LIKE @searchTerm OR cert_name LIKE @searchTerm
+
+            UNION ALL 
+
+            SELECT bc_owner_name AS name, 'Business Clearance' AS document_type, bc_track_id AS tracking_code, request_date, status
+            FROM bgms_bus_clearance
+            WHERE bc_track_id LIKE @searchTerm OR bc_owner_name LIKE @searchTerm
+        "
+
+        Dim command As New MySqlCommand(query, cn)
+        command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+        Dim dr As MySqlDataReader = command.ExecuteReader()
+
+        DataGridView1.Rows.Clear()
+
+        While dr.Read()
+            DataGridView1.Rows.Add(dr("name"), dr("document_type"), dr("tracking_code"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), dr("status"))
+        End While
+
+        dr.Close()
+        command.Dispose()
+        cn.Close()
+    End Sub
 End Class

@@ -38,42 +38,42 @@ Partial Class Login
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtbox_certPurpose = New System.Windows.Forms.RichTextBox()
+        Me.txtbox_certPurok = New MetroFramework.Controls.MetroComboBox()
+        Me.txtbox_certName = New MetroFramework.Controls.MetroTextBox()
+        Me.txtbox_certTI = New MetroFramework.Controls.MetroTextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ClearancePnl = New MetroFramework.Controls.MetroPanel()
-        Me.MetroTextBox6 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtbox_clearanceAge = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox4 = New MetroFramework.Controls.MetroComboBox()
+        Me.cb_clearanceSex = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox3 = New MetroFramework.Controls.MetroComboBox()
+        Me.cb_clearanceCS = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton8 = New MetroFramework.Controls.MetroButton()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.MetroComboBox2 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroTextBox4 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtbox_clearancePurp = New System.Windows.Forms.RichTextBox()
+        Me.cb_clearancePurok = New MetroFramework.Controls.MetroComboBox()
+        Me.txtbox_clearanceName = New MetroFramework.Controls.MetroTextBox()
+        Me.txtbox_clearance = New MetroFramework.Controls.MetroTextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.busClearancePnl = New MetroFramework.Controls.MetroPanel()
         Me.MetroLabel22 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox9 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtbox_ownerName = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel21 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton6 = New MetroFramework.Controls.MetroButton()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.MetroTextBox7 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox8 = New MetroFramework.Controls.MetroTextBox()
+        Me.btn_submitBus = New MetroFramework.Controls.MetroButton()
+        Me.txtbox_busAd = New System.Windows.Forms.RichTextBox()
+        Me.txtbox_busName = New MetroFramework.Controls.MetroTextBox()
+        Me.txtbox_trackID = New MetroFramework.Controls.MetroTextBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ConfigPnl = New MetroFramework.Controls.MetroPanel()
@@ -263,7 +263,7 @@ Partial Class Login
         Me.Label4.Location = New System.Drawing.Point(28, 146)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(458, 50)
+        Me.Label4.Size = New System.Drawing.Size(340, 34)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "           Please enter your login information to access " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "admin panel."
         '
@@ -275,7 +275,7 @@ Partial Class Login
         Me.Label3.Location = New System.Drawing.Point(24, 60)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(307, 44)
+        Me.Label3.Size = New System.Drawing.Size(211, 30)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Login to System"
         '
@@ -299,10 +299,10 @@ Partial Class Login
         Me.brgyCertPnl.Controls.Add(Me.MetroLabel6)
         Me.brgyCertPnl.Controls.Add(Me.MetroButton3)
         Me.brgyCertPnl.Controls.Add(Me.MetroButton2)
-        Me.brgyCertPnl.Controls.Add(Me.RichTextBox1)
-        Me.brgyCertPnl.Controls.Add(Me.MetroComboBox1)
-        Me.brgyCertPnl.Controls.Add(Me.MetroTextBox3)
-        Me.brgyCertPnl.Controls.Add(Me.MetroTextBox2)
+        Me.brgyCertPnl.Controls.Add(Me.txtbox_certPurpose)
+        Me.brgyCertPnl.Controls.Add(Me.txtbox_certPurok)
+        Me.brgyCertPnl.Controls.Add(Me.txtbox_certName)
+        Me.brgyCertPnl.Controls.Add(Me.txtbox_certTI)
         Me.brgyCertPnl.Controls.Add(Me.Panel5)
         Me.brgyCertPnl.HorizontalScrollbarBarColor = True
         Me.brgyCertPnl.HorizontalScrollbarHighlightOnWheel = False
@@ -377,94 +377,94 @@ Partial Class Login
         Me.MetroButton2.Text = "Submit"
         Me.MetroButton2.UseSelectable = True
         '
-        'RichTextBox1
+        'txtbox_certPurpose
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(28, 351)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(445, 270)
-        Me.RichTextBox1.TabIndex = 17
-        Me.RichTextBox1.Text = ""
+        Me.txtbox_certPurpose.Location = New System.Drawing.Point(28, 351)
+        Me.txtbox_certPurpose.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_certPurpose.Name = "txtbox_certPurpose"
+        Me.txtbox_certPurpose.Size = New System.Drawing.Size(445, 270)
+        Me.txtbox_certPurpose.TabIndex = 17
+        Me.txtbox_certPurpose.Text = ""
         '
-        'MetroComboBox1
+        'txtbox_certPurok
         '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
-        Me.MetroComboBox1.Location = New System.Drawing.Point(104, 252)
-        Me.MetroComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(91, 29)
-        Me.MetroComboBox1.TabIndex = 16
-        Me.MetroComboBox1.UseSelectable = True
+        Me.txtbox_certPurok.FormattingEnabled = True
+        Me.txtbox_certPurok.ItemHeight = 23
+        Me.txtbox_certPurok.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
+        Me.txtbox_certPurok.Location = New System.Drawing.Point(104, 252)
+        Me.txtbox_certPurok.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_certPurok.Name = "txtbox_certPurok"
+        Me.txtbox_certPurok.Size = New System.Drawing.Size(91, 29)
+        Me.txtbox_certPurok.TabIndex = 16
+        Me.txtbox_certPurok.UseSelectable = True
         '
-        'MetroTextBox3
+        'txtbox_certName
         '
-        Me.MetroTextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_certName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox3.CustomButton.Image = Nothing
-        Me.MetroTextBox3.CustomButton.Location = New System.Drawing.Point(410, 1)
-        Me.MetroTextBox3.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox3.CustomButton.Name = ""
-        Me.MetroTextBox3.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox3.CustomButton.TabIndex = 1
-        Me.MetroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox3.CustomButton.UseSelectable = True
-        Me.MetroTextBox3.CustomButton.Visible = False
-        Me.MetroTextBox3.Lines = New String(-1) {}
-        Me.MetroTextBox3.Location = New System.Drawing.Point(28, 178)
-        Me.MetroTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox3.MaxLength = 32767
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox3.SelectedText = ""
-        Me.MetroTextBox3.SelectionLength = 0
-        Me.MetroTextBox3.SelectionStart = 0
-        Me.MetroTextBox3.ShortcutsEnabled = True
-        Me.MetroTextBox3.Size = New System.Drawing.Size(444, 35)
-        Me.MetroTextBox3.TabIndex = 15
-        Me.MetroTextBox3.UseSelectable = True
-        Me.MetroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox3.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_certName.CustomButton.Image = Nothing
+        Me.txtbox_certName.CustomButton.Location = New System.Drawing.Point(410, 1)
+        Me.txtbox_certName.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_certName.CustomButton.Name = ""
+        Me.txtbox_certName.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_certName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_certName.CustomButton.TabIndex = 1
+        Me.txtbox_certName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_certName.CustomButton.UseSelectable = True
+        Me.txtbox_certName.CustomButton.Visible = False
+        Me.txtbox_certName.Lines = New String(-1) {}
+        Me.txtbox_certName.Location = New System.Drawing.Point(28, 178)
+        Me.txtbox_certName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_certName.MaxLength = 32767
+        Me.txtbox_certName.Name = "txtbox_certName"
+        Me.txtbox_certName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_certName.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_certName.SelectedText = ""
+        Me.txtbox_certName.SelectionLength = 0
+        Me.txtbox_certName.SelectionStart = 0
+        Me.txtbox_certName.ShortcutsEnabled = True
+        Me.txtbox_certName.Size = New System.Drawing.Size(444, 35)
+        Me.txtbox_certName.TabIndex = 15
+        Me.txtbox_certName.UseSelectable = True
+        Me.txtbox_certName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_certName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'MetroTextBox2
+        'txtbox_certTI
         '
-        Me.MetroTextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_certTI.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox2.CustomButton.Image = Nothing
-        Me.MetroTextBox2.CustomButton.Location = New System.Drawing.Point(323, 1)
-        Me.MetroTextBox2.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox2.CustomButton.Name = ""
-        Me.MetroTextBox2.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox2.CustomButton.TabIndex = 1
-        Me.MetroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox2.CustomButton.UseSelectable = True
-        Me.MetroTextBox2.CustomButton.Visible = False
-        Me.MetroTextBox2.Lines = New String(-1) {}
-        Me.MetroTextBox2.Location = New System.Drawing.Point(28, 95)
-        Me.MetroTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox2.MaxLength = 32767
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox2.SelectedText = ""
-        Me.MetroTextBox2.SelectionLength = 0
-        Me.MetroTextBox2.SelectionStart = 0
-        Me.MetroTextBox2.ShortcutsEnabled = True
-        Me.MetroTextBox2.Size = New System.Drawing.Size(357, 35)
-        Me.MetroTextBox2.TabIndex = 14
-        Me.MetroTextBox2.UseSelectable = True
-        Me.MetroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox2.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_certTI.CustomButton.Image = Nothing
+        Me.txtbox_certTI.CustomButton.Location = New System.Drawing.Point(323, 1)
+        Me.txtbox_certTI.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_certTI.CustomButton.Name = ""
+        Me.txtbox_certTI.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_certTI.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_certTI.CustomButton.TabIndex = 1
+        Me.txtbox_certTI.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_certTI.CustomButton.UseSelectable = True
+        Me.txtbox_certTI.CustomButton.Visible = False
+        Me.txtbox_certTI.Lines = New String(-1) {}
+        Me.txtbox_certTI.Location = New System.Drawing.Point(28, 95)
+        Me.txtbox_certTI.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_certTI.MaxLength = 32767
+        Me.txtbox_certTI.Name = "txtbox_certTI"
+        Me.txtbox_certTI.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_certTI.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_certTI.SelectedText = ""
+        Me.txtbox_certTI.SelectionLength = 0
+        Me.txtbox_certTI.SelectionStart = 0
+        Me.txtbox_certTI.ShortcutsEnabled = True
+        Me.txtbox_certTI.Size = New System.Drawing.Size(357, 35)
+        Me.txtbox_certTI.TabIndex = 14
+        Me.txtbox_certTI.UseSelectable = True
+        Me.txtbox_certTI.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_certTI.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Panel5
         '
@@ -489,22 +489,22 @@ Partial Class Login
         'ClearancePnl
         '
         Me.ClearancePnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ClearancePnl.Controls.Add(Me.MetroTextBox6)
+        Me.ClearancePnl.Controls.Add(Me.txtbox_clearanceAge)
         Me.ClearancePnl.Controls.Add(Me.MetroLabel17)
         Me.ClearancePnl.Controls.Add(Me.MetroLabel16)
-        Me.ClearancePnl.Controls.Add(Me.MetroComboBox4)
+        Me.ClearancePnl.Controls.Add(Me.cb_clearanceSex)
         Me.ClearancePnl.Controls.Add(Me.MetroLabel15)
-        Me.ClearancePnl.Controls.Add(Me.MetroComboBox3)
+        Me.ClearancePnl.Controls.Add(Me.cb_clearanceCS)
         Me.ClearancePnl.Controls.Add(Me.MetroLabel11)
         Me.ClearancePnl.Controls.Add(Me.MetroLabel12)
         Me.ClearancePnl.Controls.Add(Me.MetroLabel13)
         Me.ClearancePnl.Controls.Add(Me.MetroLabel14)
         Me.ClearancePnl.Controls.Add(Me.MetroButton4)
         Me.ClearancePnl.Controls.Add(Me.MetroButton8)
-        Me.ClearancePnl.Controls.Add(Me.RichTextBox2)
-        Me.ClearancePnl.Controls.Add(Me.MetroComboBox2)
-        Me.ClearancePnl.Controls.Add(Me.MetroTextBox4)
-        Me.ClearancePnl.Controls.Add(Me.MetroTextBox5)
+        Me.ClearancePnl.Controls.Add(Me.txtbox_clearancePurp)
+        Me.ClearancePnl.Controls.Add(Me.cb_clearancePurok)
+        Me.ClearancePnl.Controls.Add(Me.txtbox_clearanceName)
+        Me.ClearancePnl.Controls.Add(Me.txtbox_clearance)
         Me.ClearancePnl.Controls.Add(Me.Panel6)
         Me.ClearancePnl.HorizontalScrollbarBarColor = True
         Me.ClearancePnl.HorizontalScrollbarHighlightOnWheel = False
@@ -519,39 +519,39 @@ Partial Class Login
         Me.ClearancePnl.VerticalScrollbarSize = 15
         Me.ClearancePnl.Visible = False
         '
-        'MetroTextBox6
+        'txtbox_clearanceAge
         '
-        Me.MetroTextBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_clearanceAge.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox6.CustomButton.Image = Nothing
-        Me.MetroTextBox6.CustomButton.Location = New System.Drawing.Point(100, 1)
-        Me.MetroTextBox6.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox6.CustomButton.Name = ""
-        Me.MetroTextBox6.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox6.CustomButton.TabIndex = 1
-        Me.MetroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox6.CustomButton.UseSelectable = True
-        Me.MetroTextBox6.CustomButton.Visible = False
-        Me.MetroTextBox6.Lines = New String(-1) {}
-        Me.MetroTextBox6.Location = New System.Drawing.Point(141, 240)
-        Me.MetroTextBox6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox6.MaxLength = 32767
-        Me.MetroTextBox6.Name = "MetroTextBox6"
-        Me.MetroTextBox6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox6.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox6.SelectedText = ""
-        Me.MetroTextBox6.SelectionLength = 0
-        Me.MetroTextBox6.SelectionStart = 0
-        Me.MetroTextBox6.ShortcutsEnabled = True
-        Me.MetroTextBox6.Size = New System.Drawing.Size(134, 35)
-        Me.MetroTextBox6.TabIndex = 30
-        Me.MetroTextBox6.UseSelectable = True
-        Me.MetroTextBox6.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox6.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_clearanceAge.CustomButton.Image = Nothing
+        Me.txtbox_clearanceAge.CustomButton.Location = New System.Drawing.Point(100, 1)
+        Me.txtbox_clearanceAge.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_clearanceAge.CustomButton.Name = ""
+        Me.txtbox_clearanceAge.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_clearanceAge.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_clearanceAge.CustomButton.TabIndex = 1
+        Me.txtbox_clearanceAge.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_clearanceAge.CustomButton.UseSelectable = True
+        Me.txtbox_clearanceAge.CustomButton.Visible = False
+        Me.txtbox_clearanceAge.Lines = New String(-1) {}
+        Me.txtbox_clearanceAge.Location = New System.Drawing.Point(141, 240)
+        Me.txtbox_clearanceAge.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_clearanceAge.MaxLength = 32767
+        Me.txtbox_clearanceAge.Name = "txtbox_clearanceAge"
+        Me.txtbox_clearanceAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_clearanceAge.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_clearanceAge.SelectedText = ""
+        Me.txtbox_clearanceAge.SelectionLength = 0
+        Me.txtbox_clearanceAge.SelectionStart = 0
+        Me.txtbox_clearanceAge.ShortcutsEnabled = True
+        Me.txtbox_clearanceAge.Size = New System.Drawing.Size(134, 35)
+        Me.txtbox_clearanceAge.TabIndex = 30
+        Me.txtbox_clearanceAge.UseSelectable = True
+        Me.txtbox_clearanceAge.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_clearanceAge.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'MetroLabel17
         '
@@ -573,17 +573,17 @@ Partial Class Login
         Me.MetroLabel16.TabIndex = 27
         Me.MetroLabel16.Text = "Sex:"
         '
-        'MetroComboBox4
+        'cb_clearanceSex
         '
-        Me.MetroComboBox4.FormattingEnabled = True
-        Me.MetroComboBox4.ItemHeight = 23
-        Me.MetroComboBox4.Items.AddRange(New Object() {"Male", "Female"})
-        Me.MetroComboBox4.Location = New System.Drawing.Point(374, 235)
-        Me.MetroComboBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroComboBox4.Name = "MetroComboBox4"
-        Me.MetroComboBox4.Size = New System.Drawing.Size(91, 29)
-        Me.MetroComboBox4.TabIndex = 26
-        Me.MetroComboBox4.UseSelectable = True
+        Me.cb_clearanceSex.FormattingEnabled = True
+        Me.cb_clearanceSex.ItemHeight = 23
+        Me.cb_clearanceSex.Items.AddRange(New Object() {"Male", "Female"})
+        Me.cb_clearanceSex.Location = New System.Drawing.Point(374, 235)
+        Me.cb_clearanceSex.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.cb_clearanceSex.Name = "cb_clearanceSex"
+        Me.cb_clearanceSex.Size = New System.Drawing.Size(91, 29)
+        Me.cb_clearanceSex.TabIndex = 26
+        Me.cb_clearanceSex.UseSelectable = True
         '
         'MetroLabel15
         '
@@ -595,17 +595,17 @@ Partial Class Login
         Me.MetroLabel15.TabIndex = 25
         Me.MetroLabel15.Text = "Civil Status:"
         '
-        'MetroComboBox3
+        'cb_clearanceCS
         '
-        Me.MetroComboBox3.FormattingEnabled = True
-        Me.MetroComboBox3.ItemHeight = 23
-        Me.MetroComboBox3.Items.AddRange(New Object() {"Single", "Married", "Widowed", "Partners"})
-        Me.MetroComboBox3.Location = New System.Drawing.Point(142, 314)
-        Me.MetroComboBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroComboBox3.Name = "MetroComboBox3"
-        Me.MetroComboBox3.Size = New System.Drawing.Size(128, 29)
-        Me.MetroComboBox3.TabIndex = 24
-        Me.MetroComboBox3.UseSelectable = True
+        Me.cb_clearanceCS.FormattingEnabled = True
+        Me.cb_clearanceCS.ItemHeight = 23
+        Me.cb_clearanceCS.Items.AddRange(New Object() {"Single", "Married", "Widowed", "Partners"})
+        Me.cb_clearanceCS.Location = New System.Drawing.Point(142, 314)
+        Me.cb_clearanceCS.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.cb_clearanceCS.Name = "cb_clearanceCS"
+        Me.cb_clearanceCS.Size = New System.Drawing.Size(128, 29)
+        Me.cb_clearanceCS.TabIndex = 24
+        Me.cb_clearanceCS.UseSelectable = True
         '
         'MetroLabel11
         '
@@ -667,94 +667,94 @@ Partial Class Login
         Me.MetroButton8.Text = "Submit"
         Me.MetroButton8.UseSelectable = True
         '
-        'RichTextBox2
+        'txtbox_clearancePurp
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(28, 405)
-        Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(445, 270)
-        Me.RichTextBox2.TabIndex = 17
-        Me.RichTextBox2.Text = ""
+        Me.txtbox_clearancePurp.Location = New System.Drawing.Point(28, 405)
+        Me.txtbox_clearancePurp.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_clearancePurp.Name = "txtbox_clearancePurp"
+        Me.txtbox_clearancePurp.Size = New System.Drawing.Size(445, 270)
+        Me.txtbox_clearancePurp.TabIndex = 17
+        Me.txtbox_clearancePurp.Text = ""
         '
-        'MetroComboBox2
+        'cb_clearancePurok
         '
-        Me.MetroComboBox2.FormattingEnabled = True
-        Me.MetroComboBox2.ItemHeight = 23
-        Me.MetroComboBox2.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
-        Me.MetroComboBox2.Location = New System.Drawing.Point(374, 314)
-        Me.MetroComboBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroComboBox2.Name = "MetroComboBox2"
-        Me.MetroComboBox2.Size = New System.Drawing.Size(91, 29)
-        Me.MetroComboBox2.TabIndex = 16
-        Me.MetroComboBox2.UseSelectable = True
+        Me.cb_clearancePurok.FormattingEnabled = True
+        Me.cb_clearancePurok.ItemHeight = 23
+        Me.cb_clearancePurok.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
+        Me.cb_clearancePurok.Location = New System.Drawing.Point(374, 314)
+        Me.cb_clearancePurok.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.cb_clearancePurok.Name = "cb_clearancePurok"
+        Me.cb_clearancePurok.Size = New System.Drawing.Size(91, 29)
+        Me.cb_clearancePurok.TabIndex = 16
+        Me.cb_clearancePurok.UseSelectable = True
         '
-        'MetroTextBox4
+        'txtbox_clearanceName
         '
-        Me.MetroTextBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_clearanceName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox4.CustomButton.Image = Nothing
-        Me.MetroTextBox4.CustomButton.Location = New System.Drawing.Point(410, 1)
-        Me.MetroTextBox4.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox4.CustomButton.Name = ""
-        Me.MetroTextBox4.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox4.CustomButton.TabIndex = 1
-        Me.MetroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox4.CustomButton.UseSelectable = True
-        Me.MetroTextBox4.CustomButton.Visible = False
-        Me.MetroTextBox4.Lines = New String(-1) {}
-        Me.MetroTextBox4.Location = New System.Drawing.Point(28, 178)
-        Me.MetroTextBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox4.MaxLength = 32767
-        Me.MetroTextBox4.Name = "MetroTextBox4"
-        Me.MetroTextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox4.SelectedText = ""
-        Me.MetroTextBox4.SelectionLength = 0
-        Me.MetroTextBox4.SelectionStart = 0
-        Me.MetroTextBox4.ShortcutsEnabled = True
-        Me.MetroTextBox4.Size = New System.Drawing.Size(444, 35)
-        Me.MetroTextBox4.TabIndex = 15
-        Me.MetroTextBox4.UseSelectable = True
-        Me.MetroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox4.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_clearanceName.CustomButton.Image = Nothing
+        Me.txtbox_clearanceName.CustomButton.Location = New System.Drawing.Point(410, 1)
+        Me.txtbox_clearanceName.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_clearanceName.CustomButton.Name = ""
+        Me.txtbox_clearanceName.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_clearanceName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_clearanceName.CustomButton.TabIndex = 1
+        Me.txtbox_clearanceName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_clearanceName.CustomButton.UseSelectable = True
+        Me.txtbox_clearanceName.CustomButton.Visible = False
+        Me.txtbox_clearanceName.Lines = New String(-1) {}
+        Me.txtbox_clearanceName.Location = New System.Drawing.Point(28, 178)
+        Me.txtbox_clearanceName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_clearanceName.MaxLength = 32767
+        Me.txtbox_clearanceName.Name = "txtbox_clearanceName"
+        Me.txtbox_clearanceName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_clearanceName.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_clearanceName.SelectedText = ""
+        Me.txtbox_clearanceName.SelectionLength = 0
+        Me.txtbox_clearanceName.SelectionStart = 0
+        Me.txtbox_clearanceName.ShortcutsEnabled = True
+        Me.txtbox_clearanceName.Size = New System.Drawing.Size(444, 35)
+        Me.txtbox_clearanceName.TabIndex = 15
+        Me.txtbox_clearanceName.UseSelectable = True
+        Me.txtbox_clearanceName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_clearanceName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'MetroTextBox5
+        'txtbox_clearance
         '
-        Me.MetroTextBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_clearance.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox5.CustomButton.Image = Nothing
-        Me.MetroTextBox5.CustomButton.Location = New System.Drawing.Point(323, 1)
-        Me.MetroTextBox5.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox5.CustomButton.Name = ""
-        Me.MetroTextBox5.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox5.CustomButton.TabIndex = 1
-        Me.MetroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox5.CustomButton.UseSelectable = True
-        Me.MetroTextBox5.CustomButton.Visible = False
-        Me.MetroTextBox5.Lines = New String(-1) {}
-        Me.MetroTextBox5.Location = New System.Drawing.Point(28, 95)
-        Me.MetroTextBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox5.MaxLength = 32767
-        Me.MetroTextBox5.Name = "MetroTextBox5"
-        Me.MetroTextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox5.SelectedText = ""
-        Me.MetroTextBox5.SelectionLength = 0
-        Me.MetroTextBox5.SelectionStart = 0
-        Me.MetroTextBox5.ShortcutsEnabled = True
-        Me.MetroTextBox5.Size = New System.Drawing.Size(357, 35)
-        Me.MetroTextBox5.TabIndex = 14
-        Me.MetroTextBox5.UseSelectable = True
-        Me.MetroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox5.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_clearance.CustomButton.Image = Nothing
+        Me.txtbox_clearance.CustomButton.Location = New System.Drawing.Point(323, 1)
+        Me.txtbox_clearance.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_clearance.CustomButton.Name = ""
+        Me.txtbox_clearance.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_clearance.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_clearance.CustomButton.TabIndex = 1
+        Me.txtbox_clearance.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_clearance.CustomButton.UseSelectable = True
+        Me.txtbox_clearance.CustomButton.Visible = False
+        Me.txtbox_clearance.Lines = New String(-1) {}
+        Me.txtbox_clearance.Location = New System.Drawing.Point(28, 95)
+        Me.txtbox_clearance.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_clearance.MaxLength = 32767
+        Me.txtbox_clearance.Name = "txtbox_clearance"
+        Me.txtbox_clearance.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_clearance.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_clearance.SelectedText = ""
+        Me.txtbox_clearance.SelectionLength = 0
+        Me.txtbox_clearance.SelectionStart = 0
+        Me.txtbox_clearance.ShortcutsEnabled = True
+        Me.txtbox_clearance.Size = New System.Drawing.Size(357, 35)
+        Me.txtbox_clearance.TabIndex = 14
+        Me.txtbox_clearance.UseSelectable = True
+        Me.txtbox_clearance.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_clearance.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Panel6
         '
@@ -781,14 +781,14 @@ Partial Class Login
         Me.busClearancePnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.busClearancePnl.Controls.Add(Me.MetroLabel22)
         Me.busClearancePnl.Controls.Add(Me.MetroLabel19)
-        Me.busClearancePnl.Controls.Add(Me.MetroTextBox9)
+        Me.busClearancePnl.Controls.Add(Me.txtbox_ownerName)
         Me.busClearancePnl.Controls.Add(Me.MetroLabel20)
         Me.busClearancePnl.Controls.Add(Me.MetroLabel21)
         Me.busClearancePnl.Controls.Add(Me.MetroButton5)
-        Me.busClearancePnl.Controls.Add(Me.MetroButton6)
-        Me.busClearancePnl.Controls.Add(Me.RichTextBox3)
-        Me.busClearancePnl.Controls.Add(Me.MetroTextBox7)
-        Me.busClearancePnl.Controls.Add(Me.MetroTextBox8)
+        Me.busClearancePnl.Controls.Add(Me.btn_submitBus)
+        Me.busClearancePnl.Controls.Add(Me.txtbox_busAd)
+        Me.busClearancePnl.Controls.Add(Me.txtbox_busName)
+        Me.busClearancePnl.Controls.Add(Me.txtbox_trackID)
         Me.busClearancePnl.Controls.Add(Me.Panel7)
         Me.busClearancePnl.HorizontalScrollbarBarColor = True
         Me.busClearancePnl.HorizontalScrollbarHighlightOnWheel = False
@@ -823,39 +823,39 @@ Partial Class Login
         Me.MetroLabel19.TabIndex = 25
         Me.MetroLabel19.Text = "Name of Owner"
         '
-        'MetroTextBox9
+        'txtbox_ownerName
         '
-        Me.MetroTextBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_ownerName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox9.CustomButton.Image = Nothing
-        Me.MetroTextBox9.CustomButton.Location = New System.Drawing.Point(410, 1)
-        Me.MetroTextBox9.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox9.CustomButton.Name = ""
-        Me.MetroTextBox9.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox9.CustomButton.TabIndex = 1
-        Me.MetroTextBox9.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox9.CustomButton.UseSelectable = True
-        Me.MetroTextBox9.CustomButton.Visible = False
-        Me.MetroTextBox9.Lines = New String(-1) {}
-        Me.MetroTextBox9.Location = New System.Drawing.Point(28, 266)
-        Me.MetroTextBox9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox9.MaxLength = 32767
-        Me.MetroTextBox9.Name = "MetroTextBox9"
-        Me.MetroTextBox9.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox9.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox9.SelectedText = ""
-        Me.MetroTextBox9.SelectionLength = 0
-        Me.MetroTextBox9.SelectionStart = 0
-        Me.MetroTextBox9.ShortcutsEnabled = True
-        Me.MetroTextBox9.Size = New System.Drawing.Size(444, 35)
-        Me.MetroTextBox9.TabIndex = 24
-        Me.MetroTextBox9.UseSelectable = True
-        Me.MetroTextBox9.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox9.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_ownerName.CustomButton.Image = Nothing
+        Me.txtbox_ownerName.CustomButton.Location = New System.Drawing.Point(410, 1)
+        Me.txtbox_ownerName.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_ownerName.CustomButton.Name = ""
+        Me.txtbox_ownerName.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_ownerName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_ownerName.CustomButton.TabIndex = 1
+        Me.txtbox_ownerName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_ownerName.CustomButton.UseSelectable = True
+        Me.txtbox_ownerName.CustomButton.Visible = False
+        Me.txtbox_ownerName.Lines = New String(-1) {}
+        Me.txtbox_ownerName.Location = New System.Drawing.Point(28, 266)
+        Me.txtbox_ownerName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_ownerName.MaxLength = 32767
+        Me.txtbox_ownerName.Name = "txtbox_ownerName"
+        Me.txtbox_ownerName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_ownerName.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_ownerName.SelectedText = ""
+        Me.txtbox_ownerName.SelectionLength = 0
+        Me.txtbox_ownerName.SelectionStart = 0
+        Me.txtbox_ownerName.ShortcutsEnabled = True
+        Me.txtbox_ownerName.Size = New System.Drawing.Size(444, 35)
+        Me.txtbox_ownerName.TabIndex = 24
+        Me.txtbox_ownerName.UseSelectable = True
+        Me.txtbox_ownerName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_ownerName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'MetroLabel20
         '
@@ -887,92 +887,92 @@ Partial Class Login
         Me.MetroButton5.Text = "Copy"
         Me.MetroButton5.UseSelectable = True
         '
-        'MetroButton6
+        'btn_submitBus
         '
-        Me.MetroButton6.Location = New System.Drawing.Point(28, 568)
-        Me.MetroButton6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroButton6.Name = "MetroButton6"
-        Me.MetroButton6.Size = New System.Drawing.Size(132, 40)
-        Me.MetroButton6.TabIndex = 18
-        Me.MetroButton6.Text = "Submit"
-        Me.MetroButton6.UseSelectable = True
+        Me.btn_submitBus.Location = New System.Drawing.Point(28, 568)
+        Me.btn_submitBus.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btn_submitBus.Name = "btn_submitBus"
+        Me.btn_submitBus.Size = New System.Drawing.Size(132, 40)
+        Me.btn_submitBus.TabIndex = 18
+        Me.btn_submitBus.Text = "Submit"
+        Me.btn_submitBus.UseSelectable = True
         '
-        'RichTextBox3
+        'txtbox_busAd
         '
-        Me.RichTextBox3.Location = New System.Drawing.Point(28, 351)
-        Me.RichTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(445, 206)
-        Me.RichTextBox3.TabIndex = 17
-        Me.RichTextBox3.Text = ""
+        Me.txtbox_busAd.Location = New System.Drawing.Point(28, 351)
+        Me.txtbox_busAd.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_busAd.Name = "txtbox_busAd"
+        Me.txtbox_busAd.Size = New System.Drawing.Size(445, 206)
+        Me.txtbox_busAd.TabIndex = 17
+        Me.txtbox_busAd.Text = ""
         '
-        'MetroTextBox7
+        'txtbox_busName
         '
-        Me.MetroTextBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_busName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox7.CustomButton.Image = Nothing
-        Me.MetroTextBox7.CustomButton.Location = New System.Drawing.Point(410, 1)
-        Me.MetroTextBox7.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox7.CustomButton.Name = ""
-        Me.MetroTextBox7.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox7.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox7.CustomButton.TabIndex = 1
-        Me.MetroTextBox7.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox7.CustomButton.UseSelectable = True
-        Me.MetroTextBox7.CustomButton.Visible = False
-        Me.MetroTextBox7.Lines = New String(-1) {}
-        Me.MetroTextBox7.Location = New System.Drawing.Point(28, 180)
-        Me.MetroTextBox7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox7.MaxLength = 32767
-        Me.MetroTextBox7.Name = "MetroTextBox7"
-        Me.MetroTextBox7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox7.SelectedText = ""
-        Me.MetroTextBox7.SelectionLength = 0
-        Me.MetroTextBox7.SelectionStart = 0
-        Me.MetroTextBox7.ShortcutsEnabled = True
-        Me.MetroTextBox7.Size = New System.Drawing.Size(444, 35)
-        Me.MetroTextBox7.TabIndex = 15
-        Me.MetroTextBox7.UseSelectable = True
-        Me.MetroTextBox7.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox7.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_busName.CustomButton.Image = Nothing
+        Me.txtbox_busName.CustomButton.Location = New System.Drawing.Point(410, 1)
+        Me.txtbox_busName.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_busName.CustomButton.Name = ""
+        Me.txtbox_busName.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_busName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_busName.CustomButton.TabIndex = 1
+        Me.txtbox_busName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_busName.CustomButton.UseSelectable = True
+        Me.txtbox_busName.CustomButton.Visible = False
+        Me.txtbox_busName.Lines = New String(-1) {}
+        Me.txtbox_busName.Location = New System.Drawing.Point(28, 180)
+        Me.txtbox_busName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_busName.MaxLength = 32767
+        Me.txtbox_busName.Name = "txtbox_busName"
+        Me.txtbox_busName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_busName.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_busName.SelectedText = ""
+        Me.txtbox_busName.SelectionLength = 0
+        Me.txtbox_busName.SelectionStart = 0
+        Me.txtbox_busName.ShortcutsEnabled = True
+        Me.txtbox_busName.Size = New System.Drawing.Size(444, 35)
+        Me.txtbox_busName.TabIndex = 15
+        Me.txtbox_busName.UseSelectable = True
+        Me.txtbox_busName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_busName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'MetroTextBox8
+        'txtbox_trackID
         '
-        Me.MetroTextBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtbox_trackID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox8.CustomButton.Image = Nothing
-        Me.MetroTextBox8.CustomButton.Location = New System.Drawing.Point(323, 1)
-        Me.MetroTextBox8.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox8.CustomButton.Name = ""
-        Me.MetroTextBox8.CustomButton.Size = New System.Drawing.Size(33, 33)
-        Me.MetroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox8.CustomButton.TabIndex = 1
-        Me.MetroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox8.CustomButton.UseSelectable = True
-        Me.MetroTextBox8.CustomButton.Visible = False
-        Me.MetroTextBox8.Lines = New String(-1) {}
-        Me.MetroTextBox8.Location = New System.Drawing.Point(28, 97)
-        Me.MetroTextBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MetroTextBox8.MaxLength = 32767
-        Me.MetroTextBox8.Name = "MetroTextBox8"
-        Me.MetroTextBox8.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox8.SelectedText = ""
-        Me.MetroTextBox8.SelectionLength = 0
-        Me.MetroTextBox8.SelectionStart = 0
-        Me.MetroTextBox8.ShortcutsEnabled = True
-        Me.MetroTextBox8.Size = New System.Drawing.Size(357, 35)
-        Me.MetroTextBox8.TabIndex = 14
-        Me.MetroTextBox8.UseSelectable = True
-        Me.MetroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox8.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtbox_trackID.CustomButton.Image = Nothing
+        Me.txtbox_trackID.CustomButton.Location = New System.Drawing.Point(323, 1)
+        Me.txtbox_trackID.CustomButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_trackID.CustomButton.Name = ""
+        Me.txtbox_trackID.CustomButton.Size = New System.Drawing.Size(33, 33)
+        Me.txtbox_trackID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtbox_trackID.CustomButton.TabIndex = 1
+        Me.txtbox_trackID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtbox_trackID.CustomButton.UseSelectable = True
+        Me.txtbox_trackID.CustomButton.Visible = False
+        Me.txtbox_trackID.Lines = New String(-1) {}
+        Me.txtbox_trackID.Location = New System.Drawing.Point(28, 97)
+        Me.txtbox_trackID.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtbox_trackID.MaxLength = 32767
+        Me.txtbox_trackID.Name = "txtbox_trackID"
+        Me.txtbox_trackID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtbox_trackID.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtbox_trackID.SelectedText = ""
+        Me.txtbox_trackID.SelectionLength = 0
+        Me.txtbox_trackID.SelectionStart = 0
+        Me.txtbox_trackID.ShortcutsEnabled = True
+        Me.txtbox_trackID.Size = New System.Drawing.Size(357, 35)
+        Me.txtbox_trackID.TabIndex = 14
+        Me.txtbox_trackID.UseSelectable = True
+        Me.txtbox_trackID.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtbox_trackID.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Panel7
         '
@@ -1332,7 +1332,7 @@ Partial Class Login
         Me.Column3.HeaderText = "Tracking Code"
         Me.Column3.MinimumWidth = 8
         Me.Column3.Name = "Column3"
-        Me.Column3.Width = 135
+        Me.Column3.Width = 124
         '
         'Column4
         '
@@ -1340,7 +1340,7 @@ Partial Class Login
         Me.Column4.HeaderText = "Date Requested"
         Me.Column4.MinimumWidth = 8
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 150
+        Me.Column4.Width = 139
         '
         'Column5
         '
@@ -1389,9 +1389,9 @@ Partial Class Login
         Me.MetroLabel10.Location = New System.Drawing.Point(30, 62)
         Me.MetroLabel10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(92, 19)
+        Me.MetroLabel10.Size = New System.Drawing.Size(213, 19)
         Me.MetroLabel10.TabIndex = 8
-        Me.MetroLabel10.Text = "Tracking Code"
+        Me.MetroLabel10.Text = "Search for Tracking Code or Name"
         '
         'Panel4
         '
@@ -1415,10 +1415,10 @@ Partial Class Login
         '
         'LobbyPnl
         '
-        Me.LobbyPnl.Controls.Add(Me.ConfigPnl)
-        Me.LobbyPnl.Controls.Add(Me.busClearancePnl)
         Me.LobbyPnl.Controls.Add(Me.ClearancePnl)
+        Me.LobbyPnl.Controls.Add(Me.busClearancePnl)
         Me.LobbyPnl.Controls.Add(Me.brgyCertPnl)
+        Me.LobbyPnl.Controls.Add(Me.ConfigPnl)
         Me.LobbyPnl.Controls.Add(Me.loginPnl)
         Me.LobbyPnl.Controls.Add(Me.requestPnl)
         Me.LobbyPnl.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1620,42 +1620,42 @@ Partial Class Login
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtbox_certPurpose As RichTextBox
+    Friend WithEvents txtbox_certPurok As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents txtbox_certName As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtbox_certTI As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents ClearancePnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents MetroTextBox6 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtbox_clearanceAge As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox4 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents cb_clearanceSex As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox3 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents cb_clearanceCS As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton4 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton8 As MetroFramework.Controls.MetroButton
-    Friend WithEvents RichTextBox2 As RichTextBox
-    Friend WithEvents MetroComboBox2 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroTextBox4 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox5 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtbox_clearancePurp As RichTextBox
+    Friend WithEvents cb_clearancePurok As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents txtbox_clearanceName As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtbox_clearance As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label8 As Label
     Friend WithEvents busClearancePnl As MetroFramework.Controls.MetroPanel
     Friend WithEvents MetroLabel22 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox9 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtbox_ownerName As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel21 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton5 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton6 As MetroFramework.Controls.MetroButton
-    Friend WithEvents RichTextBox3 As RichTextBox
-    Friend WithEvents MetroTextBox7 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox8 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents btn_submitBus As MetroFramework.Controls.MetroButton
+    Friend WithEvents txtbox_busAd As RichTextBox
+    Friend WithEvents txtbox_busName As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtbox_trackID As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents ConfigPnl As MetroFramework.Controls.MetroPanel
