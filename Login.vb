@@ -193,7 +193,6 @@ Public Class Login
     End Sub
 
     Private Sub MetroButton1_Click_1(sender As Object, e As EventArgs) Handles login_btn.Click
-
         Dim command As New MySqlCommand("SELECT COUNT(*) FROM bgms_account WHERE acc_username = @username AND acc_password = @password", cn)
         command.Parameters.AddWithValue("@username", login_uname_txtbox.Text())
         command.Parameters.AddWithValue("@password", ComputeSHA256Hash(login_pword_txtbox.Text()))
@@ -213,6 +212,8 @@ Public Class Login
             MsgBox("Database error: " & ex.Message, vbCritical, "Failure")
         Catch ex As Exception
             MsgBox("Error: " & ex.Message, vbCritical, "Failure")
+        Finally
+            cn.Close()
         End Try
     End Sub
 

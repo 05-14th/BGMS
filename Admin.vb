@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports MySql.Data.MySqlClient
+Imports Mysqlx
 
 Public Class Admin
     Private Sub InitializeLogo()
@@ -7,6 +9,85 @@ Public Class Admin
         Dim fullPath As String = Path.Combine(logoFolderPath, My.Settings.LogoName)
         LoadImageToPictureBox(LogoSlot, fullPath)
     End Sub
+
+    Private Sub FetchClearance()
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_clearance.Rows.Clear()
+            Dim sqlQuery As String = "SELECT * FROM bgms_clearance"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                dgv_clearanceEdit.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchCertificate()
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_certificate.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_certificate"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                dgv_certificateEdit.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchBusClearance()
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_clearance.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_bus_clearance"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                dgv_bus_clearance.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                dgv_bus_clearanceEdit.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles upload_btn.Click
 
         Dim openFileDialog As New OpenFileDialog()
@@ -68,6 +149,7 @@ Public Class Admin
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        FetchClearance()
         clearance_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False)
         ToggleReports(True, False, False)
@@ -75,6 +157,7 @@ Public Class Admin
     End Sub
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        FetchCertificate()
         certificate_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False)
         ToggleReports(False, True, False)
@@ -82,6 +165,7 @@ Public Class Admin
     End Sub
 
     Private Sub BusinessClearanceToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BusinessClearanceToolStripMenuItem1.Click
+        FetchBusClearance()
         bus_clearance_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False)
         ToggleReports(False, False, True)
@@ -153,8 +237,8 @@ Public Class Admin
         Panel8.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellContentClick
-        If e.ColumnIndex = DataGridView4.Columns("actionBtn").Index AndAlso e.RowIndex >= 0 Then
+    Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_clearanceEdit.CellContentClick
+        If e.ColumnIndex = dgv_clearanceEdit.Columns("actionBtn").Index AndAlso e.RowIndex >= 0 Then
             bt_clearance_pnl.Controls.Add(actionModel)
             actionModel.Width = 410
             actionModel.Height = 430

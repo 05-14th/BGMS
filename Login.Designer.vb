@@ -263,7 +263,7 @@ Partial Class Login
         Me.Label4.Location = New System.Drawing.Point(28, 146)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(340, 34)
+        Me.Label4.Size = New System.Drawing.Size(458, 50)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "           Please enter your login information to access " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "admin panel."
         '
@@ -275,7 +275,7 @@ Partial Class Login
         Me.Label3.Location = New System.Drawing.Point(24, 60)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(211, 30)
+        Me.Label3.Size = New System.Drawing.Size(307, 44)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Login to System"
         '
@@ -1332,7 +1332,7 @@ Partial Class Login
         Me.Column3.HeaderText = "Tracking Code"
         Me.Column3.MinimumWidth = 8
         Me.Column3.Name = "Column3"
-        Me.Column3.Width = 124
+        Me.Column3.Width = 135
         '
         'Column4
         '
@@ -1340,7 +1340,7 @@ Partial Class Login
         Me.Column4.HeaderText = "Date Requested"
         Me.Column4.MinimumWidth = 8
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 139
+        Me.Column4.Width = 150
         '
         'Column5
         '
@@ -1571,7 +1571,6 @@ Partial Class Login
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.loginPnl.ResumeLayout(False)
         Me.loginPnl.PerformLayout()
