@@ -18,6 +18,8 @@ Public Class Admin
             End If
 
             dgv_clearance.Rows.Clear()
+            dgv_clearanceEdit.Rows.Clear()
+
             Dim sqlQuery As String = "SELECT * FROM bgms_clearance"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
@@ -43,6 +45,7 @@ Public Class Admin
             End If
 
             dgv_certificate.Rows.Clear()
+            dgv_certificateEdit.Rows.Clear()
 
             Dim sqlQuery As String = "SELECT * FROM bgms_certificate"
 
@@ -68,7 +71,8 @@ Public Class Admin
                 cn.Open()
             End If
 
-            dgv_clearance.Rows.Clear()
+            dgv_bus_clearance.Rows.Clear()
+            dgv_bus_clearanceEdit.Rows.Clear()
 
             Dim sqlQuery As String = "SELECT * FROM bgms_bus_clearance"
 
@@ -173,6 +177,7 @@ Public Class Admin
     End Sub
 
     Private Sub ClearanceToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ClearanceToolStripMenuItem.Click
+        FetchClearance()
         bt_clearance_pnl.Dock = DockStyle.Fill
         ToggleReports(False, False, False)
         ToggleBT(True, False, False)
@@ -180,6 +185,7 @@ Public Class Admin
     End Sub
 
     Private Sub CertificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificationToolStripMenuItem.Click
+        FetchCertificate()
         bt_certificate_pnl.Dock = DockStyle.Fill
         ToggleReports(False, False, False)
         ToggleBT(False, True, False)
@@ -187,6 +193,7 @@ Public Class Admin
     End Sub
 
     Private Sub BusinessClearanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusinessClearanceToolStripMenuItem.Click
+        FetchBusClearance()
         bt_bus_clearance.Dock = DockStyle.Fill
         ToggleReports(False, False, False)
         ToggleBT(False, False, True)
@@ -252,5 +259,7 @@ Public Class Admin
         End If
     End Sub
 
-
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+        actionModel.Visible = False
+    End Sub
 End Class

@@ -151,6 +151,12 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.actionBtn = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton6 = New MetroFramework.Controls.MetroButton()
+        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -177,6 +183,8 @@ Partial Class Admin
         Me.Panel6.SuspendLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.actionModel.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -1171,12 +1179,18 @@ Partial Class Admin
         '
         'actionModel
         '
+        Me.actionModel.Controls.Add(Me.RichTextBox4)
+        Me.actionModel.Controls.Add(Me.MetroButton6)
+        Me.actionModel.Controls.Add(Me.MetroButton5)
+        Me.actionModel.Controls.Add(Me.MetroButton4)
+        Me.actionModel.Controls.Add(Me.Panel4)
         Me.actionModel.HorizontalScrollbarBarColor = True
         Me.actionModel.HorizontalScrollbarHighlightOnWheel = False
         Me.actionModel.HorizontalScrollbarSize = 9
         Me.actionModel.Location = New System.Drawing.Point(264, 222)
         Me.actionModel.Name = "actionModel"
-        Me.actionModel.Size = New System.Drawing.Size(14, 99)
+        Me.actionModel.Padding = New System.Windows.Forms.Padding(4)
+        Me.actionModel.Size = New System.Drawing.Size(496, 400)
         Me.actionModel.TabIndex = 16
         Me.actionModel.VerticalScrollbarBarColor = True
         Me.actionModel.VerticalScrollbarHighlightOnWheel = False
@@ -1401,6 +1415,65 @@ Partial Class Admin
         Me.actionBtn.Name = "actionBtn"
         Me.actionBtn.Width = 60
         '
+        'MetroButton4
+        '
+        Me.MetroButton4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.MetroButton4.Location = New System.Drawing.Point(4, 351)
+        Me.MetroButton4.Name = "MetroButton4"
+        Me.MetroButton4.Size = New System.Drawing.Size(488, 45)
+        Me.MetroButton4.TabIndex = 4
+        Me.MetroButton4.Text = "Deny"
+        Me.MetroButton4.UseSelectable = True
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label15)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(4, 4)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(488, 73)
+        Me.Panel4.TabIndex = 2
+        '
+        'MetroButton5
+        '
+        Me.MetroButton5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.MetroButton5.Location = New System.Drawing.Point(4, 306)
+        Me.MetroButton5.Name = "MetroButton5"
+        Me.MetroButton5.Size = New System.Drawing.Size(488, 45)
+        Me.MetroButton5.TabIndex = 6
+        Me.MetroButton5.Text = "Archive"
+        Me.MetroButton5.UseSelectable = True
+        '
+        'MetroButton6
+        '
+        Me.MetroButton6.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.MetroButton6.Location = New System.Drawing.Point(4, 261)
+        Me.MetroButton6.Name = "MetroButton6"
+        Me.MetroButton6.Size = New System.Drawing.Size(488, 45)
+        Me.MetroButton6.TabIndex = 8
+        Me.MetroButton6.Text = "Grant"
+        Me.MetroButton6.UseSelectable = True
+        '
+        'RichTextBox4
+        '
+        Me.RichTextBox4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox4.Location = New System.Drawing.Point(4, 77)
+        Me.RichTextBox4.Name = "RichTextBox4"
+        Me.RichTextBox4.Size = New System.Drawing.Size(488, 184)
+        Me.RichTextBox4.TabIndex = 9
+        Me.RichTextBox4.Text = ""
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(463, 6)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(21, 20)
+        Me.Label15.TabIndex = 0
+        Me.Label15.Text = "X"
+        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -1460,6 +1533,9 @@ Partial Class Admin
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.actionModel.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1592,4 +1668,10 @@ Partial Class Admin
     Friend WithEvents DataGridViewTextBoxColumn30 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn31 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewImageColumn
+    Friend WithEvents MetroButton4 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroButton5 As MetroFramework.Controls.MetroButton
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents RichTextBox4 As RichTextBox
+    Friend WithEvents MetroButton6 As MetroFramework.Controls.MetroButton
+    Friend WithEvents Label15 As Label
 End Class
