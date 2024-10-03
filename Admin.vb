@@ -246,6 +246,7 @@ Public Class Admin
 
     Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_clearanceEdit.CellContentClick
         If e.ColumnIndex = dgv_clearanceEdit.Columns("actionBtn").Index AndAlso e.RowIndex >= 0 Then
+            showFullDetails("SELECT * FROM bgms_clearance")
             bt_clearance_pnl.Controls.Add(actionModel)
             actionModel.Width = 410
             actionModel.Height = 430
@@ -259,7 +260,80 @@ Public Class Admin
         End If
     End Sub
 
+    Private Sub showFullDetails(query As String)
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            Dim cm As New MySqlCommand(query, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+            Dim labels() As String
+
+            informationBox.Clear()
+
+            If query.Contains("bgms_clearance") Then
+                labels = {"Track ID: ", "Name: ", "Age: ", "Sex: ", "Civil Status: ", "Purok: ", "Purpose: ", "Request Date: ", "Status: "}
+            ElseIf query.Contains("bgms_certificate") Then
+                labels = {"Track ID: ", "Name: ", "Purok: ", "Purpose: ", "Request Date: ", "Status: "}
+            Else
+                labels = {"Track ID: ", "Business Name: ", "Business Owner: ", "Business Address: ", "Request Date: ", "Status: "}
+            End If
+
+            While dr.Read()
+                For i As Integer = 0 To dr.FieldCount - 1
+                    If TypeOf dr(i) Is DateTime Then
+                        Dim dateValue As DateTime = CType(dr(i), DateTime)
+                        informationBox.AppendText("Request Date: " & dateValue.ToString("yyyy-MM-dd"))
+                        informationBox.AppendText(Environment.NewLine)
+                    Else
+                        informationBox.AppendText(labels(i) & dr(i).ToString())
+                        informationBox.AppendText(Environment.NewLine)
+                    End If
+                Next
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
         actionModel.Visible = False
+    End Sub
+
+    Private Sub dgv_certificateEdit_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_certificateEdit.CellContentClick
+        If e.ColumnIndex = dgv_certificateEdit.Columns("actBtn").Index AndAlso e.RowIndex >= 0 Then
+            showFullDetails("SELECT * FROM bgms_certificate")
+            bt_certificate_pnl.Controls.Add(actionModel)
+            actionModel.Width = 410
+            actionModel.Height = 430
+            actionModel.Location = New Point(
+               bt_certificate_pnl.Width / 2 - actionModel.Size.Width / 2,
+               bt_certificate_pnl.Height / 2 - actionModel.Size.Height / 2
+            )
+            actionModel.Anchor = AnchorStyles.None
+            actionModel.Visible = True
+            actionModel.BringToFront()
+        End If
+    End Sub
+
+    Private Sub dgv_bus_clearanceEdit_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_bus_clearanceEdit.CellContentClick
+        If e.ColumnIndex = dgv_bus_clearanceEdit.Columns("actionButton").Index AndAlso e.RowIndex >= 0 Then
+            showFullDetails("SELECT * FROM bgms_bus_clearance")
+            bt_bus_clearance.Controls.Add(actionModel)
+            actionModel.Width = 410
+            actionModel.Height = 430
+            actionModel.Location = New Point(
+               bt_bus_clearance.Width / 2 - actionModel.Size.Width / 2,
+               bt_bus_clearance.Height / 2 - actionModel.Size.Height / 2
+            )
+            actionModel.Anchor = AnchorStyles.None
+            actionModel.Visible = True
+            actionModel.BringToFront()
+        End If
     End Sub
 End Class
