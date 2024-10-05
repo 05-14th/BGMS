@@ -52,7 +52,8 @@ Public Class Login
             clearance_name AS name, 
             'Barangay Clearance' AS document_type,
             clearance_track_id AS tracking_code,
-            request_date, 
+            request_date,
+            date_issued,
             status
         FROM 
             bgms_clearance 
@@ -64,6 +65,7 @@ Public Class Login
             'Barangay Certificate' AS document_type,
             cert_track_id AS tracking_code,
             request_date, 
+            date_issued,
             status 
         FROM 
             bgms_certificate 
@@ -75,6 +77,7 @@ Public Class Login
             'Business Clearance' AS document_type,
             bc_track_id AS tracking_code,
             request_date, 
+            date_issued,
             status
         FROM 
             bgms_bus_clearance;"
@@ -83,7 +86,11 @@ Public Class Login
             Dim dr As MySqlDataReader = cm.ExecuteReader()
 
             While dr.Read()
-                DataGridView1.Rows.Add(dr("name"), dr("document_type"), dr("tracking_code"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), dr("status"))
+                Try
+                    DataGridView1.Rows.Add(dr("name"), dr("document_type"), dr("tracking_code"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                Catch ex As System.InvalidCastException
+                    DataGridView1.Rows.Add(dr("name"), dr("document_type"), dr("tracking_code"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                End Try
             End While
 
             dr.Close()

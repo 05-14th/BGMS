@@ -92,11 +92,6 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.requestPnl = New MetroFramework.Controls.MetroPanel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -113,6 +108,12 @@ Partial Class Login
         Me.trackReqBtn = New MetroFramework.Controls.MetroButton()
         Me.configBtn = New MetroFramework.Controls.MetroButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.loginPnl.SuspendLayout()
         Me.brgyCertPnl.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -1304,50 +1305,13 @@ Partial Class Login
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column6, Me.Column5})
         Me.DataGridView1.Location = New System.Drawing.Point(30, 155)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.Size = New System.Drawing.Size(741, 639)
         Me.DataGridView1.TabIndex = 14
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "Name"
-        Me.Column1.MinimumWidth = 8
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "Document Type"
-        Me.Column2.MinimumWidth = 8
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.HeaderText = "Tracking Code"
-        Me.Column3.MinimumWidth = 8
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 135
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.HeaderText = "Date Requested"
-        Me.Column4.MinimumWidth = 8
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 150
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "Status"
-        Me.Column5.MinimumWidth = 8
-        Me.Column5.Name = "Column5"
         '
         'MetroTextBox1
         '
@@ -1559,6 +1523,51 @@ Partial Class Login
         Me.Panel1.Size = New System.Drawing.Size(300, 1050)
         Me.Panel1.TabIndex = 0
         '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "Name"
+        Me.Column1.MinimumWidth = 8
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "Document Type"
+        Me.Column2.MinimumWidth = 8
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.HeaderText = "Tracking Code"
+        Me.Column3.MinimumWidth = 8
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 147
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.HeaderText = "Date Requested"
+        Me.Column4.MinimumWidth = 8
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 150
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.HeaderText = "Date Issued"
+        Me.Column6.MinimumWidth = 8
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 122
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "Status"
+        Me.Column5.MinimumWidth = 8
+        Me.Column5.Name = "Column5"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -1673,11 +1682,6 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents requestPnl As MetroFramework.Controls.MetroPanel
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Panel4 As Panel
@@ -1694,4 +1698,10 @@ Partial Class Login
     Friend WithEvents trackReqBtn As MetroFramework.Controls.MetroButton
     Friend WithEvents configBtn As MetroFramework.Controls.MetroButton
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

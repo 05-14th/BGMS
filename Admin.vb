@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 Imports Mysqlx
 
 Public Class Admin
+    Private documentType As String
     Private Sub InitializeLogo()
         Dim imagePath As String = Application.StartupPath
         Dim logoFolderPath As String = Path.Combine(imagePath, "Logo")
@@ -26,7 +27,13 @@ Public Class Admin
             Dim dr As MySqlDataReader = cm.ExecuteReader()
 
             While dr.Read()
-                dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                If dr("status").Equals("Granted") Or dr("status").Equals("Deny") Then
+                    If IsDBNull(dr("date_issued")) Then
+                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                    Else
+                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                    End If
+                End If
                 dgv_clearanceEdit.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
             End While
 
@@ -53,7 +60,13 @@ Public Class Admin
             Dim dr As MySqlDataReader = cm.ExecuteReader()
 
             While dr.Read()
-                dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                If dr("status").Equals("Granted") Or dr("status").Equals("Deny") Then
+                    If IsDBNull(dr("date_issued")) Then
+                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                    Else
+                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                    End If
+                End If
                 dgv_certificateEdit.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
             End While
 
@@ -80,7 +93,13 @@ Public Class Admin
             Dim dr As MySqlDataReader = cm.ExecuteReader()
 
             While dr.Read()
-                dgv_bus_clearance.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                If dr("status").Equals("Granted") Or dr("status").Equals("Deny") Then
+                    If IsDBNull(dr("date_issued")) Then
+                        dgv_bus_clearance.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                    Else
+                        dgv_bus_clearance.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                    End If
+                End If
                 dgv_bus_clearanceEdit.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
             End While
 
@@ -174,6 +193,7 @@ Public Class Admin
         ToggleBT(False, False, False)
         ToggleReports(False, False, True)
         showSettings()
+        documentType = "business_clearance"
     End Sub
 
     Private Sub ClearanceToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ClearanceToolStripMenuItem.Click
@@ -182,6 +202,7 @@ Public Class Admin
         ToggleReports(False, False, False)
         ToggleBT(True, False, False)
         showSettings()
+        documentType = "clearance"
     End Sub
 
     Private Sub CertificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificationToolStripMenuItem.Click
@@ -190,6 +211,7 @@ Public Class Admin
         ToggleReports(False, False, False)
         ToggleBT(False, True, False)
         showSettings()
+        documentType = "certificate"
     End Sub
 
     Private Sub BusinessClearanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusinessClearanceToolStripMenuItem.Click
@@ -273,21 +295,29 @@ Public Class Admin
             informationBox.Clear()
 
             If query.Contains("bgms_clearance") Then
-                labels = {"Track ID: ", "Name: ", "Age: ", "Sex: ", "Civil Status: ", "Purok: ", "Purpose: ", "Request Date: ", "Status: "}
+                labels = {"Track ID: ", "Name: ", "Age: ", "Sex: ", "Civil Status: ", "Purok: ", "Purpose: ", "Request Date: ", "Date Issued: ", "Status: "}
             ElseIf query.Contains("bgms_certificate") Then
-                labels = {"Track ID: ", "Name: ", "Purok: ", "Purpose: ", "Request Date: ", "Status: "}
+                labels = {"Track ID: ", "Name: ", "Purok: ", "Purpose: ", "Request Date: ", "Date Issued: ", "Status: "}
             Else
-                labels = {"Track ID: ", "Business Name: ", "Business Owner: ", "Business Address: ", "Request Date: ", "Status: "}
+                labels = {"Track ID: ", "Business Name: ", "Business Owner: ", "Business Address: ", "Request Date: ", "Date Issued: ", "Status: "}
             End If
 
             While dr.Read()
-                For i As Integer = 0 To dr.FieldCount - 1
+                For i As Integer = 1 To dr.FieldCount - 1
+                    txtbox_trackid.Text = dr(0).ToString()
                     If TypeOf dr(i) Is DateTime Then
                         Dim dateValue As DateTime = CType(dr(i), DateTime)
-                        informationBox.AppendText("Request Date: " & dateValue.ToString("yyyy-MM-dd"))
+                        If dr.GetName(i).Equals("request_date") Then
+                            informationBox.AppendText("Request Date: " & dateValue.ToString("yyyy-MM-dd"))
+                        ElseIf dr.GetName(i).Equals("date_issued") Then
+                            informationBox.AppendText("Date Issued: " & dateValue.ToString("yyyy-MM-dd"))
+                        End If
+
+                        informationBox.AppendText(Environment.NewLine)
                         informationBox.AppendText(Environment.NewLine)
                     Else
                         informationBox.AppendText(labels(i) & dr(i).ToString())
+                        informationBox.AppendText(Environment.NewLine)
                         informationBox.AppendText(Environment.NewLine)
                     End If
                 Next
@@ -335,5 +365,49 @@ Public Class Admin
             actionModel.Visible = True
             actionModel.BringToFront()
         End If
+    End Sub
+
+    Private Sub exit_btn_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub MetroButton6_Click(sender As Object, e As EventArgs) Handles MetroButton6.Click
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            Dim cmd As New MySqlCommand()
+            cmd.Connection = cn
+
+            If documentType.Equals("clearance") Then
+                cmd.CommandText = "UPDATE bgms_clearance SET date_issued=@date, status = @status WHERE clearance_track_id = @document_id"
+            ElseIf documentType.Equals("certificate") Then
+                cmd.CommandText = "UPDATE bgms_certificate SET date_issued=@date, status = @status WHERE cert_track_id = @document_id"
+            Else
+                cmd.CommandText = "UPDATE bgms_bus_clearance SET date_issued=@date, status = @status WHERE bc_track_id = @document_id"
+            End If
+
+            cmd.Parameters.AddWithValue("@status", "Granted")
+            cmd.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"))
+            cmd.Parameters.AddWithValue("@document_id", txtbox_trackid.Text)
+
+            Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+            If rowsAffected > 0 Then
+                MsgBox("Document status updated successfully.", vbInformation, "Success")
+            Else
+                MsgBox("No document found with the specified ID.", vbExclamation, "No Update")
+            End If
+
+        Catch ex As Exception
+            MsgBox("Failed to update document status", vbCritical, "Failure")
+            cn.Close()
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+            actionModel.Visible = False
+        End Try
     End Sub
 End Class
