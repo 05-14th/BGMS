@@ -200,7 +200,7 @@ Public Class Login
     End Sub
 
     Private Sub MetroButton1_Click_1(sender As Object, e As EventArgs) Handles login_btn.Click
-        Dim command As New MySqlCommand("SELECT COUNT(*) FROM bgms_account WHERE acc_username = @username AND acc_password = @password", cn)
+        Dim command As New MySqlCommand("SELECT COUNT(*) FROM bgms_account WHERE acc_username = @username AND acc_password = @password AND acc_status = 'Active'", cn)
         command.Parameters.AddWithValue("@username", login_uname_txtbox.Text())
         command.Parameters.AddWithValue("@password", ComputeSHA256Hash(login_pword_txtbox.Text()))
         Try
@@ -328,19 +328,19 @@ Public Class Login
         cn.Open()
         Dim searchTerm As String = MetroTextBox1.Text
         Dim query As String = "
-            SELECT clearance_name AS name, 'Barangay Clearance' AS document_type, clearance_track_id AS tracking_code, request_date, status
+            SELECT clearance_name AS name, 'Barangay Clearance' AS document_type, clearance_track_id AS tracking_code, request_date, date_issued, status
             FROM bgms_clearance
             WHERE clearance_track_id LIKE @searchTerm OR clearance_name LIKE @searchTerm
 
             UNION ALL 
 
-            SELECT cert_name AS name, 'Barangay Certificate' AS document_type, cert_track_id AS tracking_code, request_date, status
+            SELECT cert_name AS name, 'Barangay Certificate' AS document_type, cert_track_id AS tracking_code, request_date, date_issued, status
             FROM bgms_certificate
             WHERE cert_track_id LIKE @searchTerm OR cert_name LIKE @searchTerm
 
             UNION ALL 
 
-            SELECT bc_owner_name AS name, 'Business Clearance' AS document_type, bc_track_id AS tracking_code, request_date, status
+            SELECT bc_owner_name AS name, 'Business Clearance' AS document_type, bc_track_id AS tracking_code, request_date, date_issued, status
             FROM bgms_bus_clearance
             WHERE bc_track_id LIKE @searchTerm OR bc_owner_name LIKE @searchTerm
         "
@@ -352,11 +352,19 @@ Public Class Login
         DataGridView1.Rows.Clear()
 
         While dr.Read()
-            DataGridView1.Rows.Add(dr("name"), dr("document_type"), dr("tracking_code"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), dr("status"))
+            Dim requestDate As String = If(dr("request_date") Is DBNull.Value, "N/A", Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+            Dim dateIssued As String = If(dr("date_issued") Is DBNull.Value, "N/A", Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"))
+
+            DataGridView1.Rows.Add(dr("name"), dr("document_type"), dr("tracking_code"), requestDate, dateIssued, dr("status"))
         End While
+
 
         dr.Close()
         command.Dispose()
         cn.Close()
+    End Sub
+
+    Private Sub MetroTextBox1_Click_1(sender As Object, e As EventArgs) Handles MetroTextBox1.Click
+
     End Sub
 End Class

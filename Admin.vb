@@ -4,6 +4,7 @@ Imports Mysqlx
 
 Public Class Admin
     Dim documentType As String
+    Dim totalAmount As Decimal = 0
     Private Sub InitializeLogo()
         Dim imagePath As String = Application.StartupPath
         Dim logoFolderPath As String = Path.Combine(imagePath, "Logo")
@@ -151,12 +152,15 @@ Public Class Admin
         bus_clearance_pnl.Visible = state3
     End Sub
 
-    Private Sub ToggleBT(state1 As Boolean, state2 As Boolean, state3 As Boolean, Optional state4 As Boolean = False, Optional state5 As Boolean = False)
+    Private Sub ToggleBT(state1 As Boolean, state2 As Boolean, state3 As Boolean, Optional state4 As Boolean = False, Optional state5 As Boolean = False, Optional state6 As Boolean = False, Optional state7 As Boolean = False, Optional state8 As Boolean = False)
         bt_clearance_pnl.Visible = state1
         bt_certificate_pnl.Visible = state2
         bt_bus_clearance.Visible = state3
         blotter_pnl.Visible = state4
         summonPnl.Visible = state5
+        pnl_financial.Visible = state6
+        pnl_archive.Visible = state7
+        um_pnl.Visible = state8
     End Sub
 
     Private Sub brgyTrans_btn_Click(sender As Object, e As EventArgs) Handles brgyTrans_btn.Click
@@ -425,6 +429,15 @@ Public Class Admin
                 cn.Close()
             End If
             actionModel.Visible = False
+            txtbox_amountPaid.Clear()
+
+            If documentType.Equals("clearance") Then
+                FetchClearance()
+            ElseIf documentType.Equals("certificate") Then
+                FetchCertificate()
+            Else
+                FetchBusClearance()
+            End If
         End Try
     End Sub
 
@@ -467,12 +480,21 @@ Public Class Admin
                 cn.Close()
             End If
             actionModel.Visible = False
+            txtbox_amountPaid.Clear()
+
+            If documentType.Equals("clearance") Then
+                FetchClearance()
+            ElseIf documentType.Equals("certificate") Then
+                FetchCertificate()
+            Else
+                FetchBusClearance()
+            End If
         End Try
     End Sub
 
     Private Sub MetroButton5_Click_1(sender As Object, e As EventArgs) Handles MetroButton5.Click
         Dim answer = MsgBox("Are you sure you want to archive this record?", vbQuestion + vbYesNo, "Archive")
-        If answer.Yes Then
+        If answer = vbYes Then
             Try
                 If cn.State = ConnectionState.Closed Then
                     cn.Open()
@@ -511,6 +533,7 @@ Public Class Admin
                     cn.Close()
                 End If
                 actionModel.Visible = False
+                txtbox_amountPaid.Clear()
 
                 If documentType.Equals("clearance") Then
                     FetchClearance()
@@ -523,8 +546,10 @@ Public Class Admin
         End If
     End Sub
 
-    Private Sub exit_btn_Click_1(sender As Object, e As EventArgs) Handles exit_btn.Click
-        Me.Close()
+    Private Sub exit_btn_Click_1(sender As Object, e As EventArgs) Handles um_btn.Click
+        FetchAccount()
+        um_pnl.Dock = DockStyle.Fill
+        ToggleBT(False, False, False, state8:=True)
     End Sub
 
     Private Sub txtbox_amountPaid_TextChanged(sender As Object, e As EventArgs) Handles txtbox_amountPaid.TextChanged
@@ -553,4 +578,256 @@ Public Class Admin
         End If
     End Sub
 
+    Private Sub FinancialReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FinancialReportToolStripMenuItem.Click
+        ToggleBT(False, False, False, False, False, True)
+        pnl_financial.Dock = DockStyle.Fill
+        FetchFinancialRep()
+    End Sub
+
+    Private Sub FetchFinancialRep()
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_financial.Rows.Clear()
+
+            Dim sqlQuery As String = "
+        SELECT 
+            clearance_name AS name, 
+            'Barangay Clearance' AS document_type,
+            clearance_track_id AS tracking_code,
+            request_date,
+            date_issued,
+            amount
+        FROM 
+            bgms_clearance 
+
+        UNION ALL 
+
+        SELECT 
+            cert_name AS name, 
+            'Barangay Certificate' AS document_type,
+            cert_track_id AS tracking_code,
+            request_date, 
+            date_issued,
+            amount
+        FROM 
+            bgms_certificate 
+
+        UNION ALL 
+
+        SELECT 
+            bc_owner_name AS name,
+            'Business Clearance' AS document_type,
+            bc_track_id AS tracking_code,
+            request_date, 
+            date_issued,
+            amount
+        FROM 
+            bgms_bus_clearance;"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                Try
+                    dgv_financial.Rows.Add(dr("tracking_code"), dr("name"), dr("document_type"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("amount"))
+                    Dim amount = Convert.ToDecimal(dr("amount"))
+                    totalAmount += amount
+                Catch ex As System.InvalidCastException
+                    dgv_financial.Rows.Add(dr("tracking_code"), dr("name"), dr("document_type"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("amount"))
+                End Try
+            End While
+
+            dgv_financial.Rows.Add("", "Total", "", "", "", totalAmount)
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchArchive()
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_archive.Rows.Clear()
+
+            Dim sqlQuery As String = "
+        SELECT 
+            clearance_name AS name, 
+            'Barangay Clearance' AS document_type,
+            clearance_track_id AS tracking_code,
+            request_date
+        FROM 
+            bgms_clearance WHERE archived = 1
+
+        UNION ALL 
+
+        SELECT 
+            cert_name AS name, 
+            'Barangay Certificate' AS document_type,
+            cert_track_id AS tracking_code,
+            request_date
+        FROM 
+            bgms_certificate WHERE archived = 1
+
+        UNION ALL 
+
+        SELECT 
+            bc_owner_name AS name,
+            'Business Clearance' AS document_type,
+            bc_track_id AS tracking_code,
+            request_date
+        FROM 
+            bgms_bus_clearance WHERE archived = 1;"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                dgv_archive.Rows.Add(dr("tracking_code"), dr("name"), dr("document_type"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub MetroButton7_Click(sender As Object, e As EventArgs) Handles MetroButton7.Click
+        FetchArchive()
+        pnl_archive.Dock = DockStyle.Fill
+        ToggleBT(False, False, False, state7:=True)
+    End Sub
+
+    Private Sub UpdateArchive(query As String, query2 As String)
+        Try
+            Dim count As Integer = 0
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            Dim cm As New MySqlCommand(query, cn)
+            count = Convert.ToInt32(cm.ExecuteScalar())
+            If count > 0 Then
+                Dim cmd As New MySqlCommand(query2, cn)
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                If rowsAffected > 0 Then
+                    MsgBox("Document Updated successfully.", vbInformation, "Success")
+                    FetchArchive()
+                End If
+            End If
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub dgv_archive_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_archive.CellContentClick
+        If e.ColumnIndex = dgv_archive.Columns("actButton").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = dgv_archive.Rows(e.RowIndex)
+            Dim firstCellValue As Object = clickedRow.Cells(0).Value
+            Dim query = MsgBox("Do you want to unarchive this file?", vbQuestion + vbYesNo, "Archive")
+            If query = vbYes Then
+                UpdateArchive("SELECT COUNT(*) FROM bgms_clearance", "UPDATE bgms_clearance SET archived = 0 WHERE clearance_track_id = '" & firstCellValue & "'")
+                UpdateArchive("SELECT COUNT(*) FROM bgms_certificate", "UPDATE bgms_certificate SET archived = 0 WHERE cert_track_id = '" & firstCellValue & "'")
+                UpdateArchive("SELECT COUNT(*) FROM bgms_bus_clearance", "UPDATE bgms_bus_clearance SET archived = 0 WHERE bc_track_id = '" & firstCellValue & "'")
+            End If
+        End If
+    End Sub
+
+    Private Sub FetchAccount()
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            um_dgv.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_account"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            Dim rowCount As Integer = 1
+
+            While dr.Read()
+                um_dgv.Rows.Add(rowCount.ToString(), dr("acc_name").ToString(), dr("acc_username").ToString(), dr("acc_position").ToString(), dr("acc_role").ToString(), dr("acc_status").ToString())
+                rowCount += 1
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub um_dgv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles um_dgv.CellContentClick
+        If e.ColumnIndex = um_dgv.Columns("um_action").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = um_dgv.Rows(e.RowIndex)
+            Dim firstCellValue As Object = clickedRow.Cells(2).Value
+            Dim currentStatus As Object = clickedRow.Cells(5).Value
+            Dim pos As Object = clickedRow.Cells(4).Value
+            If currentStatus = "Active" And pos <> "Super Admin" Then
+                Dim deactivate_confirmation = MsgBox("Do you want to deactivate this account?", vbYesNo + vbExclamation, "Deactivating Account")
+                If deactivate_confirmation = vbYes Then
+                    Try
+                        If cn.State = ConnectionState.Closed Then
+                            cn.Open()
+                        End If
+
+                        Dim deactivateString As String = "UPDATE bgms_account SET acc_status='Inactive' WHERE acc_username = @username"
+                        Dim cmd As New MySqlCommand(deactivateString, cn)
+                        cmd.Parameters.AddWithValue("@username", firstCellValue)
+                        cmd.ExecuteNonQuery()
+                        MsgBox("Account deactivated successfully.", vbInformation, "Success")
+                        FetchAccount()
+                    Catch ex As Exception
+                        MsgBox("Failed to deactivate account: " & ex.Message, vbCritical, "Failure")
+                    Finally
+                        If cn.State = ConnectionState.Open Then
+                            cn.Close()
+                        End If
+                    End Try
+                End If
+            ElseIf currentStatus = "Inactive" And pos <> "Super Admin" Then
+                Dim activate_confirmation = MsgBox("Do you want to reactivate this account?", vbYesNo + vbExclamation, "Reactivating Account")
+                If activate_confirmation = vbYes Then
+                    Try
+                        If cn.State = ConnectionState.Closed Then
+                            cn.Open()
+                        End If
+
+                        Dim activateString As String = "UPDATE bgms_account SET acc_status='Active' WHERE acc_username = @username"
+                        Dim cmd As New MySqlCommand(activateString, cn)
+                        cmd.Parameters.AddWithValue("@username", firstCellValue)
+                        cmd.ExecuteNonQuery()
+                        MsgBox("Account reactivated successfully.", vbInformation, "Success")
+                        FetchAccount()
+                    Catch ex As Exception
+                        MsgBox("Failed to activate account: " & ex.Message, vbCritical, "Failure")
+                    Finally
+                        If cn.State = ConnectionState.Open Then
+                            cn.Close()
+                        End If
+                    End Try
+                End If
+            Else
+                MsgBox("This account cannot be modified.", vbInformation, "Notice")
+            End If
+        End If
+    End Sub
 End Class

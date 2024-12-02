@@ -24,7 +24,7 @@ Partial Class Admin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.exit_btn = New MetroFramework.Controls.MetroButton()
+        Me.um_btn = New MetroFramework.Controls.MetroButton()
         Me.MetroButton7 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton11 = New MetroFramework.Controls.MetroButton()
         Me.reports_btn = New MetroFramework.Controls.MetroButton()
@@ -34,6 +34,7 @@ Partial Class Admin
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusinessClearanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FinancialReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.clearance_pnl = New MetroFramework.Controls.MetroPanel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -168,6 +169,50 @@ Partial Class Admin
         Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.pnl_financial = New MetroFramework.Controls.MetroPanel()
+        Me.MetroButton8 = New MetroFramework.Controls.MetroButton()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.dgv_financial = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pnl_archive = New MetroFramework.Controls.MetroPanel()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
+        Me.dgv_archive = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.actButton = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.um_pnl = New MetroFramework.Controls.MetroPanel()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
+        Me.um_dgv = New System.Windows.Forms.DataGridView()
+        Me.addUsr_btn = New System.Windows.Forms.Button()
+        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.um_pos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.um_action = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -197,11 +242,18 @@ Partial Class Admin
         Me.actionModel.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.pnl_financial.SuspendLayout()
+        CType(Me.dgv_financial, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_archive.SuspendLayout()
+        CType(Me.dgv_archive, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.um_pnl.SuspendLayout()
+        CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.exit_btn)
+        Me.Panel1.Controls.Add(Me.um_btn)
         Me.Panel1.Controls.Add(Me.MetroButton7)
         Me.Panel1.Controls.Add(Me.MetroButton11)
         Me.Panel1.Controls.Add(Me.reports_btn)
@@ -213,15 +265,15 @@ Partial Class Admin
         Me.Panel1.Size = New System.Drawing.Size(258, 652)
         Me.Panel1.TabIndex = 0
         '
-        'exit_btn
+        'um_btn
         '
-        Me.exit_btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.exit_btn.Location = New System.Drawing.Point(0, 220)
-        Me.exit_btn.Name = "exit_btn"
-        Me.exit_btn.Size = New System.Drawing.Size(258, 55)
-        Me.exit_btn.TabIndex = 9
-        Me.exit_btn.Text = "Exit"
-        Me.exit_btn.UseSelectable = True
+        Me.um_btn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.um_btn.Location = New System.Drawing.Point(0, 220)
+        Me.um_btn.Name = "um_btn"
+        Me.um_btn.Size = New System.Drawing.Size(258, 55)
+        Me.um_btn.TabIndex = 9
+        Me.um_btn.Text = "User Management"
+        Me.um_btn.UseSelectable = True
         '
         'MetroButton7
         '
@@ -276,9 +328,9 @@ Partial Class Admin
         'Settings_Menu
         '
         Me.Settings_Menu.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Settings_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.BusinessClearanceToolStripMenuItem1})
+        Me.Settings_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.BusinessClearanceToolStripMenuItem1, Me.FinancialReportToolStripMenuItem})
         Me.Settings_Menu.Name = "MetroContextMenu1"
-        Me.Settings_Menu.Size = New System.Drawing.Size(232, 100)
+        Me.Settings_Menu.Size = New System.Drawing.Size(232, 132)
         '
         'ToolStripMenuItem1
         '
@@ -297,6 +349,12 @@ Partial Class Admin
         Me.BusinessClearanceToolStripMenuItem1.Name = "BusinessClearanceToolStripMenuItem1"
         Me.BusinessClearanceToolStripMenuItem1.Size = New System.Drawing.Size(231, 32)
         Me.BusinessClearanceToolStripMenuItem1.Text = "Business Clearance"
+        '
+        'FinancialReportToolStripMenuItem
+        '
+        Me.FinancialReportToolStripMenuItem.Name = "FinancialReportToolStripMenuItem"
+        Me.FinancialReportToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.FinancialReportToolStripMenuItem.Text = "Financial Report"
         '
         'Panel3
         '
@@ -1481,7 +1539,7 @@ Partial Class Admin
         Me.actionModel.Location = New System.Drawing.Point(264, 222)
         Me.actionModel.Name = "actionModel"
         Me.actionModel.Padding = New System.Windows.Forms.Padding(4)
-        Me.actionModel.Size = New System.Drawing.Size(455, 400)
+        Me.actionModel.Size = New System.Drawing.Size(11, 400)
         Me.actionModel.TabIndex = 16
         Me.actionModel.VerticalScrollbarBarColor = True
         Me.actionModel.VerticalScrollbarHighlightOnWheel = False
@@ -1494,7 +1552,7 @@ Partial Class Admin
         Me.informationBox.Location = New System.Drawing.Point(4, 62)
         Me.informationBox.Name = "informationBox"
         Me.informationBox.ReadOnly = True
-        Me.informationBox.Size = New System.Drawing.Size(447, 162)
+        Me.informationBox.Size = New System.Drawing.Size(3, 162)
         Me.informationBox.TabIndex = 13
         Me.informationBox.Text = ""
         '
@@ -1506,7 +1564,7 @@ Partial Class Admin
         Me.Panel9.Location = New System.Drawing.Point(4, 224)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Padding = New System.Windows.Forms.Padding(3)
-        Me.Panel9.Size = New System.Drawing.Size(447, 37)
+        Me.Panel9.Size = New System.Drawing.Size(3, 37)
         Me.Panel9.TabIndex = 12
         '
         'txtbox_amountPaid
@@ -1515,7 +1573,7 @@ Partial Class Admin
         Me.txtbox_amountPaid.Location = New System.Drawing.Point(145, 3)
         Me.txtbox_amountPaid.MaxLength = 12
         Me.txtbox_amountPaid.Name = "txtbox_amountPaid"
-        Me.txtbox_amountPaid.Size = New System.Drawing.Size(299, 26)
+        Me.txtbox_amountPaid.Size = New System.Drawing.Size(0, 26)
         Me.txtbox_amountPaid.TabIndex = 1
         '
         'Label16
@@ -1534,7 +1592,7 @@ Partial Class Admin
         Me.txtbox_trackid.Location = New System.Drawing.Point(4, 36)
         Me.txtbox_trackid.Name = "txtbox_trackid"
         Me.txtbox_trackid.ReadOnly = True
-        Me.txtbox_trackid.Size = New System.Drawing.Size(447, 26)
+        Me.txtbox_trackid.Size = New System.Drawing.Size(3, 26)
         Me.txtbox_trackid.TabIndex = 10
         '
         'MetroButton6
@@ -1542,7 +1600,7 @@ Partial Class Admin
         Me.MetroButton6.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MetroButton6.Location = New System.Drawing.Point(4, 261)
         Me.MetroButton6.Name = "MetroButton6"
-        Me.MetroButton6.Size = New System.Drawing.Size(447, 45)
+        Me.MetroButton6.Size = New System.Drawing.Size(3, 45)
         Me.MetroButton6.TabIndex = 8
         Me.MetroButton6.Text = "Grant"
         Me.MetroButton6.UseSelectable = True
@@ -1552,7 +1610,7 @@ Partial Class Admin
         Me.MetroButton5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MetroButton5.Location = New System.Drawing.Point(4, 306)
         Me.MetroButton5.Name = "MetroButton5"
-        Me.MetroButton5.Size = New System.Drawing.Size(447, 45)
+        Me.MetroButton5.Size = New System.Drawing.Size(3, 45)
         Me.MetroButton5.TabIndex = 6
         Me.MetroButton5.Text = "Archive"
         Me.MetroButton5.UseSelectable = True
@@ -1562,7 +1620,7 @@ Partial Class Admin
         Me.MetroButton4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MetroButton4.Location = New System.Drawing.Point(4, 351)
         Me.MetroButton4.Name = "MetroButton4"
-        Me.MetroButton4.Size = New System.Drawing.Size(447, 45)
+        Me.MetroButton4.Size = New System.Drawing.Size(3, 45)
         Me.MetroButton4.TabIndex = 4
         Me.MetroButton4.Text = "Deny"
         Me.MetroButton4.UseSelectable = True
@@ -1573,7 +1631,7 @@ Partial Class Admin
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(447, 32)
+        Me.Panel4.Size = New System.Drawing.Size(3, 32)
         Me.Panel4.TabIndex = 2
         '
         'Label15
@@ -1581,17 +1639,477 @@ Partial Class Admin
         Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(422, 6)
+        Me.Label15.Location = New System.Drawing.Point(-22, 6)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(21, 20)
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "X"
+        '
+        'pnl_financial
+        '
+        Me.pnl_financial.Controls.Add(Me.MetroButton8)
+        Me.pnl_financial.Controls.Add(Me.TextBox15)
+        Me.pnl_financial.Controls.Add(Me.MetroLabel7)
+        Me.pnl_financial.Controls.Add(Me.dgv_financial)
+        Me.pnl_financial.HorizontalScrollbarBarColor = True
+        Me.pnl_financial.HorizontalScrollbarHighlightOnWheel = False
+        Me.pnl_financial.HorizontalScrollbarSize = 9
+        Me.pnl_financial.Location = New System.Drawing.Point(1165, 61)
+        Me.pnl_financial.Name = "pnl_financial"
+        Me.pnl_financial.Size = New System.Drawing.Size(440, 175)
+        Me.pnl_financial.TabIndex = 17
+        Me.pnl_financial.VerticalScrollbarBarColor = True
+        Me.pnl_financial.VerticalScrollbarHighlightOnWheel = False
+        Me.pnl_financial.VerticalScrollbarSize = 10
+        Me.pnl_financial.Visible = False
+        '
+        'MetroButton8
+        '
+        Me.MetroButton8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton8.Location = New System.Drawing.Point(322, 126)
+        Me.MetroButton8.Name = "MetroButton8"
+        Me.MetroButton8.Size = New System.Drawing.Size(104, 43)
+        Me.MetroButton8.TabIndex = 8
+        Me.MetroButton8.Text = "Print"
+        Me.MetroButton8.UseSelectable = True
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox15.Location = New System.Drawing.Point(211, 15)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox15.TabIndex = 7
+        '
+        'MetroLabel7
+        '
+        Me.MetroLabel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel7.AutoSize = True
+        Me.MetroLabel7.Location = New System.Drawing.Point(134, 15)
+        Me.MetroLabel7.Name = "MetroLabel7"
+        Me.MetroLabel7.Size = New System.Drawing.Size(51, 19)
+        Me.MetroLabel7.TabIndex = 4
+        Me.MetroLabel7.Text = "Search:"
+        '
+        'dgv_financial
+        '
+        Me.dgv_financial.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_financial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_financial.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.Column13, Me.Column14})
+        Me.dgv_financial.Location = New System.Drawing.Point(18, 68)
+        Me.dgv_financial.Name = "dgv_financial"
+        Me.dgv_financial.RowHeadersWidth = 62
+        Me.dgv_financial.RowTemplate.Height = 28
+        Me.dgv_financial.Size = New System.Drawing.Size(408, 53)
+        Me.dgv_financial.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Track ID"
+        Me.DataGridViewTextBoxColumn3.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Width = 98
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn4.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Document Type"
+        Me.DataGridViewTextBoxColumn9.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Date Requested"
+        Me.DataGridViewTextBoxColumn10.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Width = 150
+        '
+        'Column13
+        '
+        Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column13.HeaderText = "Date Issued"
+        Me.Column13.MinimumWidth = 8
+        Me.Column13.Name = "Column13"
+        Me.Column13.Width = 122
+        '
+        'Column14
+        '
+        Me.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column14.HeaderText = "Amount"
+        Me.Column14.MinimumWidth = 8
+        Me.Column14.Name = "Column14"
+        Me.Column14.Width = 101
+        '
+        'pnl_archive
+        '
+        Me.pnl_archive.Controls.Add(Me.TextBox16)
+        Me.pnl_archive.Controls.Add(Me.MetroLabel8)
+        Me.pnl_archive.Controls.Add(Me.dgv_archive)
+        Me.pnl_archive.HorizontalScrollbarBarColor = True
+        Me.pnl_archive.HorizontalScrollbarHighlightOnWheel = False
+        Me.pnl_archive.HorizontalScrollbarSize = 9
+        Me.pnl_archive.Location = New System.Drawing.Point(1165, 243)
+        Me.pnl_archive.Name = "pnl_archive"
+        Me.pnl_archive.Size = New System.Drawing.Size(440, 175)
+        Me.pnl_archive.TabIndex = 19
+        Me.pnl_archive.VerticalScrollbarBarColor = True
+        Me.pnl_archive.VerticalScrollbarHighlightOnWheel = False
+        Me.pnl_archive.VerticalScrollbarSize = 10
+        Me.pnl_archive.Visible = False
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox16.Location = New System.Drawing.Point(211, 15)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox16.TabIndex = 7
+        '
+        'MetroLabel8
+        '
+        Me.MetroLabel8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel8.AutoSize = True
+        Me.MetroLabel8.Location = New System.Drawing.Point(134, 15)
+        Me.MetroLabel8.Name = "MetroLabel8"
+        Me.MetroLabel8.Size = New System.Drawing.Size(51, 19)
+        Me.MetroLabel8.TabIndex = 4
+        Me.MetroLabel8.Text = "Search:"
+        '
+        'dgv_archive
+        '
+        Me.dgv_archive.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_archive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_archive.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.actButton})
+        Me.dgv_archive.Location = New System.Drawing.Point(18, 68)
+        Me.dgv_archive.Name = "dgv_archive"
+        Me.dgv_archive.RowHeadersWidth = 62
+        Me.dgv_archive.RowTemplate.Height = 28
+        Me.dgv_archive.Size = New System.Drawing.Size(408, 95)
+        Me.dgv_archive.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Track ID"
+        Me.DataGridViewTextBoxColumn14.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.Width = 98
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn15.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn15.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn20.HeaderText = "Document Type"
+        Me.DataGridViewTextBoxColumn20.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn21.HeaderText = "Date Requested"
+        Me.DataGridViewTextBoxColumn21.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        Me.DataGridViewTextBoxColumn21.Width = 150
+        '
+        'actButton
+        '
+        Me.actButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.actButton.HeaderText = "Action"
+        Me.actButton.MinimumWidth = 8
+        Me.actButton.Name = "actButton"
+        Me.actButton.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.actButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.actButton.Width = 90
+        '
+        'um_pnl
+        '
+        Me.um_pnl.Controls.Add(Me.addUsr_btn)
+        Me.um_pnl.Controls.Add(Me.TextBox17)
+        Me.um_pnl.Controls.Add(Me.MetroLabel9)
+        Me.um_pnl.Controls.Add(Me.um_dgv)
+        Me.um_pnl.HorizontalScrollbarBarColor = True
+        Me.um_pnl.HorizontalScrollbarHighlightOnWheel = False
+        Me.um_pnl.HorizontalScrollbarSize = 9
+        Me.um_pnl.Location = New System.Drawing.Point(1500, 61)
+        Me.um_pnl.Name = "um_pnl"
+        Me.um_pnl.Size = New System.Drawing.Size(387, 225)
+        Me.um_pnl.TabIndex = 9
+        Me.um_pnl.VerticalScrollbarBarColor = True
+        Me.um_pnl.VerticalScrollbarHighlightOnWheel = False
+        Me.um_pnl.VerticalScrollbarSize = 10
+        Me.um_pnl.Visible = False
+        '
+        'TextBox17
+        '
+        Me.TextBox17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox17.Location = New System.Drawing.Point(158, 15)
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox17.TabIndex = 7
+        '
+        'MetroLabel9
+        '
+        Me.MetroLabel9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel9.AutoSize = True
+        Me.MetroLabel9.Location = New System.Drawing.Point(81, 15)
+        Me.MetroLabel9.Name = "MetroLabel9"
+        Me.MetroLabel9.Size = New System.Drawing.Size(51, 19)
+        Me.MetroLabel9.TabIndex = 4
+        Me.MetroLabel9.Text = "Search:"
+        '
+        'um_dgv
+        '
+        Me.um_dgv.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.um_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.um_dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn35, Me.um_pos, Me.Column15, Me.Column16, Me.um_action})
+        Me.um_dgv.Location = New System.Drawing.Point(18, 68)
+        Me.um_dgv.Name = "um_dgv"
+        Me.um_dgv.RowHeadersWidth = 62
+        Me.um_dgv.RowTemplate.Height = 28
+        Me.um_dgv.Size = New System.Drawing.Size(355, 91)
+        Me.um_dgv.TabIndex = 2
+        '
+        'addUsr_btn
+        '
+        Me.addUsr_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.addUsr_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addUsr_btn.Location = New System.Drawing.Point(228, 167)
+        Me.addUsr_btn.Name = "addUsr_btn"
+        Me.addUsr_btn.Size = New System.Drawing.Size(146, 47)
+        Me.addUsr_btn.TabIndex = 18
+        Me.addUsr_btn.Text = "ADD USER"
+        Me.addUsr_btn.UseVisualStyleBackColor = True
+        '
+        'DataGridViewTextBoxColumn26
+        '
+        Me.DataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn26.HeaderText = "#"
+        Me.DataGridViewTextBoxColumn26.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
+        Me.DataGridViewTextBoxColumn26.Width = 54
+        '
+        'DataGridViewTextBoxColumn27
+        '
+        Me.DataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn27.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn27.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
+        '
+        'DataGridViewTextBoxColumn35
+        '
+        Me.DataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn35.HeaderText = "Username"
+        Me.DataGridViewTextBoxColumn35.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        '
+        'um_pos
+        '
+        Me.um_pos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.um_pos.HeaderText = "Position"
+        Me.um_pos.MinimumWidth = 8
+        Me.um_pos.Name = "um_pos"
+        Me.um_pos.Width = 101
+        '
+        'Column15
+        '
+        Me.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column15.HeaderText = "Roles"
+        Me.Column15.MinimumWidth = 8
+        Me.Column15.Name = "Column15"
+        Me.Column15.Width = 86
+        '
+        'Column16
+        '
+        Me.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column16.HeaderText = "Status"
+        Me.Column16.MinimumWidth = 8
+        Me.Column16.Name = "Column16"
+        Me.Column16.Width = 92
+        '
+        'um_action
+        '
+        Me.um_action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.um_action.HeaderText = "Action"
+        Me.um_action.MinimumWidth = 8
+        Me.um_action.Name = "um_action"
+        Me.um_action.Width = 60
+        '
+        'MetroPanel1
+        '
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel14)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel13)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel12)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel11)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel10)
+        Me.MetroPanel1.Controls.Add(Me.Button5)
+        Me.MetroPanel1.Controls.Add(Me.TextBox22)
+        Me.MetroPanel1.Controls.Add(Me.TextBox21)
+        Me.MetroPanel1.Controls.Add(Me.TextBox20)
+        Me.MetroPanel1.Controls.Add(Me.TextBox19)
+        Me.MetroPanel1.Controls.Add(Me.TextBox18)
+        Me.MetroPanel1.HorizontalScrollbarBarColor = True
+        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.HorizontalScrollbarSize = 10
+        Me.MetroPanel1.Location = New System.Drawing.Point(1507, 293)
+        Me.MetroPanel1.Name = "MetroPanel1"
+        Me.MetroPanel1.Size = New System.Drawing.Size(409, 290)
+        Me.MetroPanel1.TabIndex = 20
+        Me.MetroPanel1.VerticalScrollbarBarColor = True
+        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'TextBox18
+        '
+        Me.TextBox18.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox18.Location = New System.Drawing.Point(124, 33)
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.Size = New System.Drawing.Size(269, 26)
+        Me.TextBox18.TabIndex = 8
+        '
+        'TextBox19
+        '
+        Me.TextBox19.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox19.Location = New System.Drawing.Point(124, 77)
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.Size = New System.Drawing.Size(269, 26)
+        Me.TextBox19.TabIndex = 9
+        '
+        'TextBox20
+        '
+        Me.TextBox20.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox20.Location = New System.Drawing.Point(124, 121)
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.Size = New System.Drawing.Size(269, 26)
+        Me.TextBox20.TabIndex = 10
+        '
+        'TextBox21
+        '
+        Me.TextBox21.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox21.Location = New System.Drawing.Point(124, 163)
+        Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.Size = New System.Drawing.Size(269, 26)
+        Me.TextBox21.TabIndex = 11
+        '
+        'TextBox22
+        '
+        Me.TextBox22.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox22.Location = New System.Drawing.Point(124, 200)
+        Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.Size = New System.Drawing.Size(269, 26)
+        Me.TextBox22.TabIndex = 12
+        '
+        'Button5
+        '
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(247, 235)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(146, 45)
+        Me.Button5.TabIndex = 18
+        Me.Button5.Text = "CONFIRM"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'MetroLabel10
+        '
+        Me.MetroLabel10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel10.AutoSize = True
+        Me.MetroLabel10.Location = New System.Drawing.Point(11, 36)
+        Me.MetroLabel10.Name = "MetroLabel10"
+        Me.MetroLabel10.Size = New System.Drawing.Size(45, 19)
+        Me.MetroLabel10.TabIndex = 19
+        Me.MetroLabel10.Text = "Name"
+        '
+        'MetroLabel11
+        '
+        Me.MetroLabel11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel11.AutoSize = True
+        Me.MetroLabel11.Location = New System.Drawing.Point(11, 79)
+        Me.MetroLabel11.Name = "MetroLabel11"
+        Me.MetroLabel11.Size = New System.Drawing.Size(68, 19)
+        Me.MetroLabel11.TabIndex = 20
+        Me.MetroLabel11.Text = "Username"
+        '
+        'MetroLabel12
+        '
+        Me.MetroLabel12.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel12.AutoSize = True
+        Me.MetroLabel12.Location = New System.Drawing.Point(11, 124)
+        Me.MetroLabel12.Name = "MetroLabel12"
+        Me.MetroLabel12.Size = New System.Drawing.Size(63, 19)
+        Me.MetroLabel12.TabIndex = 21
+        Me.MetroLabel12.Text = "Password"
+        '
+        'MetroLabel13
+        '
+        Me.MetroLabel13.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel13.AutoSize = True
+        Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel13.Location = New System.Drawing.Point(12, 168)
+        Me.MetroLabel13.Name = "MetroLabel13"
+        Me.MetroLabel13.Size = New System.Drawing.Size(97, 15)
+        Me.MetroLabel13.TabIndex = 22
+        Me.MetroLabel13.Text = "Confirm Password"
+        '
+        'MetroLabel14
+        '
+        Me.MetroLabel14.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel14.AutoSize = True
+        Me.MetroLabel14.Location = New System.Drawing.Point(11, 203)
+        Me.MetroLabel14.Name = "MetroLabel14"
+        Me.MetroLabel14.Size = New System.Drawing.Size(54, 19)
+        Me.MetroLabel14.TabIndex = 23
+        Me.MetroLabel14.Text = "Position"
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1924, 652)
+        Me.Controls.Add(Me.MetroPanel1)
+        Me.Controls.Add(Me.um_pnl)
+        Me.Controls.Add(Me.pnl_archive)
+        Me.Controls.Add(Me.pnl_financial)
         Me.Controls.Add(Me.actionModel)
         Me.Controls.Add(Me.summonPnl)
         Me.Controls.Add(Me.blotter_pnl)
@@ -1652,6 +2170,17 @@ Partial Class Admin
         Me.Panel9.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.pnl_financial.ResumeLayout(False)
+        Me.pnl_financial.PerformLayout()
+        CType(Me.dgv_financial, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_archive.ResumeLayout(False)
+        Me.pnl_archive.PerformLayout()
+        CType(Me.dgv_archive, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.um_pnl.ResumeLayout(False)
+        Me.um_pnl.PerformLayout()
+        CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MetroPanel1.ResumeLayout(False)
+        Me.MetroPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1796,9 +2325,54 @@ Partial Class Admin
     Friend WithEvents t As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents exit_btn As MetroFramework.Controls.MetroButton
+    Friend WithEvents um_btn As MetroFramework.Controls.MetroButton
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label16 As Label
     Friend WithEvents txtbox_amountPaid As TextBox
     Friend WithEvents informationBox As RichTextBox
+    Friend WithEvents FinancialReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents pnl_financial As MetroFramework.Controls.MetroPanel
+    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents dgv_financial As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents MetroButton8 As MetroFramework.Controls.MetroButton
+    Friend WithEvents pnl_archive As MetroFramework.Controls.MetroPanel
+    Friend WithEvents TextBox16 As TextBox
+    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents dgv_archive As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
+    Friend WithEvents actButton As DataGridViewImageColumn
+    Friend WithEvents um_pnl As MetroFramework.Controls.MetroPanel
+    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents um_dgv As DataGridView
+    Friend WithEvents addUsr_btn As Button
+    Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn35 As DataGridViewTextBoxColumn
+    Friend WithEvents um_pos As DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As DataGridViewTextBoxColumn
+    Friend WithEvents Column16 As DataGridViewTextBoxColumn
+    Friend WithEvents um_action As DataGridViewImageColumn
+    Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
+    Friend WithEvents TextBox22 As TextBox
+    Friend WithEvents TextBox21 As TextBox
+    Friend WithEvents TextBox20 As TextBox
+    Friend WithEvents TextBox19 As TextBox
+    Friend WithEvents TextBox18 As TextBox
+    Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents Button5 As Button
+    Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
 End Class
