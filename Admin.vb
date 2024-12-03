@@ -830,4 +830,61 @@ Public Class Admin
             End If
         End If
     End Sub
+
+    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
+        actionModal.Visible = False
+    End Sub
+
+    Private Sub addUsr_btn_Click(sender As Object, e As EventArgs) Handles addUsr_btn.Click
+        um_pnl.Controls.Add(actionModal)
+        actionModal.Width = 410
+        actionModal.Height = 430
+        actionModal.Location = New Point(
+            um_pnl.Width / 2 - actionModal.Size.Width / 2,
+            um_pnl.Height / 2 - actionModal.Size.Height / 2
+        )
+        actionModal.Anchor = AnchorStyles.None
+        actionModal.Visible = True
+        actionModal.BringToFront()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        cn.Open()
+
+        If txtbox_pass.Text = txtbox_cpass.Text Then
+            Dim userInsertCommand As New MySqlCommand("INSERT INTO bgms_account (`acc_name`, `acc_username`, `acc_password`, `acc_position`, `acc_role`,`acc_status`) VALUES (@ac, @au, @ap, @acp,@ar, @as)", cn)
+            userInsertCommand.Parameters.Add("@ac", MySqlDbType.VarChar).Value = txtbox_name.Text
+            userInsertCommand.Parameters.Add("@au", MySqlDbType.VarChar).Value = txtbox_uname.Text
+            userInsertCommand.Parameters.Add("@ap", MySqlDbType.VarChar).Value = ComputeSHA256Hash(txtbox_pass.Text)
+            userInsertCommand.Parameters.Add("@acp", MySqlDbType.VarChar).Value = cb_pos.Text
+            userInsertCommand.Parameters.Add("@ar", MySqlDbType.VarChar).Value = cb_role.Text
+            userInsertCommand.Parameters.Add("@as", MySqlDbType.VarChar).Value = "Active"
+
+            Try
+                If userInsertCommand.ExecuteNonQuery() = 1 Then
+                    MsgBox("Account inserted successfully", vbInformation, "Success")
+                Else
+                    MsgBox("Error inserting data", vbCritical, "Failure")
+                End If
+            Catch ex As Exception
+                MsgBox("Error inserting data: " & ex.Message, vbCritical, "Failure")
+            Finally
+                cn.Close()
+                actionModal.Visible = False
+                FetchAccount()
+                ClearText()
+            End Try
+        Else
+            MsgBox("Password do not match.", vbExclamation, "Warning")
+        End If
+    End Sub
+
+    Private Sub ClearText()
+        txtbox_name.Clear()
+        txtbox_uname.Clear()
+        txtbox_pass.Clear()
+        txtbox_cpass.Clear()
+        cb_pos.ResetText()
+        cb_role.ResetText()
+    End Sub
 End Class

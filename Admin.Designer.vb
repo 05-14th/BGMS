@@ -201,18 +201,23 @@ Partial Class Admin
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.um_action = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.actionModal = New MetroFramework.Controls.MetroPanel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
+        Me.txtbox_name = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtbox_uname = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtbox_pass = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtbox_cpass = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.cb_role = New MetroFramework.Controls.MetroComboBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.cb_pos = New MetroFramework.Controls.MetroComboBox()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -248,7 +253,9 @@ Partial Class Admin
         CType(Me.dgv_archive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.um_pnl.SuspendLayout()
         CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MetroPanel1.SuspendLayout()
+        Me.actionModal.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel11.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -1955,158 +1962,220 @@ Partial Class Admin
         Me.um_action.Name = "um_action"
         Me.um_action.Width = 60
         '
-        'MetroPanel1
+        'actionModal
         '
-        Me.MetroPanel1.Controls.Add(Me.MetroLabel14)
-        Me.MetroPanel1.Controls.Add(Me.MetroLabel13)
-        Me.MetroPanel1.Controls.Add(Me.MetroLabel12)
-        Me.MetroPanel1.Controls.Add(Me.MetroLabel11)
-        Me.MetroPanel1.Controls.Add(Me.MetroLabel10)
-        Me.MetroPanel1.Controls.Add(Me.Button5)
-        Me.MetroPanel1.Controls.Add(Me.TextBox22)
-        Me.MetroPanel1.Controls.Add(Me.TextBox21)
-        Me.MetroPanel1.Controls.Add(Me.TextBox20)
-        Me.MetroPanel1.Controls.Add(Me.TextBox19)
-        Me.MetroPanel1.Controls.Add(Me.TextBox18)
-        Me.MetroPanel1.HorizontalScrollbarBarColor = True
-        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(1507, 293)
-        Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(409, 290)
-        Me.MetroPanel1.TabIndex = 20
-        Me.MetroPanel1.VerticalScrollbarBarColor = True
-        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.VerticalScrollbarSize = 10
+        Me.actionModal.Controls.Add(Me.Panel11)
+        Me.actionModal.Controls.Add(Me.Panel10)
+        Me.actionModal.Controls.Add(Me.Button5)
+        Me.actionModal.HorizontalScrollbarBarColor = True
+        Me.actionModal.HorizontalScrollbarHighlightOnWheel = False
+        Me.actionModal.HorizontalScrollbarSize = 10
+        Me.actionModal.Location = New System.Drawing.Point(1507, 270)
+        Me.actionModal.Name = "actionModal"
+        Me.actionModal.Size = New System.Drawing.Size(409, 369)
+        Me.actionModal.TabIndex = 20
+        Me.actionModal.VerticalScrollbarBarColor = True
+        Me.actionModal.VerticalScrollbarHighlightOnWheel = False
+        Me.actionModal.VerticalScrollbarSize = 10
+        Me.actionModal.Visible = False
         '
-        'TextBox18
+        'Label17
         '
-        Me.TextBox18.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox18.Location = New System.Drawing.Point(124, 33)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(269, 26)
-        Me.TextBox18.TabIndex = 8
+        Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(384, 6)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(21, 20)
+        Me.Label17.TabIndex = 0
+        Me.Label17.Text = "X"
         '
-        'TextBox19
+        'Panel10
         '
-        Me.TextBox19.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox19.Location = New System.Drawing.Point(124, 77)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(269, 26)
-        Me.TextBox19.TabIndex = 9
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox20.Location = New System.Drawing.Point(124, 121)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(269, 26)
-        Me.TextBox20.TabIndex = 10
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox21.Location = New System.Drawing.Point(124, 163)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(269, 26)
-        Me.TextBox21.TabIndex = 11
-        '
-        'TextBox22
-        '
-        Me.TextBox22.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox22.Location = New System.Drawing.Point(124, 200)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(269, 26)
-        Me.TextBox22.TabIndex = 12
+        Me.Panel10.Controls.Add(Me.Label17)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel10.Location = New System.Drawing.Point(0, 0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(409, 32)
+        Me.Panel10.TabIndex = 27
         '
         'Button5
         '
-        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(247, 235)
+        Me.Button5.Location = New System.Drawing.Point(0, 324)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(146, 45)
+        Me.Button5.Size = New System.Drawing.Size(409, 45)
         Me.Button5.TabIndex = 18
         Me.Button5.Text = "CONFIRM"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'MetroLabel10
+        'txtbox_name
         '
-        Me.MetroLabel10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.txtbox_name.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Location = New System.Drawing.Point(11, 36)
-        Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(45, 19)
-        Me.MetroLabel10.TabIndex = 19
-        Me.MetroLabel10.Text = "Name"
+        Me.txtbox_name.Location = New System.Drawing.Point(129, 10)
+        Me.txtbox_name.Name = "txtbox_name"
+        Me.txtbox_name.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_name.TabIndex = 20
         '
-        'MetroLabel11
+        'Label18
         '
-        Me.MetroLabel11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.Label18.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel11.AutoSize = True
-        Me.MetroLabel11.Location = New System.Drawing.Point(11, 79)
-        Me.MetroLabel11.Name = "MetroLabel11"
-        Me.MetroLabel11.Size = New System.Drawing.Size(68, 19)
-        Me.MetroLabel11.TabIndex = 20
-        Me.MetroLabel11.Text = "Username"
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(7, 13)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(55, 20)
+        Me.Label18.TabIndex = 21
+        Me.Label18.Text = "Name:"
         '
-        'MetroLabel12
+        'txtbox_uname
         '
-        Me.MetroLabel12.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.txtbox_uname.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel12.AutoSize = True
-        Me.MetroLabel12.Location = New System.Drawing.Point(11, 124)
-        Me.MetroLabel12.Name = "MetroLabel12"
-        Me.MetroLabel12.Size = New System.Drawing.Size(63, 19)
-        Me.MetroLabel12.TabIndex = 21
-        Me.MetroLabel12.Text = "Password"
+        Me.txtbox_uname.Location = New System.Drawing.Point(129, 57)
+        Me.txtbox_uname.Name = "txtbox_uname"
+        Me.txtbox_uname.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_uname.TabIndex = 22
         '
-        'MetroLabel13
+        'Label19
         '
-        Me.MetroLabel13.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.Label19.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel13.AutoSize = True
-        Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel13.Location = New System.Drawing.Point(12, 168)
-        Me.MetroLabel13.Name = "MetroLabel13"
-        Me.MetroLabel13.Size = New System.Drawing.Size(97, 15)
-        Me.MetroLabel13.TabIndex = 22
-        Me.MetroLabel13.Text = "Confirm Password"
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(6, 60)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(87, 20)
+        Me.Label19.TabIndex = 23
+        Me.Label19.Text = "Username:"
         '
-        'MetroLabel14
+        'txtbox_pass
         '
-        Me.MetroLabel14.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.txtbox_pass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel14.AutoSize = True
-        Me.MetroLabel14.Location = New System.Drawing.Point(11, 203)
-        Me.MetroLabel14.Name = "MetroLabel14"
-        Me.MetroLabel14.Size = New System.Drawing.Size(54, 19)
-        Me.MetroLabel14.TabIndex = 23
-        Me.MetroLabel14.Text = "Position"
+        Me.txtbox_pass.Location = New System.Drawing.Point(129, 103)
+        Me.txtbox_pass.Name = "txtbox_pass"
+        Me.txtbox_pass.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_pass.TabIndex = 24
+        '
+        'Label20
+        '
+        Me.Label20.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(6, 106)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(82, 20)
+        Me.Label20.TabIndex = 25
+        Me.Label20.Text = "Password:"
+        '
+        'txtbox_cpass
+        '
+        Me.txtbox_cpass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtbox_cpass.Location = New System.Drawing.Point(129, 149)
+        Me.txtbox_cpass.Name = "txtbox_cpass"
+        Me.txtbox_cpass.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_cpass.TabIndex = 26
+        '
+        'Label21
+        '
+        Me.Label21.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(6, 143)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(82, 40)
+        Me.Label21.TabIndex = 27
+        Me.Label21.Text = "Confirm " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Password:"
+        '
+        'Label22
+        '
+        Me.Label22.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(6, 252)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(46, 20)
+        Me.Label22.TabIndex = 29
+        Me.Label22.Text = "Role:"
+        '
+        'cb_role
+        '
+        Me.cb_role.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cb_role.FormattingEnabled = True
+        Me.cb_role.ItemHeight = 23
+        Me.cb_role.Items.AddRange(New Object() {"Admin", "Secretary", "Treasurer"})
+        Me.cb_role.Location = New System.Drawing.Point(129, 249)
+        Me.cb_role.Name = "cb_role"
+        Me.cb_role.Size = New System.Drawing.Size(10, 29)
+        Me.cb_role.TabIndex = 30
+        Me.cb_role.UseSelectable = True
+        '
+        'Label23
+        '
+        Me.Label23.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(6, 202)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(69, 20)
+        Me.Label23.TabIndex = 31
+        Me.Label23.Text = "Position:"
+        '
+        'cb_pos
+        '
+        Me.cb_pos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cb_pos.FormattingEnabled = True
+        Me.cb_pos.ItemHeight = 23
+        Me.cb_pos.Items.AddRange(New Object() {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer"})
+        Me.cb_pos.Location = New System.Drawing.Point(129, 196)
+        Me.cb_pos.Name = "cb_pos"
+        Me.cb_pos.Size = New System.Drawing.Size(10, 29)
+        Me.cb_pos.TabIndex = 32
+        Me.cb_pos.UseSelectable = True
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.cb_pos)
+        Me.Panel11.Controls.Add(Me.Label23)
+        Me.Panel11.Controls.Add(Me.cb_role)
+        Me.Panel11.Controls.Add(Me.Label22)
+        Me.Panel11.Controls.Add(Me.Label21)
+        Me.Panel11.Controls.Add(Me.txtbox_cpass)
+        Me.Panel11.Controls.Add(Me.Label20)
+        Me.Panel11.Controls.Add(Me.txtbox_pass)
+        Me.Panel11.Controls.Add(Me.Label19)
+        Me.Panel11.Controls.Add(Me.txtbox_uname)
+        Me.Panel11.Controls.Add(Me.Label18)
+        Me.Panel11.Controls.Add(Me.txtbox_name)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel11.Location = New System.Drawing.Point(0, 32)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(409, 292)
+        Me.Panel11.TabIndex = 30
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1924, 652)
-        Me.Controls.Add(Me.MetroPanel1)
+        Me.Controls.Add(Me.actionModal)
         Me.Controls.Add(Me.um_pnl)
         Me.Controls.Add(Me.pnl_archive)
         Me.Controls.Add(Me.pnl_financial)
@@ -2179,8 +2248,11 @@ Partial Class Admin
         Me.um_pnl.ResumeLayout(False)
         Me.um_pnl.PerformLayout()
         CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MetroPanel1.ResumeLayout(False)
-        Me.MetroPanel1.PerformLayout()
+        Me.actionModal.ResumeLayout(False)
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2363,16 +2435,21 @@ Partial Class Admin
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents Column16 As DataGridViewTextBoxColumn
     Friend WithEvents um_action As DataGridViewImageColumn
-    Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
-    Friend WithEvents TextBox22 As TextBox
-    Friend WithEvents TextBox21 As TextBox
-    Friend WithEvents TextBox20 As TextBox
-    Friend WithEvents TextBox19 As TextBox
-    Friend WithEvents TextBox18 As TextBox
-    Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents actionModal As MetroFramework.Controls.MetroPanel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Label17 As Label
     Friend WithEvents Button5 As Button
-    Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents cb_pos As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents cb_role As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents txtbox_cpass As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents txtbox_pass As TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents txtbox_uname As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents txtbox_name As TextBox
 End Class
