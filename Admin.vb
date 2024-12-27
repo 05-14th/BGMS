@@ -4,7 +4,6 @@ Imports Mysqlx
 
 Public Class Admin
     Dim documentType As String
-    Dim totalAmount As Decimal = 0
     Private Sub InitializeLogo()
         Dim imagePath As String = Application.StartupPath
         Dim logoFolderPath As String = Path.Combine(imagePath, "Logo")
@@ -78,6 +77,40 @@ Public Class Admin
         Catch ex As Exception
             MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
             cn.Close()
+        End Try
+    End Sub
+
+    Public Sub FetchConfig()
+        Dim command As MySqlCommand = Nothing
+        Dim reader As MySqlDataReader = Nothing
+
+        Try
+            Dim query As String = "SELECT * FROM bgms_config WHERE config_type = @value"
+            command = New MySqlCommand(query, cn)
+            command.Parameters.AddWithValue("@value", "name")
+            reader = command.ExecuteReader()
+            If reader.HasRows Then
+                While reader.Read()
+                    Dim result As String = reader("config_content").ToString()
+                    txtbox_brgyName.Text = result
+                End While
+            Else
+                MsgBox("No data found.", vbOK + vbCritical, "Missing Data")
+            End If
+        Catch ex As MySqlException
+            MsgBox("MySQL error: " & ex.Message, vbOK + vbCritical, "Database Error")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbOK + vbCritical, "System Error")
+        Finally
+            ' Close the reader
+            If reader IsNot Nothing Then
+                reader.Close()
+            End If
+
+            ' Dispose of the command
+            If command IsNot Nothing Then
+                command.Dispose()
+            End If
         End Try
     End Sub
 
@@ -244,6 +277,7 @@ Public Class Admin
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeLogo()
+        FetchConfig()
     End Sub
 
     Private Sub MetroButton5_Click(sender As Object, e As EventArgs) Handles removeLogo.Click
@@ -629,6 +663,7 @@ Public Class Admin
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
+            Dim totalAmount As Decimal = 0
 
             While dr.Read()
                 Try
@@ -886,5 +921,21 @@ Public Class Admin
         txtbox_cpass.Clear()
         cb_pos.ResetText()
         cb_role.ResetText()
+    End Sub
+
+    Private Sub MetroButton9_Click(sender As Object, e As EventArgs) Handles MetroButton9.Click
+        Me.Close()
+        Dim loginForm As New Login()
+        loginForm.ShowDialog()
+
+
+    End Sub
+
+    Private Sub MetroPanel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub OrdinanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdinanceToolStripMenuItem.Click
+
     End Sub
 End Class

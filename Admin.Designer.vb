@@ -24,6 +24,7 @@ Partial Class Admin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MetroButton9 = New MetroFramework.Controls.MetroButton()
         Me.um_btn = New MetroFramework.Controls.MetroButton()
         Me.MetroButton7 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton11 = New MetroFramework.Controls.MetroButton()
@@ -190,10 +191,10 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.actButton = New System.Windows.Forms.DataGridViewImageColumn()
         Me.um_pnl = New MetroFramework.Controls.MetroPanel()
+        Me.addUsr_btn = New System.Windows.Forms.Button()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.um_dgv = New System.Windows.Forms.DataGridView()
-        Me.addUsr_btn = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -202,22 +203,25 @@ Partial Class Admin
         Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.um_action = New System.Windows.Forms.DataGridViewImageColumn()
         Me.actionModal = New MetroFramework.Controls.MetroPanel()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.txtbox_name = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.txtbox_uname = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.txtbox_pass = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtbox_cpass = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.cb_role = New MetroFramework.Controls.MetroComboBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.cb_pos = New MetroFramework.Controls.MetroComboBox()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.cb_pos = New MetroFramework.Controls.MetroComboBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.cb_role = New MetroFramework.Controls.MetroComboBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtbox_cpass = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtbox_pass = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtbox_uname = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtbox_name = New System.Windows.Forms.TextBox()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.MetroButton10 = New MetroFramework.Controls.MetroButton()
+        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
+        Me.txtbox_brgyName = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -254,12 +258,13 @@ Partial Class Admin
         Me.um_pnl.SuspendLayout()
         CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.actionModal.SuspendLayout()
-        Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.Panel10.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.MetroButton9)
         Me.Panel1.Controls.Add(Me.um_btn)
         Me.Panel1.Controls.Add(Me.MetroButton7)
         Me.Panel1.Controls.Add(Me.MetroButton11)
@@ -271,6 +276,16 @@ Partial Class Admin
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(258, 652)
         Me.Panel1.TabIndex = 0
+        '
+        'MetroButton9
+        '
+        Me.MetroButton9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.MetroButton9.Location = New System.Drawing.Point(0, 275)
+        Me.MetroButton9.Name = "MetroButton9"
+        Me.MetroButton9.Size = New System.Drawing.Size(258, 55)
+        Me.MetroButton9.TabIndex = 10
+        Me.MetroButton9.Text = "Logout"
+        Me.MetroButton9.UseSelectable = True
         '
         'um_btn
         '
@@ -337,30 +352,30 @@ Partial Class Admin
         Me.Settings_Menu.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.Settings_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.BusinessClearanceToolStripMenuItem1, Me.FinancialReportToolStripMenuItem})
         Me.Settings_Menu.Name = "MetroContextMenu1"
-        Me.Settings_Menu.Size = New System.Drawing.Size(232, 132)
+        Me.Settings_Menu.Size = New System.Drawing.Size(175, 92)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(231, 32)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(174, 22)
         Me.ToolStripMenuItem1.Text = "Clearance"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(231, 32)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(174, 22)
         Me.ToolStripMenuItem2.Text = "Certificate"
         '
         'BusinessClearanceToolStripMenuItem1
         '
         Me.BusinessClearanceToolStripMenuItem1.Name = "BusinessClearanceToolStripMenuItem1"
-        Me.BusinessClearanceToolStripMenuItem1.Size = New System.Drawing.Size(231, 32)
+        Me.BusinessClearanceToolStripMenuItem1.Size = New System.Drawing.Size(174, 22)
         Me.BusinessClearanceToolStripMenuItem1.Text = "Business Clearance"
         '
         'FinancialReportToolStripMenuItem
         '
         Me.FinancialReportToolStripMenuItem.Name = "FinancialReportToolStripMenuItem"
-        Me.FinancialReportToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.FinancialReportToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.FinancialReportToolStripMenuItem.Text = "Financial Report"
         '
         'Panel3
@@ -437,7 +452,7 @@ Partial Class Admin
         Me.Column1.HeaderText = "Clearance ID"
         Me.Column1.MinimumWidth = 8
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 138
+        Me.Column1.Width = 127
         '
         'Column4
         '
@@ -459,7 +474,7 @@ Partial Class Admin
         Me.Column2.HeaderText = "Request Date"
         Me.Column2.MinimumWidth = 8
         Me.Column2.Name = "Column2"
-        Me.Column2.Width = 145
+        Me.Column2.Width = 134
         '
         'Column6
         '
@@ -467,7 +482,7 @@ Partial Class Admin
         Me.Column6.HeaderText = "Date Issued"
         Me.Column6.MinimumWidth = 8
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 132
+        Me.Column6.Width = 121
         '
         'Column3
         '
@@ -475,7 +490,7 @@ Partial Class Admin
         Me.Column3.HeaderText = "Status"
         Me.Column3.MinimumWidth = 8
         Me.Column3.Name = "Column3"
-        Me.Column3.Width = 92
+        Me.Column3.Width = 81
         '
         'certificate_pnl
         '
@@ -543,7 +558,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn1.HeaderText = "Certificate ID"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 138
+        Me.DataGridViewTextBoxColumn1.Width = 127
         '
         'DataGridViewTextBoxColumn2
         '
@@ -565,7 +580,7 @@ Partial Class Admin
         Me.R.HeaderText = "Request Date"
         Me.R.MinimumWidth = 8
         Me.R.Name = "R"
-        Me.R.Width = 145
+        Me.R.Width = 134
         '
         'DataGridViewTextBoxColumn6
         '
@@ -573,7 +588,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn6.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn6.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 132
+        Me.DataGridViewTextBoxColumn6.Width = 121
         '
         'Column8
         '
@@ -581,7 +596,7 @@ Partial Class Admin
         Me.Column8.HeaderText = "Status"
         Me.Column8.MinimumWidth = 8
         Me.Column8.Name = "Column8"
-        Me.Column8.Width = 92
+        Me.Column8.Width = 81
         '
         'bus_clearance_pnl
         '
@@ -649,7 +664,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn7.HeaderText = "Business Clearance ID"
         Me.DataGridViewTextBoxColumn7.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 171
+        Me.DataGridViewTextBoxColumn7.Width = 160
         '
         'DataGridViewTextBoxColumn8
         '
@@ -678,7 +693,7 @@ Partial Class Admin
         Me.t.HeaderText = "Request Date"
         Me.t.MinimumWidth = 8
         Me.t.Name = "t"
-        Me.t.Width = 134
+        Me.t.Width = 123
         '
         'DataGridViewTextBoxColumn12
         '
@@ -686,7 +701,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn12.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn12.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.Width = 122
+        Me.DataGridViewTextBoxColumn12.Width = 111
         '
         'Column9
         '
@@ -694,43 +709,43 @@ Partial Class Admin
         Me.Column9.HeaderText = "Status"
         Me.Column9.MinimumWidth = 8
         Me.Column9.Name = "Column9"
-        Me.Column9.Width = 92
+        Me.Column9.Width = 81
         '
         'Bt_Menu
         '
         Me.Bt_Menu.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.Bt_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClearanceToolStripMenuItem, Me.CertificationToolStripMenuItem, Me.BusinessClearanceToolStripMenuItem, Me.BlotterToolStripMenuItem, Me.SummonToolStripMenuItem})
         Me.Bt_Menu.Name = "Bt_Menu"
-        Me.Bt_Menu.Size = New System.Drawing.Size(232, 164)
+        Me.Bt_Menu.Size = New System.Drawing.Size(175, 114)
         '
         'ClearanceToolStripMenuItem
         '
         Me.ClearanceToolStripMenuItem.Name = "ClearanceToolStripMenuItem"
-        Me.ClearanceToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.ClearanceToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.ClearanceToolStripMenuItem.Text = "Clearance"
         '
         'CertificationToolStripMenuItem
         '
         Me.CertificationToolStripMenuItem.Name = "CertificationToolStripMenuItem"
-        Me.CertificationToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.CertificationToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.CertificationToolStripMenuItem.Text = "Certification"
         '
         'BusinessClearanceToolStripMenuItem
         '
         Me.BusinessClearanceToolStripMenuItem.Name = "BusinessClearanceToolStripMenuItem"
-        Me.BusinessClearanceToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.BusinessClearanceToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.BusinessClearanceToolStripMenuItem.Text = "Business Clearance"
         '
         'BlotterToolStripMenuItem
         '
         Me.BlotterToolStripMenuItem.Name = "BlotterToolStripMenuItem"
-        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.BlotterToolStripMenuItem.Text = "Blotter"
         '
         'SummonToolStripMenuItem
         '
         Me.SummonToolStripMenuItem.Name = "SummonToolStripMenuItem"
-        Me.SummonToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.SummonToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.SummonToolStripMenuItem.Text = "Summon"
         '
         'Bm_Menu
@@ -738,18 +753,18 @@ Partial Class Admin
         Me.Bm_Menu.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.Bm_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdinanceToolStripMenuItem, Me.ResolutionToolStripMenuItem})
         Me.Bm_Menu.Name = "Bm_Menu"
-        Me.Bm_Menu.Size = New System.Drawing.Size(168, 68)
+        Me.Bm_Menu.Size = New System.Drawing.Size(181, 70)
         '
         'OrdinanceToolStripMenuItem
         '
         Me.OrdinanceToolStripMenuItem.Name = "OrdinanceToolStripMenuItem"
-        Me.OrdinanceToolStripMenuItem.Size = New System.Drawing.Size(167, 32)
+        Me.OrdinanceToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OrdinanceToolStripMenuItem.Text = "Ordinance"
         '
         'ResolutionToolStripMenuItem
         '
         Me.ResolutionToolStripMenuItem.Name = "ResolutionToolStripMenuItem"
-        Me.ResolutionToolStripMenuItem.Size = New System.Drawing.Size(167, 32)
+        Me.ResolutionToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.ResolutionToolStripMenuItem.Text = "Resolution"
         '
         'bt_clearance_pnl
@@ -807,7 +822,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn13.HeaderText = "Clearance ID"
         Me.DataGridViewTextBoxColumn13.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.Width = 127
+        Me.DataGridViewTextBoxColumn13.Width = 116
         '
         'DataGridViewTextBoxColumn16
         '
@@ -829,7 +844,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn18.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn18.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.Width = 150
+        Me.DataGridViewTextBoxColumn18.Width = 139
         '
         'actionBtn
         '
@@ -894,7 +909,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn19.HeaderText = "Certificate ID"
         Me.DataGridViewTextBoxColumn19.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.Width = 127
+        Me.DataGridViewTextBoxColumn19.Width = 116
         '
         'DataGridViewTextBoxColumn22
         '
@@ -916,7 +931,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn24.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn24.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.Width = 150
+        Me.DataGridViewTextBoxColumn24.Width = 139
         '
         'actBtn
         '
@@ -981,7 +996,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn25.HeaderText = "Business Clearance ID"
         Me.DataGridViewTextBoxColumn25.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        Me.DataGridViewTextBoxColumn25.Width = 171
+        Me.DataGridViewTextBoxColumn25.Width = 160
         '
         'DataGridViewTextBoxColumn28
         '
@@ -1010,7 +1025,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn31.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn31.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.Width = 150
+        Me.DataGridViewTextBoxColumn31.Width = 139
         '
         'actionButton
         '
@@ -1022,6 +1037,9 @@ Partial Class Admin
         '
         'settings_pnl
         '
+        Me.settings_pnl.Controls.Add(Me.MetroButton10)
+        Me.settings_pnl.Controls.Add(Me.MetroLabel10)
+        Me.settings_pnl.Controls.Add(Me.txtbox_brgyName)
         Me.settings_pnl.Controls.Add(Me.removeLogo)
         Me.settings_pnl.Controls.Add(Me.upload_btn)
         Me.settings_pnl.Controls.Add(Me.LogoSlot)
@@ -1030,7 +1048,7 @@ Partial Class Admin
         Me.settings_pnl.HorizontalScrollbarSize = 9
         Me.settings_pnl.Location = New System.Drawing.Point(1164, 72)
         Me.settings_pnl.Name = "settings_pnl"
-        Me.settings_pnl.Size = New System.Drawing.Size(320, 388)
+        Me.settings_pnl.Size = New System.Drawing.Size(320, 508)
         Me.settings_pnl.TabIndex = 12
         Me.settings_pnl.VerticalScrollbarBarColor = True
         Me.settings_pnl.VerticalScrollbarHighlightOnWheel = False
@@ -1310,7 +1328,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn32.HeaderText = "#"
         Me.DataGridViewTextBoxColumn32.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
-        Me.DataGridViewTextBoxColumn32.Width = 54
+        Me.DataGridViewTextBoxColumn32.Width = 43
         '
         'DataGridViewTextBoxColumn33
         '
@@ -1411,7 +1429,7 @@ Partial Class Admin
         Me.Column10.HeaderText = "#"
         Me.Column10.MinimumWidth = 8
         Me.Column10.Name = "Column10"
-        Me.Column10.Width = 54
+        Me.Column10.Width = 43
         '
         'Column11
         '
@@ -1648,7 +1666,7 @@ Partial Class Admin
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.Location = New System.Drawing.Point(-22, 6)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(21, 20)
+        Me.Label15.Size = New System.Drawing.Size(15, 13)
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "X"
         '
@@ -1718,7 +1736,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn3.HeaderText = "Track ID"
         Me.DataGridViewTextBoxColumn3.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 98
+        Me.DataGridViewTextBoxColumn3.Width = 87
         '
         'DataGridViewTextBoxColumn4
         '
@@ -1740,7 +1758,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn10.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn10.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 150
+        Me.DataGridViewTextBoxColumn10.Width = 139
         '
         'Column13
         '
@@ -1748,7 +1766,7 @@ Partial Class Admin
         Me.Column13.HeaderText = "Date Issued"
         Me.Column13.MinimumWidth = 8
         Me.Column13.Name = "Column13"
-        Me.Column13.Width = 122
+        Me.Column13.Width = 111
         '
         'Column14
         '
@@ -1756,7 +1774,7 @@ Partial Class Admin
         Me.Column14.HeaderText = "Amount"
         Me.Column14.MinimumWidth = 8
         Me.Column14.Name = "Column14"
-        Me.Column14.Width = 101
+        Me.Column14.Width = 90
         '
         'pnl_archive
         '
@@ -1813,7 +1831,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn14.HeaderText = "Track ID"
         Me.DataGridViewTextBoxColumn14.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        Me.DataGridViewTextBoxColumn14.Width = 98
+        Me.DataGridViewTextBoxColumn14.Width = 87
         '
         'DataGridViewTextBoxColumn15
         '
@@ -1835,7 +1853,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn21.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn21.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.Width = 150
+        Me.DataGridViewTextBoxColumn21.Width = 139
         '
         'actButton
         '
@@ -1845,7 +1863,7 @@ Partial Class Admin
         Me.actButton.Name = "actButton"
         Me.actButton.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.actButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.actButton.Width = 90
+        Me.actButton.Width = 79
         '
         'um_pnl
         '
@@ -1864,6 +1882,17 @@ Partial Class Admin
         Me.um_pnl.VerticalScrollbarHighlightOnWheel = False
         Me.um_pnl.VerticalScrollbarSize = 10
         Me.um_pnl.Visible = False
+        '
+        'addUsr_btn
+        '
+        Me.addUsr_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.addUsr_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addUsr_btn.Location = New System.Drawing.Point(228, 167)
+        Me.addUsr_btn.Name = "addUsr_btn"
+        Me.addUsr_btn.Size = New System.Drawing.Size(146, 47)
+        Me.addUsr_btn.TabIndex = 18
+        Me.addUsr_btn.Text = "ADD USER"
+        Me.addUsr_btn.UseVisualStyleBackColor = True
         '
         'TextBox17
         '
@@ -1897,24 +1926,13 @@ Partial Class Admin
         Me.um_dgv.Size = New System.Drawing.Size(355, 91)
         Me.um_dgv.TabIndex = 2
         '
-        'addUsr_btn
-        '
-        Me.addUsr_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.addUsr_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addUsr_btn.Location = New System.Drawing.Point(228, 167)
-        Me.addUsr_btn.Name = "addUsr_btn"
-        Me.addUsr_btn.Size = New System.Drawing.Size(146, 47)
-        Me.addUsr_btn.TabIndex = 18
-        Me.addUsr_btn.Text = "ADD USER"
-        Me.addUsr_btn.UseVisualStyleBackColor = True
-        '
         'DataGridViewTextBoxColumn26
         '
         Me.DataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn26.HeaderText = "#"
         Me.DataGridViewTextBoxColumn26.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
-        Me.DataGridViewTextBoxColumn26.Width = 54
+        Me.DataGridViewTextBoxColumn26.Width = 43
         '
         'DataGridViewTextBoxColumn27
         '
@@ -1936,7 +1954,7 @@ Partial Class Admin
         Me.um_pos.HeaderText = "Position"
         Me.um_pos.MinimumWidth = 8
         Me.um_pos.Name = "um_pos"
-        Me.um_pos.Width = 101
+        Me.um_pos.Width = 90
         '
         'Column15
         '
@@ -1944,7 +1962,7 @@ Partial Class Admin
         Me.Column15.HeaderText = "Roles"
         Me.Column15.MinimumWidth = 8
         Me.Column15.Name = "Column15"
-        Me.Column15.Width = 86
+        Me.Column15.Width = 75
         '
         'Column16
         '
@@ -1952,7 +1970,7 @@ Partial Class Admin
         Me.Column16.HeaderText = "Status"
         Me.Column16.MinimumWidth = 8
         Me.Column16.Name = "Column16"
-        Me.Column16.Width = 92
+        Me.Column16.Width = 81
         '
         'um_action
         '
@@ -1979,177 +1997,6 @@ Partial Class Admin
         Me.actionModal.VerticalScrollbarSize = 10
         Me.actionModal.Visible = False
         '
-        'Label17
-        '
-        Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(384, 6)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(21, 20)
-        Me.Label17.TabIndex = 0
-        Me.Label17.Text = "X"
-        '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.Label17)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(409, 32)
-        Me.Panel10.TabIndex = 27
-        '
-        'Button5
-        '
-        Me.Button5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(0, 324)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(409, 45)
-        Me.Button5.TabIndex = 18
-        Me.Button5.Text = "CONFIRM"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'txtbox_name
-        '
-        Me.txtbox_name.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtbox_name.Location = New System.Drawing.Point(129, 10)
-        Me.txtbox_name.Name = "txtbox_name"
-        Me.txtbox_name.Size = New System.Drawing.Size(269, 26)
-        Me.txtbox_name.TabIndex = 20
-        '
-        'Label18
-        '
-        Me.Label18.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(7, 13)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(55, 20)
-        Me.Label18.TabIndex = 21
-        Me.Label18.Text = "Name:"
-        '
-        'txtbox_uname
-        '
-        Me.txtbox_uname.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtbox_uname.Location = New System.Drawing.Point(129, 57)
-        Me.txtbox_uname.Name = "txtbox_uname"
-        Me.txtbox_uname.Size = New System.Drawing.Size(269, 26)
-        Me.txtbox_uname.TabIndex = 22
-        '
-        'Label19
-        '
-        Me.Label19.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(6, 60)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(87, 20)
-        Me.Label19.TabIndex = 23
-        Me.Label19.Text = "Username:"
-        '
-        'txtbox_pass
-        '
-        Me.txtbox_pass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtbox_pass.Location = New System.Drawing.Point(129, 103)
-        Me.txtbox_pass.Name = "txtbox_pass"
-        Me.txtbox_pass.Size = New System.Drawing.Size(269, 26)
-        Me.txtbox_pass.TabIndex = 24
-        '
-        'Label20
-        '
-        Me.Label20.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(6, 106)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(82, 20)
-        Me.Label20.TabIndex = 25
-        Me.Label20.Text = "Password:"
-        '
-        'txtbox_cpass
-        '
-        Me.txtbox_cpass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtbox_cpass.Location = New System.Drawing.Point(129, 149)
-        Me.txtbox_cpass.Name = "txtbox_cpass"
-        Me.txtbox_cpass.Size = New System.Drawing.Size(269, 26)
-        Me.txtbox_cpass.TabIndex = 26
-        '
-        'Label21
-        '
-        Me.Label21.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(6, 143)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(82, 40)
-        Me.Label21.TabIndex = 27
-        Me.Label21.Text = "Confirm " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Password:"
-        '
-        'Label22
-        '
-        Me.Label22.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(6, 252)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(46, 20)
-        Me.Label22.TabIndex = 29
-        Me.Label22.Text = "Role:"
-        '
-        'cb_role
-        '
-        Me.cb_role.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cb_role.FormattingEnabled = True
-        Me.cb_role.ItemHeight = 23
-        Me.cb_role.Items.AddRange(New Object() {"Admin", "Secretary", "Treasurer"})
-        Me.cb_role.Location = New System.Drawing.Point(129, 249)
-        Me.cb_role.Name = "cb_role"
-        Me.cb_role.Size = New System.Drawing.Size(10, 29)
-        Me.cb_role.TabIndex = 30
-        Me.cb_role.UseSelectable = True
-        '
-        'Label23
-        '
-        Me.Label23.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(6, 202)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(69, 20)
-        Me.Label23.TabIndex = 31
-        Me.Label23.Text = "Position:"
-        '
-        'cb_pos
-        '
-        Me.cb_pos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cb_pos.FormattingEnabled = True
-        Me.cb_pos.ItemHeight = 23
-        Me.cb_pos.Items.AddRange(New Object() {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer"})
-        Me.cb_pos.Location = New System.Drawing.Point(129, 196)
-        Me.cb_pos.Name = "cb_pos"
-        Me.cb_pos.Size = New System.Drawing.Size(10, 29)
-        Me.cb_pos.TabIndex = 32
-        Me.cb_pos.UseSelectable = True
-        '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.cb_pos)
@@ -2170,11 +2017,208 @@ Partial Class Admin
         Me.Panel11.Size = New System.Drawing.Size(409, 292)
         Me.Panel11.TabIndex = 30
         '
+        'cb_pos
+        '
+        Me.cb_pos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cb_pos.FormattingEnabled = True
+        Me.cb_pos.ItemHeight = 23
+        Me.cb_pos.Items.AddRange(New Object() {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer"})
+        Me.cb_pos.Location = New System.Drawing.Point(129, 196)
+        Me.cb_pos.Name = "cb_pos"
+        Me.cb_pos.Size = New System.Drawing.Size(10, 29)
+        Me.cb_pos.TabIndex = 32
+        Me.cb_pos.UseSelectable = True
+        '
+        'Label23
+        '
+        Me.Label23.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(6, 202)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(69, 20)
+        Me.Label23.TabIndex = 31
+        Me.Label23.Text = "Position:"
+        '
+        'cb_role
+        '
+        Me.cb_role.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cb_role.FormattingEnabled = True
+        Me.cb_role.ItemHeight = 23
+        Me.cb_role.Items.AddRange(New Object() {"Admin", "Secretary", "Treasurer"})
+        Me.cb_role.Location = New System.Drawing.Point(129, 249)
+        Me.cb_role.Name = "cb_role"
+        Me.cb_role.Size = New System.Drawing.Size(10, 29)
+        Me.cb_role.TabIndex = 30
+        Me.cb_role.UseSelectable = True
+        '
+        'Label22
+        '
+        Me.Label22.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(6, 252)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(46, 20)
+        Me.Label22.TabIndex = 29
+        Me.Label22.Text = "Role:"
+        '
+        'Label21
+        '
+        Me.Label21.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(6, 143)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(82, 40)
+        Me.Label21.TabIndex = 27
+        Me.Label21.Text = "Confirm " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Password:"
+        '
+        'txtbox_cpass
+        '
+        Me.txtbox_cpass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtbox_cpass.Location = New System.Drawing.Point(129, 149)
+        Me.txtbox_cpass.Name = "txtbox_cpass"
+        Me.txtbox_cpass.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_cpass.TabIndex = 26
+        '
+        'Label20
+        '
+        Me.Label20.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(6, 106)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(82, 20)
+        Me.Label20.TabIndex = 25
+        Me.Label20.Text = "Password:"
+        '
+        'txtbox_pass
+        '
+        Me.txtbox_pass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtbox_pass.Location = New System.Drawing.Point(129, 103)
+        Me.txtbox_pass.Name = "txtbox_pass"
+        Me.txtbox_pass.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_pass.TabIndex = 24
+        '
+        'Label19
+        '
+        Me.Label19.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(6, 60)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(87, 20)
+        Me.Label19.TabIndex = 23
+        Me.Label19.Text = "Username:"
+        '
+        'txtbox_uname
+        '
+        Me.txtbox_uname.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtbox_uname.Location = New System.Drawing.Point(129, 57)
+        Me.txtbox_uname.Name = "txtbox_uname"
+        Me.txtbox_uname.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_uname.TabIndex = 22
+        '
+        'Label18
+        '
+        Me.Label18.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(7, 13)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(55, 20)
+        Me.Label18.TabIndex = 21
+        Me.Label18.Text = "Name:"
+        '
+        'txtbox_name
+        '
+        Me.txtbox_name.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtbox_name.Location = New System.Drawing.Point(129, 10)
+        Me.txtbox_name.Name = "txtbox_name"
+        Me.txtbox_name.Size = New System.Drawing.Size(269, 26)
+        Me.txtbox_name.TabIndex = 20
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.Label17)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel10.Location = New System.Drawing.Point(0, 0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(409, 32)
+        Me.Panel10.TabIndex = 27
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(384, 6)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(15, 13)
+        Me.Label17.TabIndex = 0
+        Me.Label17.Text = "X"
+        '
+        'Button5
+        '
+        Me.Button5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(0, 324)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(409, 45)
+        Me.Button5.TabIndex = 18
+        Me.Button5.Text = "CONFIRM"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'MetroButton10
+        '
+        Me.MetroButton10.Location = New System.Drawing.Point(14, 467)
+        Me.MetroButton10.Name = "MetroButton10"
+        Me.MetroButton10.Size = New System.Drawing.Size(292, 34)
+        Me.MetroButton10.TabIndex = 10
+        Me.MetroButton10.Text = "Save"
+        Me.MetroButton10.UseSelectable = True
+        '
+        'MetroLabel10
+        '
+        Me.MetroLabel10.AutoSize = True
+        Me.MetroLabel10.Location = New System.Drawing.Point(11, 385)
+        Me.MetroLabel10.Name = "MetroLabel10"
+        Me.MetroLabel10.Size = New System.Drawing.Size(115, 19)
+        Me.MetroLabel10.TabIndex = 12
+        Me.MetroLabel10.Text = "Baranggay Name:"
+        '
+        'txtbox_brgyName
+        '
+        Me.txtbox_brgyName.Location = New System.Drawing.Point(14, 426)
+        Me.txtbox_brgyName.Name = "txtbox_brgyName"
+        Me.txtbox_brgyName.Size = New System.Drawing.Size(292, 26)
+        Me.txtbox_brgyName.TabIndex = 11
+        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1924, 652)
+        Me.Controls.Add(Me.settings_pnl)
         Me.Controls.Add(Me.actionModal)
         Me.Controls.Add(Me.um_pnl)
         Me.Controls.Add(Me.pnl_archive)
@@ -2182,7 +2226,6 @@ Partial Class Admin
         Me.Controls.Add(Me.actionModel)
         Me.Controls.Add(Me.summonPnl)
         Me.Controls.Add(Me.blotter_pnl)
-        Me.Controls.Add(Me.settings_pnl)
         Me.Controls.Add(Me.bt_bus_clearance)
         Me.Controls.Add(Me.bt_certificate_pnl)
         Me.Controls.Add(Me.bt_clearance_pnl)
@@ -2220,6 +2263,7 @@ Partial Class Admin
         Me.bt_bus_clearance.PerformLayout()
         CType(Me.dgv_bus_clearanceEdit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.settings_pnl.ResumeLayout(False)
+        Me.settings_pnl.PerformLayout()
         CType(Me.LogoSlot, System.ComponentModel.ISupportInitialize).EndInit()
         Me.summon_pnl.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
@@ -2249,10 +2293,10 @@ Partial Class Admin
         Me.um_pnl.PerformLayout()
         CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.actionModal.ResumeLayout(False)
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2452,4 +2496,8 @@ Partial Class Admin
     Friend WithEvents txtbox_uname As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents txtbox_name As TextBox
+    Friend WithEvents MetroButton9 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroButton10 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtbox_brgyName As TextBox
 End Class

@@ -209,7 +209,8 @@ Public Class Login
 
             If count > 0 Then
                 Me.Hide()
-                Admin.ShowDialog()
+                Dim adminForm As New Admin()
+                adminForm.ShowDialog(Me)
                 Me.Close()
             Else
                 MsgBox("Invalid username or password.", vbInformation, "Incorrect")
