@@ -25,6 +25,11 @@ Partial Class Blotter_Report
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.dgv_person = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btn_publish = New MetroFramework.Controls.MetroButton()
         Me.btn_cancel = New MetroFramework.Controls.MetroButton()
@@ -56,11 +61,6 @@ Partial Class Blotter_Report
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtbox_no = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
-        Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroPanel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.dgv_person, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +111,44 @@ Partial Class Blotter_Report
         Me.dgv_person.RowHeadersWidth = 62
         Me.dgv_person.Size = New System.Drawing.Size(906, 852)
         Me.dgv_person.TabIndex = 32
+        '
+        'DataGridViewTextBoxColumn33
+        '
+        Me.DataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn33.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn33.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
+        '
+        'DataGridViewTextBoxColumn34
+        '
+        Me.DataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn34.HeaderText = "Address"
+        Me.DataGridViewTextBoxColumn34.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
+        '
+        'Age
+        '
+        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Age.HeaderText = "Age"
+        Me.Age.MinimumWidth = 8
+        Me.Age.Name = "Age"
+        Me.Age.Width = 74
+        '
+        'DataGridViewTextBoxColumn35
+        '
+        Me.DataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn35.HeaderText = "Contact Number"
+        Me.DataGridViewTextBoxColumn35.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        Me.DataGridViewTextBoxColumn35.Width = 148
+        '
+        'DataGridViewTextBoxColumn36
+        '
+        Me.DataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn36.HeaderText = "Classification"
+        Me.DataGridViewTextBoxColumn36.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
+        Me.DataGridViewTextBoxColumn36.Width = 138
         '
         'Panel2
         '
@@ -579,44 +617,6 @@ Partial Class Blotter_Report
         Me.MetroLabel19.Size = New System.Drawing.Size(33, 19)
         Me.MetroLabel19.TabIndex = 16
         Me.MetroLabel19.Text = "No.:"
-        '
-        'DataGridViewTextBoxColumn33
-        '
-        Me.DataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn33.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn33.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
-        '
-        'DataGridViewTextBoxColumn34
-        '
-        Me.DataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn34.HeaderText = "Address"
-        Me.DataGridViewTextBoxColumn34.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
-        '
-        'Age
-        '
-        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Age.HeaderText = "Age"
-        Me.Age.MinimumWidth = 8
-        Me.Age.Name = "Age"
-        Me.Age.Width = 74
-        '
-        'DataGridViewTextBoxColumn35
-        '
-        Me.DataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn35.HeaderText = "Contact Number"
-        Me.DataGridViewTextBoxColumn35.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
-        Me.DataGridViewTextBoxColumn35.Width = 148
-        '
-        'DataGridViewTextBoxColumn36
-        '
-        Me.DataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn36.HeaderText = "Classification"
-        Me.DataGridViewTextBoxColumn36.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
-        Me.DataGridViewTextBoxColumn36.Width = 138
         '
         'Blotter_Report
         '

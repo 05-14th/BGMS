@@ -42,12 +42,6 @@ Partial Class Admin
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.dgv_clearance = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.certificate_pnl = New MetroFramework.Controls.MetroPanel()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
@@ -71,6 +65,7 @@ Partial Class Admin
         Me.t = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bc_action = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Bt_Menu = New MetroFramework.Controls.MetroContextMenu(Me.components)
         Me.ClearanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CertificationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -109,6 +104,13 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.actionButton = New System.Windows.Forms.DataGridViewImageColumn()
         Me.settings_pnl = New MetroFramework.Controls.MetroPanel()
+        Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
+        Me.txtBox_prov = New System.Windows.Forms.TextBox()
+        Me.txtBox_muni = New System.Windows.Forms.TextBox()
+        Me.MetroButton10 = New MetroFramework.Controls.MetroButton()
+        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
+        Me.txtbox_brgyName = New System.Windows.Forms.TextBox()
         Me.removeLogo = New MetroFramework.Controls.MetroButton()
         Me.upload_btn = New MetroFramework.Controls.MetroButton()
         Me.LogoSlot = New System.Windows.Forms.PictureBox()
@@ -219,9 +221,13 @@ Partial Class Admin
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.MetroButton10 = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
-        Me.txtbox_brgyName = New System.Windows.Forms.TextBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clearance_action = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.clearance_pnl.SuspendLayout()
@@ -352,30 +358,30 @@ Partial Class Admin
         Me.Settings_Menu.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.Settings_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.BusinessClearanceToolStripMenuItem1, Me.FinancialReportToolStripMenuItem})
         Me.Settings_Menu.Name = "MetroContextMenu1"
-        Me.Settings_Menu.Size = New System.Drawing.Size(175, 92)
+        Me.Settings_Menu.Size = New System.Drawing.Size(232, 132)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(174, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(231, 32)
         Me.ToolStripMenuItem1.Text = "Clearance"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(174, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(231, 32)
         Me.ToolStripMenuItem2.Text = "Certificate"
         '
         'BusinessClearanceToolStripMenuItem1
         '
         Me.BusinessClearanceToolStripMenuItem1.Name = "BusinessClearanceToolStripMenuItem1"
-        Me.BusinessClearanceToolStripMenuItem1.Size = New System.Drawing.Size(174, 22)
+        Me.BusinessClearanceToolStripMenuItem1.Size = New System.Drawing.Size(231, 32)
         Me.BusinessClearanceToolStripMenuItem1.Text = "Business Clearance"
         '
         'FinancialReportToolStripMenuItem
         '
         Me.FinancialReportToolStripMenuItem.Name = "FinancialReportToolStripMenuItem"
-        Me.FinancialReportToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.FinancialReportToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
         Me.FinancialReportToolStripMenuItem.Text = "Financial Report"
         '
         'Panel3
@@ -438,59 +444,13 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_clearance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_clearance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column5, Me.Column2, Me.Column6, Me.Column3})
+        Me.dgv_clearance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column5, Me.Column2, Me.Column6, Me.Column3, Me.clearance_action})
         Me.dgv_clearance.Location = New System.Drawing.Point(18, 68)
         Me.dgv_clearance.Name = "dgv_clearance"
         Me.dgv_clearance.RowHeadersWidth = 62
         Me.dgv_clearance.RowTemplate.Height = 28
         Me.dgv_clearance.Size = New System.Drawing.Size(386, 42)
         Me.dgv_clearance.TabIndex = 2
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.HeaderText = "Clearance ID"
-        Me.Column1.MinimumWidth = 8
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 127
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "Name"
-        Me.Column4.MinimumWidth = 8
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "Purpose"
-        Me.Column5.MinimumWidth = 8
-        Me.Column5.Name = "Column5"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.HeaderText = "Request Date"
-        Me.Column2.MinimumWidth = 8
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 134
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.HeaderText = "Date Issued"
-        Me.Column6.MinimumWidth = 8
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 121
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.HeaderText = "Status"
-        Me.Column3.MinimumWidth = 8
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 81
         '
         'certificate_pnl
         '
@@ -558,7 +518,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn1.HeaderText = "Certificate ID"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 127
+        Me.DataGridViewTextBoxColumn1.Width = 138
         '
         'DataGridViewTextBoxColumn2
         '
@@ -580,7 +540,7 @@ Partial Class Admin
         Me.R.HeaderText = "Request Date"
         Me.R.MinimumWidth = 8
         Me.R.Name = "R"
-        Me.R.Width = 134
+        Me.R.Width = 145
         '
         'DataGridViewTextBoxColumn6
         '
@@ -588,7 +548,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn6.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn6.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 121
+        Me.DataGridViewTextBoxColumn6.Width = 132
         '
         'Column8
         '
@@ -596,7 +556,7 @@ Partial Class Admin
         Me.Column8.HeaderText = "Status"
         Me.Column8.MinimumWidth = 8
         Me.Column8.Name = "Column8"
-        Me.Column8.Width = 81
+        Me.Column8.Width = 92
         '
         'bus_clearance_pnl
         '
@@ -650,7 +610,7 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_bus_clearance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_bus_clearance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn11, Me.Column7, Me.t, Me.DataGridViewTextBoxColumn12, Me.Column9})
+        Me.dgv_bus_clearance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn11, Me.Column7, Me.t, Me.DataGridViewTextBoxColumn12, Me.Column9, Me.bc_action})
         Me.dgv_bus_clearance.Location = New System.Drawing.Point(18, 68)
         Me.dgv_bus_clearance.Name = "dgv_bus_clearance"
         Me.dgv_bus_clearance.RowHeadersWidth = 62
@@ -664,7 +624,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn7.HeaderText = "Business Clearance ID"
         Me.DataGridViewTextBoxColumn7.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 160
+        Me.DataGridViewTextBoxColumn7.Width = 171
         '
         'DataGridViewTextBoxColumn8
         '
@@ -693,7 +653,7 @@ Partial Class Admin
         Me.t.HeaderText = "Request Date"
         Me.t.MinimumWidth = 8
         Me.t.Name = "t"
-        Me.t.Width = 123
+        Me.t.Width = 134
         '
         'DataGridViewTextBoxColumn12
         '
@@ -701,7 +661,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn12.HeaderText = "Date Issued"
         Me.DataGridViewTextBoxColumn12.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.Width = 111
+        Me.DataGridViewTextBoxColumn12.Width = 122
         '
         'Column9
         '
@@ -709,43 +669,53 @@ Partial Class Admin
         Me.Column9.HeaderText = "Status"
         Me.Column9.MinimumWidth = 8
         Me.Column9.Name = "Column9"
-        Me.Column9.Width = 81
+        Me.Column9.Width = 92
+        '
+        'bc_action
+        '
+        Me.bc_action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.bc_action.HeaderText = "Action"
+        Me.bc_action.MinimumWidth = 8
+        Me.bc_action.Name = "bc_action"
+        Me.bc_action.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bc_action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.bc_action.Width = 90
         '
         'Bt_Menu
         '
         Me.Bt_Menu.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.Bt_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClearanceToolStripMenuItem, Me.CertificationToolStripMenuItem, Me.BusinessClearanceToolStripMenuItem, Me.BlotterToolStripMenuItem, Me.SummonToolStripMenuItem})
         Me.Bt_Menu.Name = "Bt_Menu"
-        Me.Bt_Menu.Size = New System.Drawing.Size(175, 114)
+        Me.Bt_Menu.Size = New System.Drawing.Size(232, 164)
         '
         'ClearanceToolStripMenuItem
         '
         Me.ClearanceToolStripMenuItem.Name = "ClearanceToolStripMenuItem"
-        Me.ClearanceToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ClearanceToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
         Me.ClearanceToolStripMenuItem.Text = "Clearance"
         '
         'CertificationToolStripMenuItem
         '
         Me.CertificationToolStripMenuItem.Name = "CertificationToolStripMenuItem"
-        Me.CertificationToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.CertificationToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
         Me.CertificationToolStripMenuItem.Text = "Certification"
         '
         'BusinessClearanceToolStripMenuItem
         '
         Me.BusinessClearanceToolStripMenuItem.Name = "BusinessClearanceToolStripMenuItem"
-        Me.BusinessClearanceToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.BusinessClearanceToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
         Me.BusinessClearanceToolStripMenuItem.Text = "Business Clearance"
         '
         'BlotterToolStripMenuItem
         '
         Me.BlotterToolStripMenuItem.Name = "BlotterToolStripMenuItem"
-        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
         Me.BlotterToolStripMenuItem.Text = "Blotter"
         '
         'SummonToolStripMenuItem
         '
         Me.SummonToolStripMenuItem.Name = "SummonToolStripMenuItem"
-        Me.SummonToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.SummonToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
         Me.SummonToolStripMenuItem.Text = "Summon"
         '
         'Bm_Menu
@@ -753,18 +723,18 @@ Partial Class Admin
         Me.Bm_Menu.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.Bm_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdinanceToolStripMenuItem, Me.ResolutionToolStripMenuItem})
         Me.Bm_Menu.Name = "Bm_Menu"
-        Me.Bm_Menu.Size = New System.Drawing.Size(181, 70)
+        Me.Bm_Menu.Size = New System.Drawing.Size(168, 68)
         '
         'OrdinanceToolStripMenuItem
         '
         Me.OrdinanceToolStripMenuItem.Name = "OrdinanceToolStripMenuItem"
-        Me.OrdinanceToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OrdinanceToolStripMenuItem.Size = New System.Drawing.Size(167, 32)
         Me.OrdinanceToolStripMenuItem.Text = "Ordinance"
         '
         'ResolutionToolStripMenuItem
         '
         Me.ResolutionToolStripMenuItem.Name = "ResolutionToolStripMenuItem"
-        Me.ResolutionToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.ResolutionToolStripMenuItem.Size = New System.Drawing.Size(167, 32)
         Me.ResolutionToolStripMenuItem.Text = "Resolution"
         '
         'bt_clearance_pnl
@@ -822,7 +792,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn13.HeaderText = "Clearance ID"
         Me.DataGridViewTextBoxColumn13.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.Width = 116
+        Me.DataGridViewTextBoxColumn13.Width = 127
         '
         'DataGridViewTextBoxColumn16
         '
@@ -844,7 +814,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn18.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn18.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.Width = 139
+        Me.DataGridViewTextBoxColumn18.Width = 150
         '
         'actionBtn
         '
@@ -909,7 +879,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn19.HeaderText = "Certificate ID"
         Me.DataGridViewTextBoxColumn19.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.Width = 116
+        Me.DataGridViewTextBoxColumn19.Width = 127
         '
         'DataGridViewTextBoxColumn22
         '
@@ -931,7 +901,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn24.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn24.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.Width = 139
+        Me.DataGridViewTextBoxColumn24.Width = 150
         '
         'actBtn
         '
@@ -996,7 +966,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn25.HeaderText = "Business Clearance ID"
         Me.DataGridViewTextBoxColumn25.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        Me.DataGridViewTextBoxColumn25.Width = 160
+        Me.DataGridViewTextBoxColumn25.Width = 171
         '
         'DataGridViewTextBoxColumn28
         '
@@ -1025,7 +995,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn31.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn31.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.Width = 139
+        Me.DataGridViewTextBoxColumn31.Width = 150
         '
         'actionButton
         '
@@ -1037,6 +1007,10 @@ Partial Class Admin
         '
         'settings_pnl
         '
+        Me.settings_pnl.Controls.Add(Me.MetroLabel12)
+        Me.settings_pnl.Controls.Add(Me.MetroLabel11)
+        Me.settings_pnl.Controls.Add(Me.txtBox_prov)
+        Me.settings_pnl.Controls.Add(Me.txtBox_muni)
         Me.settings_pnl.Controls.Add(Me.MetroButton10)
         Me.settings_pnl.Controls.Add(Me.MetroLabel10)
         Me.settings_pnl.Controls.Add(Me.txtbox_brgyName)
@@ -1048,12 +1022,72 @@ Partial Class Admin
         Me.settings_pnl.HorizontalScrollbarSize = 9
         Me.settings_pnl.Location = New System.Drawing.Point(1164, 72)
         Me.settings_pnl.Name = "settings_pnl"
-        Me.settings_pnl.Size = New System.Drawing.Size(320, 508)
+        Me.settings_pnl.Size = New System.Drawing.Size(320, 567)
         Me.settings_pnl.TabIndex = 12
         Me.settings_pnl.VerticalScrollbarBarColor = True
         Me.settings_pnl.VerticalScrollbarHighlightOnWheel = False
         Me.settings_pnl.VerticalScrollbarSize = 10
         Me.settings_pnl.Visible = False
+        '
+        'MetroLabel12
+        '
+        Me.MetroLabel12.AutoSize = True
+        Me.MetroLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel12.Location = New System.Drawing.Point(11, 453)
+        Me.MetroLabel12.Name = "MetroLabel12"
+        Me.MetroLabel12.Size = New System.Drawing.Size(62, 19)
+        Me.MetroLabel12.TabIndex = 16
+        Me.MetroLabel12.Text = "Province:"
+        '
+        'MetroLabel11
+        '
+        Me.MetroLabel11.AutoSize = True
+        Me.MetroLabel11.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel11.Location = New System.Drawing.Point(11, 421)
+        Me.MetroLabel11.Name = "MetroLabel11"
+        Me.MetroLabel11.Size = New System.Drawing.Size(81, 19)
+        Me.MetroLabel11.TabIndex = 15
+        Me.MetroLabel11.Text = "Municipality:"
+        '
+        'txtBox_prov
+        '
+        Me.txtBox_prov.Location = New System.Drawing.Point(127, 451)
+        Me.txtBox_prov.Name = "txtBox_prov"
+        Me.txtBox_prov.Size = New System.Drawing.Size(179, 26)
+        Me.txtBox_prov.TabIndex = 14
+        '
+        'txtBox_muni
+        '
+        Me.txtBox_muni.Location = New System.Drawing.Point(127, 419)
+        Me.txtBox_muni.Name = "txtBox_muni"
+        Me.txtBox_muni.Size = New System.Drawing.Size(179, 26)
+        Me.txtBox_muni.TabIndex = 13
+        '
+        'MetroButton10
+        '
+        Me.MetroButton10.Location = New System.Drawing.Point(11, 517)
+        Me.MetroButton10.Name = "MetroButton10"
+        Me.MetroButton10.Size = New System.Drawing.Size(292, 34)
+        Me.MetroButton10.TabIndex = 10
+        Me.MetroButton10.Text = "Save"
+        Me.MetroButton10.UseSelectable = True
+        '
+        'MetroLabel10
+        '
+        Me.MetroLabel10.AutoSize = True
+        Me.MetroLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel10.Location = New System.Drawing.Point(11, 389)
+        Me.MetroLabel10.Name = "MetroLabel10"
+        Me.MetroLabel10.Size = New System.Drawing.Size(75, 19)
+        Me.MetroLabel10.TabIndex = 12
+        Me.MetroLabel10.Text = "Baranggay:"
+        '
+        'txtbox_brgyName
+        '
+        Me.txtbox_brgyName.Location = New System.Drawing.Point(127, 387)
+        Me.txtbox_brgyName.Name = "txtbox_brgyName"
+        Me.txtbox_brgyName.Size = New System.Drawing.Size(179, 26)
+        Me.txtbox_brgyName.TabIndex = 11
         '
         'removeLogo
         '
@@ -1089,7 +1123,7 @@ Partial Class Admin
         Me.blotter_pnl.HorizontalScrollbarSize = 9
         Me.blotter_pnl.Location = New System.Drawing.Point(1164, 466)
         Me.blotter_pnl.Name = "blotter_pnl"
-        Me.blotter_pnl.Size = New System.Drawing.Size(320, 144)
+        Me.blotter_pnl.Size = New System.Drawing.Size(320, 186)
         Me.blotter_pnl.TabIndex = 13
         Me.blotter_pnl.VerticalScrollbarBarColor = True
         Me.blotter_pnl.VerticalScrollbarHighlightOnWheel = False
@@ -1328,7 +1362,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn32.HeaderText = "#"
         Me.DataGridViewTextBoxColumn32.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
-        Me.DataGridViewTextBoxColumn32.Width = 43
+        Me.DataGridViewTextBoxColumn32.Width = 54
         '
         'DataGridViewTextBoxColumn33
         '
@@ -1429,7 +1463,7 @@ Partial Class Admin
         Me.Column10.HeaderText = "#"
         Me.Column10.MinimumWidth = 8
         Me.Column10.Name = "Column10"
-        Me.Column10.Width = 43
+        Me.Column10.Width = 54
         '
         'Column11
         '
@@ -1666,7 +1700,7 @@ Partial Class Admin
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.Location = New System.Drawing.Point(-22, 6)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(15, 13)
+        Me.Label15.Size = New System.Drawing.Size(21, 20)
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "X"
         '
@@ -1736,7 +1770,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn3.HeaderText = "Track ID"
         Me.DataGridViewTextBoxColumn3.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 87
+        Me.DataGridViewTextBoxColumn3.Width = 98
         '
         'DataGridViewTextBoxColumn4
         '
@@ -1758,7 +1792,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn10.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn10.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 139
+        Me.DataGridViewTextBoxColumn10.Width = 150
         '
         'Column13
         '
@@ -1766,7 +1800,7 @@ Partial Class Admin
         Me.Column13.HeaderText = "Date Issued"
         Me.Column13.MinimumWidth = 8
         Me.Column13.Name = "Column13"
-        Me.Column13.Width = 111
+        Me.Column13.Width = 122
         '
         'Column14
         '
@@ -1774,7 +1808,7 @@ Partial Class Admin
         Me.Column14.HeaderText = "Amount"
         Me.Column14.MinimumWidth = 8
         Me.Column14.Name = "Column14"
-        Me.Column14.Width = 90
+        Me.Column14.Width = 101
         '
         'pnl_archive
         '
@@ -1831,7 +1865,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn14.HeaderText = "Track ID"
         Me.DataGridViewTextBoxColumn14.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        Me.DataGridViewTextBoxColumn14.Width = 87
+        Me.DataGridViewTextBoxColumn14.Width = 98
         '
         'DataGridViewTextBoxColumn15
         '
@@ -1853,7 +1887,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn21.HeaderText = "Date Requested"
         Me.DataGridViewTextBoxColumn21.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.Width = 139
+        Me.DataGridViewTextBoxColumn21.Width = 150
         '
         'actButton
         '
@@ -1863,7 +1897,7 @@ Partial Class Admin
         Me.actButton.Name = "actButton"
         Me.actButton.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.actButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.actButton.Width = 79
+        Me.actButton.Width = 90
         '
         'um_pnl
         '
@@ -1932,7 +1966,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn26.HeaderText = "#"
         Me.DataGridViewTextBoxColumn26.MinimumWidth = 8
         Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
-        Me.DataGridViewTextBoxColumn26.Width = 43
+        Me.DataGridViewTextBoxColumn26.Width = 54
         '
         'DataGridViewTextBoxColumn27
         '
@@ -1954,7 +1988,7 @@ Partial Class Admin
         Me.um_pos.HeaderText = "Position"
         Me.um_pos.MinimumWidth = 8
         Me.um_pos.Name = "um_pos"
-        Me.um_pos.Width = 90
+        Me.um_pos.Width = 101
         '
         'Column15
         '
@@ -1962,7 +1996,7 @@ Partial Class Admin
         Me.Column15.HeaderText = "Roles"
         Me.Column15.MinimumWidth = 8
         Me.Column15.Name = "Column15"
-        Me.Column15.Width = 75
+        Me.Column15.Width = 86
         '
         'Column16
         '
@@ -1970,7 +2004,7 @@ Partial Class Admin
         Me.Column16.HeaderText = "Status"
         Me.Column16.MinimumWidth = 8
         Me.Column16.Name = "Column16"
-        Me.Column16.Width = 81
+        Me.Column16.Width = 92
         '
         'um_action
         '
@@ -2024,7 +2058,7 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cb_pos.FormattingEnabled = True
         Me.cb_pos.ItemHeight = 23
-        Me.cb_pos.Items.AddRange(New Object() {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer"})
+        Me.cb_pos.Items.AddRange(New Object() {"Barangay Secretary", "Barangay Treasurer"})
         Me.cb_pos.Location = New System.Drawing.Point(129, 196)
         Me.cb_pos.Name = "cb_pos"
         Me.cb_pos.Size = New System.Drawing.Size(10, 29)
@@ -2050,7 +2084,7 @@ Partial Class Admin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cb_role.FormattingEnabled = True
         Me.cb_role.ItemHeight = 23
-        Me.cb_role.Items.AddRange(New Object() {"Admin", "Secretary", "Treasurer"})
+        Me.cb_role.Items.AddRange(New Object() {"Secretary", "Treasurer"})
         Me.cb_role.Location = New System.Drawing.Point(129, 249)
         Me.cb_role.Name = "cb_role"
         Me.cb_role.Size = New System.Drawing.Size(10, 29)
@@ -2173,7 +2207,7 @@ Partial Class Admin
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(384, 6)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(15, 13)
+        Me.Label17.Size = New System.Drawing.Size(21, 20)
         Me.Label17.TabIndex = 0
         Me.Label17.Text = "X"
         '
@@ -2188,30 +2222,62 @@ Partial Class Admin
         Me.Button5.Text = "CONFIRM"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'MetroButton10
+        'Column1
         '
-        Me.MetroButton10.Location = New System.Drawing.Point(14, 467)
-        Me.MetroButton10.Name = "MetroButton10"
-        Me.MetroButton10.Size = New System.Drawing.Size(292, 34)
-        Me.MetroButton10.TabIndex = 10
-        Me.MetroButton10.Text = "Save"
-        Me.MetroButton10.UseSelectable = True
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "Clearance ID"
+        Me.Column1.MinimumWidth = 8
+        Me.Column1.Name = "Column1"
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column1.Width = 138
         '
-        'MetroLabel10
+        'Column4
         '
-        Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Location = New System.Drawing.Point(11, 385)
-        Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(115, 19)
-        Me.MetroLabel10.TabIndex = 12
-        Me.MetroLabel10.Text = "Baranggay Name:"
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "Name"
+        Me.Column4.MinimumWidth = 8
+        Me.Column4.Name = "Column4"
         '
-        'txtbox_brgyName
+        'Column5
         '
-        Me.txtbox_brgyName.Location = New System.Drawing.Point(14, 426)
-        Me.txtbox_brgyName.Name = "txtbox_brgyName"
-        Me.txtbox_brgyName.Size = New System.Drawing.Size(292, 26)
-        Me.txtbox_brgyName.TabIndex = 11
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "Purpose"
+        Me.Column5.MinimumWidth = 8
+        Me.Column5.Name = "Column5"
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.HeaderText = "Request Date"
+        Me.Column2.MinimumWidth = 8
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 145
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.HeaderText = "Date Issued"
+        Me.Column6.MinimumWidth = 8
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 132
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.HeaderText = "Status"
+        Me.Column3.MinimumWidth = 8
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 92
+        '
+        'clearance_action
+        '
+        Me.clearance_action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.clearance_action.HeaderText = "Action"
+        Me.clearance_action.MinimumWidth = 8
+        Me.clearance_action.Name = "clearance_action"
+        Me.clearance_action.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.clearance_action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.clearance_action.Width = 90
         '
         'Admin
         '
@@ -2422,25 +2488,12 @@ Partial Class Admin
     Friend WithEvents actionButton As DataGridViewImageColumn
     Friend WithEvents MetroButton7 As MetroFramework.Controls.MetroButton
     Friend WithEvents txtbox_trackid As TextBox
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents R As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents t As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents um_btn As MetroFramework.Controls.MetroButton
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label16 As Label
@@ -2500,4 +2553,23 @@ Partial Class Admin
     Friend WithEvents MetroButton10 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtbox_brgyName As TextBox
+    Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtBox_prov As TextBox
+    Friend WithEvents txtBox_muni As TextBox
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents t As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents bc_action As DataGridViewImageColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents clearance_action As DataGridViewButtonColumn
 End Class

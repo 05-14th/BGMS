@@ -1,6 +1,8 @@
 ﻿Imports System.IO
+Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
+Imports Microsoft.Office.Interop
 
 Public Class Admin
     Dim documentType As String
@@ -90,9 +92,18 @@ Public Class Admin
             command.Parameters.AddWithValue("@value", "name")
             reader = command.ExecuteReader()
             If reader.HasRows Then
+                Dim counter As Integer = 0
                 While reader.Read()
                     Dim result As String = reader("config_content").ToString()
-                    txtbox_brgyName.Text = result
+                    Select Case counter
+                        Case 0
+                            txtbox_brgyName.Text = result
+                        Case 1
+                            txtBox_muni.Text = result
+                        Case 2
+                            txtBox_prov.Text = result
+                    End Select
+                    counter += 1
                 End While
             Else
                 MsgBox("No data found.", vbOK + vbCritical, "Missing Data")
@@ -278,6 +289,7 @@ Public Class Admin
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeLogo()
         FetchConfig()
+        FetchAccount()
     End Sub
 
     Private Sub MetroButton5_Click(sender As Object, e As EventArgs) Handles removeLogo.Click
@@ -781,6 +793,8 @@ Public Class Admin
         End If
     End Sub
 
+    Private captainName As String
+
     Private Sub FetchAccount()
         Try
 
@@ -798,6 +812,9 @@ Public Class Admin
             Dim rowCount As Integer = 1
 
             While dr.Read()
+                If dr("acc_position").ToString = "Barangay Captain" Then
+                    captainName = dr("acc_name").ToString()
+                End If
                 um_dgv.Rows.Add(rowCount.ToString(), dr("acc_name").ToString(), dr("acc_username").ToString(), dr("acc_position").ToString(), dr("acc_role").ToString(), dr("acc_status").ToString())
                 rowCount += 1
             End While
@@ -931,11 +948,166 @@ Public Class Admin
 
     End Sub
 
-    Private Sub MetroPanel1_Paint(sender As Object, e As PaintEventArgs)
+    Private Function GetSaveFilePath() As String
+        Using saveFileDialog As New SaveFileDialog()
+            saveFileDialog.Filter = "Word Documents (*.docx)|*.docx"
+            saveFileDialog.Title = "Save Word Document"
+            saveFileDialog.DefaultExt = "docx"
+            saveFileDialog.AddExtension = True
 
+            ' Show the dialog and get the selected file path
+            If saveFileDialog.ShowDialog() = DialogResult.OK Then
+                Return saveFileDialog.FileName ' Return the selected file path
+            End If
+        End Using
+        Return String.Empty ' Return empty if the user cancels
+    End Function
+
+    Function GetDaySuffix(ByVal day As Integer) As String
+        If day >= 11 AndAlso day <= 13 Then
+            Return "th"
+        End If
+
+        Select Case day Mod 10
+            Case 1
+                Return "st"
+            Case 2
+                Return "nd"
+            Case 3
+                Return "rd"
+            Case Else
+                Return "th"
+        End Select
+    End Function
+
+    Public Sub CreateWordDocument(name As String, title As String, address As String, date_ As String, brgy As String, muni As String, prov As String)
+        Dim wordApp As Word.Application = Nothing
+        Dim doc As Word.Document = Nothing
+
+        Dim parts() As String = date_.Split("-"c)
+        Dim month As String = parts(0)
+        Dim day As String = parts(1)
+        Dim year As String = parts(2)
+
+        Dim dayInt As Integer = Convert.ToInt32(day)
+        Dim suffix As String = GetDaySuffix(dayInt)
+
+        Try
+            ' Initialize Word application
+            wordApp = New Word.Application()
+            wordApp.Visible = False
+
+            ' Define file paths
+            Dim busfilePath As String = Application.StartupPath
+            Dim busPath As String = Path.Combine(busfilePath, "Docs/busClearance.docx")
+            Dim logoPath As String = My.Settings.LogoName
+
+            ' Validate file paths
+            If Not File.Exists(busPath) Then Throw New FileNotFoundException($"Template file not found: {busPath}")
+            If Not File.Exists(logoPath) Then Throw New FileNotFoundException($"Logo file not found: {logoPath}")
+
+            ' Open the Word template
+            doc = wordApp.Documents.Open(busPath)
+            doc.Saved = True ' Prevent auto-saving
+
+            ' Replace text placeholders
+            ReplaceTextPlaceholder(doc, "{Name}", name)
+            ReplaceTextPlaceholder(doc, "{Title}", title)
+            ReplaceTextPlaceholder(doc, "{Address}", address)
+            ReplaceTextPlaceholder(doc, "{Day}", day + suffix)
+            ReplaceTextPlaceholder(doc, "{Month}", MonthName(month))
+            ReplaceTextPlaceholder(doc, "{Year}", year)
+            ReplaceTextPlaceholder(doc, "{Barangay}", brgy)
+            ReplaceTextPlaceholder(doc, "{Municipality}", muni)
+            ReplaceTextPlaceholder(doc, "{Province}", prov)
+            ReplaceTextPlaceholder(doc, "{Captain}", captainName)
+            'ReplaceTextPlaceholder(doc, "signed", "-Originally Signed-")
+
+            ' Replace image placeholder
+            ReplaceImagePlaceholder(doc, "{imagePlaceholder}", logoPath)
+
+            ' Open SaveFileDialog to let user choose save location
+            Using saveDialog As New SaveFileDialog()
+                saveDialog.Filter = "Word Documents (*.docx)|*.docx|All Files (*.*)|*.*"
+                saveDialog.Title = "Save Document As"
+                saveDialog.DefaultExt = "docx"
+                saveDialog.AddExtension = True
+
+                If saveDialog.ShowDialog() = DialogResult.OK Then
+                    doc.SaveAs2(saveDialog.FileName)
+                    MessageBox.Show($"Document saved successfully at {saveDialog.FileName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Save operation was canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            End Using
+
+        Catch ex As FileNotFoundException
+            ' Handle file not found exceptions
+            MessageBox.Show($"File error: {ex.Message}", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Catch ex As Exception
+            ' Handle any other exceptions
+            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Finally
+            ' Ensure resources are properly cleaned up
+            If doc IsNot Nothing Then
+                doc.Close(SaveChanges:=False)
+                Marshal.ReleaseComObject(doc)
+            End If
+            If wordApp IsNot Nothing Then
+                wordApp.Quit()
+                Marshal.ReleaseComObject(wordApp)
+            End If
+        End Try
     End Sub
 
-    Private Sub OrdinanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdinanceToolStripMenuItem.Click
 
+    Private Sub ReplaceTextPlaceholder(doc As Word.Document, placeholder As String, replacement As String)
+        ' Loop through the content to find and replace the text placeholder
+        Dim range As Word.Range = doc.Content
+        range.Find.Text = placeholder
+        range.Find.Replacement.Text = replacement
+        range.Find.Execute(Replace:=Word.WdReplace.wdReplaceAll)
     End Sub
+
+    Private Sub ReplaceImagePlaceholder(doc As Word.Document, placeholder As String, imagePath As String)
+        Dim range As Word.Range = doc.Content
+        With range.Find
+            .Text = placeholder
+            .Execute()
+        End With
+
+        ' If the placeholder is found, replace it with the image
+        If range.Find.Found Then
+            range.Delete() ' Remove the placeholder text
+            Dim shape As Word.Shape = doc.Shapes.AddPicture(FileName:=imagePath,
+                                                         LinkToFile:=False,
+                                                         SaveWithDocument:=True,
+                                                         Anchor:=range)
+
+            ' Set the image wrapping style to "Behind Text"
+            shape.WrapFormat.Type = Word.WdWrapType.wdWrapBehind
+
+            ' Set custom size (e.g., 1.37 inches width and proportional height)
+            Dim widthInInches As Double = 1.37
+            Dim widthInPoints As Double = widthInInches * 72
+            ' Dim originalAspectRatio As Double = shape.Width / shape.Height
+
+            shape.Width = widthInPoints
+            shape.Height = widthInPoints
+        End If
+    End Sub
+
+
+    Private Sub dgv_bus_clearance_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_bus_clearance.CellContentClick
+        If e.ColumnIndex = dgv_bus_clearance.Columns("bc_action").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = dgv_bus_clearance.Rows(e.RowIndex)
+            Dim clearanceQuery = MsgBox("Do you want to print this document?", vbYesNo + vbQuestion, "Print Document")
+            If clearanceQuery = vbYes Then
+                CreateWordDocument(clickedRow.Cells(1).Value, clickedRow.Cells(2).Value, clickedRow.Cells(3).Value, clickedRow.Cells(5).Value, txtbox_brgyName.Text, txtBox_muni.Text, txtBox_prov.Text)
+            End If
+        End If
+    End Sub
+
 End Class
