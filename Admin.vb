@@ -3,6 +3,7 @@ Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
 Imports Microsoft.Office.Interop
+Imports PdfiumViewer
 
 Public Class Admin
     Dim documentType As String
@@ -1108,6 +1109,20 @@ Public Class Admin
                 CreateWordDocument(clickedRow.Cells(1).Value, clickedRow.Cells(2).Value, clickedRow.Cells(3).Value, clickedRow.Cells(5).Value, txtbox_brgyName.Text, txtBox_muni.Text, txtBox_prov.Text)
             End If
         End If
+    End Sub
+
+    Private Sub OrdinanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdinanceToolStripMenuItem.Click
+        viewPanel.Dock = DockStyle.Fill
+        viewPanel.Visible = True
+        ' Initialize the PdfViewer
+        Dim pdfViewer As New PdfiumViewer.PdfViewer() With {
+            .Dock = DockStyle.Fill
+        }
+        viewPanel.Controls.Add(pdfViewer)
+
+        ' Load the selected PDF file
+        Dim document = PdfiumViewer.PdfDocument.Load("E:\Documents\Commission Docs\cnsc-CSS-Project-Overview.pdf")
+        pdfViewer.Document = document
     End Sub
 
 End Class
