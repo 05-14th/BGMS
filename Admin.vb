@@ -32,12 +32,12 @@ Public Class Admin
             While dr.Read()
                 If dr("status").Equals("Granted") Or dr("status").Equals("Denied") Then
                     If IsDBNull(dr("date_issued")) Then
-                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_age"), dr("clearance_sex"), dr("clearance_cs"), dr("clearance_purpose"), dr("clearance_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
                     Else
-                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_age"), dr("clearance_sex"), dr("clearance_cs"), dr("clearance_purpose"), dr("clearance_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
                     End If
                 ElseIf dr("status").Equals("Pending") Then
-                    dgv_clearanceEdit.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                    dgv_clearanceEdit.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_age"), dr("clearance_sex"), dr("clearance_cs"), dr("clearance_purpose"), dr("clearance_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
                 End If
             End While
 
@@ -1063,6 +1063,99 @@ Public Class Admin
         End Try
     End Sub
 
+    Public Sub CreateClearanceDocument(name As String, age As String, sex As String, status As String, reason As String, purok As String, brgy As String, muni As String, prov As String, date_ As String)
+        Dim wordApp As Word.Application = Nothing
+        Dim doc As Word.Document = Nothing
+
+        Dim parts() As String = date_.Split("-"c)
+        Dim month As String = parts(0)
+        Dim day As String = parts(1)
+        Dim year As String = parts(2)
+
+        Dim year_ As Integer = Convert.ToInt32(parts(2))
+
+        year_ += 1
+
+        Dim updatedYear As String = year_.ToString()
+
+        Dim dayInt As Integer = Convert.ToInt32(day)
+        Dim suffix As String = GetDaySuffix(dayInt)
+
+        Try
+            ' Initialize Word application
+            wordApp = New Word.Application()
+            wordApp.Visible = False
+
+            ' Define file paths
+            Dim busfilePath As String = Application.StartupPath
+            Dim busPath As String = Path.Combine(busfilePath, "Docs/brgyClearance.docx")
+            Dim logoPath As String = My.Settings.LogoName
+
+            ' Validate file paths
+            If Not File.Exists(busPath) Then Throw New FileNotFoundException($"Template file not found: {busPath}")
+            If Not File.Exists(logoPath) Then Throw New FileNotFoundException($"Logo file not found: {logoPath}")
+
+            ' Open the Word template
+            doc = wordApp.Documents.Open(busPath)
+            doc.Saved = True ' Prevent auto-saving
+
+            ' Replace text placeholders
+            ReplaceTextPlaceholder(doc, "{Name}", name)
+            ReplaceTextPlaceholder(doc, "{Age}", age)
+            ReplaceTextPlaceholder(doc, "{Sex}", sex)
+            ReplaceTextPlaceholder(doc, "{Day}", day + suffix)
+            ReplaceTextPlaceholder(doc, "{Month}", MonthName(month))
+            ReplaceTextPlaceholder(doc, "{Year}", year)
+            ReplaceTextPlaceholder(doc, "{Nationality}", "Filipino")
+            ReplaceTextPlaceholder(doc, "{Status}", status)
+            ReplaceTextPlaceholder(doc, "{Purok}", purok)
+            ReplaceTextPlaceholder(doc, "{Barangay}", brgy)
+            ReplaceTextPlaceholder(doc, "{Municipality}", muni)
+            ReplaceTextPlaceholder(doc, "{Province}", prov)
+            ReplaceTextPlaceholder(doc, "{Reason}", reason)
+            ReplaceTextPlaceholder(doc, "{Captain}", captainName)
+            ReplaceTextPlaceholder(doc, "{Validity}", "December 31, " & updatedYear)
+            'ReplaceTextPlaceholder(doc, "signed", "-Originally Signed-")
+
+            ' Replace image placeholder
+            ReplaceImagePlaceholder(doc, "{imagePlaceholder}", logoPath)
+
+            ' Open SaveFileDialog to let user choose save location
+            Using saveDialog As New SaveFileDialog()
+                saveDialog.Filter = "Word Documents (*.docx)|*.docx|All Files (*.*)|*.*"
+                saveDialog.Title = "Save Document As"
+                saveDialog.DefaultExt = "docx"
+                saveDialog.AddExtension = True
+
+                If saveDialog.ShowDialog() = DialogResult.OK Then
+                    doc.SaveAs2(saveDialog.FileName)
+                    MessageBox.Show($"Document saved successfully at {saveDialog.FileName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Save operation was canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            End Using
+
+        Catch ex As FileNotFoundException
+            ' Handle file not found exceptions
+            MessageBox.Show($"File error: {ex.Message}", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Catch ex As Exception
+            ' Handle any other exceptions
+            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Finally
+            ' Ensure resources are properly cleaned up
+            If doc IsNot Nothing Then
+                doc.Close(SaveChanges:=False)
+                Marshal.ReleaseComObject(doc)
+            End If
+            If wordApp IsNot Nothing Then
+                wordApp.Quit()
+                Marshal.ReleaseComObject(wordApp)
+            End If
+        End Try
+    End Sub
+
 
     Private Sub ReplaceTextPlaceholder(doc As Word.Document, placeholder As String, replacement As String)
         ' Loop through the content to find and replace the text placeholder
@@ -1107,6 +1200,16 @@ Public Class Admin
             Dim clearanceQuery = MsgBox("Do you want to print this document?", vbYesNo + vbQuestion, "Print Document")
             If clearanceQuery = vbYes Then
                 CreateWordDocument(clickedRow.Cells(1).Value, clickedRow.Cells(2).Value, clickedRow.Cells(3).Value, clickedRow.Cells(5).Value, txtbox_brgyName.Text, txtBox_muni.Text, txtBox_prov.Text)
+            End If
+        End If
+    End Sub
+
+    Private Sub dgv_brgy_clearance_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_clearance.CellContentClick
+        If e.ColumnIndex = dgv_clearance.Columns("clearance_action").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = dgv_clearance.Rows(e.RowIndex)
+            Dim clearanceQuery = MsgBox("Do you want to print this document?", vbYesNo + vbQuestion, "Print Document")
+            If clearanceQuery = vbYes Then
+                CreateClearanceDocument(clickedRow.Cells(1).Value, clickedRow.Cells(2).Value, clickedRow.Cells(3).Value, clickedRow.Cells(4).Value, clickedRow.Cells(5).Value, clickedRow.Cells(6).Value, txtbox_brgyName.Text, txtBox_muni.Text, txtBox_prov.Text, clickedRow.Cells(7).Value)
             End If
         End If
     End Sub
