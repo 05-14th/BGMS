@@ -49,6 +49,41 @@ Public Class Admin
         End Try
     End Sub
 
+    Private Sub FetchSpecifiClearance(keyword As String)
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_clearance.Rows.Clear()
+            dgv_clearanceEdit.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_clearance WHERE archived= 0 AND clearance_name LIKE '%" & keyword & "%' OR clearance_track_id LIKE '%" & keyword & "%'"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                If dr("status").Equals("Granted") Or dr("status").Equals("Denied") Then
+                    If IsDBNull(dr("date_issued")) Then
+                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_age"), dr("clearance_sex"), dr("clearance_cs"), dr("clearance_purpose"), dr("clearance_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                    Else
+                        dgv_clearance.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_age"), dr("clearance_sex"), dr("clearance_cs"), dr("clearance_purpose"), dr("clearance_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                    End If
+                ElseIf dr("status").Equals("Pending") Then
+                    dgv_clearanceEdit.Rows.Add(dr("clearance_track_id"), dr("clearance_name"), dr("clearance_age"), dr("clearance_sex"), dr("clearance_cs"), dr("clearance_purpose"), dr("clearance_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                End If
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
     Private Sub FetchCertificate()
         Try
             If cn.State = ConnectionState.Closed Then
@@ -59,6 +94,40 @@ Public Class Admin
             dgv_certificateEdit.Rows.Clear()
 
             Dim sqlQuery As String = "SELECT * FROM bgms_certificate WHERE archived = 0"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                If dr("status").Equals("Granted") Or dr("status").Equals("Denied") Then
+                    If IsDBNull(dr("date_issued")) Then
+                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), dr("cert_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                    Else
+                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), dr("cert_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                    End If
+                ElseIf dr("status").Equals("Pending") Then
+                    dgv_certificateEdit.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), dr("cert_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                End If
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchSpecificCertificate(keyword As String)
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_certificate.Rows.Clear()
+            dgv_certificateEdit.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_certificate WHERE archived = 0 AND cert_name LIKE '%" & keyword & "%' OR cert_track_id LIKE '%" & keyword & "%'"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
@@ -136,6 +205,41 @@ Public Class Admin
             dgv_bus_clearanceEdit.Rows.Clear()
 
             Dim sqlQuery As String = "SELECT * FROM bgms_bus_clearance WHERE archived = 0"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                If dr("status").Equals("Granted") Or dr("status").Equals("Denied") Then
+                    If IsDBNull(dr("date_issued")) Then
+                        dgv_bus_clearance.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                    Else
+                        dgv_bus_clearance.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                    End If
+                ElseIf dr("status").Equals("Pending") Then
+                    dgv_bus_clearanceEdit.Rows.Add(dr("bc_track_id"), dr("bc_owner_name"), dr("bc_bus_name"), dr("bc_bus_addr"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                End If
+
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchSpecificBusClearance(keyword As String)
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_bus_clearance.Rows.Clear()
+            dgv_bus_clearanceEdit.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_bus_clearance WHERE archived = 0 AND bc_owner_name LIKE '%" & keyword & "%' OR bc_bus_name LIKE '%" & keyword & "%' OR bc_track_id LIKE '%" & keyword & "%'"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
@@ -1311,5 +1415,33 @@ Public Class Admin
 
     End Sub
 
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        Dim key As String = TextBox1.Text
+        FetchSpecifiClearance(key)
+    End Sub
 
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
+        Dim key As String = TextBox4.Text
+        FetchSpecifiClearance(key)
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        Dim key As String = TextBox2.Text
+        FetchSpecificCertificate(key)
+    End Sub
+
+    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
+        Dim key As String = TextBox5.Text
+        FetchSpecificCertificate(key)
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+        Dim key As String = TextBox3.Text
+        FetchSpecificBusClearance(key)
+    End Sub
+
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+        Dim key As String = TextBox6.Text
+        FetchSpecificBusClearance(key)
+    End Sub
 End Class

@@ -365,7 +365,4 @@ Public Class Login
         cn.Close()
     End Sub
 
-    Private Sub MetroTextBox1_Click_1(sender As Object, e As EventArgs) Handles MetroTextBox1.Click
-
-    End Sub
 End Class
