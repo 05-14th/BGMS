@@ -66,12 +66,12 @@ Public Class Admin
             While dr.Read()
                 If dr("status").Equals("Granted") Or dr("status").Equals("Denied") Then
                     If IsDBNull(dr("date_issued")) Then
-                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
+                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), dr("cert_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), "N/A", dr("status"))
                     Else
-                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
+                        dgv_certificate.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), dr("cert_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"), Convert.ToDateTime(dr("date_issued")).ToString("MM-dd-yyyy"), dr("status"))
                     End If
                 ElseIf dr("status").Equals("Pending") Then
-                    dgv_certificateEdit.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+                    dgv_certificateEdit.Rows.Add(dr("cert_track_id"), dr("cert_name"), dr("cert_purpose"), dr("cert_purok"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
                 End If
             End While
 
@@ -1156,6 +1156,88 @@ Public Class Admin
         End Try
     End Sub
 
+    Public Sub CreateCertificateDocument(name As String, purok As String, date_ As String, brgy As String, muni As String, prov As String, reason As String)
+        Dim wordApp As Word.Application = Nothing
+        Dim doc As Word.Document = Nothing
+
+        Dim parts() As String = date_.Split("-"c)
+        Dim month As String = parts(0)
+        Dim day As String = parts(1)
+        Dim year As String = parts(2)
+
+        Dim dayInt As Integer = Convert.ToInt32(day)
+        Dim suffix As String = GetDaySuffix(dayInt)
+
+        Try
+            ' Initialize Word application
+            wordApp = New Word.Application()
+            wordApp.Visible = False
+
+            ' Define file paths
+            Dim busfilePath As String = Application.StartupPath
+            Dim busPath As String = Path.Combine(busfilePath, "Docs/indigency.docx")
+            Dim logoPath As String = My.Settings.LogoName
+
+            ' Validate file paths
+            If Not File.Exists(busPath) Then Throw New FileNotFoundException($"Template file not found: {busPath}")
+            If Not File.Exists(logoPath) Then Throw New FileNotFoundException($"Logo file not found: {logoPath}")
+
+            ' Open the Word template
+            doc = wordApp.Documents.Open(busPath)
+            doc.Saved = True ' Prevent auto-saving
+
+            ' Replace text placeholders
+            ReplaceTextPlaceholder(doc, "{Name}", name)
+            ReplaceTextPlaceholder(doc, "{Purok}", purok)
+            ReplaceTextPlaceholder(doc, "{Reason}", reason)
+            ReplaceTextPlaceholder(doc, "{Day}", day + suffix)
+            ReplaceTextPlaceholder(doc, "{Month}", MonthName(month))
+            ReplaceTextPlaceholder(doc, "{Year}", year)
+            ReplaceTextPlaceholder(doc, "{Barangay}", brgy)
+            ReplaceTextPlaceholder(doc, "{Municipality}", muni)
+            ReplaceTextPlaceholder(doc, "{Province}", prov)
+            ReplaceTextPlaceholder(doc, "{Captain}", captainName)
+            'ReplaceTextPlaceholder(doc, "signed", "-Originally Signed-")
+
+            ' Replace image placeholder
+            ReplaceImagePlaceholder(doc, "{imagePlaceholder}", logoPath)
+
+            ' Open SaveFileDialog to let user choose save location
+            Using saveDialog As New SaveFileDialog()
+                saveDialog.Filter = "Word Documents (*.docx)|*.docx|All Files (*.*)|*.*"
+                saveDialog.Title = "Save Document As"
+                saveDialog.DefaultExt = "docx"
+                saveDialog.AddExtension = True
+
+                If saveDialog.ShowDialog() = DialogResult.OK Then
+                    doc.SaveAs2(saveDialog.FileName)
+                    MessageBox.Show($"Document saved successfully at {saveDialog.FileName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Save operation was canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            End Using
+
+        Catch ex As FileNotFoundException
+            ' Handle file not found exceptions
+            MessageBox.Show($"File error: {ex.Message}", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Catch ex As Exception
+            ' Handle any other exceptions
+            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Finally
+            ' Ensure resources are properly cleaned up
+            If doc IsNot Nothing Then
+                doc.Close(SaveChanges:=False)
+                Marshal.ReleaseComObject(doc)
+            End If
+            If wordApp IsNot Nothing Then
+                wordApp.Quit()
+                Marshal.ReleaseComObject(wordApp)
+            End If
+        End Try
+    End Sub
+
 
     Private Sub ReplaceTextPlaceholder(doc As Word.Document, placeholder As String, replacement As String)
         ' Loop through the content to find and replace the text placeholder
@@ -1213,11 +1295,21 @@ Public Class Admin
             End If
         End If
     End Sub
+    Private Sub dgv_certificate_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_certificate.CellContentClick
+        If e.ColumnIndex = dgv_certificate.Columns("cert_action").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = dgv_certificate.Rows(e.RowIndex)
+            Dim clearanceQuery = MsgBox("Do you want to print this document?", vbYesNo + vbQuestion, "Print Document")
+            If clearanceQuery = vbYes Then
+                CreateCertificateDocument(clickedRow.Cells(1).Value, clickedRow.Cells(3).Value, clickedRow.Cells(5).Value, txtbox_brgyName.Text, txtBox_muni.Text, txtBox_prov.Text, clickedRow.Cells(2).Value)
+            End If
+        End If
+    End Sub
 
     Private Sub OrdinanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdinanceToolStripMenuItem.Click
         viewPanel.Dock = DockStyle.Fill
         viewPanel.Visible = True
 
     End Sub
+
 
 End Class
