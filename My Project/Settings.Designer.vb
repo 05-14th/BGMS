@@ -125,6 +125,30 @@ Namespace My
                 Me("LogoName") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property OrdinanceFile() As String
+            Get
+                Return CType(Me("OrdinanceFile"),String)
+            End Get
+            Set
+                Me("OrdinanceFile") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ResolutionFile() As String
+            Get
+                Return CType(Me("ResolutionFile"),String)
+            End Get
+            Set
+                Me("ResolutionFile") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

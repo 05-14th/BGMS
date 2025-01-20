@@ -42,6 +42,14 @@ Partial Class Admin
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.dgv_certificate = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.R = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cert_action = New System.Windows.Forms.DataGridViewImageColumn()
         Me.bus_clearance_pnl = New MetroFramework.Controls.MetroPanel()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
@@ -68,10 +76,25 @@ Partial Class Admin
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.dgv_clearanceEdit = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.actionBtn = New System.Windows.Forms.DataGridViewImageColumn()
         Me.bt_certificate_pnl = New MetroFramework.Controls.MetroPanel()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.dgv_certificateEdit = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.actBtn = New System.Windows.Forms.DataGridViewImageColumn()
         Me.bt_bus_clearance = New MetroFramework.Controls.MetroPanel()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
@@ -97,7 +120,6 @@ Partial Class Admin
         Me.summon_pnl = New MetroFramework.Controls.MetroPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.viewPanel = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -217,29 +239,7 @@ Partial Class Admin
         Me.TextBox17 = New System.Windows.Forms.TextBox()
         Me.addUsr_btn = New System.Windows.Forms.Button()
         Me.um_pnl = New MetroFramework.Controls.MetroPanel()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.R = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cert_action = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.actionBtn = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.actBtn = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.PdfDocumentViewer1 = New Spire.PdfViewer.Forms.PdfDocumentViewer()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.certificate_pnl.SuspendLayout()
@@ -264,6 +264,7 @@ Partial Class Admin
         Me.Panel6.SuspendLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.summonPnl.SuspendLayout()
         Me.actionModel.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -292,7 +293,7 @@ Partial Class Admin
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(258, 652)
+        Me.Panel1.Size = New System.Drawing.Size(256, 434)
         Me.Panel1.TabIndex = 0
         '
         'MetroButton9
@@ -300,7 +301,7 @@ Partial Class Admin
         Me.MetroButton9.Dock = System.Windows.Forms.DockStyle.Top
         Me.MetroButton9.Location = New System.Drawing.Point(0, 275)
         Me.MetroButton9.Name = "MetroButton9"
-        Me.MetroButton9.Size = New System.Drawing.Size(258, 55)
+        Me.MetroButton9.Size = New System.Drawing.Size(256, 55)
         Me.MetroButton9.TabIndex = 10
         Me.MetroButton9.Text = "Logout"
         Me.MetroButton9.UseSelectable = True
@@ -310,7 +311,7 @@ Partial Class Admin
         Me.um_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.um_btn.Location = New System.Drawing.Point(0, 220)
         Me.um_btn.Name = "um_btn"
-        Me.um_btn.Size = New System.Drawing.Size(258, 55)
+        Me.um_btn.Size = New System.Drawing.Size(256, 55)
         Me.um_btn.TabIndex = 9
         Me.um_btn.Text = "User Management"
         Me.um_btn.UseSelectable = True
@@ -320,7 +321,7 @@ Partial Class Admin
         Me.MetroButton7.Dock = System.Windows.Forms.DockStyle.Top
         Me.MetroButton7.Location = New System.Drawing.Point(0, 165)
         Me.MetroButton7.Name = "MetroButton7"
-        Me.MetroButton7.Size = New System.Drawing.Size(258, 55)
+        Me.MetroButton7.Size = New System.Drawing.Size(256, 55)
         Me.MetroButton7.TabIndex = 8
         Me.MetroButton7.Text = "Archives"
         Me.MetroButton7.UseSelectable = True
@@ -328,9 +329,9 @@ Partial Class Admin
         'MetroButton11
         '
         Me.MetroButton11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MetroButton11.Location = New System.Drawing.Point(0, 597)
+        Me.MetroButton11.Location = New System.Drawing.Point(0, 379)
         Me.MetroButton11.Name = "MetroButton11"
-        Me.MetroButton11.Size = New System.Drawing.Size(258, 55)
+        Me.MetroButton11.Size = New System.Drawing.Size(256, 55)
         Me.MetroButton11.TabIndex = 6
         Me.MetroButton11.Text = "Settings"
         Me.MetroButton11.UseSelectable = True
@@ -340,7 +341,7 @@ Partial Class Admin
         Me.reports_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.reports_btn.Location = New System.Drawing.Point(0, 110)
         Me.reports_btn.Name = "reports_btn"
-        Me.reports_btn.Size = New System.Drawing.Size(258, 55)
+        Me.reports_btn.Size = New System.Drawing.Size(256, 55)
         Me.reports_btn.TabIndex = 5
         Me.reports_btn.Text = "Reports"
         Me.reports_btn.UseSelectable = True
@@ -350,7 +351,7 @@ Partial Class Admin
         Me.brgyMngmnt_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.brgyMngmnt_btn.Location = New System.Drawing.Point(0, 55)
         Me.brgyMngmnt_btn.Name = "brgyMngmnt_btn"
-        Me.brgyMngmnt_btn.Size = New System.Drawing.Size(258, 55)
+        Me.brgyMngmnt_btn.Size = New System.Drawing.Size(256, 55)
         Me.brgyMngmnt_btn.TabIndex = 2
         Me.brgyMngmnt_btn.Text = "Barangay Management"
         Me.brgyMngmnt_btn.UseSelectable = True
@@ -360,7 +361,7 @@ Partial Class Admin
         Me.brgyTrans_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.brgyTrans_btn.Location = New System.Drawing.Point(0, 0)
         Me.brgyTrans_btn.Name = "brgyTrans_btn"
-        Me.brgyTrans_btn.Size = New System.Drawing.Size(258, 55)
+        Me.brgyTrans_btn.Size = New System.Drawing.Size(256, 55)
         Me.brgyTrans_btn.TabIndex = 0
         Me.brgyTrans_btn.Text = "Barangay Transaction"
         Me.brgyTrans_btn.UseSelectable = True
@@ -399,9 +400,9 @@ Partial Class Admin
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(258, 0)
+        Me.Panel3.Location = New System.Drawing.Point(256, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1666, 55)
+        Me.Panel3.Size = New System.Drawing.Size(1026, 83)
         Me.Panel3.TabIndex = 2
         '
         'certificate_pnl
@@ -463,6 +464,68 @@ Partial Class Admin
         Me.dgv_certificate.RowTemplate.Height = 28
         Me.dgv_certificate.Size = New System.Drawing.Size(386, 42)
         Me.dgv_certificate.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Certificate ID"
+        Me.DataGridViewTextBoxColumn1.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 138
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn2.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Purpose"
+        Me.DataGridViewTextBoxColumn5.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'Column21
+        '
+        Me.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column21.HeaderText = "Purok"
+        Me.Column21.MinimumWidth = 8
+        Me.Column21.Name = "Column21"
+        Me.Column21.Width = 86
+        '
+        'R
+        '
+        Me.R.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.R.HeaderText = "Request Date"
+        Me.R.MinimumWidth = 8
+        Me.R.Name = "R"
+        Me.R.Width = 145
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Date Issued"
+        Me.DataGridViewTextBoxColumn6.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 132
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "Status"
+        Me.Column8.MinimumWidth = 8
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 92
+        '
+        'cert_action
+        '
+        Me.cert_action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.cert_action.HeaderText = "Action"
+        Me.cert_action.MinimumWidth = 8
+        Me.cert_action.Name = "cert_action"
+        Me.cert_action.Width = 60
         '
         'bus_clearance_pnl
         '
@@ -692,6 +755,76 @@ Partial Class Admin
         Me.dgv_clearanceEdit.Size = New System.Drawing.Size(386, 98)
         Me.dgv_clearanceEdit.TabIndex = 2
         '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Clearance ID"
+        Me.DataGridViewTextBoxColumn13.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.Width = 127
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn16.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn16.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        '
+        'Column22
+        '
+        Me.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column22.HeaderText = "Age"
+        Me.Column22.MinimumWidth = 8
+        Me.Column22.Name = "Column22"
+        Me.Column22.Width = 74
+        '
+        'Column23
+        '
+        Me.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column23.HeaderText = "Sex"
+        Me.Column23.MinimumWidth = 8
+        Me.Column23.Name = "Column23"
+        Me.Column23.Width = 72
+        '
+        'Column24
+        '
+        Me.Column24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column24.HeaderText = "Civil Status"
+        Me.Column24.MinimumWidth = 8
+        Me.Column24.Name = "Column24"
+        Me.Column24.Width = 114
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn17.HeaderText = "Purpose"
+        Me.DataGridViewTextBoxColumn17.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        '
+        'Column25
+        '
+        Me.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column25.HeaderText = "Purok"
+        Me.Column25.MinimumWidth = 8
+        Me.Column25.Name = "Column25"
+        Me.Column25.Width = 86
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn18.HeaderText = "Date Requested"
+        Me.DataGridViewTextBoxColumn18.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.Width = 150
+        '
+        'actionBtn
+        '
+        Me.actionBtn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.actionBtn.HeaderText = "Action"
+        Me.actionBtn.MinimumWidth = 8
+        Me.actionBtn.Name = "actionBtn"
+        Me.actionBtn.Width = 60
+        '
         'bt_certificate_pnl
         '
         Me.bt_certificate_pnl.Controls.Add(Me.TextBox5)
@@ -740,6 +873,52 @@ Partial Class Admin
         Me.dgv_certificateEdit.RowTemplate.Height = 28
         Me.dgv_certificateEdit.Size = New System.Drawing.Size(386, 97)
         Me.dgv_certificateEdit.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn19.HeaderText = "Certificate ID"
+        Me.DataGridViewTextBoxColumn19.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        Me.DataGridViewTextBoxColumn19.Width = 127
+        '
+        'DataGridViewTextBoxColumn22
+        '
+        Me.DataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn22.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn22.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
+        '
+        'Column26
+        '
+        Me.Column26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column26.HeaderText = "Purok"
+        Me.Column26.MinimumWidth = 8
+        Me.Column26.Name = "Column26"
+        Me.Column26.Width = 86
+        '
+        'DataGridViewTextBoxColumn23
+        '
+        Me.DataGridViewTextBoxColumn23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn23.HeaderText = "Purpose"
+        Me.DataGridViewTextBoxColumn23.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+        '
+        'DataGridViewTextBoxColumn24
+        '
+        Me.DataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn24.HeaderText = "Date Requested"
+        Me.DataGridViewTextBoxColumn24.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
+        Me.DataGridViewTextBoxColumn24.Width = 150
+        '
+        'actBtn
+        '
+        Me.actBtn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.actBtn.HeaderText = "Action"
+        Me.actBtn.MinimumWidth = 8
+        Me.actBtn.Name = "actBtn"
+        Me.actBtn.Width = 60
         '
         'bt_bus_clearance
         '
@@ -989,7 +1168,6 @@ Partial Class Admin
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.viewPanel)
         Me.Panel8.Controls.Add(Me.Button4)
         Me.Panel8.Controls.Add(Me.Button3)
         Me.Panel8.Controls.Add(Me.ComboBox1)
@@ -1005,14 +1183,6 @@ Partial Class Admin
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(526, 545)
         Me.Panel8.TabIndex = 2
-        '
-        'viewPanel
-        '
-        Me.viewPanel.Location = New System.Drawing.Point(84, 397)
-        Me.viewPanel.Name = "viewPanel"
-        Me.viewPanel.Size = New System.Drawing.Size(200, 100)
-        Me.viewPanel.TabIndex = 19
-        Me.viewPanel.Visible = False
         '
         'Button4
         '
@@ -1410,12 +1580,13 @@ Partial Class Admin
         '
         'summonPnl
         '
+        Me.summonPnl.Controls.Add(Me.PdfDocumentViewer1)
         Me.summonPnl.HorizontalScrollbarBarColor = True
         Me.summonPnl.HorizontalScrollbarHighlightOnWheel = False
         Me.summonPnl.HorizontalScrollbarSize = 9
         Me.summonPnl.Location = New System.Drawing.Point(264, 72)
         Me.summonPnl.Name = "summonPnl"
-        Me.summonPnl.Size = New System.Drawing.Size(14, 144)
+        Me.summonPnl.Size = New System.Drawing.Size(214, 144)
         Me.summonPnl.TabIndex = 15
         Me.summonPnl.VerticalScrollbarBarColor = True
         Me.summonPnl.VerticalScrollbarHighlightOnWheel = False
@@ -2210,189 +2381,30 @@ Partial Class Admin
         Me.um_pnl.VerticalScrollbarSize = 10
         Me.um_pnl.Visible = False
         '
-        'DataGridViewTextBoxColumn1
+        'PdfDocumentViewer1
         '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Certificate ID"
-        Me.DataGridViewTextBoxColumn1.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 138
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn2.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Purpose"
-        Me.DataGridViewTextBoxColumn5.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'Column21
-        '
-        Me.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column21.HeaderText = "Purok"
-        Me.Column21.MinimumWidth = 8
-        Me.Column21.Name = "Column21"
-        Me.Column21.Width = 86
-        '
-        'R
-        '
-        Me.R.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.R.HeaderText = "Request Date"
-        Me.R.MinimumWidth = 8
-        Me.R.Name = "R"
-        Me.R.Width = 145
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Date Issued"
-        Me.DataGridViewTextBoxColumn6.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 132
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "Status"
-        Me.Column8.MinimumWidth = 8
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 92
-        '
-        'cert_action
-        '
-        Me.cert_action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.cert_action.HeaderText = "Action"
-        Me.cert_action.MinimumWidth = 8
-        Me.cert_action.Name = "cert_action"
-        Me.cert_action.Width = 60
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Clearance ID"
-        Me.DataGridViewTextBoxColumn13.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.Width = 138
-        '
-        'DataGridViewTextBoxColumn16
-        '
-        Me.DataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn16.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn16.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        '
-        'Column22
-        '
-        Me.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column22.HeaderText = "Age"
-        Me.Column22.MinimumWidth = 8
-        Me.Column22.Name = "Column22"
-        Me.Column22.Width = 74
-        '
-        'Column23
-        '
-        Me.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column23.HeaderText = "Sex"
-        Me.Column23.MinimumWidth = 8
-        Me.Column23.Name = "Column23"
-        Me.Column23.Width = 72
-        '
-        'Column24
-        '
-        Me.Column24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column24.HeaderText = "Civil Status"
-        Me.Column24.MinimumWidth = 8
-        Me.Column24.Name = "Column24"
-        Me.Column24.Width = 123
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Purpose"
-        Me.DataGridViewTextBoxColumn17.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        '
-        'Column25
-        '
-        Me.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column25.HeaderText = "Purok"
-        Me.Column25.MinimumWidth = 8
-        Me.Column25.Name = "Column25"
-        Me.Column25.Width = 86
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Date Requested"
-        Me.DataGridViewTextBoxColumn18.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.Width = 150
-        '
-        'actionBtn
-        '
-        Me.actionBtn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.actionBtn.HeaderText = "Action"
-        Me.actionBtn.MinimumWidth = 8
-        Me.actionBtn.Name = "actionBtn"
-        Me.actionBtn.Width = 60
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn19.HeaderText = "Certificate ID"
-        Me.DataGridViewTextBoxColumn19.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.Width = 138
-        '
-        'DataGridViewTextBoxColumn22
-        '
-        Me.DataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn22.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn22.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        '
-        'Column26
-        '
-        Me.Column26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column26.HeaderText = "Purok"
-        Me.Column26.MinimumWidth = 8
-        Me.Column26.Name = "Column26"
-        Me.Column26.Width = 86
-        '
-        'DataGridViewTextBoxColumn23
-        '
-        Me.DataGridViewTextBoxColumn23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn23.HeaderText = "Purpose"
-        Me.DataGridViewTextBoxColumn23.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
-        '
-        'DataGridViewTextBoxColumn24
-        '
-        Me.DataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn24.HeaderText = "Date Requested"
-        Me.DataGridViewTextBoxColumn24.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.Width = 150
-        '
-        'actBtn
-        '
-        Me.actBtn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.actBtn.HeaderText = "Action"
-        Me.actBtn.MinimumWidth = 8
-        Me.actBtn.Name = "actBtn"
-        Me.actBtn.Width = 60
+        Me.PdfDocumentViewer1.AutoScroll = True
+        Me.PdfDocumentViewer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.PdfDocumentViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PdfDocumentViewer1.FormFillEnabled = False
+        Me.PdfDocumentViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.PdfDocumentViewer1.MultiPagesThreshold = 60
+        Me.PdfDocumentViewer1.Name = "PdfDocumentViewer1"
+        Me.PdfDocumentViewer1.OnRenderPageExceptionEvent = Nothing
+        Me.PdfDocumentViewer1.PageLayoutMode = Spire.PdfViewer.Forms.PageLayoutMode.SinglePageContinuous
+        Me.PdfDocumentViewer1.Size = New System.Drawing.Size(321, 216)
+        Me.PdfDocumentViewer1.TabIndex = 2
+        Me.PdfDocumentViewer1.Text = "PdfDocumentViewer1"
+        Me.PdfDocumentViewer1.Threshold = 60
+        Me.PdfDocumentViewer1.ViewerMode = Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.MultiPage
+        Me.PdfDocumentViewer1.ZoomFactor = 1.0!
+        Me.PdfDocumentViewer1.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.[Default]
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1924, 652)
+        Me.ClientSize = New System.Drawing.Size(1282, 434)
         Me.Controls.Add(Me.settings_pnl)
         Me.Controls.Add(Me.actionModal)
         Me.Controls.Add(Me.um_pnl)
@@ -2449,6 +2461,7 @@ Partial Class Admin
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.summonPnl.ResumeLayout(False)
         Me.actionModel.ResumeLayout(False)
         Me.actionModel.PerformLayout()
         Me.Panel9.ResumeLayout(False)
@@ -2658,7 +2671,6 @@ Partial Class Admin
     Friend WithEvents TextBox17 As TextBox
     Friend WithEvents addUsr_btn As Button
     Friend WithEvents um_pnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents viewPanel As Panel
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column17 As DataGridViewTextBoxColumn
@@ -2693,4 +2705,5 @@ Partial Class Admin
     Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
     Friend WithEvents actBtn As DataGridViewImageColumn
+    Friend WithEvents PdfDocumentViewer1 As Spire.PdfViewer.Forms.PdfDocumentViewer
 End Class

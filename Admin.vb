@@ -1410,9 +1410,23 @@ Public Class Admin
     End Sub
 
     Private Sub OrdinanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdinanceToolStripMenuItem.Click
-        viewPanel.Dock = DockStyle.Fill
-        viewPanel.Visible = True
+        summonPnl.Dock = DockStyle.Fill
+        summonPnl.Visible = True
+        summonPnl.BringToFront()
+        Dim pdfDoc As String = My.Settings.OrdinanceFile
+        If File.Exists(pdfDoc) Then
+            Me.PdfDocumentViewer1.LoadFromFile(pdfDoc)
+        End If
+    End Sub
 
+    Private Sub ResolutionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResolutionToolStripMenuItem.Click
+        summonPnl.Dock = DockStyle.Fill
+        summonPnl.Visible = True
+        summonPnl.BringToFront()
+        Dim pdfDoc As String = My.Settings.ResolutionFile
+        If File.Exists(pdfDoc) Then
+            Me.PdfDocumentViewer1.LoadFromFile(pdfDoc)
+        End If
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
