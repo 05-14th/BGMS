@@ -395,6 +395,8 @@ Public Class Admin
         InitializeLogo()
         FetchConfig()
         FetchAccount()
+        MetroLabel13.Text = My.Settings.OrdinanceFile
+        MetroLabel14.Text = My.Settings.ResolutionFile
     End Sub
 
     Private Sub MetroButton5_Click(sender As Object, e As EventArgs) Handles removeLogo.Click
@@ -1413,6 +1415,9 @@ Public Class Admin
         summonPnl.Dock = DockStyle.Fill
         summonPnl.Visible = True
         summonPnl.BringToFront()
+        PdfDocumentViewer1.Visible = True
+        PdfDocumentViewer2.Visible = False
+        PdfDocumentViewer1.Dock = DockStyle.Fill
         Dim pdfDoc As String = My.Settings.OrdinanceFile
         If File.Exists(pdfDoc) Then
             Me.PdfDocumentViewer1.LoadFromFile(pdfDoc)
@@ -1423,9 +1428,12 @@ Public Class Admin
         summonPnl.Dock = DockStyle.Fill
         summonPnl.Visible = True
         summonPnl.BringToFront()
+        PdfDocumentViewer1.Visible = False
+        PdfDocumentViewer2.Visible = True
+        PdfDocumentViewer2.Dock = DockStyle.Fill
         Dim pdfDoc As String = My.Settings.ResolutionFile
         If File.Exists(pdfDoc) Then
-            Me.PdfDocumentViewer1.LoadFromFile(pdfDoc)
+            Me.PdfDocumentViewer2.LoadFromFile(pdfDoc)
         End If
     End Sub
 
@@ -1457,5 +1465,43 @@ Public Class Admin
     Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
         Dim key As String = TextBox6.Text
         FetchSpecificBusClearance(key)
+    End Sub
+
+    Private Sub MetroButton12_Click(sender As Object, e As EventArgs) Handles MetroButton12.Click
+        Dim openFileDialog As New OpenFileDialog()
+
+        openFileDialog.Title = "Select a File"
+        openFileDialog.Filter = "All Files (*.*)|*.*"
+        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+
+        If openFileDialog.ShowDialog() = DialogResult.OK Then
+            Dim filePath As String = openFileDialog.FileName
+            My.Settings.OrdinanceFile = filePath
+            My.Settings.Save()
+
+            MetroLabel13.Text = My.Settings.OrdinanceFile
+            'MessageBox.Show("File Name: " & fileName & Environment.NewLine & "File Path: " & filePath, "Selected File")
+        Else
+            MsgBox("No file selected.", vbExclamation, "Warning")
+        End If
+    End Sub
+
+    Private Sub MetroButton13_Click(sender As Object, e As EventArgs) Handles MetroButton13.Click
+        Dim openFileDialog As New OpenFileDialog()
+
+        openFileDialog.Title = "Select a File"
+        openFileDialog.Filter = "All Files (*.*)|*.*"
+        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+
+        If openFileDialog.ShowDialog() = DialogResult.OK Then
+            Dim filePath As String = openFileDialog.FileName
+            My.Settings.ResolutionFile = filePath
+            My.Settings.Save()
+
+            MetroLabel14.Text = My.Settings.ResolutionFile
+            'MessageBox.Show("File Name: " & fileName & Environment.NewLine & "File Path: " & filePath, "Selected File")
+        Else
+            MsgBox("No file selected.", vbExclamation, "Warning")
+        End If
     End Sub
 End Class
