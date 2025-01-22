@@ -124,12 +124,9 @@ Partial Class Admin
         Me.summon_pnl = New MetroFramework.Controls.MetroPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -137,7 +134,6 @@ Partial Class Admin
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.DataGridView8 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -154,7 +150,6 @@ Partial Class Admin
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView7 = New System.Windows.Forms.DataGridView()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -167,6 +162,7 @@ Partial Class Admin
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.summonPnl = New MetroFramework.Controls.MetroPanel()
+        Me.PdfDocumentViewer2 = New Spire.PdfViewer.Forms.PdfDocumentViewer()
         Me.PdfDocumentViewer1 = New Spire.PdfViewer.Forms.PdfDocumentViewer()
         Me.actionModel = New MetroFramework.Controls.MetroPanel()
         Me.informationBox = New System.Windows.Forms.RichTextBox()
@@ -179,17 +175,6 @@ Partial Class Admin
         Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.pnl_financial = New MetroFramework.Controls.MetroPanel()
-        Me.MetroButton8 = New MetroFramework.Controls.MetroButton()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
-        Me.dgv_financial = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_archive = New MetroFramework.Controls.MetroPanel()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
@@ -232,19 +217,29 @@ Partial Class Admin
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.clearance_pnl = New MetroFramework.Controls.MetroPanel()
+        Me.dgv_financial = New System.Windows.Forms.DataGridView()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.MetroButton8 = New MetroFramework.Controls.MetroButton()
+        Me.pnl_financial = New MetroFramework.Controls.MetroPanel()
         Me.um_dgv = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.um_pos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.um_action = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.um_pos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
         Me.addUsr_btn = New System.Windows.Forms.Button()
         Me.um_pnl = New MetroFramework.Controls.MetroPanel()
-        Me.PdfDocumentViewer2 = New Spire.PdfViewer.Forms.PdfDocumentViewer()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.certificate_pnl.SuspendLayout()
@@ -273,8 +268,6 @@ Partial Class Admin
         Me.actionModel.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.pnl_financial.SuspendLayout()
-        CType(Me.dgv_financial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_archive.SuspendLayout()
         CType(Me.dgv_archive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.actionModal.SuspendLayout()
@@ -282,6 +275,8 @@ Partial Class Admin
         Me.Panel10.SuspendLayout()
         CType(Me.dgv_clearance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.clearance_pnl.SuspendLayout()
+        CType(Me.dgv_financial, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_financial.SuspendLayout()
         CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.um_pnl.SuspendLayout()
         Me.SuspendLayout()
@@ -419,7 +414,7 @@ Partial Class Admin
         Me.certificate_pnl.HorizontalScrollbarBarColor = True
         Me.certificate_pnl.HorizontalScrollbarHighlightOnWheel = False
         Me.certificate_pnl.HorizontalScrollbarSize = 9
-        Me.certificate_pnl.Location = New System.Drawing.Point(315, 252)
+        Me.certificate_pnl.Location = New System.Drawing.Point(409, 252)
         Me.certificate_pnl.Name = "certificate_pnl"
         Me.certificate_pnl.Size = New System.Drawing.Size(418, 175)
         Me.certificate_pnl.TabIndex = 8
@@ -665,31 +660,31 @@ Partial Class Admin
         'ClearanceToolStripMenuItem
         '
         Me.ClearanceToolStripMenuItem.Name = "ClearanceToolStripMenuItem"
-        Me.ClearanceToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.ClearanceToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.ClearanceToolStripMenuItem.Text = "Clearance"
         '
         'CertificationToolStripMenuItem
         '
         Me.CertificationToolStripMenuItem.Name = "CertificationToolStripMenuItem"
-        Me.CertificationToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.CertificationToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.CertificationToolStripMenuItem.Text = "Certification"
         '
         'BusinessClearanceToolStripMenuItem
         '
         Me.BusinessClearanceToolStripMenuItem.Name = "BusinessClearanceToolStripMenuItem"
-        Me.BusinessClearanceToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.BusinessClearanceToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.BusinessClearanceToolStripMenuItem.Text = "Business Clearance"
         '
         'BlotterToolStripMenuItem
         '
         Me.BlotterToolStripMenuItem.Name = "BlotterToolStripMenuItem"
-        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.BlotterToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.BlotterToolStripMenuItem.Text = "Blotter"
         '
         'SummonToolStripMenuItem
         '
         Me.SummonToolStripMenuItem.Name = "SummonToolStripMenuItem"
-        Me.SummonToolStripMenuItem.Size = New System.Drawing.Size(231, 32)
+        Me.SummonToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.SummonToolStripMenuItem.Text = "Summon"
         '
         'Bm_Menu
@@ -1114,7 +1109,7 @@ Partial Class Admin
         '
         'txtBox_muni
         '
-        Me.txtBox_muni.Location = New System.Drawing.Point(127, 419)
+        Me.txtBox_muni.Location = New System.Drawing.Point(128, 419)
         Me.txtBox_muni.Name = "txtBox_muni"
         Me.txtBox_muni.Size = New System.Drawing.Size(179, 26)
         Me.txtBox_muni.TabIndex = 13
@@ -1215,12 +1210,9 @@ Partial Class Admin
         '
         'Panel8
         '
+        Me.Panel8.Controls.Add(Me.DateTimePicker2)
         Me.Panel8.Controls.Add(Me.Button4)
         Me.Panel8.Controls.Add(Me.Button3)
-        Me.Panel8.Controls.Add(Me.ComboBox1)
-        Me.Panel8.Controls.Add(Me.TextBox11)
-        Me.Panel8.Controls.Add(Me.Label9)
-        Me.Panel8.Controls.Add(Me.TextBox10)
         Me.Panel8.Controls.Add(Me.Label8)
         Me.Panel8.Controls.Add(Me.DateTimePicker1)
         Me.Panel8.Controls.Add(Me.Label7)
@@ -1230,6 +1222,17 @@ Partial Class Admin
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(526, 545)
         Me.Panel8.TabIndex = 2
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.DateTimePicker2.CustomFormat = "hh:mm tt"
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DateTimePicker2.Location = New System.Drawing.Point(192, 299)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.ShowUpDown = True
+        Me.DateTimePicker2.Size = New System.Drawing.Size(321, 26)
+        Me.DateTimePicker2.TabIndex = 20
         '
         'Button4
         '
@@ -1250,44 +1253,6 @@ Partial Class Admin
         Me.Button3.TabIndex = 17
         Me.Button3.Text = "PUBLISH"
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Morning", "Afternoon"})
-        Me.ComboBox1.Location = New System.Drawing.Point(348, 294)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(164, 28)
-        Me.ComboBox1.TabIndex = 16
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.TextBox11.Location = New System.Drawing.Point(279, 296)
-        Me.TextBox11.MaxLength = 2
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(63, 26)
-        Me.TextBox11.TabIndex = 15
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(260, 299)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(13, 20)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = ":"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.TextBox10.Location = New System.Drawing.Point(191, 296)
-        Me.TextBox10.MaxLength = 2
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(63, 26)
-        Me.TextBox10.TabIndex = 13
         '
         'Label8
         '
@@ -1353,21 +1318,13 @@ Partial Class Admin
         Me.DataGridView8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView8.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34})
+        Me.DataGridView8.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34})
         Me.DataGridView8.Location = New System.Drawing.Point(6, 196)
         Me.DataGridView8.Name = "DataGridView8"
         Me.DataGridView8.RowHeadersWidth = 62
         Me.DataGridView8.RowTemplate.Height = 28
         Me.DataGridView8.Size = New System.Drawing.Size(387, 330)
         Me.DataGridView8.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn32
-        '
-        Me.DataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn32.HeaderText = "#"
-        Me.DataGridViewTextBoxColumn32.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
-        Me.DataGridViewTextBoxColumn32.Width = 54
         '
         'DataGridViewTextBoxColumn33
         '
@@ -1505,21 +1462,13 @@ Partial Class Admin
         Me.DataGridView7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView7.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column10, Me.Column11, Me.Column12})
+        Me.DataGridView7.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column11, Me.Column12})
         Me.DataGridView7.Location = New System.Drawing.Point(7, 197)
         Me.DataGridView7.Name = "DataGridView7"
         Me.DataGridView7.RowHeadersWidth = 62
         Me.DataGridView7.RowTemplate.Height = 28
         Me.DataGridView7.Size = New System.Drawing.Size(387, 330)
         Me.DataGridView7.TabIndex = 0
-        '
-        'Column10
-        '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column10.HeaderText = "#"
-        Me.Column10.MinimumWidth = 8
-        Me.Column10.Name = "Column10"
-        Me.Column10.Width = 54
         '
         'Column11
         '
@@ -1575,6 +1524,7 @@ Partial Class Admin
         Me.TextBox13.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.TextBox13.Location = New System.Drawing.Point(120, 13)
         Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.ReadOnly = True
         Me.TextBox13.Size = New System.Drawing.Size(195, 26)
         Me.TextBox13.TabIndex = 7
         '
@@ -1634,12 +1584,31 @@ Partial Class Admin
         Me.summonPnl.HorizontalScrollbarSize = 9
         Me.summonPnl.Location = New System.Drawing.Point(264, 72)
         Me.summonPnl.Name = "summonPnl"
-        Me.summonPnl.Size = New System.Drawing.Size(214, 144)
+        Me.summonPnl.Size = New System.Drawing.Size(14, 144)
         Me.summonPnl.TabIndex = 15
         Me.summonPnl.VerticalScrollbarBarColor = True
         Me.summonPnl.VerticalScrollbarHighlightOnWheel = False
         Me.summonPnl.VerticalScrollbarSize = 10
         Me.summonPnl.Visible = False
+        '
+        'PdfDocumentViewer2
+        '
+        Me.PdfDocumentViewer2.AutoScroll = True
+        Me.PdfDocumentViewer2.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.PdfDocumentViewer2.FormFillEnabled = False
+        Me.PdfDocumentViewer2.Location = New System.Drawing.Point(59, 48)
+        Me.PdfDocumentViewer2.MultiPagesThreshold = 60
+        Me.PdfDocumentViewer2.Name = "PdfDocumentViewer2"
+        Me.PdfDocumentViewer2.OnRenderPageExceptionEvent = Nothing
+        Me.PdfDocumentViewer2.PageLayoutMode = Spire.PdfViewer.Forms.PageLayoutMode.SinglePageContinuous
+        Me.PdfDocumentViewer2.Size = New System.Drawing.Size(96, 49)
+        Me.PdfDocumentViewer2.TabIndex = 3
+        Me.PdfDocumentViewer2.Text = "PdfDocumentViewer2"
+        Me.PdfDocumentViewer2.Threshold = 60
+        Me.PdfDocumentViewer2.ViewerMode = Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.MultiPage
+        Me.PdfDocumentViewer2.Visible = False
+        Me.PdfDocumentViewer2.ZoomFactor = 1.0!
+        Me.PdfDocumentViewer2.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.[Default]
         '
         'PdfDocumentViewer1
         '
@@ -1656,6 +1625,7 @@ Partial Class Admin
         Me.PdfDocumentViewer1.Text = "PdfDocumentViewer1"
         Me.PdfDocumentViewer1.Threshold = 60
         Me.PdfDocumentViewer1.ViewerMode = Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.MultiPage
+        Me.PdfDocumentViewer1.Visible = False
         Me.PdfDocumentViewer1.ZoomFactor = 1.0!
         Me.PdfDocumentViewer1.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.[Default]
         '
@@ -1780,112 +1750,6 @@ Partial Class Admin
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "X"
         '
-        'pnl_financial
-        '
-        Me.pnl_financial.Controls.Add(Me.MetroButton8)
-        Me.pnl_financial.Controls.Add(Me.TextBox15)
-        Me.pnl_financial.Controls.Add(Me.MetroLabel7)
-        Me.pnl_financial.Controls.Add(Me.dgv_financial)
-        Me.pnl_financial.HorizontalScrollbarBarColor = True
-        Me.pnl_financial.HorizontalScrollbarHighlightOnWheel = False
-        Me.pnl_financial.HorizontalScrollbarSize = 9
-        Me.pnl_financial.Location = New System.Drawing.Point(1165, 61)
-        Me.pnl_financial.Name = "pnl_financial"
-        Me.pnl_financial.Size = New System.Drawing.Size(440, 175)
-        Me.pnl_financial.TabIndex = 17
-        Me.pnl_financial.VerticalScrollbarBarColor = True
-        Me.pnl_financial.VerticalScrollbarHighlightOnWheel = False
-        Me.pnl_financial.VerticalScrollbarSize = 10
-        Me.pnl_financial.Visible = False
-        '
-        'MetroButton8
-        '
-        Me.MetroButton8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroButton8.Location = New System.Drawing.Point(322, 126)
-        Me.MetroButton8.Name = "MetroButton8"
-        Me.MetroButton8.Size = New System.Drawing.Size(104, 43)
-        Me.MetroButton8.TabIndex = 8
-        Me.MetroButton8.Text = "Print"
-        Me.MetroButton8.UseSelectable = True
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox15.Location = New System.Drawing.Point(211, 15)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(216, 26)
-        Me.TextBox15.TabIndex = 7
-        '
-        'MetroLabel7
-        '
-        Me.MetroLabel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.Location = New System.Drawing.Point(134, 15)
-        Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(51, 19)
-        Me.MetroLabel7.TabIndex = 4
-        Me.MetroLabel7.Text = "Search:"
-        '
-        'dgv_financial
-        '
-        Me.dgv_financial.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgv_financial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_financial.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.Column13, Me.Column14})
-        Me.dgv_financial.Location = New System.Drawing.Point(18, 68)
-        Me.dgv_financial.Name = "dgv_financial"
-        Me.dgv_financial.RowHeadersWidth = 62
-        Me.dgv_financial.RowTemplate.Height = 28
-        Me.dgv_financial.Size = New System.Drawing.Size(408, 53)
-        Me.dgv_financial.TabIndex = 2
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Track ID"
-        Me.DataGridViewTextBoxColumn3.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 98
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn4.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Document Type"
-        Me.DataGridViewTextBoxColumn9.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Date Requested"
-        Me.DataGridViewTextBoxColumn10.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 150
-        '
-        'Column13
-        '
-        Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column13.HeaderText = "Date Issued"
-        Me.Column13.MinimumWidth = 8
-        Me.Column13.Name = "Column13"
-        Me.Column13.Width = 122
-        '
-        'Column14
-        '
-        Me.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column14.HeaderText = "Amount"
-        Me.Column14.MinimumWidth = 8
-        Me.Column14.Name = "Column14"
-        Me.Column14.Width = 101
-        '
         'pnl_archive
         '
         Me.pnl_archive.Controls.Add(Me.TextBox16)
@@ -1894,7 +1758,7 @@ Partial Class Admin
         Me.pnl_archive.HorizontalScrollbarBarColor = True
         Me.pnl_archive.HorizontalScrollbarHighlightOnWheel = False
         Me.pnl_archive.HorizontalScrollbarSize = 9
-        Me.pnl_archive.Location = New System.Drawing.Point(1165, 243)
+        Me.pnl_archive.Location = New System.Drawing.Point(740, 673)
         Me.pnl_archive.Name = "pnl_archive"
         Me.pnl_archive.Size = New System.Drawing.Size(440, 175)
         Me.pnl_archive.TabIndex = 19
@@ -2323,7 +2187,7 @@ Partial Class Admin
         Me.clearance_pnl.HorizontalScrollbarBarColor = True
         Me.clearance_pnl.HorizontalScrollbarHighlightOnWheel = False
         Me.clearance_pnl.HorizontalScrollbarSize = 9
-        Me.clearance_pnl.Location = New System.Drawing.Point(315, 72)
+        Me.clearance_pnl.Location = New System.Drawing.Point(407, 72)
         Me.clearance_pnl.Name = "clearance_pnl"
         Me.clearance_pnl.Size = New System.Drawing.Size(418, 175)
         Me.clearance_pnl.TabIndex = 3
@@ -2331,6 +2195,112 @@ Partial Class Admin
         Me.clearance_pnl.VerticalScrollbarHighlightOnWheel = False
         Me.clearance_pnl.VerticalScrollbarSize = 10
         Me.clearance_pnl.Visible = False
+        '
+        'dgv_financial
+        '
+        Me.dgv_financial.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_financial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_financial.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.Column13, Me.Column14})
+        Me.dgv_financial.Location = New System.Drawing.Point(18, 68)
+        Me.dgv_financial.Name = "dgv_financial"
+        Me.dgv_financial.RowHeadersWidth = 62
+        Me.dgv_financial.RowTemplate.Height = 28
+        Me.dgv_financial.Size = New System.Drawing.Size(408, 53)
+        Me.dgv_financial.TabIndex = 2
+        '
+        'Column14
+        '
+        Me.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column14.HeaderText = "Amount"
+        Me.Column14.MinimumWidth = 8
+        Me.Column14.Name = "Column14"
+        Me.Column14.Width = 101
+        '
+        'Column13
+        '
+        Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column13.HeaderText = "Date Issued"
+        Me.Column13.MinimumWidth = 8
+        Me.Column13.Name = "Column13"
+        Me.Column13.Width = 122
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Date Requested"
+        Me.DataGridViewTextBoxColumn10.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Width = 150
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Document Type"
+        Me.DataGridViewTextBoxColumn9.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn4.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Track ID"
+        Me.DataGridViewTextBoxColumn3.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Width = 98
+        '
+        'MetroLabel7
+        '
+        Me.MetroLabel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel7.AutoSize = True
+        Me.MetroLabel7.Location = New System.Drawing.Point(134, 15)
+        Me.MetroLabel7.Name = "MetroLabel7"
+        Me.MetroLabel7.Size = New System.Drawing.Size(51, 19)
+        Me.MetroLabel7.TabIndex = 4
+        Me.MetroLabel7.Text = "Search:"
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox15.Location = New System.Drawing.Point(211, 15)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(216, 26)
+        Me.TextBox15.TabIndex = 7
+        '
+        'MetroButton8
+        '
+        Me.MetroButton8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton8.Location = New System.Drawing.Point(322, 126)
+        Me.MetroButton8.Name = "MetroButton8"
+        Me.MetroButton8.Size = New System.Drawing.Size(104, 43)
+        Me.MetroButton8.TabIndex = 8
+        Me.MetroButton8.Text = "Print"
+        Me.MetroButton8.UseSelectable = True
+        '
+        'pnl_financial
+        '
+        Me.pnl_financial.Controls.Add(Me.MetroButton8)
+        Me.pnl_financial.Controls.Add(Me.TextBox15)
+        Me.pnl_financial.Controls.Add(Me.MetroLabel7)
+        Me.pnl_financial.Controls.Add(Me.dgv_financial)
+        Me.pnl_financial.HorizontalScrollbarBarColor = True
+        Me.pnl_financial.HorizontalScrollbarHighlightOnWheel = False
+        Me.pnl_financial.HorizontalScrollbarSize = 9
+        Me.pnl_financial.Location = New System.Drawing.Point(1165, 61)
+        Me.pnl_financial.Name = "pnl_financial"
+        Me.pnl_financial.Size = New System.Drawing.Size(440, 175)
+        Me.pnl_financial.TabIndex = 17
+        Me.pnl_financial.VerticalScrollbarBarColor = True
+        Me.pnl_financial.VerticalScrollbarHighlightOnWheel = False
+        Me.pnl_financial.VerticalScrollbarSize = 10
+        Me.pnl_financial.Visible = False
         '
         'um_dgv
         '
@@ -2346,43 +2316,13 @@ Partial Class Admin
         Me.um_dgv.Size = New System.Drawing.Size(355, 91)
         Me.um_dgv.TabIndex = 2
         '
-        'DataGridViewTextBoxColumn26
+        'um_action
         '
-        Me.DataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn26.HeaderText = "#"
-        Me.DataGridViewTextBoxColumn26.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
-        Me.DataGridViewTextBoxColumn26.Width = 54
-        '
-        'DataGridViewTextBoxColumn27
-        '
-        Me.DataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn27.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn27.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
-        '
-        'DataGridViewTextBoxColumn35
-        '
-        Me.DataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn35.HeaderText = "Username"
-        Me.DataGridViewTextBoxColumn35.MinimumWidth = 8
-        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
-        '
-        'um_pos
-        '
-        Me.um_pos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.um_pos.HeaderText = "Position"
-        Me.um_pos.MinimumWidth = 8
-        Me.um_pos.Name = "um_pos"
-        Me.um_pos.Width = 101
-        '
-        'Column15
-        '
-        Me.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column15.HeaderText = "Roles"
-        Me.Column15.MinimumWidth = 8
-        Me.Column15.Name = "Column15"
-        Me.Column15.Width = 86
+        Me.um_action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.um_action.HeaderText = "Action"
+        Me.um_action.MinimumWidth = 8
+        Me.um_action.Name = "um_action"
+        Me.um_action.Width = 60
         '
         'Column16
         '
@@ -2392,13 +2332,43 @@ Partial Class Admin
         Me.Column16.Name = "Column16"
         Me.Column16.Width = 92
         '
-        'um_action
+        'Column15
         '
-        Me.um_action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.um_action.HeaderText = "Action"
-        Me.um_action.MinimumWidth = 8
-        Me.um_action.Name = "um_action"
-        Me.um_action.Width = 60
+        Me.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column15.HeaderText = "Roles"
+        Me.Column15.MinimumWidth = 8
+        Me.Column15.Name = "Column15"
+        Me.Column15.Width = 86
+        '
+        'um_pos
+        '
+        Me.um_pos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.um_pos.HeaderText = "Position"
+        Me.um_pos.MinimumWidth = 8
+        Me.um_pos.Name = "um_pos"
+        Me.um_pos.Width = 101
+        '
+        'DataGridViewTextBoxColumn35
+        '
+        Me.DataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn35.HeaderText = "Username"
+        Me.DataGridViewTextBoxColumn35.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        '
+        'DataGridViewTextBoxColumn27
+        '
+        Me.DataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn27.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn27.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
+        '
+        'DataGridViewTextBoxColumn26
+        '
+        Me.DataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn26.HeaderText = "#"
+        Me.DataGridViewTextBoxColumn26.MinimumWidth = 8
+        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
+        Me.DataGridViewTextBoxColumn26.Width = 54
         '
         'MetroLabel9
         '
@@ -2447,33 +2417,15 @@ Partial Class Admin
         Me.um_pnl.VerticalScrollbarSize = 10
         Me.um_pnl.Visible = False
         '
-        'PdfDocumentViewer2
-        '
-        Me.PdfDocumentViewer2.AutoScroll = True
-        Me.PdfDocumentViewer2.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.PdfDocumentViewer2.FormFillEnabled = False
-        Me.PdfDocumentViewer2.Location = New System.Drawing.Point(59, 48)
-        Me.PdfDocumentViewer2.MultiPagesThreshold = 60
-        Me.PdfDocumentViewer2.Name = "PdfDocumentViewer2"
-        Me.PdfDocumentViewer2.OnRenderPageExceptionEvent = Nothing
-        Me.PdfDocumentViewer2.PageLayoutMode = Spire.PdfViewer.Forms.PageLayoutMode.SinglePageContinuous
-        Me.PdfDocumentViewer2.Size = New System.Drawing.Size(96, 49)
-        Me.PdfDocumentViewer2.TabIndex = 3
-        Me.PdfDocumentViewer2.Text = "PdfDocumentViewer2"
-        Me.PdfDocumentViewer2.Threshold = 60
-        Me.PdfDocumentViewer2.ViewerMode = Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.MultiPage
-        Me.PdfDocumentViewer2.ZoomFactor = 1.0!
-        Me.PdfDocumentViewer2.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.[Default]
-        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1678, 719)
         Me.Controls.Add(Me.settings_pnl)
+        Me.Controls.Add(Me.pnl_archive)
         Me.Controls.Add(Me.actionModal)
         Me.Controls.Add(Me.um_pnl)
-        Me.Controls.Add(Me.pnl_archive)
         Me.Controls.Add(Me.pnl_financial)
         Me.Controls.Add(Me.actionModel)
         Me.Controls.Add(Me.summonPnl)
@@ -2533,9 +2485,6 @@ Partial Class Admin
         Me.Panel9.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.pnl_financial.ResumeLayout(False)
-        Me.pnl_financial.PerformLayout()
-        CType(Me.dgv_financial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_archive.ResumeLayout(False)
         Me.pnl_archive.PerformLayout()
         CType(Me.dgv_archive, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2547,6 +2496,9 @@ Partial Class Admin
         CType(Me.dgv_clearance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.clearance_pnl.ResumeLayout(False)
         Me.clearance_pnl.PerformLayout()
+        CType(Me.dgv_financial, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_financial.ResumeLayout(False)
+        Me.pnl_financial.PerformLayout()
         CType(Me.um_dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.um_pnl.ResumeLayout(False)
         Me.um_pnl.PerformLayout()
@@ -2631,17 +2583,6 @@ Partial Class Admin
     Friend WithEvents txtbox_amountPaid As TextBox
     Friend WithEvents informationBox As RichTextBox
     Friend WithEvents FinancialReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents pnl_financial As MetroFramework.Controls.MetroPanel
-    Friend WithEvents TextBox15 As TextBox
-    Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents dgv_financial As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column13 As DataGridViewTextBoxColumn
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents MetroButton8 As MetroFramework.Controls.MetroButton
     Friend WithEvents pnl_archive As MetroFramework.Controls.MetroPanel
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
@@ -2688,10 +2629,6 @@ Partial Class Admin
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox10 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label7 As Label
@@ -2699,9 +2636,6 @@ Partial Class Admin
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents DataGridView8 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn32 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn33 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn34 As DataGridViewTextBoxColumn
     Friend WithEvents Label14 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents RichTextBox2 As RichTextBox
@@ -2716,26 +2650,11 @@ Partial Class Admin
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView7 As DataGridView
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column11 As DataGridViewTextBoxColumn
-    Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents dgv_clearance As DataGridView
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents clearance_pnl As MetroFramework.Controls.MetroPanel
-    Friend WithEvents um_dgv As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn35 As DataGridViewTextBoxColumn
-    Friend WithEvents um_pos As DataGridViewTextBoxColumn
-    Friend WithEvents Column15 As DataGridViewTextBoxColumn
-    Friend WithEvents Column16 As DataGridViewTextBoxColumn
-    Friend WithEvents um_action As DataGridViewImageColumn
-    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents TextBox17 As TextBox
-    Friend WithEvents addUsr_btn As Button
-    Friend WithEvents um_pnl As MetroFramework.Controls.MetroPanel
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column17 As DataGridViewTextBoxColumn
@@ -2776,4 +2695,32 @@ Partial Class Admin
     Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
     Friend WithEvents PdfDocumentViewer2 As Spire.PdfViewer.Forms.PdfDocumentViewer
+    Friend WithEvents DataGridViewTextBoxColumn33 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn34 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents dgv_financial As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents MetroButton8 As MetroFramework.Controls.MetroButton
+    Friend WithEvents pnl_financial As MetroFramework.Controls.MetroPanel
+    Friend WithEvents um_dgv As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn35 As DataGridViewTextBoxColumn
+    Friend WithEvents um_pos As DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As DataGridViewTextBoxColumn
+    Friend WithEvents Column16 As DataGridViewTextBoxColumn
+    Friend WithEvents um_action As DataGridViewImageColumn
+    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents addUsr_btn As Button
+    Friend WithEvents um_pnl As MetroFramework.Controls.MetroPanel
 End Class

@@ -238,9 +238,11 @@ Partial Class Blotter_Report
         'dt_time
         '
         Me.dt_time.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.dt_time.CustomFormat = "hh:mm tt"
         Me.dt_time.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dt_time.Location = New System.Drawing.Point(677, 41)
         Me.dt_time.Name = "dt_time"
+        Me.dt_time.ShowUpDown = True
         Me.dt_time.Size = New System.Drawing.Size(190, 26)
         Me.dt_time.TabIndex = 20
         '

@@ -410,6 +410,10 @@ Public Class Admin
     End Sub
 
     Private Sub SummonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SummonToolStripMenuItem.Click
+        Dim id As String = GenerateID()
+        TextBox13.Text = id
+        TextBox14.Text = DateTime.Now.ToString()
+        TextBox14.ReadOnly = True
         summonPnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False, False, True)
         summonPnl.Controls.Add(summon_pnl)
@@ -1504,4 +1508,6 @@ Public Class Admin
             MsgBox("No file selected.", vbExclamation, "Warning")
         End If
     End Sub
+
+
 End Class
