@@ -16,6 +16,14 @@ Public Class Admin
         LoadImageToPictureBox(LogoSlot, fullPath)
     End Sub
 
+    Private Sub CheckPriv()
+        Console.WriteLine(My.Settings.access_level)
+        If My.Settings.access_level = "Barangay Secretary" Then
+            txtbox_amountPaid.Enabled = False
+            FinancialReportToolStripMenuItem.Visible = False
+        End If
+    End Sub
+
     Private Sub FetchClearance()
         Try
 
@@ -399,6 +407,7 @@ Public Class Admin
         FetchAccount()
         MetroLabel13.Text = My.Settings.OrdinanceFile
         MetroLabel14.Text = My.Settings.ResolutionFile
+        CheckPriv()
     End Sub
 
     Private Sub MetroButton5_Click(sender As Object, e As EventArgs) Handles removeLogo.Click
@@ -846,6 +855,58 @@ Public Class Admin
             request_date
         FROM 
             bgms_bus_clearance WHERE archived = 1;"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                dgv_archive.Rows.Add(dr("tracking_code"), dr("name"), dr("document_type"), Convert.ToDateTime(dr("request_date")).ToString("MM-dd-yyyy"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchSpecificArchive(query As String)
+        Try
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_archive.Rows.Clear()
+
+            Dim sqlQuery As String = "
+        SELECT 
+            clearance_name AS name, 
+            'Barangay Clearance' AS document_type,
+            clearance_track_id AS tracking_code,
+            request_date
+        FROM 
+            bgms_clearance WHERE archived = 1 AND clearance_track_id LIKE '%" & query & "%' OR clearance_name LIKE '%" & query & "%'
+
+        UNION ALL 
+
+        SELECT 
+            cert_name AS name, 
+            'Barangay Certificate' AS document_type,
+            cert_track_id AS tracking_code,
+            request_date
+        FROM 
+            bgms_certificate WHERE archived = 1 AND cert_track_id LIKE '%" & query & "%' OR cert_name LIKE '%" & query & "%'
+
+        UNION ALL 
+
+        SELECT 
+            bc_owner_name AS name,
+            'Business Clearance' AS document_type,
+            bc_track_id AS tracking_code,
+            request_date
+        FROM 
+            bgms_bus_clearance WHERE archived = 1 AND bc_track_id LIKE '%" & query & "%' OR bc_bus_name LIKE '%" & query & "%' OR bc_owner_name LIKE '%" & query & "%';"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
@@ -1599,8 +1660,8 @@ Public Class Admin
                 cn.Close()
                 cn.Dispose()
             End If
-            TextBox13.Clear()
-            TextBox14.Clear()
+            TextBox13.Text = GenerateID()
+            TextBox14.Text = DateTime.Now.ToString("MM/dd/yyyy")
             TextBox8.Clear()
             RichTextBox1.Clear()
             DataGridView7.Rows.Clear()
@@ -1609,5 +1670,254 @@ Public Class Admin
             DataGridView8.Rows.Clear()
             RichTextBox3.Clear()
         End Try
+    End Sub
+
+    Private Sub BlotterToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BlotterToolStripMenuItem1.Click
+        blotter_info.Visible = True
+        blotter_info.Dock = DockStyle.Fill
+        FetchBlotter()
+    End Sub
+
+    Private Sub TextBox16_TextChanged(sender As Object, e As EventArgs) Handles TextBox16.TextChanged
+        FetchSpecificArchive(TextBox16.Text())
+    End Sub
+
+    Private Sub SummonToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SummonToolStripMenuItem1.Click
+        summon_info.Visible = True
+        summon_info.Dock = DockStyle.Fill
+        FetchSummon()
+    End Sub
+
+    Private Sub FetchBlotter()
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_blotter.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_blotter"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                dgv_blotter.Rows.Add(dr("blotter_no"), dr("blotter_date"), dr("blotter_time"), dr("blotter_address"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchSpecificBlotter(query As String)
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_blotter.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_blotter a JOIN bgms_blotter_person WHERE blotter_no LIKE '%" & query & "%' OR bp_name LIKE '%" & query & "%'"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                Dim exists As Boolean = False
+
+                For Each row As DataGridViewRow In dgv_blotter.Rows
+                    If row.Cells(0).Value IsNot Nothing AndAlso row.Cells(0).Value.ToString() = dr("blotter_no").ToString() Then
+                        exists = True
+                        Exit For
+                    End If
+                Next
+
+                If Not exists Then
+                    dgv_blotter.Rows.Add(dr("blotter_no"), dr("blotter_date"), dr("blotter_time"), dr("blotter_address"))
+                End If
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub TextBox11_TextChanged(sender As Object, e As EventArgs) Handles TextBox11.TextChanged
+        FetchSpecificBlotter(TextBox11.Text())
+    End Sub
+
+    Private Sub FetchSummon()
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_summon.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_summon"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                dgv_summon.Rows.Add(dr("summon_id"), dr("summon_reason"), Convert.ToDateTime(dr("summon_hearing_date")).ToString("MM-dd-yyyy"), dr("summon_hearing_time"), Convert.ToDateTime(dr("summon_publish_date")).ToString("MM-dd-yyyy"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchSpecificSummon(query As String)
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            dgv_summon.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_summon a JOIN bgms_summon_person b ON a.summon_id = b.summon_no WHERE summon_id LIKE '%" & query & "%' OR sp_type LIKE '%" & query & "%'"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+
+                Dim exists As Boolean = False
+
+                For Each row As DataGridViewRow In dgv_summon.Rows
+                    If row.Cells(0).Value IsNot Nothing AndAlso row.Cells(0).Value.ToString() = dr("summon_id").ToString() Then
+                        exists = True
+                        Exit For
+                    End If
+                Next
+
+                If Not exists Then
+                    dgv_summon.Rows.Add(dr("summon_id"), dr("summon_reason"), Convert.ToDateTime(dr("summon_hearing_date")).ToString("MM-dd-yyyy"), dr("summon_hearing_time"), Convert.ToDateTime(dr("summon_publish_date")).ToString("MM-dd-yyyy"))
+                End If
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub txtbox_summon_search_TextChanged(sender As Object, e As EventArgs) Handles txtbox_summon_search.TextChanged
+        FetchSpecificSummon(txtbox_summon_search.Text())
+    End Sub
+
+    Private Sub FetchBlotterInfo(id As String)
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            RichTextBox4.Clear()
+            DataGridView1.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_blotter_person a JOIN bgms_blotter b ON a.bp_no = b.blotter_no WHERE bp_no = '" & id & "'"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                RichTextBox4.Text = dr("blotter_statement")
+                DataGridView1.Rows.Add(dr("bp_name"), dr("bp_cn"), dr("bp_age"), dr("bp_classification"), dr("bp_address"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub FetchSummonInfo(id As String)
+        Try
+
+            If cn.State = ConnectionState.Closed Then
+                cn.Open()
+            End If
+
+            DataGridView2.Rows.Clear()
+
+            Dim sqlQuery As String = "SELECT * FROM bgms_summon_person a JOIN bgms_summon b ON a.summon_no = b.summon_id WHERE summon_no = '" & id & "'"
+
+            Dim cm As New MySqlCommand(sqlQuery, cn)
+            Dim dr As MySqlDataReader = cm.ExecuteReader()
+
+            While dr.Read()
+                DataGridView2.Rows.Add(dr("sp_name"), dr("sp_address"), dr("sp_type"))
+            End While
+
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox("Failed to fetch data: " & ex.Message, vbCritical, "Failure")
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub dgv_blotter_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_blotter.CellContentClick
+        If e.ColumnIndex = dgv_blotter.Columns("blotterAction").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = dgv_blotter.Rows(e.RowIndex)
+            Dim firstCellValue As Object = clickedRow.Cells(0).Value
+            FetchBlotterInfo(firstCellValue)
+            blotter_info.Controls.Add(blotter_popup)
+            blotter_popup.Width = 550
+            blotter_popup.Height = 430
+            blotter_popup.Location = New Point(
+               blotter_info.Width / 2 - blotter_popup.Size.Width / 2,
+               blotter_info.Height / 2 - blotter_popup.Size.Height / 2
+            )
+            blotter_popup.Anchor = AnchorStyles.None
+            blotter_popup.Visible = True
+            blotter_popup.BringToFront()
+        End If
+    End Sub
+
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+        blotter_popup.Visible = False
+    End Sub
+
+    Private Sub Label24_Click(sender As Object, e As EventArgs) Handles Label24.Click
+        summon_popup.Visible = False
+    End Sub
+
+    Private Sub dgv_summon_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_summon.CellContentClick
+        If e.ColumnIndex = dgv_summon.Columns("summonAction").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = dgv_summon.Rows(e.RowIndex)
+            Dim firstCellValue As Object = clickedRow.Cells(0).Value
+            FetchSummonInfo(firstCellValue)
+            summon_info.Controls.Add(summon_popup)
+            summon_popup.Width = 550
+            summon_popup.Height = 430
+            summon_popup.Location = New Point(
+               summon_info.Width / 2 - summon_popup.Size.Width / 2,
+               summon_info.Height / 2 - summon_popup.Size.Height / 2
+            )
+            summon_popup.Anchor = AnchorStyles.None
+            summon_popup.Visible = True
+            summon_popup.BringToFront()
+        End If
     End Sub
 End Class

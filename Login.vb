@@ -207,7 +207,14 @@ Public Class Login
             cn.Open()
             Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
 
-            If count > 0 Then
+            Dim new_command As New MySqlCommand("SELECT acc_position FROM bgms_account WHERE acc_username = @username AND acc_password = @password AND acc_status = 'Active'", cn)
+            new_command.Parameters.AddWithValue("@username", login_uname_txtbox.Text())
+            new_command.Parameters.AddWithValue("@password", ComputeSHA256Hash(login_pword_txtbox.Text()))
+
+            Dim accPosition As Object = new_command.ExecuteScalar()
+
+            If count > 0 AndAlso accPosition IsNot Nothing Then
+                My.Settings.access_level = accPosition.ToString()
                 Me.Hide()
                 Dim adminForm As New Admin()
                 adminForm.ShowDialog(Me)
