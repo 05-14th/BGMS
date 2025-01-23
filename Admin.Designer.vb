@@ -457,6 +457,7 @@ Partial Class Admin
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(256, 0)
         Me.Panel3.Name = "Panel3"
@@ -838,7 +839,7 @@ Partial Class Admin
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Controls.Add(Me.TextBox14)
         Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.TextBox13)
@@ -1084,6 +1085,7 @@ Partial Class Admin
         '
         'Panel4
         '
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel4.Controls.Add(Me.Label15)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(4, 4)
@@ -1414,6 +1416,7 @@ Partial Class Admin
         '
         'Panel10
         '
+        Me.Panel10.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel10.Controls.Add(Me.Label17)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
@@ -1451,6 +1454,7 @@ Partial Class Admin
         '
         'Panel11
         '
+        Me.Panel11.BackColor = System.Drawing.SystemColors.Control
         Me.Panel11.Controls.Add(Me.cb_pos)
         Me.Panel11.Controls.Add(Me.Label23)
         Me.Panel11.Controls.Add(Me.cb_role)
@@ -2634,6 +2638,7 @@ Partial Class Admin
         '
         'Panel12
         '
+        Me.Panel12.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel12.Controls.Add(Me.Label9)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel12.Location = New System.Drawing.Point(0, 0)
@@ -2815,6 +2820,7 @@ Partial Class Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1851, 1050)
         Me.Controls.Add(Me.summon_popup)
         Me.Controls.Add(Me.blotter_popup)

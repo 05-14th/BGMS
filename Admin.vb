@@ -311,7 +311,7 @@ Public Class Admin
         bus_clearance_pnl.Visible = state3
     End Sub
 
-    Private Sub ToggleBT(state1 As Boolean, state2 As Boolean, state3 As Boolean, Optional state4 As Boolean = False, Optional state5 As Boolean = False, Optional state6 As Boolean = False, Optional state7 As Boolean = False, Optional state8 As Boolean = False)
+    Private Sub ToggleBT(Optional state1 As Boolean = False, Optional state2 As Boolean = False, Optional state3 As Boolean = False, Optional state4 As Boolean = False, Optional state5 As Boolean = False, Optional state6 As Boolean = False, Optional state7 As Boolean = False, Optional state8 As Boolean = False)
         bt_clearance_pnl.Visible = state1
         bt_certificate_pnl.Visible = state2
         bt_bus_clearance.Visible = state3
@@ -320,6 +320,8 @@ Public Class Admin
         pnl_financial.Visible = state6
         pnl_archive.Visible = state7
         um_pnl.Visible = state8
+        summon_info.Visible = False
+        blotter_info.Visible = False
     End Sub
 
     Private Sub brgyTrans_btn_Click(sender As Object, e As EventArgs) Handles brgyTrans_btn.Click
@@ -1479,6 +1481,7 @@ Public Class Admin
     End Sub
 
     Private Sub OrdinanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdinanceToolStripMenuItem.Click
+        ToggleBT()
         summonPnl.Dock = DockStyle.Fill
         summonPnl.Visible = True
         summonPnl.BringToFront()
@@ -1492,6 +1495,7 @@ Public Class Admin
     End Sub
 
     Private Sub ResolutionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResolutionToolStripMenuItem.Click
+        ToggleBT()
         summonPnl.Dock = DockStyle.Fill
         summonPnl.Visible = True
         summonPnl.BringToFront()
@@ -1673,6 +1677,7 @@ Public Class Admin
     End Sub
 
     Private Sub BlotterToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BlotterToolStripMenuItem1.Click
+        ToggleBT()
         blotter_info.Visible = True
         blotter_info.Dock = DockStyle.Fill
         FetchBlotter()
@@ -1683,6 +1688,7 @@ Public Class Admin
     End Sub
 
     Private Sub SummonToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SummonToolStripMenuItem1.Click
+        ToggleBT()
         summon_info.Visible = True
         summon_info.Dock = DockStyle.Fill
         FetchSummon()

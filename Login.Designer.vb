@@ -469,6 +469,7 @@ Partial Class Login
         '
         'Panel5
         '
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
@@ -759,6 +760,7 @@ Partial Class Login
         '
         'Panel6
         '
+        Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel6.Controls.Add(Me.Label8)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
@@ -977,6 +979,7 @@ Partial Class Login
         '
         'Panel7
         '
+        Me.Panel7.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel7.Controls.Add(Me.Label9)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
@@ -1258,6 +1261,7 @@ Partial Class Login
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
@@ -1404,6 +1408,7 @@ Partial Class Login
         '
         'Panel4
         '
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
@@ -1445,6 +1450,7 @@ Partial Class Login
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(300, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1465,6 +1471,7 @@ Partial Class Login
         '
         'DocumentsBtn
         '
+        Me.DocumentsBtn.BackColor = System.Drawing.SystemColors.Control
         Me.DocumentsBtn.Dock = System.Windows.Forms.DockStyle.Top
         Me.DocumentsBtn.Location = New System.Drawing.Point(0, 257)
         Me.DocumentsBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1476,6 +1483,7 @@ Partial Class Login
         '
         'LoginBtn
         '
+        Me.LoginBtn.BackColor = System.Drawing.SystemColors.Control
         Me.LoginBtn.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.LoginBtn.Location = New System.Drawing.Point(0, 979)
         Me.LoginBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1500,6 +1508,7 @@ Partial Class Login
         '
         'brgyClearance_btn
         '
+        Me.brgyClearance_btn.BackColor = System.Drawing.SystemColors.Control
         Me.brgyClearance_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.brgyClearance_btn.Location = New System.Drawing.Point(0, 108)
         Me.brgyClearance_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1511,6 +1520,7 @@ Partial Class Login
         '
         'Clearance_btn
         '
+        Me.Clearance_btn.BackColor = System.Drawing.SystemColors.Control
         Me.Clearance_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.Clearance_btn.Location = New System.Drawing.Point(0, 54)
         Me.Clearance_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1522,6 +1532,7 @@ Partial Class Login
         '
         'Cert_btn
         '
+        Me.Cert_btn.BackColor = System.Drawing.SystemColors.Control
         Me.Cert_btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.Cert_btn.Location = New System.Drawing.Point(0, 0)
         Me.Cert_btn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1533,6 +1544,7 @@ Partial Class Login
         '
         'trackReqBtn
         '
+        Me.trackReqBtn.BackColor = System.Drawing.SystemColors.Control
         Me.trackReqBtn.Dock = System.Windows.Forms.DockStyle.Top
         Me.trackReqBtn.Location = New System.Drawing.Point(0, 502)
         Me.trackReqBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1544,6 +1556,7 @@ Partial Class Login
         '
         'configBtn
         '
+        Me.configBtn.BackColor = System.Drawing.SystemColors.Control
         Me.configBtn.Dock = System.Windows.Forms.DockStyle.Top
         Me.configBtn.Location = New System.Drawing.Point(0, 587)
         Me.configBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -1572,6 +1585,7 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1924, 1050)
         Me.Controls.Add(Me.LobbyPnl)
         Me.Controls.Add(Me.Panel2)
