@@ -3,6 +3,8 @@ Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
 Imports Microsoft.Office.Interop
+Imports System.Globalization
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ListView
 
 
 Public Class Admin
@@ -412,7 +414,7 @@ Public Class Admin
     Private Sub SummonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SummonToolStripMenuItem.Click
         Dim id As String = GenerateID()
         TextBox13.Text = id
-        TextBox14.Text = DateTime.Now.ToString()
+        TextBox14.Text = DateTime.Now.ToString("MM/dd/yyyy")
         TextBox14.ReadOnly = True
         summonPnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False, False, True)
@@ -1509,5 +1511,103 @@ Public Class Admin
         End If
     End Sub
 
+    Private Sub Add_Complainant_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        DataGridView7.Rows.Add(TextBox8.Text, RichTextBox1.Text)
+        TextBox8.Clear()
+        RichTextBox1.Clear()
+    End Sub
 
+    Private Sub Add_Respondent_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        DataGridView8.Rows.Add(TextBox9.Text, RichTextBox2.Text)
+        TextBox9.Clear()
+        RichTextBox2.Clear()
+    End Sub
+
+    Private Sub Add_Summon(sender As Object, e As EventArgs) Handles Button3.Click
+        If cn.State <> ConnectionState.Open Then
+            cn.Open()
+        End If
+
+        Dim query As String = "INSERT INTO bgms_summon_person (`sp_name`, `sp_address`, `sp_type`, `summon_no`) VALUES (@spn, @spa, @spt, @smno)"
+        Dim summon_query As String = "INSERT INTO bgms_summon (`summon_id`, `summon_reason`, `summon_hearing_date`, `summon_hearing_time`, `summon_publish_date`) VALUES (@si, @sr, @shd, @sht, @shp)"
+        Dim complianantInsertCommand As MySqlCommand = Nothing
+        Dim defendantInsertCommand As MySqlCommand = Nothing
+        Dim summonInsertCommand As MySqlCommand = Nothing
+        Dim lastInsertedId As Integer = 0
+
+        Try
+            ' Insert into bgms_blotter table
+            summonInsertCommand = New MySqlCommand(summon_query, cn)
+            summonInsertCommand.Parameters.AddWithValue("@si", TextBox13.Text())
+            summonInsertCommand.Parameters.AddWithValue("@sr", RichTextBox3.Text())
+            summonInsertCommand.Parameters.AddWithValue("@shd", DateTimePicker1.Value.ToString("yyyy-MM-dd"))
+            summonInsertCommand.Parameters.AddWithValue("@sht", DateTimePicker2.Value.ToString("HH:mm"))
+            summonInsertCommand.Parameters.AddWithValue("@shp", Date.ParseExact(TextBox14.Text(), "M/d/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd"))
+            summonInsertCommand.ExecuteNonQuery()
+
+            ' Insert into bgms_blotter_person table for each row in DataGridView
+            For Each row As DataGridViewRow In DataGridView7.Rows
+                If Not row.IsNewRow Then
+                    complianantInsertCommand = New MySqlCommand(query, cn)
+                    complianantInsertCommand.Parameters.AddWithValue("@spn", row.Cells(0).Value)
+                    complianantInsertCommand.Parameters.AddWithValue("@spa", row.Cells(1).Value)
+                    complianantInsertCommand.Parameters.AddWithValue("@spt", "Complainant")
+                    complianantInsertCommand.Parameters.AddWithValue("@smno", TextBox13.Text()) ' Use the last inserted ID for the foreign key
+
+                    ' Execute the command
+                    complianantInsertCommand.ExecuteNonQuery()
+
+                    ' Dispose of the command to free resources
+                    complianantInsertCommand.Dispose()
+                End If
+            Next
+
+            ' Insert into bgms_blotter_person table for each row in DataGridView
+            For Each row As DataGridViewRow In DataGridView8.Rows
+                If Not row.IsNewRow Then
+                    defendantInsertCommand = New MySqlCommand(query, cn)
+                    defendantInsertCommand.Parameters.AddWithValue("@spn", row.Cells(0).Value)
+                    defendantInsertCommand.Parameters.AddWithValue("@spa", row.Cells(1).Value)
+                    defendantInsertCommand.Parameters.AddWithValue("@spt", "Defendant")
+                    defendantInsertCommand.Parameters.AddWithValue("@smno", TextBox13.Text()) ' Use the last inserted ID for the foreign key
+
+                    ' Execute the command
+                    defendantInsertCommand.ExecuteNonQuery()
+
+                    ' Dispose of the command to free resources
+                    defendantInsertCommand.Dispose()
+                End If
+            Next
+
+            MsgBox("Data successfully inserted into the database.", vbInformation, "Success")
+
+        Catch ex As Exception
+            MsgBox($"Error: {ex.Message}", vbCritical, "Error")
+
+        Finally
+            ' Clean up resources
+            If summonInsertCommand IsNot Nothing Then
+                summonInsertCommand.Dispose()
+            End If
+            If complianantInsertCommand IsNot Nothing Then
+                complianantInsertCommand.Dispose()
+            End If
+            If defendantInsertCommand IsNot Nothing Then
+                defendantInsertCommand.Dispose()
+            End If
+            If cn IsNot Nothing AndAlso cn.State = ConnectionState.Open Then
+                cn.Close()
+                cn.Dispose()
+            End If
+            TextBox13.Clear()
+            TextBox14.Clear()
+            TextBox8.Clear()
+            RichTextBox1.Clear()
+            DataGridView7.Rows.Clear()
+            TextBox9.Clear()
+            RichTextBox2.Clear()
+            DataGridView8.Rows.Clear()
+            RichTextBox3.Clear()
+        End Try
+    End Sub
 End Class
