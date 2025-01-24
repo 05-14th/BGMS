@@ -23,9 +23,14 @@ Public Class Admin
             FinancialReportToolStripMenuItem.Visible = False
         End If
 
-        If My.Settings.access_level <> "Barangay Captain" Or My.Settings.access_level <> "Unknown Developer" Then
+        If My.Settings.access_level <> "Barangay Captain" Then
             um_btn.Visible = False
             MetroButton11.Visible = False
+        End If
+
+        If My.Settings.access_level = "Unknown Developer" Then
+            um_btn.Visible = True
+            MetroButton11.Visible = True
         End If
     End Sub
 
