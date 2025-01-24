@@ -25,6 +25,7 @@ Public Class Admin
 
         If My.Settings.access_level <> "Barangay Captain" Then
             um_btn.Visible = False
+            MetroButton11.Visible = False
         End If
     End Sub
 
@@ -1930,4 +1931,5 @@ Public Class Admin
             summon_popup.BringToFront()
         End If
     End Sub
+
 End Class
