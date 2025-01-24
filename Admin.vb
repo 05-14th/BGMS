@@ -22,6 +22,10 @@ Public Class Admin
             txtbox_amountPaid.Enabled = False
             FinancialReportToolStripMenuItem.Visible = False
         End If
+
+        If My.Settings.access_level <> "Barangay Captain" Then
+            um_btn.Visible = False
+        End If
     End Sub
 
     Private Sub FetchClearance()
