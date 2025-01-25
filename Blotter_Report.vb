@@ -72,7 +72,6 @@ Public Class Blotter_Report
             End If
             If cn IsNot Nothing AndAlso cn.State = ConnectionState.Open Then
                 cn.Close()
-                cn.Dispose()
             End If
             Me.Dispose(True)
         End Try

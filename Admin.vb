@@ -1,10 +1,8 @@
 ﻿Imports System.IO
 Imports System.Runtime.InteropServices
+Imports Microsoft.Office.Interop
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
-Imports Microsoft.Office.Interop
-Imports System.Globalization
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ListView
 
 
 Public Class Admin
@@ -729,6 +727,7 @@ Public Class Admin
     Private Sub exit_btn_Click_1(sender As Object, e As EventArgs) Handles um_btn.Click
         FetchAccount()
         um_pnl.Dock = DockStyle.Fill
+        um_pnl.BringToFront()
         ToggleBT(False, False, False, state8:=True)
     End Sub
 
@@ -1672,7 +1671,6 @@ Public Class Admin
             End If
             If cn IsNot Nothing AndAlso cn.State = ConnectionState.Open Then
                 cn.Close()
-                cn.Dispose()
             End If
             TextBox13.Text = GenerateID()
             TextBox14.Text = DateTime.Now.ToString("MM/dd/yyyy")
@@ -1713,7 +1711,7 @@ Public Class Admin
 
             dgv_blotter.Rows.Clear()
 
-            Dim sqlQuery As String = "SELECT * FROM bgms_blotter"
+            Dim sqlQuery As String = "SELECT * FROM bgms_blotter WHERE status = 'active'"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
@@ -1739,7 +1737,7 @@ Public Class Admin
 
             dgv_blotter.Rows.Clear()
 
-            Dim sqlQuery As String = "SELECT * FROM bgms_blotter a JOIN bgms_blotter_person WHERE blotter_no LIKE '%" & query & "%' OR bp_name LIKE '%" & query & "%'"
+            Dim sqlQuery As String = "SELECT * FROM bgms_blotter a JOIN bgms_blotter_person WHERE a.status = 'active' AND blotter_no LIKE '%" & query & "%' OR bp_name LIKE '%" & query & "%'"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
@@ -1780,7 +1778,7 @@ Public Class Admin
 
             dgv_summon.Rows.Clear()
 
-            Dim sqlQuery As String = "SELECT * FROM bgms_summon"
+            Dim sqlQuery As String = "SELECT * FROM bgms_summon WHERE status = 'active'"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
@@ -1806,7 +1804,7 @@ Public Class Admin
 
             dgv_summon.Rows.Clear()
 
-            Dim sqlQuery As String = "SELECT * FROM bgms_summon a JOIN bgms_summon_person b ON a.summon_id = b.summon_no WHERE summon_id LIKE '%" & query & "%' OR sp_type LIKE '%" & query & "%'"
+            Dim sqlQuery As String = "SELECT * FROM bgms_summon a JOIN bgms_summon_person b ON a.summon_id = b.summon_no WHERE a.status = 'active' AND summon_id LIKE '%" & query & "%' OR sp_type LIKE '%" & query & "%'"
 
             Dim cm As New MySqlCommand(sqlQuery, cn)
             Dim dr As MySqlDataReader = cm.ExecuteReader()
@@ -1846,6 +1844,8 @@ Public Class Admin
                 cn.Open()
             End If
 
+            lbl_blotter_id.Text = id
+
             RichTextBox4.Clear()
             DataGridView1.Rows.Clear()
 
@@ -1873,6 +1873,8 @@ Public Class Admin
             If cn.State = ConnectionState.Closed Then
                 cn.Open()
             End If
+
+            lbl_summon_id.Text = id
 
             DataGridView2.Rows.Clear()
 
@@ -1937,4 +1939,53 @@ Public Class Admin
         End If
     End Sub
 
+    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+        Dim query As DialogResult = MsgBox("Are you sure you want to delete this record?", vbQuestion + vbYesNo, "Confirmation")
+        If query = DialogResult.Yes Then
+            Try
+                If cn.State = ConnectionState.Closed Then
+                    cn.Open()
+                End If
+
+                Dim deactivateString As String = "UPDATE bgms_summon SET status = 'inactive' WHERE summon_id = @id"
+                Dim cmd As New MySqlCommand(deactivateString, cn)
+                cmd.Parameters.AddWithValue("@id", lbl_summon_id.Text())
+                cmd.ExecuteNonQuery()
+                MsgBox("Record deleted successfully.", vbInformation, "Success")
+                summon_popup.Visible = False
+                FetchSummon()
+            Catch ex As Exception
+                MsgBox("Failed to  delete record: " & ex.Message, vbCritical, "Failure")
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        End If
+    End Sub
+
+    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
+        Dim query As DialogResult = MsgBox("Are you sure you want to delete this record?", vbQuestion + vbYesNo, "Confirmation")
+        If query = DialogResult.Yes Then
+            Try
+                If cn.State = ConnectionState.Closed Then
+                    cn.Open()
+                End If
+
+                Dim deactivateString As String = "UPDATE bgms_blotter SET status = 'inactive' WHERE blotter_no = @id"
+                Dim cmd As New MySqlCommand(deactivateString, cn)
+                cmd.Parameters.AddWithValue("@id", lbl_blotter_id.Text())
+                cmd.ExecuteNonQuery()
+                MsgBox("Record deleted successfully.", vbInformation, "Success")
+                blotter_popup.Visible = False
+                FetchBlotter()
+            Catch ex As Exception
+                MsgBox("Failed to  delete record: " & ex.Message, vbCritical, "Failure")
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
+            End Try
+        End If
+    End Sub
 End Class

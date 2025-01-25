@@ -277,6 +277,10 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Label24 = New System.Windows.Forms.Label()
+        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
+        Me.lbl_blotter_id = New MetroFramework.Controls.MetroLabel()
+        Me.lbl_summon_id = New MetroFramework.Controls.MetroLabel()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.Bt_Menu.SuspendLayout()
@@ -2648,6 +2652,7 @@ Partial Class Admin
         '
         'blotter_popup
         '
+        Me.blotter_popup.Controls.Add(Me.MetroButton2)
         Me.blotter_popup.Controls.Add(Me.DataGridView1)
         Me.blotter_popup.Controls.Add(Me.RichTextBox4)
         Me.blotter_popup.Controls.Add(Me.MetroLabel17)
@@ -2655,9 +2660,9 @@ Partial Class Admin
         Me.blotter_popup.HorizontalScrollbarBarColor = True
         Me.blotter_popup.HorizontalScrollbarHighlightOnWheel = False
         Me.blotter_popup.HorizontalScrollbarSize = 10
-        Me.blotter_popup.Location = New System.Drawing.Point(1186, 645)
+        Me.blotter_popup.Location = New System.Drawing.Point(1186, 598)
         Me.blotter_popup.Name = "blotter_popup"
-        Me.blotter_popup.Size = New System.Drawing.Size(338, 342)
+        Me.blotter_popup.Size = New System.Drawing.Size(338, 430)
         Me.blotter_popup.TabIndex = 23
         Me.blotter_popup.VerticalScrollbarBarColor = True
         Me.blotter_popup.VerticalScrollbarHighlightOnWheel = False
@@ -2675,7 +2680,7 @@ Partial Class Admin
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(309, 109)
+        Me.DataGridView1.Size = New System.Drawing.Size(309, 144)
         Me.DataGridView1.TabIndex = 8
         '
         'DataGridViewTextBoxColumn40
@@ -2738,6 +2743,7 @@ Partial Class Admin
         'Panel12
         '
         Me.Panel12.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel12.Controls.Add(Me.lbl_blotter_id)
         Me.Panel12.Controls.Add(Me.Label9)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel12.Location = New System.Drawing.Point(0, 0)
@@ -2758,14 +2764,15 @@ Partial Class Admin
         '
         'summon_popup
         '
+        Me.summon_popup.Controls.Add(Me.MetroButton1)
         Me.summon_popup.Controls.Add(Me.DataGridView2)
         Me.summon_popup.Controls.Add(Me.Panel13)
         Me.summon_popup.HorizontalScrollbarBarColor = True
         Me.summon_popup.HorizontalScrollbarHighlightOnWheel = False
         Me.summon_popup.HorizontalScrollbarSize = 10
-        Me.summon_popup.Location = New System.Drawing.Point(740, 866)
+        Me.summon_popup.Location = New System.Drawing.Point(740, 844)
         Me.summon_popup.Name = "summon_popup"
-        Me.summon_popup.Size = New System.Drawing.Size(139, 112)
+        Me.summon_popup.Size = New System.Drawing.Size(426, 184)
         Me.summon_popup.TabIndex = 24
         Me.summon_popup.VerticalScrollbarBarColor = True
         Me.summon_popup.VerticalScrollbarHighlightOnWheel = False
@@ -2783,7 +2790,7 @@ Partial Class Admin
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowHeadersWidth = 62
         Me.DataGridView2.RowTemplate.Height = 28
-        Me.DataGridView2.Size = New System.Drawing.Size(110, 55)
+        Me.DataGridView2.Size = New System.Drawing.Size(397, 79)
         Me.DataGridView2.TabIndex = 8
         '
         'DataGridViewTextBoxColumn39
@@ -2810,11 +2817,13 @@ Partial Class Admin
         '
         'Panel13
         '
+        Me.Panel13.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Panel13.Controls.Add(Me.lbl_summon_id)
         Me.Panel13.Controls.Add(Me.Label24)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel13.Location = New System.Drawing.Point(0, 0)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(139, 32)
+        Me.Panel13.Size = New System.Drawing.Size(426, 32)
         Me.Panel13.TabIndex = 3
         '
         'Label24
@@ -2822,11 +2831,53 @@ Partial Class Admin
         Me.Label24.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(114, 6)
+        Me.Label24.Location = New System.Drawing.Point(401, 6)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(21, 20)
         Me.Label24.TabIndex = 0
         Me.Label24.Text = "X"
+        '
+        'MetroButton1
+        '
+        Me.MetroButton1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton1.Location = New System.Drawing.Point(14, 129)
+        Me.MetroButton1.Name = "MetroButton1"
+        Me.MetroButton1.Size = New System.Drawing.Size(397, 41)
+        Me.MetroButton1.TabIndex = 9
+        Me.MetroButton1.Text = "Delete"
+        Me.MetroButton1.UseSelectable = True
+        '
+        'MetroButton2
+        '
+        Me.MetroButton2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton2.Location = New System.Drawing.Point(14, 375)
+        Me.MetroButton2.Name = "MetroButton2"
+        Me.MetroButton2.Size = New System.Drawing.Size(309, 41)
+        Me.MetroButton2.TabIndex = 10
+        Me.MetroButton2.Text = "Delete"
+        Me.MetroButton2.UseSelectable = True
+        '
+        'lbl_blotter_id
+        '
+        Me.lbl_blotter_id.AutoSize = True
+        Me.lbl_blotter_id.Location = New System.Drawing.Point(8, 7)
+        Me.lbl_blotter_id.Name = "lbl_blotter_id"
+        Me.lbl_blotter_id.Size = New System.Drawing.Size(20, 19)
+        Me.lbl_blotter_id.TabIndex = 11
+        Me.lbl_blotter_id.Text = "id"
+        Me.lbl_blotter_id.Visible = False
+        '
+        'lbl_summon_id
+        '
+        Me.lbl_summon_id.AutoSize = True
+        Me.lbl_summon_id.Location = New System.Drawing.Point(8, 7)
+        Me.lbl_summon_id.Name = "lbl_summon_id"
+        Me.lbl_summon_id.Size = New System.Drawing.Size(20, 19)
+        Me.lbl_summon_id.TabIndex = 12
+        Me.lbl_summon_id.Text = "id"
+        Me.lbl_summon_id.Visible = False
         '
         'Admin
         '
@@ -3191,4 +3242,8 @@ Partial Class Admin
     Friend WithEvents summonAction As DataGridViewImageColumn
     Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
+    Friend WithEvents lbl_blotter_id As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lbl_summon_id As MetroFramework.Controls.MetroLabel
 End Class
