@@ -3,6 +3,7 @@ Imports System.Runtime.InteropServices
 Imports Microsoft.Office.Interop
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
+Imports Org.BouncyCastle.Tsp
 
 
 Public Class Admin
@@ -24,11 +25,13 @@ Public Class Admin
         If My.Settings.access_level <> "Barangay Captain" Then
             um_btn.Visible = False
             MetroButton11.Visible = False
+            MetroButton3.Visible = False
         End If
 
         If My.Settings.access_level = "Unknown Developer" Then
             um_btn.Visible = True
             MetroButton11.Visible = True
+            MetroButton3.Visible = True
         End If
     End Sub
 
@@ -345,53 +348,53 @@ Public Class Admin
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        FetchClearance()
         clearance_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False)
         ToggleReports(True, False, False)
+        FetchClearance()
         showSettings()
     End Sub
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
-        FetchCertificate()
         certificate_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False)
         ToggleReports(False, True, False)
+        FetchCertificate()
         showSettings()
     End Sub
 
     Private Sub BusinessClearanceToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BusinessClearanceToolStripMenuItem1.Click
-        FetchBusClearance()
         bus_clearance_pnl.Dock = DockStyle.Fill
         ToggleBT(False, False, False)
         ToggleReports(False, False, True)
+        FetchBusClearance()
         showSettings()
     End Sub
 
     Private Sub ClearanceToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ClearanceToolStripMenuItem.Click
         documentType = "clearance"
-        FetchClearance()
         bt_clearance_pnl.Dock = DockStyle.Fill
         ToggleReports(False, False, False)
         ToggleBT(True, False, False)
+        FetchClearance()
         showSettings()
     End Sub
 
     Private Sub CertificationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CertificationToolStripMenuItem.Click
         documentType = "certificate"
-        FetchCertificate()
         bt_certificate_pnl.Dock = DockStyle.Fill
         ToggleReports(False, False, False)
         ToggleBT(False, True, False)
+        FetchCertificate()
         showSettings()
     End Sub
 
     Private Sub BusinessClearanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusinessClearanceToolStripMenuItem.Click
         documentType = "business_clearance"
-        FetchBusClearance()
         bt_bus_clearance.Dock = DockStyle.Fill
         ToggleReports(False, False, False)
         ToggleBT(False, False, True)
+        FetchBusClearance()
         showSettings()
     End Sub
 
@@ -415,8 +418,6 @@ Public Class Admin
         InitializeLogo()
         FetchConfig()
         FetchAccount()
-        MetroLabel13.Text = My.Settings.OrdinanceFile
-        MetroLabel14.Text = My.Settings.ResolutionFile
         CheckPriv()
     End Sub
 
@@ -431,6 +432,8 @@ Public Class Admin
     End Sub
 
     Private Sub SummonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SummonToolStripMenuItem.Click
+        MetroButton12.Visible = False
+        MetroButton13.Visible = False
         Dim id As String = GenerateID()
         TextBox13.Text = id
         TextBox14.Text = DateTime.Now.ToString("MM/dd/yyyy")
@@ -760,6 +763,7 @@ Public Class Admin
     Private Sub FinancialReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FinancialReportToolStripMenuItem.Click
         ToggleBT(False, False, False, False, False, True)
         pnl_financial.Dock = DockStyle.Fill
+        pnl_financial.BringToFront()
         FetchFinancialRep()
     End Sub
 
@@ -1126,6 +1130,7 @@ Public Class Admin
     End Sub
 
     Private Sub MetroButton9_Click(sender As Object, e As EventArgs) Handles MetroButton9.Click
+        Me.Hide()
         Me.Close()
         Dim loginForm As New Login()
         loginForm.ShowDialog()
@@ -1491,30 +1496,26 @@ Public Class Admin
 
     Private Sub OrdinanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdinanceToolStripMenuItem.Click
         ToggleBT()
+        Dim filePath As String = Application.StartupPath
         summonPnl.Dock = DockStyle.Fill
         summonPnl.Visible = True
         summonPnl.BringToFront()
-        PdfDocumentViewer1.Visible = True
-        PdfDocumentViewer2.Visible = False
-        PdfDocumentViewer1.Dock = DockStyle.Fill
-        Dim pdfDoc As String = My.Settings.OrdinanceFile
-        If File.Exists(pdfDoc) Then
-            Me.PdfDocumentViewer1.LoadFromFile(pdfDoc)
-        End If
+        dgv_folder.Visible = True
+        MetroButton12.Visible = True
+        MetroButton13.Visible = False
+        FetchFiles(filePath & "\Ordinance")
     End Sub
 
     Private Sub ResolutionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResolutionToolStripMenuItem.Click
         ToggleBT()
+        Dim filePath As String = Application.StartupPath
         summonPnl.Dock = DockStyle.Fill
         summonPnl.Visible = True
         summonPnl.BringToFront()
-        PdfDocumentViewer1.Visible = False
-        PdfDocumentViewer2.Visible = True
-        PdfDocumentViewer2.Dock = DockStyle.Fill
-        Dim pdfDoc As String = My.Settings.ResolutionFile
-        If File.Exists(pdfDoc) Then
-            Me.PdfDocumentViewer2.LoadFromFile(pdfDoc)
-        End If
+        dgv_folder.Visible = True
+        MetroButton12.Visible = False
+        MetroButton13.Visible = True
+        FetchFiles(filePath & "\Resolution")
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -1549,39 +1550,49 @@ Public Class Admin
 
     Private Sub MetroButton12_Click(sender As Object, e As EventArgs) Handles MetroButton12.Click
         Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf"
+        openFileDialog.Title = "Select a PDF File"
 
-        openFileDialog.Title = "Select a File"
-        openFileDialog.Filter = "All Files (*.*)|*.*"
-        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        Dim filePath As String = Application.StartupPath
 
         If openFileDialog.ShowDialog() = DialogResult.OK Then
-            Dim filePath As String = openFileDialog.FileName
-            My.Settings.OrdinanceFile = filePath
-            My.Settings.Save()
+            Dim destinationPath As String = Path.Combine(filePath & "\Ordinance", Path.GetFileName(openFileDialog.FileName))
+            Try
+                If Not Directory.Exists(filePath & "\Ordinance") Then
+                    Directory.CreateDirectory(filePath & "\Ordinance")
+                End If
 
-            MetroLabel13.Text = My.Settings.OrdinanceFile
-            'MessageBox.Show("File Name: " & fileName & Environment.NewLine & "File Path: " & filePath, "Selected File")
-        Else
-            MsgBox("No file selected.", vbExclamation, "Warning")
+                ' Copy the file to the destination
+                File.Copy(openFileDialog.FileName, destinationPath, True)
+                MessageBox.Show("File uploaded successfully to: " & destinationPath, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                FetchFiles(filePath & "\Ordinance")
+            Catch ex As Exception
+                MessageBox.Show("Error uploading file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
     End Sub
 
     Private Sub MetroButton13_Click(sender As Object, e As EventArgs) Handles MetroButton13.Click
         Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf"
+        openFileDialog.Title = "Select a PDF File"
 
-        openFileDialog.Title = "Select a File"
-        openFileDialog.Filter = "All Files (*.*)|*.*"
-        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        Dim filePath As String = Application.StartupPath
 
         If openFileDialog.ShowDialog() = DialogResult.OK Then
-            Dim filePath As String = openFileDialog.FileName
-            My.Settings.ResolutionFile = filePath
-            My.Settings.Save()
+            Dim destinationPath As String = Path.Combine(filePath & "\Resolution", Path.GetFileName(openFileDialog.FileName))
+            Try
+                If Not Directory.Exists(filePath & "\Resolution") Then
+                    Directory.CreateDirectory(filePath & "\Resolution")
+                End If
 
-            MetroLabel14.Text = My.Settings.ResolutionFile
-            'MessageBox.Show("File Name: " & fileName & Environment.NewLine & "File Path: " & filePath, "Selected File")
-        Else
-            MsgBox("No file selected.", vbExclamation, "Warning")
+                ' Copy the file to the destination
+                File.Copy(openFileDialog.FileName, destinationPath, True)
+                MessageBox.Show("File uploaded successfully to: " & destinationPath, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                FetchFiles(filePath & "\Resolution")
+            Catch ex As Exception
+                MessageBox.Show("Error uploading file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
     End Sub
 
@@ -1985,6 +1996,81 @@ Public Class Admin
                 If cn.State = ConnectionState.Open Then
                     cn.Close()
                 End If
+            End Try
+        End If
+    End Sub
+
+    Private Sub FetchFiles(folderPath As String)
+        If Not Directory.Exists(folderPath) Then
+            MessageBox.Show("Folder does not exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        dgv_folder.Rows.Clear()
+
+        Dim files As String() = Directory.GetFiles(folderPath)
+
+        For Each filePath As String In files
+            Dim fileInfo As New FileInfo(filePath)
+            dgv_folder.Rows.Add(fileInfo.Name, fileInfo.DirectoryName, fileInfo.LastWriteTime)
+        Next
+    End Sub
+
+    Private selectedFile As String
+
+    Private Sub dgv_folder_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_folder.CellContentClick
+        If e.ColumnIndex = dgv_folder.Columns("fileAction").Index AndAlso e.RowIndex >= 0 Then
+            Dim clickedRow As DataGridViewRow = dgv_folder.Rows(e.RowIndex)
+            Dim firstCellValue As Object = clickedRow.Cells(0).Value
+            Dim filePath As String = Application.StartupPath
+            Dim pdfDoc1 As String = filePath & "\Ordinance\" & firstCellValue.ToString()
+            Dim pdfDoc2 As String = filePath & "\Resolution\" & firstCellValue.ToString()
+            If File.Exists(pdfDoc1) Then
+                Me.PdfDocumentViewer1.LoadFromFile(pdfDoc1)
+                selectedFile = pdfDoc1
+            ElseIf File.Exists(pdfDoc2) Then
+                Me.PdfDocumentViewer1.LoadFromFile(pdfDoc2)
+                selectedFile = pdfDoc2
+            End If
+            summonPnl.Controls.Add(file_popup)
+            file_popup.Width = 1000
+            file_popup.Height = 500
+            file_popup.Location = New Point(
+               summonPnl.Width / 2 - file_popup.Size.Width / 2,
+               summonPnl.Height / 2 - file_popup.Size.Height / 2
+            )
+            file_popup.Anchor = AnchorStyles.None
+            file_popup.Visible = True
+            file_popup.BringToFront()
+        End If
+    End Sub
+
+    Private Sub Label25_Click(sender As Object, e As EventArgs) Handles Label25.Click
+        file_popup.Visible = False
+    End Sub
+
+    Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles MetroButton3.Click
+        Dim query As DialogResult = MsgBox("Are you sure you want to delete this file?", vbYesNo + vbQuestion, "File Deletion")
+        If query = vbYes Then
+            Try
+                file_popup.Visible = False
+                ' Check if the file exists
+                Dim filePath As String = Application.StartupPath
+                If File.Exists(selectedFile) Then
+                    ' Delete the file
+                    File.Delete(selectedFile)
+                    MessageBox.Show("File deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    If selectedFile.Contains("\Ordinance") Then
+                        FetchFiles(filePath & "\Ordinance")
+                    Else
+                        FetchFiles(filePath & "\Resolution")
+                    End If
+                Else
+                    MessageBox.Show("File not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                ' Handle any errors during deletion
+                MessageBox.Show("An error occurred while deleting the file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub

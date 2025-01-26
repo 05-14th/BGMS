@@ -90,8 +90,13 @@ Partial Class Admin
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.summonPnl = New MetroFramework.Controls.MetroPanel()
-        Me.PdfDocumentViewer2 = New Spire.PdfViewer.Forms.PdfDocumentViewer()
-        Me.PdfDocumentViewer1 = New Spire.PdfViewer.Forms.PdfDocumentViewer()
+        Me.dgv_folder = New System.Windows.Forms.DataGridView()
+        Me.Column30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fileAction = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.MetroButton13 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton12 = New MetroFramework.Controls.MetroButton()
         Me.actionModel = New MetroFramework.Controls.MetroPanel()
         Me.informationBox = New System.Windows.Forms.RichTextBox()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -233,12 +238,7 @@ Partial Class Admin
         Me.txtBox_muni = New System.Windows.Forms.TextBox()
         Me.txtBox_prov = New System.Windows.Forms.TextBox()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroButton12 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton13 = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
         Me.settings_pnl = New MetroFramework.Controls.MetroPanel()
-        Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
         Me.summon_info = New MetroFramework.Controls.MetroPanel()
         Me.txtbox_summon_search = New System.Windows.Forms.TextBox()
@@ -260,6 +260,7 @@ Partial Class Admin
         Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.blotterAction = New System.Windows.Forms.DataGridViewImageColumn()
         Me.blotter_popup = New MetroFramework.Controls.MetroPanel()
+        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -269,18 +270,22 @@ Partial Class Admin
         Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.lbl_blotter_id = New MetroFramework.Controls.MetroLabel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.summon_popup = New MetroFramework.Controls.MetroPanel()
+        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.lbl_blotter_id = New MetroFramework.Controls.MetroLabel()
         Me.lbl_summon_id = New MetroFramework.Controls.MetroLabel()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.file_popup = New MetroFramework.Controls.MetroPanel()
+        Me.PdfDocumentViewer1 = New Spire.PdfViewer.Forms.PdfDocumentViewer()
+        Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Settings_Menu.SuspendLayout()
         Me.Bt_Menu.SuspendLayout()
@@ -294,6 +299,7 @@ Partial Class Admin
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.summonPnl.SuspendLayout()
+        CType(Me.dgv_folder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.actionModel.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -330,6 +336,8 @@ Partial Class Admin
         Me.summon_popup.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
+        Me.file_popup.SuspendLayout()
+        Me.Panel14.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -935,57 +943,89 @@ Partial Class Admin
         '
         'summonPnl
         '
-        Me.summonPnl.Controls.Add(Me.PdfDocumentViewer2)
-        Me.summonPnl.Controls.Add(Me.PdfDocumentViewer1)
+        Me.summonPnl.Controls.Add(Me.dgv_folder)
+        Me.summonPnl.Controls.Add(Me.MetroButton13)
+        Me.summonPnl.Controls.Add(Me.MetroButton12)
         Me.summonPnl.HorizontalScrollbarBarColor = True
         Me.summonPnl.HorizontalScrollbarHighlightOnWheel = False
         Me.summonPnl.HorizontalScrollbarSize = 9
         Me.summonPnl.Location = New System.Drawing.Point(264, 72)
         Me.summonPnl.Name = "summonPnl"
-        Me.summonPnl.Size = New System.Drawing.Size(14, 144)
+        Me.summonPnl.Size = New System.Drawing.Size(385, 192)
         Me.summonPnl.TabIndex = 15
         Me.summonPnl.VerticalScrollbarBarColor = True
         Me.summonPnl.VerticalScrollbarHighlightOnWheel = False
         Me.summonPnl.VerticalScrollbarSize = 10
         Me.summonPnl.Visible = False
         '
-        'PdfDocumentViewer2
+        'dgv_folder
         '
-        Me.PdfDocumentViewer2.AutoScroll = True
-        Me.PdfDocumentViewer2.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.PdfDocumentViewer2.FormFillEnabled = False
-        Me.PdfDocumentViewer2.Location = New System.Drawing.Point(59, 48)
-        Me.PdfDocumentViewer2.MultiPagesThreshold = 60
-        Me.PdfDocumentViewer2.Name = "PdfDocumentViewer2"
-        Me.PdfDocumentViewer2.OnRenderPageExceptionEvent = Nothing
-        Me.PdfDocumentViewer2.PageLayoutMode = Spire.PdfViewer.Forms.PageLayoutMode.SinglePageContinuous
-        Me.PdfDocumentViewer2.Size = New System.Drawing.Size(96, 49)
-        Me.PdfDocumentViewer2.TabIndex = 3
-        Me.PdfDocumentViewer2.Text = "PdfDocumentViewer2"
-        Me.PdfDocumentViewer2.Threshold = 60
-        Me.PdfDocumentViewer2.ViewerMode = Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.MultiPage
-        Me.PdfDocumentViewer2.Visible = False
-        Me.PdfDocumentViewer2.ZoomFactor = 1.0!
-        Me.PdfDocumentViewer2.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.[Default]
+        Me.dgv_folder.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_folder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_folder.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column30, Me.Column35, Me.Column36, Me.fileAction})
+        Me.dgv_folder.Location = New System.Drawing.Point(11, 15)
+        Me.dgv_folder.Name = "dgv_folder"
+        Me.dgv_folder.RowHeadersWidth = 62
+        Me.dgv_folder.RowTemplate.Height = 28
+        Me.dgv_folder.Size = New System.Drawing.Size(360, 122)
+        Me.dgv_folder.TabIndex = 19
+        Me.dgv_folder.Visible = False
         '
-        'PdfDocumentViewer1
+        'Column30
         '
-        Me.PdfDocumentViewer1.AutoScroll = True
-        Me.PdfDocumentViewer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.PdfDocumentViewer1.FormFillEnabled = False
-        Me.PdfDocumentViewer1.Location = New System.Drawing.Point(35, 27)
-        Me.PdfDocumentViewer1.MultiPagesThreshold = 60
-        Me.PdfDocumentViewer1.Name = "PdfDocumentViewer1"
-        Me.PdfDocumentViewer1.OnRenderPageExceptionEvent = Nothing
-        Me.PdfDocumentViewer1.PageLayoutMode = Spire.PdfViewer.Forms.PageLayoutMode.SinglePageContinuous
-        Me.PdfDocumentViewer1.Size = New System.Drawing.Size(96, 49)
-        Me.PdfDocumentViewer1.TabIndex = 2
-        Me.PdfDocumentViewer1.Text = "PdfDocumentViewer1"
-        Me.PdfDocumentViewer1.Threshold = 60
-        Me.PdfDocumentViewer1.ViewerMode = Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.MultiPage
-        Me.PdfDocumentViewer1.Visible = False
-        Me.PdfDocumentViewer1.ZoomFactor = 1.0!
-        Me.PdfDocumentViewer1.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.[Default]
+        Me.Column30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column30.HeaderText = "Name"
+        Me.Column30.MinimumWidth = 8
+        Me.Column30.Name = "Column30"
+        '
+        'Column35
+        '
+        Me.Column35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column35.HeaderText = "Location"
+        Me.Column35.MinimumWidth = 8
+        Me.Column35.Name = "Column35"
+        '
+        'Column36
+        '
+        Me.Column36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column36.HeaderText = "Date Posted"
+        Me.Column36.MinimumWidth = 8
+        Me.Column36.Name = "Column36"
+        Me.Column36.Width = 134
+        '
+        'fileAction
+        '
+        Me.fileAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.fileAction.HeaderText = "Action"
+        Me.fileAction.MinimumWidth = 8
+        Me.fileAction.Name = "fileAction"
+        Me.fileAction.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.fileAction.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.fileAction.Width = 90
+        '
+        'MetroButton13
+        '
+        Me.MetroButton13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton13.Location = New System.Drawing.Point(290, 143)
+        Me.MetroButton13.Name = "MetroButton13"
+        Me.MetroButton13.Size = New System.Drawing.Size(81, 34)
+        Me.MetroButton13.TabIndex = 18
+        Me.MetroButton13.Text = "Upload"
+        Me.MetroButton13.UseSelectable = True
+        Me.MetroButton13.Visible = False
+        '
+        'MetroButton12
+        '
+        Me.MetroButton12.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton12.Location = New System.Drawing.Point(290, 143)
+        Me.MetroButton12.Name = "MetroButton12"
+        Me.MetroButton12.Size = New System.Drawing.Size(81, 34)
+        Me.MetroButton12.TabIndex = 17
+        Me.MetroButton12.Text = "Upload"
+        Me.MetroButton12.UseSelectable = True
+        Me.MetroButton12.Visible = False
         '
         'actionModel
         '
@@ -2344,7 +2384,8 @@ Partial Class Admin
         '
         'MetroButton10
         '
-        Me.MetroButton10.Location = New System.Drawing.Point(11, 589)
+        Me.MetroButton10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton10.Location = New System.Drawing.Point(16, 649)
         Me.MetroButton10.Name = "MetroButton10"
         Me.MetroButton10.Size = New System.Drawing.Size(292, 34)
         Me.MetroButton10.TabIndex = 10
@@ -2375,51 +2416,8 @@ Partial Class Admin
         Me.MetroLabel11.TabIndex = 15
         Me.MetroLabel11.Text = "Municipality:"
         '
-        'MetroButton12
-        '
-        Me.MetroButton12.Location = New System.Drawing.Point(14, 488)
-        Me.MetroButton12.Name = "MetroButton12"
-        Me.MetroButton12.Size = New System.Drawing.Size(81, 34)
-        Me.MetroButton12.TabIndex = 17
-        Me.MetroButton12.Text = "Ordinance"
-        Me.MetroButton12.UseSelectable = True
-        '
-        'MetroButton13
-        '
-        Me.MetroButton13.Location = New System.Drawing.Point(14, 528)
-        Me.MetroButton13.Name = "MetroButton13"
-        Me.MetroButton13.Size = New System.Drawing.Size(81, 34)
-        Me.MetroButton13.TabIndex = 18
-        Me.MetroButton13.Text = "Resolution"
-        Me.MetroButton13.UseSelectable = True
-        '
-        'MetroLabel13
-        '
-        Me.MetroLabel13.AutoSize = True
-        Me.MetroLabel13.BackColor = System.Drawing.Color.Transparent
-        Me.MetroLabel13.Location = New System.Drawing.Point(101, 495)
-        Me.MetroLabel13.Name = "MetroLabel13"
-        Me.MetroLabel13.Size = New System.Drawing.Size(154, 19)
-        Me.MetroLabel13.TabIndex = 19
-        Me.MetroLabel13.Text = "No Uploaded Ordinance"
-        '
-        'MetroLabel14
-        '
-        Me.MetroLabel14.AutoSize = True
-        Me.MetroLabel14.BackColor = System.Drawing.Color.Transparent
-        Me.MetroLabel14.Location = New System.Drawing.Point(100, 535)
-        Me.MetroLabel14.Name = "MetroLabel14"
-        Me.MetroLabel14.Size = New System.Drawing.Size(153, 19)
-        Me.MetroLabel14.TabIndex = 20
-        Me.MetroLabel14.Text = "No Uploaded Resolution"
-        '
         'settings_pnl
         '
-        Me.settings_pnl.Controls.Add(Me.MetroLabel18)
-        Me.settings_pnl.Controls.Add(Me.MetroLabel14)
-        Me.settings_pnl.Controls.Add(Me.MetroLabel13)
-        Me.settings_pnl.Controls.Add(Me.MetroButton13)
-        Me.settings_pnl.Controls.Add(Me.MetroButton12)
         Me.settings_pnl.Controls.Add(Me.MetroLabel12)
         Me.settings_pnl.Controls.Add(Me.MetroLabel11)
         Me.settings_pnl.Controls.Add(Me.txtBox_prov)
@@ -2435,22 +2433,12 @@ Partial Class Admin
         Me.settings_pnl.HorizontalScrollbarSize = 9
         Me.settings_pnl.Location = New System.Drawing.Point(1164, 72)
         Me.settings_pnl.Name = "settings_pnl"
-        Me.settings_pnl.Size = New System.Drawing.Size(320, 635)
+        Me.settings_pnl.Size = New System.Drawing.Size(320, 698)
         Me.settings_pnl.TabIndex = 12
         Me.settings_pnl.VerticalScrollbarBarColor = True
         Me.settings_pnl.VerticalScrollbarHighlightOnWheel = False
         Me.settings_pnl.VerticalScrollbarSize = 10
         Me.settings_pnl.Visible = False
-        '
-        'MetroLabel18
-        '
-        Me.MetroLabel18.AutoSize = True
-        Me.MetroLabel18.BackColor = System.Drawing.Color.Transparent
-        Me.MetroLabel18.Location = New System.Drawing.Point(129, 308)
-        Me.MetroLabel18.Name = "MetroLabel18"
-        Me.MetroLabel18.Size = New System.Drawing.Size(62, 19)
-        Me.MetroLabel18.TabIndex = 21
-        Me.MetroLabel18.Text = "Province:"
         '
         'MetroLabel12
         '
@@ -2660,7 +2648,7 @@ Partial Class Admin
         Me.blotter_popup.HorizontalScrollbarBarColor = True
         Me.blotter_popup.HorizontalScrollbarHighlightOnWheel = False
         Me.blotter_popup.HorizontalScrollbarSize = 10
-        Me.blotter_popup.Location = New System.Drawing.Point(1186, 598)
+        Me.blotter_popup.Location = New System.Drawing.Point(1264, 712)
         Me.blotter_popup.Name = "blotter_popup"
         Me.blotter_popup.Size = New System.Drawing.Size(338, 430)
         Me.blotter_popup.TabIndex = 23
@@ -2668,6 +2656,17 @@ Partial Class Admin
         Me.blotter_popup.VerticalScrollbarHighlightOnWheel = False
         Me.blotter_popup.VerticalScrollbarSize = 10
         Me.blotter_popup.Visible = False
+        '
+        'MetroButton2
+        '
+        Me.MetroButton2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton2.Location = New System.Drawing.Point(14, 375)
+        Me.MetroButton2.Name = "MetroButton2"
+        Me.MetroButton2.Size = New System.Drawing.Size(309, 41)
+        Me.MetroButton2.TabIndex = 10
+        Me.MetroButton2.Text = "Delete"
+        Me.MetroButton2.UseSelectable = True
         '
         'DataGridView1
         '
@@ -2751,6 +2750,16 @@ Partial Class Admin
         Me.Panel12.Size = New System.Drawing.Size(338, 32)
         Me.Panel12.TabIndex = 3
         '
+        'lbl_blotter_id
+        '
+        Me.lbl_blotter_id.AutoSize = True
+        Me.lbl_blotter_id.Location = New System.Drawing.Point(8, 7)
+        Me.lbl_blotter_id.Name = "lbl_blotter_id"
+        Me.lbl_blotter_id.Size = New System.Drawing.Size(20, 19)
+        Me.lbl_blotter_id.TabIndex = 11
+        Me.lbl_blotter_id.Text = "id"
+        Me.lbl_blotter_id.Visible = False
+        '
         'Label9
         '
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -2778,6 +2787,17 @@ Partial Class Admin
         Me.summon_popup.VerticalScrollbarHighlightOnWheel = False
         Me.summon_popup.VerticalScrollbarSize = 10
         Me.summon_popup.Visible = False
+        '
+        'MetroButton1
+        '
+        Me.MetroButton1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton1.Location = New System.Drawing.Point(14, 129)
+        Me.MetroButton1.Name = "MetroButton1"
+        Me.MetroButton1.Size = New System.Drawing.Size(397, 41)
+        Me.MetroButton1.TabIndex = 9
+        Me.MetroButton1.Text = "Delete"
+        Me.MetroButton1.UseSelectable = True
         '
         'DataGridView2
         '
@@ -2826,6 +2846,16 @@ Partial Class Admin
         Me.Panel13.Size = New System.Drawing.Size(426, 32)
         Me.Panel13.TabIndex = 3
         '
+        'lbl_summon_id
+        '
+        Me.lbl_summon_id.AutoSize = True
+        Me.lbl_summon_id.Location = New System.Drawing.Point(8, 7)
+        Me.lbl_summon_id.Name = "lbl_summon_id"
+        Me.lbl_summon_id.Size = New System.Drawing.Size(20, 19)
+        Me.lbl_summon_id.TabIndex = 12
+        Me.lbl_summon_id.Text = "id"
+        Me.lbl_summon_id.Visible = False
+        '
         'Label24
         '
         Me.Label24.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -2837,47 +2867,74 @@ Partial Class Admin
         Me.Label24.TabIndex = 0
         Me.Label24.Text = "X"
         '
-        'MetroButton1
+        'file_popup
         '
-        Me.MetroButton1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.file_popup.Controls.Add(Me.PdfDocumentViewer1)
+        Me.file_popup.Controls.Add(Me.MetroButton3)
+        Me.file_popup.Controls.Add(Me.Panel14)
+        Me.file_popup.HorizontalScrollbarBarColor = True
+        Me.file_popup.HorizontalScrollbarHighlightOnWheel = False
+        Me.file_popup.HorizontalScrollbarSize = 10
+        Me.file_popup.Location = New System.Drawing.Point(1500, 717)
+        Me.file_popup.Name = "file_popup"
+        Me.file_popup.Size = New System.Drawing.Size(338, 296)
+        Me.file_popup.TabIndex = 24
+        Me.file_popup.VerticalScrollbarBarColor = True
+        Me.file_popup.VerticalScrollbarHighlightOnWheel = False
+        Me.file_popup.VerticalScrollbarSize = 10
+        Me.file_popup.Visible = False
+        '
+        'PdfDocumentViewer1
+        '
+        Me.PdfDocumentViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroButton1.Location = New System.Drawing.Point(14, 129)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(397, 41)
-        Me.MetroButton1.TabIndex = 9
-        Me.MetroButton1.Text = "Delete"
-        Me.MetroButton1.UseSelectable = True
+        Me.PdfDocumentViewer1.AutoScroll = True
+        Me.PdfDocumentViewer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.PdfDocumentViewer1.FormFillEnabled = False
+        Me.PdfDocumentViewer1.Location = New System.Drawing.Point(14, 38)
+        Me.PdfDocumentViewer1.MultiPagesThreshold = 60
+        Me.PdfDocumentViewer1.Name = "PdfDocumentViewer1"
+        Me.PdfDocumentViewer1.OnRenderPageExceptionEvent = Nothing
+        Me.PdfDocumentViewer1.PageLayoutMode = Spire.PdfViewer.Forms.PageLayoutMode.SinglePageContinuous
+        Me.PdfDocumentViewer1.Size = New System.Drawing.Size(309, 197)
+        Me.PdfDocumentViewer1.TabIndex = 11
+        Me.PdfDocumentViewer1.Text = "PdfDocumentViewer1"
+        Me.PdfDocumentViewer1.Threshold = 60
+        Me.PdfDocumentViewer1.ViewerMode = Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.MultiPage
+        Me.PdfDocumentViewer1.ZoomFactor = 1.0!
+        Me.PdfDocumentViewer1.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.[Default]
         '
-        'MetroButton2
+        'MetroButton3
         '
-        Me.MetroButton2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroButton2.Location = New System.Drawing.Point(14, 375)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(309, 41)
-        Me.MetroButton2.TabIndex = 10
-        Me.MetroButton2.Text = "Delete"
-        Me.MetroButton2.UseSelectable = True
+        Me.MetroButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.MetroButton3.Location = New System.Drawing.Point(14, 241)
+        Me.MetroButton3.Name = "MetroButton3"
+        Me.MetroButton3.Size = New System.Drawing.Size(93, 41)
+        Me.MetroButton3.TabIndex = 10
+        Me.MetroButton3.Text = "Delete"
+        Me.MetroButton3.UseSelectable = True
         '
-        'lbl_blotter_id
+        'Panel14
         '
-        Me.lbl_blotter_id.AutoSize = True
-        Me.lbl_blotter_id.Location = New System.Drawing.Point(8, 7)
-        Me.lbl_blotter_id.Name = "lbl_blotter_id"
-        Me.lbl_blotter_id.Size = New System.Drawing.Size(20, 19)
-        Me.lbl_blotter_id.TabIndex = 11
-        Me.lbl_blotter_id.Text = "id"
-        Me.lbl_blotter_id.Visible = False
+        Me.Panel14.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel14.Controls.Add(Me.Label25)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(338, 32)
+        Me.Panel14.TabIndex = 3
         '
-        'lbl_summon_id
+        'Label25
         '
-        Me.lbl_summon_id.AutoSize = True
-        Me.lbl_summon_id.Location = New System.Drawing.Point(8, 7)
-        Me.lbl_summon_id.Name = "lbl_summon_id"
-        Me.lbl_summon_id.Size = New System.Drawing.Size(20, 19)
-        Me.lbl_summon_id.TabIndex = 12
-        Me.lbl_summon_id.Text = "id"
-        Me.lbl_summon_id.Visible = False
+        Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(313, 6)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(21, 20)
+        Me.Label25.TabIndex = 0
+        Me.Label25.Text = "X"
         '
         'Admin
         '
@@ -2885,8 +2942,8 @@ Partial Class Admin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1851, 1050)
+        Me.Controls.Add(Me.file_popup)
         Me.Controls.Add(Me.summon_popup)
-        Me.Controls.Add(Me.blotter_popup)
         Me.Controls.Add(Me.summon_info)
         Me.Controls.Add(Me.blotter_info)
         Me.Controls.Add(Me.settings_pnl)
@@ -2906,6 +2963,7 @@ Partial Class Admin
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.summon_pnl)
+        Me.Controls.Add(Me.blotter_popup)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -2928,6 +2986,7 @@ Partial Class Admin
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.summonPnl.ResumeLayout(False)
+        CType(Me.dgv_folder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.actionModel.ResumeLayout(False)
         Me.actionModel.PerformLayout()
         Me.Panel9.ResumeLayout(False)
@@ -2984,6 +3043,9 @@ Partial Class Admin
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
+        Me.file_popup.ResumeLayout(False)
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3068,8 +3130,6 @@ Partial Class Admin
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView7 As DataGridView
-    Friend WithEvents PdfDocumentViewer1 As Spire.PdfViewer.Forms.PdfDocumentViewer
-    Friend WithEvents PdfDocumentViewer2 As Spire.PdfViewer.Forms.PdfDocumentViewer
     Friend WithEvents DataGridViewTextBoxColumn33 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn34 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
@@ -3198,8 +3258,6 @@ Partial Class Admin
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton12 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton13 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
     Friend WithEvents settings_pnl As MetroFramework.Controls.MetroPanel
     Friend WithEvents summon_info As MetroFramework.Controls.MetroPanel
     Friend WithEvents txtbox_summon_search As TextBox
@@ -3240,10 +3298,19 @@ Partial Class Admin
     Friend WithEvents Column28 As DataGridViewTextBoxColumn
     Friend WithEvents Column29 As DataGridViewTextBoxColumn
     Friend WithEvents summonAction As DataGridViewImageColumn
-    Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents lbl_blotter_id As MetroFramework.Controls.MetroLabel
     Friend WithEvents lbl_summon_id As MetroFramework.Controls.MetroLabel
+    Friend WithEvents dgv_folder As DataGridView
+    Friend WithEvents Column30 As DataGridViewTextBoxColumn
+    Friend WithEvents Column35 As DataGridViewTextBoxColumn
+    Friend WithEvents Column36 As DataGridViewTextBoxColumn
+    Friend WithEvents fileAction As DataGridViewImageColumn
+    Friend WithEvents file_popup As MetroFramework.Controls.MetroPanel
+    Friend WithEvents PdfDocumentViewer1 As Spire.PdfViewer.Forms.PdfDocumentViewer
+    Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Label25 As Label
 End Class
