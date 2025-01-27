@@ -582,7 +582,7 @@ Public Class Admin
             cmd.Connection = cn
 
             If documentType.Equals("clearance") Then
-                cmd.CommandText = "UPDATE bgms_clearance SET date_issued=@date, status = @status WHERE, amount=@amount clearance_track_id = @document_id"
+                cmd.CommandText = "UPDATE bgms_clearance SET date_issued=@date, status = @status, amount=@amount WHERE clearance_track_id = @document_id"
             ElseIf documentType.Equals("certificate") Then
                 cmd.CommandText = "UPDATE bgms_certificate SET date_issued=@date, status = @status, amount=@amount  WHERE cert_track_id = @document_id"
             Else
@@ -2071,6 +2071,53 @@ Public Class Admin
             Catch ex As Exception
                 ' Handle any errors during deletion
                 MessageBox.Show("An error occurred while deleting the file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    Private Sub MetroButton10_Click_1(sender As Object, e As EventArgs) Handles MetroButton10.Click
+        Dim query As DialogResult = MsgBox("Are you sure you want to save changes?", vbYesNo + vbQuestion, "Saving Changes")
+        If query = vbYes Then
+            Try
+                If cn.State = ConnectionState.Closed Then
+                    cn.Open()
+                End If
+
+                Dim cmd As New MySqlCommand()
+                cmd.Connection = cn
+                Dim cmd1 As New MySqlCommand()
+                cmd1.Connection = cn
+                Dim cmd2 As New MySqlCommand()
+                cmd2.Connection = cn
+
+
+                cmd.CommandText = "UPDATE bgms_config SET config_content=@cc WHERE config_id = 1"
+                cmd1.CommandText = "UPDATE bgms_config SET config_content=@cc WHERE config_id = 2"
+                cmd2.CommandText = "UPDATE bgms_config SET config_content=@cc WHERE config_id = 3"
+
+
+                cmd.Parameters.AddWithValue("@cc", txtbox_brgyName.Text())
+                cmd1.Parameters.AddWithValue("@cc", txtBox_muni.Text())
+                cmd2.Parameters.AddWithValue("@cc", txtBox_prov.Text())
+
+
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                Dim rowsAffected1 As Integer = cmd1.ExecuteNonQuery()
+                Dim rowsAffected2 As Integer = cmd2.ExecuteNonQuery()
+
+                If rowsAffected > 0 AndAlso rowsAffected1 > 0 AndAlso rowsAffected2 > 0 Then
+                    MsgBox("Changes saved successfully.", vbInformation, "Success")
+                Else
+                    MsgBox("Changes was not saved.", vbExclamation, "No Update")
+                End If
+
+            Catch ex As Exception
+                MsgBox("Failed to update configuration", vbCritical, "Failure")
+                cn.Close()
+            Finally
+                If cn.State = ConnectionState.Open Then
+                    cn.Close()
+                End If
             End Try
         End If
     End Sub

@@ -2367,7 +2367,7 @@ Partial Class Admin
         '
         'txtbox_brgyName
         '
-        Me.txtbox_brgyName.Location = New System.Drawing.Point(127, 387)
+        Me.txtbox_brgyName.Location = New System.Drawing.Point(127, 388)
         Me.txtbox_brgyName.Name = "txtbox_brgyName"
         Me.txtbox_brgyName.Size = New System.Drawing.Size(179, 26)
         Me.txtbox_brgyName.TabIndex = 11
@@ -2394,14 +2394,14 @@ Partial Class Admin
         '
         'txtBox_muni
         '
-        Me.txtBox_muni.Location = New System.Drawing.Point(128, 419)
+        Me.txtBox_muni.Location = New System.Drawing.Point(136, 420)
         Me.txtBox_muni.Name = "txtBox_muni"
-        Me.txtBox_muni.Size = New System.Drawing.Size(179, 26)
+        Me.txtBox_muni.Size = New System.Drawing.Size(170, 26)
         Me.txtBox_muni.TabIndex = 13
         '
         'txtBox_prov
         '
-        Me.txtBox_prov.Location = New System.Drawing.Point(127, 451)
+        Me.txtBox_prov.Location = New System.Drawing.Point(127, 452)
         Me.txtBox_prov.Name = "txtBox_prov"
         Me.txtBox_prov.Size = New System.Drawing.Size(179, 26)
         Me.txtBox_prov.TabIndex = 14
